@@ -106,13 +106,15 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Scroll Indicator */}
-          <div className="text-center mt-16">
-            <p className="text-white/40 text-sm mb-4 animate-pulse">Scroll untuk melihat lebih banyak</p>
-            <div className="w-6 h-10 border-2 border-white/20 rounded-full mx-auto flex items-start justify-center p-2">
-              <div className="w-1.5 h-3 bg-[#3B82F6] rounded-full animate-bounce"></div>
+          {/* Scroll Indicator - Desktop Only */}
+          {!isMobile && (
+            <div className="text-center mt-16">
+              <p className="text-white/40 text-sm mb-4 animate-pulse">Scroll untuk melihat lebih banyak</p>
+              <div className="w-6 h-10 border-2 border-white/20 rounded-full mx-auto flex items-start justify-center p-2">
+                <div className="w-1.5 h-3 bg-[#3B82F6] rounded-full animate-bounce"></div>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
       

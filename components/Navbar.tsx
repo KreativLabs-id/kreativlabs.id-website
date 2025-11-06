@@ -19,12 +19,17 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
+    // Check initial scroll position on mount
+    const checkScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
+    
+    // Check immediately on mount
+    checkScroll();
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    // Then add scroll listener
+    window.addEventListener("scroll", checkScroll);
+    return () => window.removeEventListener("scroll", checkScroll);
   }, []);
 
   return (

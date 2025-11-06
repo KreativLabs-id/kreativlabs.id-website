@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 interface FadeInStaggerProps {
   children: React.ReactNode;
@@ -17,6 +18,10 @@ export default function FadeInStagger({
 }: FadeInStaggerProps) {
   const [isVisible, setIsVisible] = useState(false);
   const elementRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
+  
+  // Reduce stagger delay on mobile for faster loading feel
+  const mobileDelay = isMobile ? Math.min(delay, 50) : delay;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -47,13 +52,13 @@ export default function FadeInStagger({
   return (
     <div
       ref={elementRef}
-      className={`transition-all duration-500 ease-out ${
+      className={`transition-all ${isMobile ? 'duration-300' : 'duration-500'} ease-out ${
         isVisible
           ? "opacity-100 translate-y-0"
-          : "opacity-0 translate-y-6"
+          : `opacity-0 ${isMobile ? 'translate-y-3' : 'translate-y-6'}`
       } ${className}`}
       style={{ 
-        transitionDelay: `${index * delay}ms`,
+        transitionDelay: `${index * mobileDelay}ms`,
         willChange: isVisible ? 'auto' : 'opacity, transform'
       }}
     >

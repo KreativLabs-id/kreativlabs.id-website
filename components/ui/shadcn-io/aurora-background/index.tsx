@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import React, { ReactNode } from "react";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 interface AuroraBackgroundProps extends React.HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
@@ -14,6 +15,8 @@ export const AuroraBackground = ({
   showRadialGradient = true,
   ...props
 }: AuroraBackgroundProps) => {
+  const isMobile = useIsMobile();
+  
   return (
     <main className="overflow-x-hidden w-full">
       <div
@@ -23,6 +26,7 @@ export const AuroraBackground = ({
         )}
         {...props}
       >
+        {!isMobile && (
         <div
           className="absolute inset-0 overflow-hidden w-full"
           style={
@@ -54,6 +58,7 @@ export const AuroraBackground = ({
             )}
           ></div>
         </div>
+        )}
         {children}
       </div>
     </main>
