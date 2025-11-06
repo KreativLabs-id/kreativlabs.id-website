@@ -70,4 +70,4 @@ Untuk mengubah konten, edit file-file berikut:
 
 ## 📄 License
 
-© 2024 KreativLabs.id. All rights reserved.
+© 2025 KreativLabs.id. All rights reserved.

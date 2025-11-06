@@ -6,33 +6,8 @@ import OptimizedParticles from "@/components/OptimizedParticles";
 import Image from "next/image";
 import AnimatedSection from "@/components/AnimatedSection";
 import FadeInStagger from "@/components/FadeInStagger";
-
-const projects = [
-  {
-    title: "E-Commerce Platform",
-    category: "Web Development",
-    description: "Platform e-commerce modern dengan fitur lengkap dan user-friendly",
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop&q=80",
-  },
-  {
-    title: "Corporate Website",
-    category: "Web Design",
-    description: "Website perusahaan profesional dengan desain minimalis dan elegan",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop&q=80",
-  },
-  {
-    title: "Mobile App Design",
-    category: "UI/UX Design",
-    description: "Desain aplikasi mobile yang intuitif dan modern",
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop&q=80",
-  },
-  {
-    title: "Landing Page",
-    category: "Web Development",
-    description: "Landing page dengan konversi tinggi untuk bisnis digital",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&q=80",
-  },
-];
+import Link from "next/link";
+import { projects } from "@/data/projects";
 
 export default function Projects() {
   return (
@@ -56,10 +31,11 @@ export default function Projects() {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {projects.map((project, index) => (
-            <FadeInStagger key={index} index={index} delay={100}>
-              <Card
-                className="group bg-[#0F1E37] border-white/10 hover:border-[#3B82F6]/50 transition-all duration-300 overflow-hidden cursor-pointer"
-              >
+            <FadeInStagger key={project.id} index={index} delay={100}>
+              <Link href={`/projects/${project.id}`}>
+                <Card
+                  className="group bg-[#0F1E37] border-white/10 hover:border-[#3B82F6]/50 transition-all duration-300 overflow-hidden cursor-pointer"
+                >
                 {/* Project Image */}
                 <div className="relative h-64 bg-[#1E3A5F] overflow-hidden">
                   <Image
@@ -93,6 +69,7 @@ export default function Projects() {
                   </p>
                 </div>
               </Card>
+              </Link>
             </FadeInStagger>
           ))}
         </div>
