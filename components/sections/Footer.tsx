@@ -1,7 +1,14 @@
 "use client";
 
-import { Instagram, Linkedin, Mail, Github } from "lucide-react";
+import { Instagram, Mail, Github } from "lucide-react";
 import Image from "next/image";
+
+// TikTok Icon Component
+const TikTokIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+  </svg>
+);
 
 const socialLinks = [
   {
@@ -10,18 +17,18 @@ const socialLinks = [
     label: "Instagram",
   },
   {
-    icon: Linkedin,
-    href: "https://linkedin.com/company/kreativlabs",
-    label: "LinkedIn",
+    icon: TikTokIcon,
+    href: "https://tiktok.com/@kreativlabs.id",
+    label: "TikTok",
   },
   {
     icon: Github,
-    href: "https://github.com/kreativlabs",
+    href: "https://github.com/fahrezi93",
     label: "GitHub",
   },
   {
     icon: Mail,
-    href: "mailto:hello@kreativlabs.id",
+    href: "mailto:kreativlabsid@gmail.com",
     label: "Email",
   },
 ];
@@ -48,7 +55,7 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#0A192F] border-t border-white/10 overflow-hidden">
+    <footer className="relative bg-[#0A192F] border-t border-white/10 overflow-hidden overflow-x-hidden w-full">
       {/* Lighting Effect */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#3B82F6] rounded-full blur-[120px] opacity-5"></div>
 

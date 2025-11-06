@@ -65,8 +65,8 @@ export default function Navbar() {
 
           {/* CTA Button - Right */}
           <div className="hidden md:block">
-            <Button className="bg-[#3B82F6] hover:bg-[#3B82F6]/90 text-white rounded-full px-6">
-              Get Started
+            <Button asChild className="bg-[#3B82F6] hover:bg-[#3B82F6]/90 text-white rounded-full px-6">
+              <a href="#contact">Get Started</a>
             </Button>
           </div>
 
@@ -99,10 +99,10 @@ export default function Navbar() {
               ))}
               <div className="px-4 pt-4 mt-2 border-t border-white/5">
                 <Button 
+                  asChild
                   className="bg-[#3B82F6] hover:bg-[#3B82F6]/90 text-white w-full rounded-full py-6 text-base font-medium shadow-lg shadow-[#3B82F6]/30"
-                  onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Get Started
+                  <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Get Started</a>
                 </Button>
               </div>
             </div>

@@ -8,24 +8,25 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import emailjs from "@emailjs/browser";
 import OptimizedParticles from "@/components/OptimizedParticles";
+import AnimatedSection from "@/components/AnimatedSection";
 
 const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    value: "hello@kreativlabs.id",
-    link: "mailto:hello@kreativlabs.id",
+    value: "kreativlabsid@gmail.com",
+    link: "mailto:kreativlabsid@gmail.com",
   },
   {
     icon: Phone,
     title: "Phone",
-    value: "+62 812-3456-7890",
-    link: "tel:+6281234567890",
+    value: "+62 895-3801-63004",
+    link: "tel:+62895380163004",
   },
   {
     icon: MapPin,
     title: "Location",
-    value: "Jakarta, Indonesia",
+    value: "Semarang, Indonesia",
     link: "#",
   },
 ];
@@ -88,26 +89,29 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-24 bg-[#0A192F] overflow-hidden">
+    <section id="contact" className="relative py-24 bg-[#0A192F] overflow-hidden overflow-x-hidden w-full">
       {/* Lighting Effects */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-[#3B82F6] rounded-full blur-[120px] opacity-10"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#3B82F6] rounded-full blur-[120px] opacity-10"></div>
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Chat Ke <span className="text-[#3B82F6]">Kami</span>
-          </h2>
-          <p className="text-white/70 text-lg max-w-2xl mx-auto">
-            Punya project atau pertanyaan? Jangan ragu untuk menghubungi kami
-          </p>
-        </div>
+        <AnimatedSection animation="fade-up">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Chat Ke <span className="text-[#3B82F6]">Kami</span>
+            </h2>
+            <p className="text-white/70 text-lg max-w-2xl mx-auto">
+              Punya project atau pertanyaan? Jangan ragu untuk menghubungi kami
+            </p>
+          </div>
+        </AnimatedSection>
 
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Contact Info */}
-            <div className="lg:col-span-1 space-y-6">
+        <AnimatedSection animation="fade-up" delay={100}>
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Contact Info */}
+              <div className="lg:col-span-1 space-y-6">
               {contactInfo.map((info, index) => {
                 const Icon = info.icon;
                 return (
@@ -233,9 +237,10 @@ export default function Contact() {
                   </Button>
                 </form>
               </Card>
+              </div>
             </div>
           </div>
-        </div>
+        </AnimatedSection>
       </div>
       
       {/* Interactive Particles - Desktop Only */}

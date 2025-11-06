@@ -2,6 +2,7 @@
 
 import { Users, Target, Award, TrendingUp } from "lucide-react";
 import OptimizedParticles from "@/components/OptimizedParticles";
+import AnimatedSection from "@/components/AnimatedSection";
 
 const stats = [
   {
@@ -23,7 +24,7 @@ const stats = [
 
 export default function About() {
   return (
-    <section id="about" className="relative py-24 bg-[#0A192F] overflow-hidden">
+    <section id="about" className="relative py-24 bg-[#0A192F] overflow-hidden overflow-x-hidden w-full">
       {/* Lighting Effect */}
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#3B82F6] rounded-full blur-[120px] opacity-10"></div>
 
@@ -31,7 +32,8 @@ export default function About() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
-            <div>
+            <AnimatedSection animation="fade-right">
+              <div>
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 About <span className="text-[#3B82F6]">Us</span>
               </h2>
@@ -61,10 +63,12 @@ export default function About() {
                   );
                 })}
               </div>
-            </div>
+              </div>
+            </AnimatedSection>
 
             {/* Right Content - Visual Element */}
-            <div className="relative">
+            <AnimatedSection animation="fade-left" delay={200}>
+              <div className="relative">
               <div className="relative aspect-square">
                 {/* Main Circle */}
                 <div className="absolute inset-0 border-2 border-[#3B82F6]/20 rounded-full"></div>
@@ -84,7 +88,8 @@ export default function About() {
                   <div className="w-8 h-8 bg-[#3B82F6] rounded-md"></div>
                 </div>
               </div>
-            </div>
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </div>

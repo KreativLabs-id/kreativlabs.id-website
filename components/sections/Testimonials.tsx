@@ -2,6 +2,8 @@
 
 import { Card } from "@/components/ui/card";
 import { Star } from "lucide-react";
+import AnimatedSection from "@/components/AnimatedSection";
+import FadeInStagger from "@/components/FadeInStagger";
 
 const testimonials = [
   {
@@ -29,24 +31,27 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="relative py-24 bg-[#0A192F] overflow-hidden">
+    <section className="relative py-24 bg-[#0A192F] overflow-hidden overflow-x-hidden w-full">
       {/* Lighting Effect */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#3B82F6] rounded-full blur-[120px] opacity-10"></div>
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Client <span className="text-[#3B82F6]">Testimonials</span>
-          </h2>
-          <p className="text-white/70 text-lg max-w-2xl mx-auto">
-            Apa kata mereka yang telah mempercayai kami
-          </p>
-        </div>
+        <AnimatedSection animation="fade-up">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Client <span className="text-[#3B82F6]">Testimonials</span>
+            </h2>
+            <p className="text-white/70 text-lg max-w-2xl mx-auto">
+              Apa kata mereka yang telah mempercayai kami
+            </p>
+          </div>
+        </AnimatedSection>
 
         {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
+            <FadeInStagger key={index} index={index} delay={100}>
             <Card
               key={index}
               className="bg-[#0F1E37] border-white/10 p-6 hover:border-[#3B82F6]/50 transition-all duration-300"
@@ -80,6 +85,7 @@ export default function Testimonials() {
                 </div>
               </div>
             </Card>
+            </FadeInStagger>
           ))}
         </div>
       </div>

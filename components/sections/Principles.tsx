@@ -1,6 +1,8 @@
 "use client";
 
 import { Zap, Shield, Heart, TrendingUp } from "lucide-react";
+import AnimatedSection from "@/components/AnimatedSection";
+import FadeInStagger from "@/components/FadeInStagger";
 
 const principles = [
   {
@@ -27,30 +29,30 @@ const principles = [
 
 export default function Principles() {
   return (
-    <section className="relative py-24 bg-[#0A192F] overflow-hidden">
+    <section className="relative py-24 bg-[#0A192F] overflow-hidden overflow-x-hidden w-full">
       {/* Lighting Effects */}
       <div className="absolute top-1/2 right-0 w-96 h-96 bg-[#3B82F6] rounded-full blur-[120px] opacity-10"></div>
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Engineering <span className="text-[#3B82F6]">Principles</span>
-          </h2>
-          <p className="text-white/70 text-lg max-w-2xl mx-auto">
-            Prinsip-prinsip yang kami pegang dalam setiap project
-          </p>
-        </div>
+        <AnimatedSection animation="fade-up">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Engineering <span className="text-[#3B82F6]">Principles</span>
+            </h2>
+            <p className="text-white/70 text-lg max-w-2xl mx-auto">
+              Prinsip-prinsip yang kami pegang dalam setiap project
+            </p>
+          </div>
+        </AnimatedSection>
 
         {/* Principles Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
           {principles.map((principle, index) => {
             const Icon = principle.icon;
             return (
-              <div
-                key={index}
-                className="group text-center"
-              >
+              <FadeInStagger key={index} index={index} delay={100}>
+                <div className="group text-center">
                 {/* Icon Container */}
                 <div className="relative mb-6 inline-block">
                   {/* Glow Effect */}
@@ -71,7 +73,8 @@ export default function Principles() {
                 <p className="text-white/70 text-sm leading-relaxed">
                   {principle.description}
                 </p>
-              </div>
+                </div>
+              </FadeInStagger>
             );
           })}
         </div>
