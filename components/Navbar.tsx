@@ -6,17 +6,18 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 const navLinks = [
-  { name: "Home", href: "#" },
-  { name: "Projects", href: "#projects" },
-  { name: "About", href: "#about" },
-  { name: "Services", href: "#services" },
-  { name: "Pricing", href: "#pricing" },
-  { name: "Contact", href: "#contact" },
+  { name: "Beranda", href: "#" },
+  { name: "Proyek", href: "#projects" },
+  { name: "Tentang", href: "#about" },
+  { name: "Layanan", href: "#services" },
+  { name: "Harga", href: "#pricing" },
+  { name: "Kontak", href: "#contact" },
 ];
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     // Check initial scroll position on mount
@@ -32,13 +33,43 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", checkScroll);
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navLinks.map(link => link.href.replace('#', ''));
+      const scrollPosition = window.scrollY + 100;
+
+      for (const section of sections) {
+        if (section === '') {
+          if (window.scrollY < 100) {
+            setActiveSection('#');
+          }
+          continue;
+        }
+        const element = document.getElementById(section);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetHeight = element.offsetHeight;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(`#${section}`);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check on mount
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-[999] transition-all duration-500 ${
         isScrolled
           ? "bg-[#0A192F]/80 backdrop-blur-xl shadow-lg shadow-[#3B82F6]/5"
           : "bg-transparent"
       }`}
+      style={{ position: 'fixed' }}
     >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20 relative">
@@ -60,10 +91,16 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-white/80 hover:text-[#3B82F6] transition-colors text-sm font-medium relative group"
+                className={`text-sm font-medium relative group transition-colors ${
+                  activeSection === link.href
+                    ? "text-[#3B82F6]"
+                    : "text-white/80 hover:text-[#3B82F6]"
+                }`}
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#3B82F6] transition-all duration-300 group-hover:w-full"></span>
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-[#3B82F6] transition-all duration-300 ${
+                  activeSection === link.href ? "w-full" : "w-0 group-hover:w-full"
+                }`}></span>
               </a>
             ))}
           </div>
@@ -71,7 +108,7 @@ export default function Navbar() {
           {/* CTA Button - Right */}
           <div className="hidden md:block">
             <Button asChild className="bg-[#3B82F6] hover:bg-[#3B82F6]/90 text-white rounded-full px-6">
-              <a href="#contact">Get Started</a>
+              <a href="#contact">Mulai Sekarang</a>
             </Button>
           </div>
 
@@ -93,7 +130,11 @@ export default function Navbar() {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-white hover:text-[#3B82F6] hover:bg-white/5 transition-all text-base font-medium px-6 py-3 rounded-lg mx-2"
+                  className={`text-base font-medium px-6 py-3 rounded-lg mx-2 transition-all ${
+                    activeSection === link.href
+                      ? "text-[#3B82F6] bg-white/10"
+                      : "text-white hover:text-[#3B82F6] hover:bg-white/5"
+                  }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                   style={{
                     animationDelay: `${index * 50}ms`,
@@ -107,7 +148,7 @@ export default function Navbar() {
                   asChild
                   className="bg-[#3B82F6] hover:bg-[#3B82F6]/90 text-white w-full rounded-full py-6 text-base font-medium shadow-lg shadow-[#3B82F6]/30"
                 >
-                  <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Get Started</a>
+                  <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Mulai Sekarang</a>
                 </Button>
               </div>
             </div>

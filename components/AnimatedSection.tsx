@@ -55,27 +55,28 @@ export default function AnimatedSection({
 
   const getAnimationClasses = () => {
     const baseClasses = "transition-all ease-out";
-    const durationClass = `duration-[${mobileDuration}ms]`;
-    const translateAmount = isMobile ? 4 : 8; // Smaller movement on mobile
     
     if (isVisible) {
-      return `${baseClasses} ${durationClass} opacity-100 translate-x-0 translate-y-0 scale-100`;
+      return `${baseClasses} duration-[${mobileDuration}ms] opacity-100 translate-x-0 translate-y-0 scale-100`;
     }
 
+    // Use fixed Tailwind classes for better performance
+    const baseHidden = `${baseClasses} duration-[${mobileDuration}ms] opacity-0`;
+    
     switch (animation) {
       case "fade-up":
-        return `${baseClasses} ${durationClass} opacity-0 translate-y-${translateAmount}`;
+        return `${baseHidden} ${isMobile ? 'translate-y-4' : 'translate-y-8'}`;
       case "fade-down":
-        return `${baseClasses} ${durationClass} opacity-0 -translate-y-${translateAmount}`;
+        return `${baseHidden} ${isMobile ? '-translate-y-4' : '-translate-y-8'}`;
       case "fade-left":
-        return `${baseClasses} ${durationClass} opacity-0 translate-x-${translateAmount}`;
+        return `${baseHidden} ${isMobile ? 'translate-x-4' : 'translate-x-8'}`;
       case "fade-right":
-        return `${baseClasses} ${durationClass} opacity-0 -translate-x-${translateAmount}`;
+        return `${baseHidden} ${isMobile ? '-translate-x-4' : '-translate-x-8'}`;
       case "scale":
-        return `${baseClasses} ${durationClass} opacity-0 scale-95`;
+        return `${baseHidden} scale-95`;
       case "fade":
       default:
-        return `${baseClasses} ${durationClass} opacity-0`;
+        return baseHidden;
     }
   };
 

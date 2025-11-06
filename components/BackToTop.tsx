@@ -28,16 +28,17 @@ export default function BackToTop() {
   };
 
   return (
-    <>
-      {isVisible && (
-        <Button
-          onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 w-12 h-12 rounded-full bg-[#3B82F6] hover:bg-[#3B82F6]/90 text-white shadow-lg shadow-[#3B82F6]/30 transition-all duration-300 hover:scale-110 p-0"
-          aria-label="Back to top"
-        >
-          <ArrowUp className="w-5 h-5" />
-        </Button>
-      )}
-    </>
+    <Button
+      onClick={scrollToTop}
+      className={`fixed bottom-8 right-8 z-[100] w-12 h-12 rounded-full bg-[#3B82F6] hover:bg-[#3B82F6]/90 text-white shadow-lg shadow-[#3B82F6]/30 transition-all duration-500 hover:scale-110 p-0 ${
+        isVisible
+          ? "opacity-100 translate-y-0 pointer-events-auto"
+          : "opacity-0 translate-y-4 pointer-events-none"
+      }`}
+      aria-label="Back to top"
+      style={{ position: 'fixed' }}
+    >
+      <ArrowUp className="w-5 h-5" />
+    </Button>
   );
 }

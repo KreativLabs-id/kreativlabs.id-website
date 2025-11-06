@@ -1,8 +1,20 @@
 "use client";
 
+import { useState, useEffect } from "react";
+
 export default function WhatsAppButton() {
+  const [isVisible, setIsVisible] = useState(false);
   const phoneNumber = "62895380163004";
   const message = "Halo KreativLabs.id, saya tertarik dengan jasa Anda!";
+  
+  useEffect(() => {
+    // Show button after a short delay when page loads
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
   
   const handleClick = () => {
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
@@ -12,8 +24,13 @@ export default function WhatsAppButton() {
   return (
     <button
       onClick={handleClick}
-      className="fixed bottom-24 right-8 z-50 w-14 h-14 bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-full shadow-lg shadow-[#25D366]/30 transition-all duration-300 hover:scale-110 flex items-center justify-center group"
+      className={`fixed bottom-24 right-8 z-[100] w-14 h-14 bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-full shadow-lg shadow-[#25D366]/30 transition-all duration-500 hover:scale-110 flex items-center justify-center group ${
+        isVisible
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 translate-y-4"
+      }`}
       aria-label="Chat on WhatsApp"
+      style={{ position: 'fixed' }}
     >
       {/* Official WhatsApp Logo SVG */}
       <svg 

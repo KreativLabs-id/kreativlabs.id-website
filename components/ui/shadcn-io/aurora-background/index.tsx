@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import React, { ReactNode } from "react";
+import React, { ReactNode, useState, useEffect } from "react";
 import { useIsMobile } from "@/hooks/useIsMobile";
 
 interface AuroraBackgroundProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -16,17 +16,24 @@ export const AuroraBackground = ({
   ...props
 }: AuroraBackgroundProps) => {
   const isMobile = useIsMobile();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Don't render aurora until we know if it's mobile or not
+  const shouldShowAurora = mounted && !isMobile;
   
   return (
-    <main className="overflow-x-hidden w-full">
-      <div
-        className={cn(
-          "transition-bg relative flex flex-col items-center justify-center bg-[#0A192F] text-white overflow-x-hidden w-full",
-          className,
-        )}
-        {...props}
-      >
-        {!isMobile && (
+    <div
+      className={cn(
+        "transition-bg relative flex flex-col items-center justify-center bg-[#0A192F] text-white w-full",
+        className,
+      )}
+      {...props}
+    >
+        {shouldShowAurora && (
         <div
           className="absolute inset-0 overflow-hidden w-full"
           style={
@@ -60,7 +67,6 @@ export const AuroraBackground = ({
         </div>
         )}
         {children}
-      </div>
-    </main>
+    </div>
   );
 };

@@ -162,18 +162,19 @@
       background-color: rgba(10, 25, 47, 0.95) !important;
     }
     
-    /* Optimize transforms for mobile */
-    * {
-      -webkit-transform: translateZ(0);
-      transform: translateZ(0);
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-    }
-    
     /* Reduce shadow complexity on mobile */
     .shadow-lg,
     .shadow-xl {
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    /* Fix for fixed elements on mobile */
+    nav[class*="fixed"],
+    button[class*="fixed"],
+    .fixed {
+      position: fixed !important;
+      -webkit-transform: none !important;
+      transform: none !important;
     }
   }
 
