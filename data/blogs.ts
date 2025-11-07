@@ -20,7 +20,7 @@ export const blogPosts: BlogPost[] = [
     slug: "aplikasi-kasir-web-modern",
     excerpt: "Tingkatkan efisiensi bisnis retail Anda dengan aplikasi kasir berbasis web yang modern, mudah digunakan, dan dapat diakses dari mana saja. Hemat biaya operasional hingga 60%!",
     image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=800&fit=crop",
-    author: "Fahrezi & Roychan",
+    author: "Tim Kreatif KreativLabs",
     date: "7 November 2024",
     category: "Web Application",
     tags: ["Aplikasi Kasir", "POS System", "Web Application", "Business Solution", "UMKM"],
