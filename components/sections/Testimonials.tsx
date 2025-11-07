@@ -31,7 +31,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="relative py-24 bg-[#0A192F] overflow-hidden overflow-x-hidden w-full">
+    <section id="testimonials" className="relative py-24 bg-[#0A192F] overflow-hidden overflow-x-hidden w-full">
       {/* Lighting Effect */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#3B82F6] rounded-full blur-[120px] opacity-10"></div>
 

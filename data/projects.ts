@@ -23,14 +23,14 @@ export const projects: Project[] = [
     title: "E-Commerce Platform",
     category: "Web Development",
     description: "Platform e-commerce modern dengan fitur lengkap dan user-friendly",
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop&q=80",
+    image: "/ecommerce.png",
     fullDescription: "Platform e-commerce lengkap yang dirancang untuk meningkatkan penjualan online dengan pengalaman pengguna yang optimal. Sistem ini dilengkapi dengan manajemen produk, keranjang belanja, sistem pembayaran terintegrasi, dan dashboard admin yang powerful.",
     challenge: "Klien membutuhkan platform e-commerce yang dapat menangani ribuan produk dengan performa tinggi, sistem pembayaran yang aman, dan dashboard admin yang mudah digunakan untuk mengelola inventori dan pesanan.",
     solution: "Kami mengembangkan platform menggunakan Next.js untuk performa optimal, dengan integrasi payment gateway, sistem manajemen produk yang scalable, dan dashboard admin yang intuitif. Implementasi caching dan optimasi database memastikan loading time yang cepat.",
     results: [
       "Peningkatan konversi penjualan 45%",
       "Loading time < 2 detik",
-      "Dapat menangani 10,000+ produk",
+      "Dapat menangani 100 produk",
       "Mobile responsive dengan UX yang excellent"
     ],
     techStack: [
@@ -47,9 +47,9 @@ export const projects: Project[] = [
     client: "Toko Online Indonesia",
     year: "2024",
     gallery: [
-      "https://images.unsplash.com/photo-1557821552-17105176677c?w=1200&h=800&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=800&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&h=800&fit=crop&q=80"
+      "/ecommerce.png",
+      "/ecommerce.png",
+      "/ecommerce.png"
     ],
     features: [
       "Manajemen Produk & Kategori",
@@ -67,7 +67,7 @@ export const projects: Project[] = [
     title: "Corporate Website",
     category: "Web Design",
     description: "Website perusahaan profesional dengan desain minimalis dan elegan",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop&q=80",
+    image: "/companyprofile.png",
     fullDescription: "Website corporate modern yang mencerminkan profesionalisme dan kredibilitas perusahaan. Dirancang dengan fokus pada user experience dan konversi, dilengkapi dengan CMS untuk memudahkan update konten.",
     challenge: "Perusahaan membutuhkan website yang dapat meningkatkan brand awareness dan kredibilitas di mata klien, dengan konten yang mudah diupdate oleh tim internal tanpa bantuan developer.",
     solution: "Kami merancang website dengan desain minimalis yang elegan, menggunakan animasi subtle untuk meningkatkan engagement. Implementasi CMS headless memungkinkan tim klien untuk update konten dengan mudah melalui dashboard yang user-friendly.",
@@ -91,9 +91,9 @@ export const projects: Project[] = [
     client: "PT Maju Bersama",
     year: "2024",
     gallery: [
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&h=800&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200&h=800&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=800&fit=crop&q=80"
+      "/companyprofile.png",
+      "/companyprofile.png",
+      "/companyprofile.png"
     ],
     features: [
       "Responsive Design",
@@ -107,13 +107,13 @@ export const projects: Project[] = [
     ]
   },
   {
-    id: "mobile-app-design",
-    title: "Mobile App Design",
-    category: "UI/UX Design",
-    description: "Desain aplikasi mobile yang intuitif dan modern",
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop&q=80",
-    fullDescription: "Desain UI/UX untuk aplikasi mobile yang fokus pada kemudahan penggunaan dan estetika modern. Setiap elemen dirancang dengan mempertimbangkan user journey dan accessibility.",
-    challenge: "Aplikasi harus mudah digunakan oleh berbagai kalangan usia, dengan interface yang menarik namun tidak overwhelming. Perlu balance antara fitur lengkap dengan simplicity.",
+    id: "website chat",
+    title: "Website Chatly untuk Chat",
+    category: "Fullstack Web Development",
+    description: "Website chat untuk Chatly",
+    image: "/chatly.png",
+    fullDescription: "Website chat untuk Chatly",
+    challenge: "Website harus mudah digunakan oleh berbagai kalangan usia, dengan interface yang menarik namun tidak overwhelming. Perlu balance antara fitur lengkap dengan simplicity.",
     solution: "Kami melakukan user research mendalam, membuat user persona, dan iterasi design berdasarkan feedback. Menggunakan design system yang konsisten dan mengikuti best practices mobile UI/UX.",
     results: [
       "User satisfaction score 4.8/5",
@@ -122,22 +122,27 @@ export const projects: Project[] = [
       "Daily active users meningkat 200%"
     ],
     techStack: [
-      "Figma",
-      "Adobe XD",
-      "Illustrator",
-      "Protopie",
-      "Principle",
-      "Zeplin",
+      "TypeScript",
+      "Next.js 14",
+      "Tailwind CSS",
+      "Prisma ORM",
+      "Stripe Payment",
+      "Redis Cache",
+      "Vercel",
+      "Stripe Payment",
+      "Redis Cache",
+      "Vercel",
+      "Socket.io",
       "Miro",
       "Maze"
     ],
     duration: "25 hari",
-    client: "Startup Digital",
-    year: "2024",
+    client: "Chatly",
+    year: "2025",
     gallery: [
-      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1200&h=800&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1200&h=800&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=1200&h=800&fit=crop&q=80"
+      "/chatly.png",
+      "/chatly.png",
+      "/chatly.png"
     ],
     features: [
       "User Research & Persona",
@@ -151,12 +156,12 @@ export const projects: Project[] = [
     ]
   },
   {
-    id: "landing-page",
-    title: "Landing Page",
+    id: "website-top-up-game",
+    title: "Website Top-Up Game",
     category: "Web Development",
-    description: "Landing page dengan konversi tinggi untuk bisnis digital",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&q=80",
-    fullDescription: "Landing page yang dioptimasi untuk konversi tinggi dengan copywriting yang persuasif dan design yang menarik perhatian. Dilengkapi dengan A/B testing dan analytics untuk continuous improvement.",
+    description: "Website top-up game dengan fitur lengkap dan user-friendly",
+    image: "/topupgame.png",
+    fullDescription: "Website top-up game yang dioptimasi untuk konversi tinggi dengan copywriting yang persuasif dan design yang menarik perhatian. Dilengkapi dengan A/B testing dan analytics untuk continuous improvement.",
     challenge: "Klien membutuhkan landing page yang dapat mengkonversi visitor menjadi leads dengan conversion rate minimal 5%, dengan loading time yang sangat cepat dan mobile-friendly.",
     solution: "Kami merancang landing page dengan fokus pada conversion optimization, menggunakan psychological triggers, clear CTA, dan social proof. Implementasi lazy loading dan image optimization memastikan performa maksimal.",
     results: [
@@ -176,12 +181,12 @@ export const projects: Project[] = [
       "Vercel"
     ],
     duration: "15 hari",
-    client: "Digital Marketing Agency",
-    year: "2024",
+    client: "PT. Top Up Game",
+    year: "2025",
     gallery: [
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&h=800&fit=crop&q=80"
+      "/topupgame.png",
+      "/topupgame.png",
+      "/topupgame.png"
     ],
     features: [
       "Conversion Optimized",
