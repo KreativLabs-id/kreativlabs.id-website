@@ -342,4 +342,242 @@
   .animate-float-fast {
     animation: float-fast 4s ease-in-out infinite;
   }
+
+  /* Blog Content Styling */
+  .blog-content {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.75;
+  }
+
+  .blog-content h1 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+    line-height: 1.25;
+  }
+
+  @media (min-width: 768px) {
+    .blog-content h1 {
+      font-size: 2.25rem;
+    }
+  }
+
+  .blog-content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    line-height: 1.25;
+  }
+
+  @media (min-width: 768px) {
+    .blog-content h2 {
+      font-size: 1.875rem;
+    }
+  }
+
+  .blog-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.75rem;
+    margin-top: 1.5rem;
+    line-height: 1.25;
+  }
+
+  @media (min-width: 768px) {
+    .blog-content h3 {
+      font-size: 1.5rem;
+    }
+  }
+
+  .blog-content h4 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .blog-content h4 {
+      font-size: 1.25rem;
+    }
+  }
+
+  .blog-content p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .blog-content p {
+      font-size: 1.125rem;
+    }
+  }
+
+  .blog-content ul {
+    list-style: none;
+    margin-bottom: 1.5rem;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .blog-content ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  .blog-content ol {
+    list-style-type: decimal;
+    list-style-position: inside;
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .blog-content ol li {
+    margin-bottom: 0.5rem;
+  }
+
+  .blog-content li {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  @media (min-width: 768px) {
+    .blog-content li {
+      font-size: 1.125rem;
+    }
+  }
+
+  .blog-content ul > li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .blog-content ul > li::before {
+    content: "•";
+    color: #3B82F6;
+    font-size: 1.25rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+  }
+
+  .blog-content strong,
+  .blog-content b {
+    color: white;
+    font-weight: 700;
+  }
+
+  .blog-content em,
+  .blog-content i {
+    color: rgba(255, 255, 255, 0.9);
+    font-style: italic;
+  }
+
+  .blog-content blockquote {
+    border-left: 4px solid #3B82F6;
+    padding-left: 1.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    background-color: rgba(15, 30, 55, 0.5);
+    border-radius: 0 0.5rem 0.5rem 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+  }
+
+  .blog-content blockquote p {
+    margin-bottom: 0.5rem;
+  }
+
+  .blog-content hr {
+    border-color: rgba(255, 255, 255, 0.1);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .blog-content a {
+    color: #3B82F6;
+    text-decoration: underline;
+    transition: color 0.2s;
+  }
+
+  .blog-content a:hover {
+    color: #60A5FA;
+  }
+
+  .blog-content code {
+    background-color: #0F1E37;
+    color: #3B82F6;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    font-family: monospace;
+  }
+
+  .blog-content pre {
+    background-color: #0F1E37;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .blog-content pre code {
+    background-color: transparent;
+    padding: 0;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .blog-content img {
+    border-radius: 0.75rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+
+  .blog-content > p > img {
+    border-radius: 0.75rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Table Styling */
+  .blog-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .blog-content th {
+    background-color: #0F1E37;
+    color: white;
+    font-weight: 700;
+    padding: 0.75rem;
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .blog-content td {
+    padding: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .blog-content tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
 }

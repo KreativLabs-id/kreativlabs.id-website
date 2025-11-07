@@ -198,6 +198,57 @@ export const projects: Project[] = [
       "Analytics Integration",
       "A/B Testing Ready"
     ]
+  },
+  {
+    id: "aplikasi-kasir-web",
+    title: "Aplikasi Kasir Web Modern",
+    category: "Web Application",
+    description: "Sistem kasir berbasis web yang powerful untuk mengelola bisnis retail Anda",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=800&fit=crop",
+    fullDescription: "Aplikasi kasir web modern yang dirancang khusus untuk membantu bisnis retail, toko, restoran, dan UMKM dalam mengelola transaksi penjualan dengan lebih efisien. Dilengkapi dengan fitur lengkap mulai dari manajemen produk, stok, laporan penjualan real-time, hingga integrasi dengan berbagai metode pembayaran.",
+    challenge: "Banyak bisnis UMKM masih menggunakan sistem manual atau aplikasi kasir yang rumit dan mahal. Mereka membutuhkan solusi yang mudah digunakan, terjangkau, dapat diakses dari mana saja, dan memiliki fitur lengkap untuk mengelola bisnis mereka.",
+    solution: "Kami mengembangkan aplikasi kasir berbasis web yang dapat diakses dari browser tanpa perlu instalasi. Sistem ini dilengkapi dengan interface yang intuitif, fitur multi-user, laporan real-time, dan dapat diakses dari berbagai perangkat. Teknologi cloud memastikan data aman dan selalu ter-backup.",
+    results: [
+      "Efisiensi transaksi meningkat 70%",
+      "Pengurangan kesalahan input hingga 90%",
+      "Akses real-time dari mana saja",
+      "Hemat biaya operasional 60%"
+    ],
+    techStack: [
+      "Next.js 14",
+      "TypeScript",
+      "Tailwind CSS",
+      "PostgreSQL",
+      "Prisma ORM",
+      "NextAuth.js",
+      "React Query",
+      "Zustand",
+      "Recharts",
+      "Vercel"
+    ],
+    duration: "60 hari",
+    client: "Kreativ Labs",
+    year: "2025",
+    gallery: [
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop"
+    ],
+    features: [
+      "Point of Sale (POS) Modern",
+      "Manajemen Produk & Kategori",
+      "Manajemen Stok Real-time",
+      "Multi Payment Method",
+      "Laporan Penjualan & Analytics",
+      "Multi User & Role Management",
+      "Riwayat Transaksi Lengkap",
+      "Responsive Design",
+      "Print Receipt",
+      "Dashboard Analytics",
+      "Backup Otomatis",
+      "Cloud-based Access"
+    ],
+    link: "#contact"
   }
 ];
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -10,11 +11,12 @@ const navLinks = [
   { name: "Proyek", href: "#projects" },
   { name: "Tentang", href: "#about" },
   { name: "Layanan", href: "#services" },
-  { name: "Harga", href: "#pricing" },
+  { name: "Blog", href: "/blog" },
   { name: "Kontak", href: "#contact" },
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
@@ -33,7 +35,19 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", checkScroll);
   }, []);
 
+  // Set active section based on pathname
   useEffect(() => {
+    if (pathname.startsWith('/blog')) {
+      setActiveSection('/blog');
+    } else if (pathname === '/') {
+      setActiveSection('#');
+    }
+  }, [pathname]);
+
+  useEffect(() => {
+    // Only track scroll on homepage
+    if (pathname !== '/') return;
+
     const handleScroll = () => {
       const sections = navLinks.map(link => link.href.replace('#', ''));
       const scrollPosition = window.scrollY + 100;
@@ -60,13 +74,13 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Check on mount
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [pathname]);
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-[999] transition-all duration-500 ${
-        isScrolled
-          ? "bg-[#0A192F]/80 backdrop-blur-xl shadow-lg shadow-[#3B82F6]/5"
+        isScrolled || isMobileMenuOpen
+          ? "bg-[#0A192F]/95 backdrop-blur-xl shadow-lg shadow-[#3B82F6]/5"
           : "bg-transparent"
       }`}
       style={{ position: 'fixed' }}
@@ -87,28 +101,34 @@ export default function Navbar() {
 
           {/* Desktop Navigation - Centered */}
           <div className="hidden md:flex items-center space-x-8 absolute left-1/2 -translate-x-1/2">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className={`text-sm font-medium relative group transition-colors ${
-                  activeSection === link.href
-                    ? "text-[#3B82F6]"
-                    : "text-white/80 hover:text-[#3B82F6]"
-                }`}
-              >
-                {link.name}
-                <span className={`absolute -bottom-1 left-0 h-0.5 bg-[#3B82F6] transition-all duration-300 ${
-                  activeSection === link.href ? "w-full" : "w-0 group-hover:w-full"
-                }`}></span>
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isExternal = link.href.startsWith('/');
+              const href = isExternal ? link.href : (pathname !== '/' ? `/${link.href}` : link.href);
+              const isActive = activeSection === link.href || (link.href.startsWith('/') && pathname.startsWith(link.href));
+              
+              return (
+                <a
+                  key={link.name}
+                  href={href}
+                  className={`text-sm font-medium relative group transition-colors ${
+                    isActive
+                      ? "text-[#3B82F6]"
+                      : "text-white/80 hover:text-[#3B82F6]"
+                  }`}
+                >
+                  {link.name}
+                  <span className={`absolute -bottom-1 left-0 h-0.5 bg-[#3B82F6] transition-all duration-300 ${
+                    isActive ? "w-full" : "w-0 group-hover:w-full"
+                  }`}></span>
+                </a>
+              );
+            })}
           </div>
 
           {/* CTA Button - Right */}
           <div className="hidden md:block">
             <Button asChild className="bg-[#3B82F6] hover:bg-[#3B82F6]/90 text-white rounded-full px-6">
-              <a href="#contact">Mulai Sekarang</a>
+              <a href={pathname !== '/' ? '/#contact' : '#contact'}>Mulai Sekarang</a>
             </Button>
           </div>
 
@@ -123,37 +143,49 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden py-6 bg-[#0A192F]/98 backdrop-blur-xl rounded-b-2xl border-t border-white/5 animate-in slide-in-from-top-5 duration-300">
+        <div 
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            isMobileMenuOpen 
+              ? 'max-h-[600px] opacity-100' 
+              : 'max-h-0 opacity-0'
+          }`}
+        >
+          <div className="py-6 bg-[#0A192F] backdrop-blur-xl rounded-b-2xl shadow-xl">
             <div className="flex flex-col space-y-1">
-              {navLinks.map((link, index) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className={`text-base font-medium px-6 py-3 rounded-lg mx-2 transition-all ${
-                    activeSection === link.href
-                      ? "text-[#3B82F6] bg-white/10"
-                      : "text-white hover:text-[#3B82F6] hover:bg-white/5"
-                  }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  style={{
-                    animationDelay: `${index * 50}ms`,
-                  }}
-                >
-                  {link.name}
-                </a>
-              ))}
+              {navLinks.map((link, index) => {
+                const isExternal = link.href.startsWith('/');
+                const href = isExternal ? link.href : (pathname !== '/' ? `/${link.href}` : link.href);
+                const isActive = activeSection === link.href || (link.href.startsWith('/') && pathname.startsWith(link.href));
+                
+                return (
+                  <a
+                    key={link.name}
+                    href={href}
+                    className={`text-base font-medium px-6 py-3 rounded-lg mx-2 transition-all ${
+                      isActive
+                        ? "text-[#3B82F6] bg-white/10"
+                        : "text-white hover:text-[#3B82F6] hover:bg-white/5"
+                    }`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    style={{
+                      animationDelay: `${index * 50}ms`,
+                    }}
+                  >
+                    {link.name}
+                  </a>
+                );
+              })}
               <div className="px-4 pt-4 mt-2 border-t border-white/5">
                 <Button 
                   asChild
                   className="bg-[#3B82F6] hover:bg-[#3B82F6]/90 text-white w-full rounded-full py-6 text-base font-medium shadow-lg shadow-[#3B82F6]/30"
                 >
-                  <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Mulai Sekarang</a>
+                  <a href={pathname !== '/' ? '/#contact' : '#contact'} onClick={() => setIsMobileMenuOpen(false)}>Mulai Sekarang</a>
                 </Button>
               </div>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );

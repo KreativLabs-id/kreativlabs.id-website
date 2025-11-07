@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import BackToTop from "@/components/BackToTop";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Hero from "@/components/sections/Hero";
+import HotProducts from "@/components/sections/HotProducts";
 import Projects from "@/components/sections/Projects";
 import About from "@/components/sections/About";
 import Services from "@/components/sections/Services";
@@ -17,6 +18,7 @@ export default function Home() {
     <main className="min-h-screen bg-[#0A192F] overflow-x-hidden w-full max-w-[100vw]">
       <Navbar />
       <Hero />
+      <HotProducts />
       <Projects />
       <About />
       <Services />

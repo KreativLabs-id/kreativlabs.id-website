@@ -26,7 +26,7 @@ const pricingPlans = [
   },
   {
     name: "Website Development",
-    price: "1.5jt",
+    price: "799k",
     originalPrice: "3jt",
     description: "Paling laris! Website profesional",
     features: [

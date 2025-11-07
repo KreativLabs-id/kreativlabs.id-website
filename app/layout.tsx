@@ -10,23 +10,32 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://kreativlabs-id.vercel.app'),
   title: "KreativLabs.id - Jasa Website & Desain Grafis Profesional Mulai 50rb",
   description:
     "Jasa pembuatan website dan desain grafis profesional (logo, poster, sosmed, packaging) dengan harga terjangkau mulai dari 50 ribu. Kualitas premium, harga bersahabat!",
   keywords:
     "jasa website, web development, desain grafis, desain logo, desain poster, desain sosmed, desain kemasan, jasa design murah, pembuatan website murah",
   authors: [{ name: "KreativLabs.id" }],
+  icons: {
+    icon: [
+      { url: '/icon', type: 'image/png', sizes: '32x32' },
+    ],
+    apple: [
+      { url: '/apple-icon', type: 'image/png', sizes: '180x180' },
+    ],
+  },
   openGraph: {
     title: "KreativLabs.id - Jasa Website & Desain Grafis Mulai 50rb",
     description:
       "Jasa pembuatan website dan desain grafis (logo, poster, sosmed, packaging) mulai dari 50 ribu",
-    url: "https://kreativlabs-id.vercel.app",
+    url: "/",
     siteName: "KreativLabs.id",
     locale: "id_ID",
     type: "website",
     images: [
       {
-        url: "https://kreativlabs-id.vercel.app/og-image.png",
+        url: "/bannerkreativlabsid.png",
         width: 1200,
         height: 630,
         alt: "KreativLabs.id - Jasa Website & Desain Grafis Mulai 50rb",
@@ -38,6 +47,7 @@ export const metadata: Metadata = {
     title: "KreativLabs.id - Jasa Website & Desain Grafis Mulai 50rb",
     description:
       "Jasa pembuatan website dan desain grafis profesional dengan harga terjangkau",
+    images: ["/bannerkreativlabsid.png"],
   },
 };
 
