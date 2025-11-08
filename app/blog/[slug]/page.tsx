@@ -116,12 +116,13 @@ export default function BlogPostPage() {
               </div>
 
               {/* Featured Image */}
-              <div className="relative h-[400px] rounded-2xl overflow-hidden mb-8">
+              <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-8">
                 <Image
                   src={post.image}
                   alt={post.title}
-                  fill
-                  className="object-cover"
+                  width={1920}
+                  height={1080}
+                  className="object-cover w-full h-full"
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0F1E37]/80 to-transparent"></div>
