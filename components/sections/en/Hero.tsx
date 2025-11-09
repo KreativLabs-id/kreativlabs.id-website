@@ -68,9 +68,9 @@ export default function HeroEN() {
                 <Button 
                   asChild
                   variant="outline" 
-                  className="border-white/20 text-white hover:bg-white/10 px-6 py-5 text-base rounded-full backdrop-blur-sm"
+                  className="border-white/20 !text-white hover:bg-white/10 hover:!text-white px-6 py-5 text-base rounded-full backdrop-blur-sm"
                 >
-                  <a href="#projects">View Portfolio</a>
+                  <a href="#projects" className="text-white">View Portfolio</a>
                 </Button>
               </div>
             </AnimatedSection>

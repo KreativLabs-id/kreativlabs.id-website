@@ -37,12 +37,13 @@ export default function Projects() {
                   className="group bg-[#0F1E37] border-white/10 hover:border-[#3B82F6]/50 transition-all duration-300 overflow-hidden cursor-pointer"
                 >
                 {/* Project Image */}
-                <div className="relative h-64 bg-[#1E3A5F] overflow-hidden">
+                <div className="relative w-full aspect-video bg-[#1E3A5F] overflow-hidden">
                   <Image
                     src={project.image}
                     alt={project.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    width={1920}
+                    height={1080}
+                    className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     loading="lazy"
                   />
