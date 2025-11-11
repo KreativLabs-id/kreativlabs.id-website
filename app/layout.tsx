@@ -32,13 +32,13 @@ export const metadata: Metadata = {
     title: "KreativLabs.id - Jasa Website & Desain Grafis Mulai 50rb",
     description:
       "Jasa pembuatan website dan desain grafis (logo, poster, sosmed, packaging) mulai dari 50 ribu",
-    url: "/",
+    url: "https://kreativlabs.my.id",
     siteName: "KreativLabs.id",
     locale: "id_ID",
     type: "website",
     images: [
       {
-        url: "/bannerkreativlabsid.png",
+        url: "https://kreativlabs.my.id/bannerkreativlabsid.png",
         width: 1200,
         height: 630,
         alt: "KreativLabs.id - Jasa Website & Desain Grafis Mulai 50rb",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: "KreativLabs.id - Jasa Website & Desain Grafis Mulai 50rb",
     description:
       "Jasa pembuatan website dan desain grafis profesional dengan harga terjangkau",
-    images: ["/bannerkreativlabsid.png"],
+    images: ["https://kreativlabs.my.id/bannerkreativlabsid.png"],
   },
 };
 
