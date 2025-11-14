@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 export default function WhatsAppButton() {
   const [isVisible, setIsVisible] = useState(false);
-  const phoneNumber = "628382478799";
+  const phoneNumber = "6283824787997";
   const message = "Halo KreativLabs.id, saya tertarik dengan jasa Anda!";
   
   useEffect(() => {
