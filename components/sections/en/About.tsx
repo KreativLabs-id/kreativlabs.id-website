@@ -65,7 +65,7 @@ export default function AboutEN() {
                 {/* Founded Info */}
                 <div className="space-y-4">
                   <p className="text-white/80 text-base leading-relaxed">
-                    Founded in <span className="text-white font-semibold">2023</span>, KreativLabs.id emerged with a vision to become a <span className="text-white font-semibold">trusted digital partner</span> that empowers businesses in Indonesia to grow and excel through innovative and results-oriented technology solutions.
+                    Founded in <span className="text-white font-semibold">2025</span>, KreativLabs.id emerged with a vision to become a <span className="text-white font-semibold">trusted digital partner</span> that empowers businesses in Indonesia to grow and excel through innovative and results-oriented technology solutions.
                   </p>
                 </div>
 

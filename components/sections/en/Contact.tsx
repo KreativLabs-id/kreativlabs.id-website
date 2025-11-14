@@ -20,8 +20,8 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    value: "+62 895-3801-63004",
-    link: "tel:+62895380163004",
+    value: "+62 838-2478-7997",
+    link: "tel:+628382478799",
   },
   {
     icon: MapPin,
