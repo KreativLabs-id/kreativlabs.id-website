@@ -9,28 +9,29 @@ import FadeInStagger from "@/components/FadeInStagger";
 
 const pricingPlans = [
   {
-    name: "Graphic Design",
-    price: "50k",
-    originalPrice: "100k",
-    description: "Desain grafis untuk kebutuhan branding",
+    name: "Landing Page",
+    price: "300k",
+    originalPrice: "600k",
+    description: "Landing page profesional untuk bisnis Anda",
     features: [
-      "Logo / Poster / Flyer",
-      "Desain Sosmed (1 post)",
-      "High Quality Output",
-      "File Source (AI/PSD)",
+      "Landing Page Responsif",
+      "Modern Design",
+      "Fast Loading",
+      "SEO Friendly",
+      "1 Bulan Support",
       "2 Kali Revisi",
-      "Fast Response",
+      "Domain terpisah",
     ],
     popular: false,
-    badge: "Mulai dari",
+    badge: "Best untuk UMKM",
   },
   {
-    name: "Website Development",
-    price: "799k",
-    originalPrice: "3jt",
-    description: "Paling laris! Website profesional",
+    name: "Fullstack Website",
+    price: "800k",
+    originalPrice: "1.6jt",
+    description: "Website lengkap dengan backend & database",
     features: [
-      "Landing Page / Company Profile",
+      "Multi-page Website",
       "Responsive Design",
       "Modern & Fast Loading",
       "SEO Friendly",
@@ -42,20 +43,69 @@ const pricingPlans = [
     badge: "Most Popular",
   },
   {
-    name: "Full Branding Package",
-    price: "Mulai 5jt",
-    description: "Website + Design lengkap untuk bisnis",
+    name: "Website Custom",
+    price: "2jt",
+    originalPrice: "4jt",
+    description: "Website custom sesuai kebutuhan bisnis",
     features: [
-      "Multi-page Website + SEO",
-      "Logo & Brand Identity",
-      "Social Media Design Kit",
-      "Marketing Materials",
-      "E-Commerce Ready",
+      "Custom Website Development",
+      "Advanced Features",
+      "E-Commerce Integration",
+      "SEO Optimization",
+      "Free Domain .com",
       "6 Bulan Support",
       "Unlimited Revisi",
     ],
     popular: false,
     badge: "Best Value",
+  },
+  {
+    name: "Design Logo",
+    price: "79k",
+    originalPrice: "158k",
+    description: "Desain logo profesional untuk branding",
+    features: [
+      "Logo Design Profesional",
+      "3 Konsep Awal",
+      "High Quality Output",
+      "File Source (AI/PSD)",
+      "3 Kali Revisi",
+      "Fast Response",
+    ],
+    popular: false,
+    badge: "Mulai dari",
+  },
+  {
+    name: "Desain Social Media",
+    price: "150k",
+    originalPrice: "300k",
+    description: "Desain konten social media yang menarik",
+    features: [
+      "Design 5 Post Social Media",
+      "Modern & Eye-catching",
+      "High Quality Output",
+      "File Source (AI/PSD)",
+      "2 Kali Revisi",
+      "Fast Response",
+    ],
+    popular: false,
+    badge: "Mulai dari",
+  },
+  {
+    name: "UI/UX Design",
+    price: "500k",
+    originalPrice: "1jt",
+    description: "Desain UI/UX profesional untuk aplikasi",
+    features: [
+      "UI/UX Design Lengkap",
+      "Wireframe & Prototype",
+      "High Fidelity Mockup",
+      "Design System",
+      "3 Kali Revisi",
+      "Fast Response",
+    ],
+    popular: false,
+    badge: "Mulai dari",
   },
 ];
 
@@ -75,7 +125,7 @@ export default function Pricing() {
             </div>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Mulai dari <span className="text-[#3B82F6]">50 Ribu</span>
+            Mulai dari <span className="text-[#3B82F6]">79 Ribu</span>
           </h2>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
             Harga terjangkau untuk Website Development & Graphic Design. Investasi terbaik untuk bisnis Anda!
@@ -84,12 +134,12 @@ export default function Pricing() {
         </AnimatedSection>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 gap-y-16 max-w-6xl mx-auto">
           {pricingPlans.map((plan, index) => (
             <FadeInStagger key={index} index={index} delay={100}>
             <Card
               key={index}
-              className={`relative bg-[#0F1E37] border-white/10 p-8 transition-all duration-300 ${
+              className={`relative bg-[#0F1E37] border-white/10 p-8 transition-all duration-300 flex flex-col h-full ${
                 plan.popular
                   ? "border-[#3B82F6] transform scale-105 shadow-xl shadow-[#3B82F6]/20"
                   : "hover:border-[#3B82F6]/50"
@@ -99,7 +149,7 @@ export default function Pricing() {
               {(plan.popular || plan.badge) && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                   <div className={`text-white text-sm font-semibold px-4 py-1 rounded-full ${
-                    plan.popular ? "bg-[#3B82F6]" : "bg-linear-to-r from-purple-500 to-pink-500"
+                    plan.popular ? "bg-gradient-to-r from-purple-500 to-pink-500" : "bg-[#3B82F6]"
                   }`}>
                     {plan.badge || "Most Popular"}
                   </div>
@@ -115,7 +165,7 @@ export default function Pricing() {
                 {plan.originalPrice && (
                   <div className="mb-2">
                     <span className="text-white/40 line-through text-lg">Rp {plan.originalPrice}</span>
-                    <span className="ml-2 bg-red-500/20 text-red-400 text-xs px-2 py-1 rounded-full">Hemat 65%</span>
+                    <span className="ml-2 bg-red-500/20 text-red-400 text-xs px-2 py-1 rounded-full">Hemat 50%</span>
                   </div>
                 )}
                 <div className="flex items-baseline">
@@ -129,7 +179,7 @@ export default function Pricing() {
               </div>
 
               {/* Features */}
-              <ul className="space-y-4 mb-8">
+              <ul className="space-y-4 mb-8 flex-grow">
                 {plan.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start">
                     <div className="shrink-0 w-5 h-5 bg-[#3B82F6]/20 rounded-full flex items-center justify-center mr-3 mt-0.5">
