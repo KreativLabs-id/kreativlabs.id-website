@@ -10,33 +10,32 @@ import FadeInStagger from "@/components/FadeInStagger";
 const pricingPlans = [
   {
     name: "Landing Page",
-    price: "300k",
-    originalPrice: "600k",
-    description: "Landing page profesional untuk bisnis Anda",
+    price: "99k",
+    originalPrice: "500k",
+    description: "Landing page sederhana untuk bisnis Anda",
     features: [
       "Landing Page Responsif",
-      "Modern Design",
+      "Template Modern",
       "Fast Loading",
-      "SEO Friendly",
-      "1 Bulan Support",
+      "1 Minggu Support",
       "2 Kali Revisi",
-      "Domain terpisah",
+      "Domain Terpisah",
     ],
     popular: false,
     badge: "Best untuk UMKM",
   },
   {
     name: "Fullstack Website",
-    price: "800k",
-    originalPrice: "1.6jt",
+    price: "469k",
+    originalPrice: "2jt",
     description: "Website lengkap dengan backend & database",
     features: [
       "Multi-page Website",
       "Responsive Design",
       "Modern & Fast Loading",
       "SEO Friendly",
-      "Free Domain .com",
-      "3 Bulan Support",
+      "Domain Terpisah",
+      "2 Bulan Support",
       "3 Kali Revisi",
     ],
     popular: true,
@@ -44,8 +43,8 @@ const pricingPlans = [
   },
   {
     name: "Website Custom",
-    price: "2jt",
-    originalPrice: "4jt",
+    price: "2,899k",
+    originalPrice: "6jt",
     description: "Website custom sesuai kebutuhan bisnis",
     features: [
       "Custom Website Development",
@@ -53,7 +52,7 @@ const pricingPlans = [
       "E-Commerce Integration",
       "SEO Optimization",
       "Free Domain .com",
-      "6 Bulan Support",
+      "3 Bulan Support",
       "Unlimited Revisi",
     ],
     popular: false,
@@ -61,8 +60,8 @@ const pricingPlans = [
   },
   {
     name: "Design Logo",
-    price: "79k",
-    originalPrice: "158k",
+    price: "50k",
+    originalPrice: "250k",
     description: "Desain logo profesional untuk branding",
     features: [
       "Logo Design Profesional",
@@ -110,6 +109,22 @@ const pricingPlans = [
 ];
 
 export default function Pricing() {
+  const parsePrice = (price: string) => {
+    const cleanPrice = price.replace(/,/g, ''); // remove commas
+    if (cleanPrice.includes('jt')) {
+      return parseFloat(cleanPrice.replace('jt', '')) * 1000000;
+    } else if (cleanPrice.includes('k')) {
+      return parseFloat(cleanPrice.replace('k', '')) * 1000;
+    }
+    return parseFloat(cleanPrice);
+  };
+
+  const calculateSavings = (original: string, current: string) => {
+    const orig = parsePrice(original);
+    const curr = parsePrice(current);
+    return Math.round(((orig - curr) / orig) * 100);
+  };
+
   return (
     <section id="pricing" className="relative py-24 bg-[#0A192F] overflow-hidden overflow-x-hidden w-full">
       {/* Lighting Effect */}
@@ -165,16 +180,21 @@ export default function Pricing() {
                 {plan.originalPrice && (
                   <div className="mb-2">
                     <span className="text-white/40 line-through text-lg">Rp {plan.originalPrice}</span>
-                    <span className="ml-2 bg-red-500/20 text-red-400 text-xs px-2 py-1 rounded-full">Hemat 50%</span>
+                    <span className="ml-2 bg-red-500/20 text-red-400 text-xs px-2 py-1 rounded-full">Hemat {calculateSavings(plan.originalPrice, plan.price)}%</span>
                   </div>
                 )}
-                <div className="flex items-baseline">
-                  <span className="text-4xl font-bold text-white">
-                    {plan.price.includes("Mulai") ? plan.price : `Rp ${plan.price}`}
-                  </span>
-                  {!plan.price.includes("Mulai") && (
-                    <span className="text-white/60 ml-2 text-sm">/project</span>
+                <div>
+                  {(plan.name === "Landing Page" || plan.name === "Fullstack Website" || plan.name === "Website Custom") && (
+                    <p className="text-white/70 text-sm mb-1">Mulai dari</p>
                   )}
+                  <div className="flex items-baseline">
+                    <span className="text-4xl font-bold text-white">
+                      {plan.price.includes("Mulai") ? plan.price : `Rp ${plan.price}`}
+                    </span>
+                    {!plan.price.includes("Mulai") && (
+                      <span className="text-white/60 ml-2 text-sm">/project</span>
+                    )}
+                  </div>
                 </div>
               </div>
 

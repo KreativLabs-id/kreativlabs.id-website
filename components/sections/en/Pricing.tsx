@@ -9,25 +9,26 @@ import FadeInStagger from "@/components/FadeInStagger";
 
 const pricingPlans = [
   {
-    name: "Graphic Design",
-    price: "$10",
-    originalPrice: "$20",
-    description: "Graphic design for branding needs",
+    name: "Landing Page",
+    price: "$50",
+    originalPrice: "$100",
+    description: "Professional landing page for your business",
     features: [
-      "Logo / Poster / Flyer",
-      "Social Media Design (1 post)",
-      "High Quality Output",
-      "Source File (PSD, PNG, JPG, Or Canva)",
+      "Responsive Landing Page",
+      "Modern Design",
+      "Fast Loading",
+      "SEO Friendly",
+      "1 Month Support",
       "2 Revisions",
-      "Fast Response",
+      "Separate Domain",
     ],
     popular: false,
-    badge: "Starting from",
+    badge: "Best for SMEs",
   },
   {
     name: "Website Development",
-    price: "$250",
-    originalPrice: "$500",
+    price: "$200",
+    originalPrice: "$400",
     description: "Best seller! Professional website",
     features: [
       "Landing Page / Company Profile",
@@ -57,6 +58,54 @@ const pricingPlans = [
     popular: false,
     badge: "Best Value",
   },
+  {
+    name: "Graphic Design",
+    price: "$10",
+    originalPrice: "$20",
+    description: "Graphic design for branding needs",
+    features: [
+      "Logo / Poster / Flyer",
+      "Social Media Design (1 post)",
+      "High Quality Output",
+      "Source File (PSD, PNG, JPG, Or Canva)",
+      "2 Revisions",
+      "Fast Response",
+    ],
+    popular: false,
+    badge: "Starting from",
+  },
+  {
+    name: "Social Media Design",
+    price: "$30",
+    originalPrice: "$60",
+    description: "Eye-catching social media content design",
+    features: [
+      "5 Social Media Posts",
+      "Modern & Engaging Design",
+      "High Quality Output",
+      "Source Files",
+      "2 Revisions",
+      "Fast Response",
+    ],
+    popular: false,
+    badge: "Starting from",
+  },
+  {
+    name: "UI/UX Design",
+    price: "$100",
+    originalPrice: "$200",
+    description: "Professional UI/UX design for applications",
+    features: [
+      "Complete UI/UX Design",
+      "Wireframe & Prototype",
+      "High Fidelity Mockup",
+      "Design System",
+      "3 Revisions",
+      "Fast Response",
+    ],
+    popular: false,
+    badge: "Starting from",
+  },
 ];
 
 export default function PricingEN() {
@@ -84,7 +133,7 @@ export default function PricingEN() {
         </AnimatedSection>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 gap-y-16 max-w-6xl mx-auto">
           {pricingPlans.map((plan, index) => (
             <FadeInStagger key={index} index={index} delay={100}>
             <Card
