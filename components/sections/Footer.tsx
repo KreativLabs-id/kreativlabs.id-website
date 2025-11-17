@@ -2,6 +2,7 @@
 
 import { Instagram, Mail, Github } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 // TikTok Icon Component
 const TikTokIcon = ({ className }: { className?: string }) => (
@@ -40,7 +41,7 @@ const footerLinks = {
     { name: "Portfolio", href: "#projects" },
     { name: "FAQ", href: "#faq" },
     { name: "Contact", href: "#contact" },
-    { name: "Blog", href: "#blog" },
+    { name: "Blog", href: "/blog" },
   ],
   services: [
     { name: "Landing Page", href: "#services" },
@@ -106,12 +107,21 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.company.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-white/70 hover:text-[#3B82F6] text-sm transition-colors"
-                  >
-                    {link.name}
-                  </a>
+                  {link.href.startsWith('#') ? (
+                    <a
+                      href={link.href}
+                      className="text-white/70 hover:text-[#3B82F6] text-sm transition-colors"
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-white/70 hover:text-[#3B82F6] text-sm transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

@@ -170,7 +170,7 @@ export default function BlogPostPageEN() {
                               },
                               ul: { 
                                 component: ({ children, ...props }) => (
-                                  <ul {...props} className="list-disc pl-6 text-white/80 mb-6 space-y-3">{children}</ul>
+                                  <ul {...props} className="pl-6 text-white/80 mb-6 space-y-3" style={{ listStyleType: 'disc', color: '#3B82F6' }}>{children}</ul>
                                 )
                               },
                               ol: { 
@@ -196,6 +196,20 @@ export default function BlogPostPageEN() {
                               hr: { 
                                 component: (props) => (
                                   <hr {...props} className="border-white/20 my-8" />
+                                )
+                              },
+                              img: {
+                                component: ({ src, alt, ...props }) => (
+                                  <div className="my-8">
+                                    <Image
+                                      src={src}
+                                      alt={alt || "Blog image"}
+                                      width={800}
+                                      height={450}
+                                      className="w-full h-auto rounded-lg shadow-lg"
+                                      {...props}
+                                    />
+                                  </div>
                                 )
                               },
                             }
