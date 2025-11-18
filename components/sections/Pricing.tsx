@@ -140,7 +140,7 @@ export default function Pricing() {
             </div>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Mulai dari <span className="text-[#3B82F6]">79 Ribu</span>
+            Mulai dari <span className="text-[#3B82F6]">50 Ribu</span>
           </h2>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
             Harga terjangkau untuk Website Development & Graphic Design. Investasi terbaik untuk bisnis Anda!
