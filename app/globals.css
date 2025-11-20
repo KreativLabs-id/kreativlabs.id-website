@@ -126,7 +126,6 @@
     @apply border-border outline-ring/50;
   }
   html {
-    scroll-behavior: smooth;
     overflow-x: hidden;
     max-width: 100vw;
   }
@@ -213,6 +212,27 @@
   * {
     scrollbar-width: thin;
     scrollbar-color: #3B82F6 #0A192F;
+  }
+
+  /* Lenis Recommended Styles */
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
   }
 }
 

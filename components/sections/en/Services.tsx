@@ -1,112 +1,115 @@
 "use client";
 
 import { Card } from "@/components/ui/card";
-import { Code, Palette, Image, Package, Instagram, FileText } from "lucide-react";
+import { Code, Image, Instagram, CheckCircle2, ArrowRight, LayoutTemplate, Briefcase, PenTool } from "lucide-react";
 import OptimizedParticles from "@/components/OptimizedParticles";
 import AnimatedSection from "@/components/AnimatedSection";
 import FadeInStagger from "@/components/FadeInStagger";
 
 const services = [
   {
-    icon: Code,
-    title: "Website Development",
-    description: "Professional website creation with modern technology and optimal performance",
-    features: ["Landing Page", "Company Profile", "E-Commerce", "Responsive & SEO"],
+    icon: LayoutTemplate,
+    title: "Landing Page",
+    description: "Professional landing page to showcase your business effectively.",
+    features: ["Responsive Design", "Fast Loading", "SEO Friendly", "Modern Template"],
   },
   {
-    icon: Palette,
-    title: "Logo & Branding Design",
-    description: "Create a strong and memorable brand identity for your business",
-    features: ["Logo Design", "Brand Identity", "Style Guide", "Business Card"],
+    icon: Code,
+    title: "Website Development",
+    description: "Full-featured website development with modern technologies.",
+    features: ["Company Profile", "E-Commerce", "Web Application", "CMS Integration"],
+  },
+  {
+    icon: Briefcase,
+    title: "Full Branding Package",
+    description: "Complete solution including website and brand identity design.",
+    features: ["Logo Design", "Brand Guidelines", "Stationery", "Social Media Kit"],
+  },
+  {
+    icon: Image,
+    title: "Graphic Design",
+    description: "Creative designs for logos, posters, flyers, and more.",
+    features: ["Logo & Identity", "Marketing Materials", "Print Design", "Digital Assets"],
   },
   {
     icon: Instagram,
     title: "Social Media Design",
-    description: "Attractive visual content to increase social media engagement",
-    features: ["Instagram Post", "Story Design", "Carousel", "Feed Planning"],
+    description: "Engaging visual content to boost your social media presence.",
+    features: ["Post & Story", "Content Strategy", "Feed Aesthetics", "Engagement Boost"],
   },
   {
-    icon: FileText,
-    title: "Flyer & Poster Design",
-    description: "Eye-catching promotional designs for your marketing campaigns",
-    features: ["Event Flyer", "Promotional Poster", "Banner Design", "Print Ready"],
-  },
-  {
-    icon: Package,
-    title: "Product Packaging Design",
-    description: "Attractive packaging design to increase product appeal",
-    features: ["Product Packaging", "Label Design", "Box Design", "3D Mockup"],
-  },
-  {
-    icon: Image,
-    title: "Other Graphic Design",
-    description: "Various graphic design needs for business and personal",
-    features: ["Brochure", "Catalog", "Menu Design", "Certificate"],
+    icon: PenTool,
+    title: "UI/UX Design",
+    description: "Professional user interface and user experience design for apps.",
+    features: ["User Research", "Wireframing", "Prototyping", "App Design"],
   },
 ];
 
 export default function ServicesEN() {
   return (
-    <section id="services" className="relative py-24 bg-[#0A192F] overflow-hidden overflow-x-hidden w-full">
-      {/* Lighting Effects */}
-      <div className="absolute top-1/3 left-0 w-96 h-96 bg-[#3B82F6] rounded-full blur-[120px] opacity-10"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#3B82F6] rounded-full blur-[120px] opacity-10"></div>
+    <section id="services" className="relative py-32 bg-[#0A192F] overflow-hidden w-full">
+      {/* Background Elements - Monochromatic Blue */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[128px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[128px] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <AnimatedSection animation="fade-up">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Our <span className="text-[#3B82F6]">Services</span>
+          <div className="text-center mb-20">
+            <span className="inline-block py-1 px-3 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-4">
+              Our Services
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+              Integrated Digital <span className="text-blue-400">Solutions</span>
             </h2>
-            <p className="text-white/70 text-lg max-w-2xl mx-auto">
-              Complete Website Development & Graphic Design solutions for your business needs
+            <p className="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
+              We provide Website Development & Graphic Design solutions that are not only aesthetic but also functional for your business growth.
             </p>
           </div>
         </AnimatedSection>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
-              <FadeInStagger key={index} index={index} delay={80}>
-                <Card
-                  className="group bg-[#0F1E37] border-white/10 hover:border-[#3B82F6]/50 transition-all duration-300 p-6 hover:transform hover:-translate-y-2"
-                >
-                {/* Icon */}
-                <div className="mb-4">
-                  <div className="inline-flex items-center justify-center w-14 h-14 bg-[#3B82F6]/10 rounded-lg group-hover:bg-[#3B82F6]/20 transition-colors">
-                    <Icon className="w-7 h-7 text-[#3B82F6]" />
-                  </div>
+              <FadeInStagger key={index} index={index} delay={index * 100}>
+                <div className="group relative h-full">
+                  <Card className="h-full bg-[#112240]/50 backdrop-blur-sm border-white/5 group-hover:border-blue-500/30 p-8 rounded-3xl transition-all duration-300 hover:-translate-y-2 overflow-hidden relative flex flex-col">
+
+                    {/* Icon */}
+                    <div className="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:bg-blue-500/20 transition-colors duration-300">
+                      <Icon className="w-7 h-7 text-blue-400 group-hover:text-blue-300 transition-colors" />
+                    </div>
+
+                    {/* Content */}
+                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-slate-400 mb-6 leading-relaxed">
+                      {service.description}
+                    </p>
+
+                    {/* Features */}
+                    <ul className="space-y-3 mb-8 flex-grow">
+                      {service.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-center text-slate-300 text-sm">
+                          <CheckCircle2 className="w-4 h-4 mr-3 text-blue-500/70" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+
+                  </Card>
                 </div>
-
-                {/* Title & Description */}
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#3B82F6] transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-white/70 text-sm mb-4 leading-relaxed">
-                  {service.description}
-                </p>
-
-                {/* Features */}
-                <ul className="space-y-2">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-white/60 text-sm">
-                      <div className="w-1.5 h-1.5 bg-[#3B82F6] rounded-full mr-2"></div>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                </Card>
               </FadeInStagger>
             );
           })}
         </div>
       </div>
-      
+
       {/* Interactive Particles - Desktop Only */}
-      <OptimizedParticles quantity={50} />
+      <OptimizedParticles quantity={30} />
     </section>
   );
 }

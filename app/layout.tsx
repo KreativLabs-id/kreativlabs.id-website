@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta-sans",
@@ -64,6 +65,7 @@ export default function RootLayout({
       <body
         className={`${plusJakartaSans.variable} antialiased font-sans overflow-x-hidden`}
       >
+        <SmoothScroll />
         {children}
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || ""} />
       </body>
