@@ -21,7 +21,7 @@ export default function FadeInStagger({
   const isMobile = useIsMobile();
   
   // Reduce stagger delay on mobile for faster loading feel
-  const mobileDelay = isMobile ? Math.min(delay, 50) : delay;
+  const mobileDelay = isMobile ? Math.min(delay, 30) : delay;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -32,8 +32,8 @@ export default function FadeInStagger({
         }
       },
       {
-        threshold: 0.1,
-        rootMargin: "0px 0px -30px 0px",
+        threshold: 0.05,
+        rootMargin: "0px 0px 100px 0px",
       }
     );
 
@@ -52,10 +52,10 @@ export default function FadeInStagger({
   return (
     <div
       ref={elementRef}
-      className={`transition-all ${isMobile ? 'duration-300' : 'duration-500'} ease-out ${
+      className={`transition-all ${isMobile ? 'duration-200' : 'duration-400'} ease-out ${
         isVisible
           ? "opacity-100 translate-y-0"
-          : `opacity-0 ${isMobile ? 'translate-y-3' : 'translate-y-6'}`
+          : `opacity-0 ${isMobile ? 'translate-y-2' : 'translate-y-4'}`
       } ${className}`}
       style={{ 
         transitionDelay: `${index * mobileDelay}ms`,

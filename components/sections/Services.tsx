@@ -73,7 +73,7 @@ export default function Services() {
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
-              <FadeInStagger key={index} index={index} delay={index * 100}>
+              <FadeInStagger key={index} index={index} delay={index * 20}>
                 <div className="group relative h-full">
                   <Card className="h-full bg-[#112240]/50 backdrop-blur-sm border-white/5 group-hover:border-blue-500/30 p-8 rounded-3xl transition-all duration-300 hover:-translate-y-2 overflow-hidden relative flex flex-col">
 

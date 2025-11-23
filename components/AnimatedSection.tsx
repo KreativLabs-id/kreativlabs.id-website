@@ -23,8 +23,8 @@ export default function AnimatedSection({
   const isMobile = useIsMobile();
   
   // Reduce animation complexity on mobile
-  const mobileDuration = isMobile ? Math.min(duration, 400) : duration;
-  const mobileDelay = isMobile ? Math.min(delay, 50) : delay;
+  const mobileDuration = isMobile ? Math.min(duration, 300) : duration;
+  const mobileDelay = isMobile ? Math.min(delay, 30) : delay;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
