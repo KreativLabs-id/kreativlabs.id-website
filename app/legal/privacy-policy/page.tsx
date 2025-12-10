@@ -69,7 +69,7 @@ export default function PrivacyPolicyPage() {
       title: "Hubungi Kami",
       content: [
         "Jika Anda memiliki pertanyaan tentang kebijakan privasi ini, silakan hubungi kami:",
-        "Email: kreativlabsid@gmail.com",
+        "Email: hello@kreativlabs.my.id",
         "Instagram: @kreativlabs.id",
         "Kami akan merespons pertanyaan Anda dalam waktu 2-3 hari kerja"
       ]
@@ -79,16 +79,16 @@ export default function PrivacyPolicyPage() {
   return (
     <main className="min-h-screen bg-[#0A192F] overflow-x-hidden w-full max-w-[100vw]">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 bg-gradient-to-b from-[#0A192F] to-[#0F1E37]">
         <div className="absolute top-20 right-10 w-96 h-96 bg-[#3B82F6] rounded-full blur-[120px] opacity-10"></div>
-        
+
         <div className="container mx-auto px-6 relative z-10">
           <AnimatedSection animation="fade-up">
             <div className="max-w-4xl mx-auto">
               {/* Back Button */}
-              <Link 
+              <Link
                 href="/"
                 className="inline-flex items-center gap-2 text-white/70 hover:text-[#3B82F6] transition-colors mb-8 group"
               >
@@ -178,7 +178,7 @@ export default function PrivacyPolicyPage() {
                 <p className="text-white/70 mb-6">
                   Masih ada pertanyaan tentang privasi Anda?
                 </p>
-                <Link 
+                <Link
                   href="/#contact"
                   className="inline-flex items-center gap-2 px-8 py-4 bg-[#3B82F6] hover:bg-[#3B82F6]/90 text-white font-semibold rounded-full transition-all duration-300 shadow-lg shadow-[#3B82F6]/30"
                 >
