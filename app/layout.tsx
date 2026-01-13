@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
+import SEOSchema from "@/components/SEOSchema";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta-sans",
@@ -12,14 +13,60 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://kreativlabs.my.id'),
-  title: "KreativLabs.id - Jasa Website & Desain Grafis Profesional Mulai 50rb",
+  title: {
+    default: "Jasa Website Murah & Desain Grafis | KreativLabs.id - Mulai 50rb",
+    template: "%s | KreativLabs.id"
+  },
   description:
-    "Jasa pembuatan website dan desain grafis profesional (logo, poster, sosmed, packaging) dengan harga terjangkau mulai dari 50 ribu. Kualitas premium, harga bersahabat!",
-  keywords:
-    "jasa website, web development, desain grafis, desain logo, desain poster, desain sosmed, desain kemasan, jasa design murah, pembuatan website murah",
-  authors: [{ name: "KreativLabs.id" }],
+    "Jasa pembuatan website murah & desain grafis profesional mulai 50rb. Landing page, company profile, toko online, desain logo, poster, social media. Kualitas premium, harga UMKM friendly!",
+  keywords: [
+    // Primary Keywords - Jasa Website
+    "jasa website murah",
+    "jasa pembuatan website",
+    "jasa website semarang",
+    "jasa bikin website",
+    "jasa buat website murah",
+    "jasa landing page",
+    "jasa company profile",
+    "jasa toko online",
+    "jasa e-commerce",
+    "jasa website umkm",
+
+    // Primary Keywords - Jasa Design
+    "jasa design",
+    "jasa desain grafis",
+    "jasa desain logo",
+    "jasa desain murah",
+    "jasa desain poster",
+    "jasa desain social media",
+    "jasa desain semarang",
+    "jasa design murah",
+
+    // Location Keywords
+    "jasa website jawa tengah",
+    "web developer semarang",
+    "desainer grafis semarang",
+    "freelance website semarang",
+
+    // Long-tail Keywords
+    "bikin website murah berkualitas",
+    "harga jasa pembuatan website",
+    "jasa desain logo murah berkualitas",
+    "paket website umkm murah",
+    "jasa website profesional murah"
+  ],
+  authors: [{ name: "KreativLabs.id", url: "https://kreativlabs.my.id" }],
+  creator: "KreativLabs.id",
+  publisher: "KreativLabs.id",
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
+  },
+  alternates: {
+    canonical: "https://kreativlabs.my.id",
+    languages: {
+      'id-ID': 'https://kreativlabs.my.id',
+      'en-US': 'https://kreativlabs.my.id/en',
+    },
   },
   icons: {
     icon: [
@@ -31,29 +78,44 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "KreativLabs.id - Jasa Website & Desain Grafis Mulai 50rb",
+    title: "Jasa Website Murah & Desain Grafis | KreativLabs.id",
     description:
-      "Jasa pembuatan website dan desain grafis (logo, poster, sosmed, packaging) mulai dari 50 ribu",
+      "Jasa pembuatan website murah & desain grafis profesional mulai 50rb. Landing page, company profile, e-commerce, desain logo, poster, social media. Melayani di seluruh Indonesia!",
     url: "https://kreativlabs.my.id",
     siteName: "KreativLabs.id",
     locale: "id_ID",
+    alternateLocale: "en_US",
     type: "website",
     images: [
       {
         url: "https://kreativlabs.my.id/bannerkreativlabsid.png",
         width: 1200,
         height: 630,
-        alt: "KreativLabs.id - Jasa Website & Desain Grafis Mulai 50rb",
+        alt: "KreativLabs.id - Jasa Website Murah & Desain Grafis Mulai 50rb",
+        type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "KreativLabs.id - Jasa Website & Desain Grafis Mulai 50rb",
+    title: "Jasa Website Murah & Desain Grafis | KreativLabs.id",
     description:
-      "Jasa pembuatan website dan desain grafis profesional dengan harga terjangkau",
+      "Jasa pembuatan website & desain grafis profesional mulai 50rb. Melayani di seluruh Indonesia!",
     images: ["https://kreativlabs.my.id/bannerkreativlabsid.png"],
+    creator: "@kreativlabsid",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  category: "technology",
 };
 
 export default function RootLayout({
@@ -62,10 +124,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="overflow-x-hidden">
+    <html lang="id" className="overflow-x-hidden">
       <body
         className={`${plusJakartaSans.variable} antialiased font-sans overflow-x-hidden`}
       >
+        <SEOSchema />
         <SmoothScroll />
         {children}
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || ""} />

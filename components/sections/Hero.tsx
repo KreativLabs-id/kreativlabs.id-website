@@ -12,7 +12,10 @@ export default function Hero() {
   const isMobile = useIsMobile();
 
   return (
-    <section className="relative min-h-[90vh] pt-20 bg-[#0A192F] overflow-hidden flex items-center justify-center">
+    <section
+      className="relative min-h-[90vh] pt-20 bg-[#0A192F] overflow-hidden flex items-center justify-center"
+      aria-label="Jasa Website Murah dan Desain Grafis Profesional"
+    >
       {/* Background Beams - Desktop Only */}
       {!isMobile && <BackgroundBeams className="absolute inset-0" />}
 

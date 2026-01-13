@@ -1,56 +1,72 @@
 import { MetadataRoute } from 'next'
+import { blogPosts } from '@/data/blogs';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://kreativlabs.my.id';
-  
+
+  // Blog posts sitemap entries
+  const blogEntries: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
   return [
+    // Homepage - highest priority
     {
       url: baseUrl,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 1,
+      changeFrequency: 'weekly',
+      priority: 1.0,
     },
+    // Service Pages - High Priority for SEO
     {
-      url: `${baseUrl}#projects`,
+      url: `${baseUrl}/services/website`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.95,
     },
     {
-      url: `${baseUrl}#services`,
+      url: `${baseUrl}/services/design`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
+      changeFrequency: 'weekly',
+      priority: 0.95,
     },
+    // Blog listing page
     {
-      url: `${baseUrl}#pricing`,
+      url: `${baseUrl}/blog`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}#contact`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: 'weekly',
       priority: 0.9,
     },
+    // English version
     {
-      url: `${baseUrl}#about`,
+      url: `${baseUrl}/en`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/en/blog`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
       priority: 0.7,
     },
+    // Legal pages
     {
-      url: `${baseUrl}#faq`,
+      url: `${baseUrl}/legal/privacy-policy`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.6,
+      changeFrequency: 'yearly',
+      priority: 0.3,
     },
     {
-      url: `${baseUrl}#testimonials`,
+      url: `${baseUrl}/legal/terms-of-service`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.6,
+      changeFrequency: 'yearly',
+      priority: 0.3,
     },
+    // Include all blog posts
+    ...blogEntries,
   ]
 }
