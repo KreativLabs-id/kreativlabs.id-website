@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Code2, Palette } from "lucide-react";
 import { Particles } from "@/components/ui/shadcn-io/particles";
@@ -7,17 +8,21 @@ import { BackgroundBeams } from "@/components/ui/shadcn-io/background-beams";
 import { useIsMobile } from "@/hooks/useIsMobile";
 import FadeInStagger from "@/components/FadeInStagger";
 import AnimatedSection from "@/components/AnimatedSection";
+import { useInView } from "framer-motion";
 
 export default function Hero() {
   const isMobile = useIsMobile();
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { margin: "200px" });
 
   return (
     <section
+      ref={ref}
       className="relative min-h-[90vh] pt-20 bg-[#0A192F] overflow-hidden flex items-center justify-center"
       aria-label="Jasa Website Murah dan Desain Grafis Profesional"
     >
       {/* Background Beams - Desktop Only */}
-      {!isMobile && <BackgroundBeams className="absolute inset-0" />}
+      {!isMobile && isInView && <BackgroundBeams className="absolute inset-0" />}
 
       {/* Gradient overlay for better text readability */}
       <div className="absolute inset-0 bg-linear-to-b from-[#0A192F]/50 via-transparent to-[#0A192F]/80 pointer-events-none" />
@@ -72,7 +77,7 @@ export default function Hero() {
       </div>
 
       {/* Interactive Particles - Desktop Only */}
-      {!isMobile && (
+      {!isMobile && isInView && (
         <Particles
           className="absolute inset-0"
           quantity={100}
