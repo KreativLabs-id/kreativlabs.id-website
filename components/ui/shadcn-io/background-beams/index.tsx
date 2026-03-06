@@ -79,6 +79,7 @@ export const BackgroundBeams = React.memo(
           viewBox="0 0 696 316"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="xMidYMid slice"
         >
           {/* Static paths base - all 72 paths to cover everything */}
           <path
