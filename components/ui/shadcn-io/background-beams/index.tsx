@@ -10,7 +10,7 @@ export interface BackgroundBeamsProps {
 export const BackgroundBeams = React.memo(
   ({ className }: BackgroundBeamsProps) => {
     // We bring back all 72 paths so it fills the screen perfectly.
-    // Instead of Framer Motion (which tanks performance) or CSS dashes (which looks wrong),
+    // Instead of Framer Motion (which tanks performance) or CSS dashes (which looks jagged),
     // we use native SVG SMIL `<animate>` tags for the moving gradients! Perfect performance and identical visuals.
     const allPaths = [
       "M-380 -189C-380 -189 -312 216 152 343C616 470 684 875 684 875",
@@ -103,10 +103,11 @@ export const BackgroundBeams = React.memo(
           <defs>
             {allPaths.map((_, index) => {
               // Creating stable/deterministic randomness for SMIL
-              // so it doesn't cause hydration mismatch if SSR'd
-              const duration = 10 + (index % 10);
-              const delay = index % 10;
-              const y2Target = 93 + (index % 8);
+              // using prime numbers so it distributes uniformly and looks completely random, 
+              // while avoiding React hydration mismatch errors!
+              const duration = 15 + ((index * 13) % 20); // range: 15 to 34 sec
+              const delay = (index * 19) % 35; // range: 0 to 34 sec
+              const y2Target = 93 + ((index * 7) % 8); // range: 93 to 100
 
               return (
                 <linearGradient

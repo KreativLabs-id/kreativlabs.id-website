@@ -4,32 +4,6 @@ import React from "react";
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
-interface MousePosition {
-  x: number;
-  y: number;
-}
-
-function useMousePosition(): MousePosition {
-  const [mousePosition, setMousePosition] = useState<MousePosition>({
-    x: 0,
-    y: 0,
-  });
-
-  useEffect(() => {
-    const handleMouseMove = (event: MouseEvent) => {
-      setMousePosition({ x: event.clientX, y: event.clientY });
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
-
-  return mousePosition;
-}
-
 export interface ParticlesProps {
   className?: string;
   quantity?: number;
@@ -74,13 +48,13 @@ export const Particles: React.FC<ParticlesProps> = ({
   const canvasContainerRef = useRef<HTMLDivElement>(null);
   const context = useRef<CanvasRenderingContext2D | null>(null);
   const circles = useRef<Circle[]>([]);
-  const mousePosition = useMousePosition();
   const mouse = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
   const canvasSize = useRef<{ w: number; h: number }>({ w: 0, h: 0 });
   // Force DPR to 1. Using higher DPR on retina screens makes the canvas 4x larger,
   // causing massive performance drops and scroll lag while the effect is active.
   const dpr = 1;
   const isVisible = useRef(true);
+  const requestRef = useRef<number>(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
@@ -102,12 +76,29 @@ export const Particles: React.FC<ParticlesProps> = ({
 
     return () => {
       window.removeEventListener("resize", initCanvas);
+      if (requestRef.current) {
+        window.cancelAnimationFrame(requestRef.current);
+      }
     };
   }, [color]);
 
   useEffect(() => {
-    onMouseMove();
-  }, [mousePosition.x, mousePosition.y]);
+    const handleMouseMove = (event: MouseEvent) => {
+      if (canvasRef.current && isVisible.current) {
+        const rect = canvasRef.current.getBoundingClientRect();
+        const { w, h } = canvasSize.current;
+        const x = event.clientX - rect.left - w / 2;
+        const y = event.clientY - rect.top - h / 2;
+        const inside = x < w / 2 && x > -w / 2 && y < h / 2 && y > -h / 2;
+        if (inside) {
+          mouse.current.x = x;
+          mouse.current.y = y;
+        }
+      }
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
 
   useEffect(() => {
     initCanvas();
@@ -116,20 +107,6 @@ export const Particles: React.FC<ParticlesProps> = ({
   const initCanvas = () => {
     resizeCanvas();
     drawParticles();
-  };
-
-  const onMouseMove = () => {
-    if (canvasRef.current) {
-      const rect = canvasRef.current.getBoundingClientRect();
-      const { w, h } = canvasSize.current;
-      const x = mousePosition.x - rect.left - w / 2;
-      const y = mousePosition.y - rect.top - h / 2;
-      const inside = x < w / 2 && x > -w / 2 && y < h / 2 && y > -h / 2;
-      if (inside) {
-        mouse.current.x = x;
-        mouse.current.y = y;
-      }
-    }
   };
 
   type Circle = {
@@ -283,7 +260,7 @@ export const Particles: React.FC<ParticlesProps> = ({
         }
       });
     }
-    window.requestAnimationFrame(animate);
+    requestRef.current = window.requestAnimationFrame(animate);
   };
 
   return (
