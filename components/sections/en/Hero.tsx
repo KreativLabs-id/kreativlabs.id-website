@@ -22,7 +22,7 @@ export default function HeroEN() {
       aria-label="Professional Website and Graphic Design Services"
     >
       {/* Background Beams - Desktop Only */}
-      {!isMobile && isInView && <BackgroundBeams className="absolute inset-0" />}
+      {!isMobile && <BackgroundBeams className="absolute inset-0" />}
 
       {/* Gradient overlay for better text readability and smooth bottom transition */}
       <div className="absolute inset-0 bg-linear-to-b from-[#0A192F]/50 via-[#0A192F]/10 to-transparent pointer-events-none z-0" />
@@ -143,7 +143,7 @@ export default function HeroEN() {
       </div>
 
       {/* Interactive Particles - Desktop Only */}
-      {!isMobile && isInView && (
+      {!isMobile && (
         <Particles
           className="absolute inset-0 z-[1]"
           quantity={40}
