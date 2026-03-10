@@ -11,17 +11,36 @@ import AnimatedSection from "@/components/AnimatedSection";
 import FadeInStagger from "@/components/FadeInStagger";
 import Image from "next/image";
 import Link from "next/link";
-import { blogPosts } from "../../../data/blogs";
+import { blogPosts, BlogPost } from "../../../data/blogs";
+
+function parseDateIndonesian(dateStr: string): Date {
+  // Format: "10 Maret 2026"
+  const months: { [key: string]: number } = {
+    "Januari": 0, "Februari": 1, "Maret": 2, "April": 3, "Mei": 4, "Juni": 5,
+    "Juli": 6, "Agustus": 7, "September": 8, "Oktober": 9, "November": 10, "Desember": 11
+  };
+  const parts = dateStr.split(" ");
+  if (parts.length === 3) {
+    const day = parseInt(parts[0], 10);
+    const month = months[parts[1]] || 0;
+    const year = parseInt(parts[2], 10);
+    return new Date(year, month, day);
+  }
+  return new Date(); // Fallback
+}
 
 export default function BlogPageEN() {
+  const sortedPosts = [...blogPosts].sort((a, b) => {
+    return parseDateIndonesian(b.date).getTime() - parseDateIndonesian(a.date).getTime();
+  });
   return (
     <main className="min-h-screen bg-[#0A192F] overflow-x-hidden w-full max-w-[100vw]">
       <NavbarEN />
-      
+
       {/* Hero Section */}
       <section className="relative pt-24 pb-12 bg-gradient-to-b from-[#0A192F] to-[#0F1E37]">
         <div className="absolute top-20 right-10 w-96 h-96 bg-[#3B82F6] rounded-full blur-[120px] opacity-10"></div>
-        
+
         <div className="container mx-auto px-6 relative z-10">
           <AnimatedSection animation="fade-up">
             <div className="text-center max-w-3xl mx-auto">
@@ -33,7 +52,7 @@ export default function BlogPageEN() {
                 <span className="text-[#3B82F6]">Kreativ Labs</span> Blog
               </h1>
               <p className="text-white/70 text-lg leading-relaxed">
-                Discover the latest tips, tutorials, and insights about web development, 
+                Discover the latest tips, tutorials, and insights about web development,
                 graphic design, and digital business solutions
               </p>
             </div>
@@ -45,7 +64,7 @@ export default function BlogPageEN() {
       <section className="py-12 bg-[#0A192F]">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {blogPosts.map((post, index) => (
+            {sortedPosts.map((post, index) => (
               <FadeInStagger key={post.id} index={index} delay={100}>
                 <Link href={`/blog/${post.slug}`}>
                   <Card className="group bg-[#0F1E37] border-white/10 hover:border-[#3B82F6]/50 transition-all duration-300 overflow-hidden cursor-pointer h-full flex flex-col">
@@ -59,7 +78,7 @@ export default function BlogPageEN() {
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#0F1E37] via-transparent to-transparent opacity-60"></div>
-                      
+
                       {/* Category Badge */}
                       <div className="absolute top-4 left-4 z-10">
                         <span className="px-3 py-1 bg-[#3B82F6] text-white text-xs font-semibold rounded-full">
@@ -95,7 +114,7 @@ export default function BlogPageEN() {
                       {/* Tags */}
                       <div className="flex flex-wrap gap-2 mb-4">
                         {post.tags.slice(0, 3).map((tag, idx) => (
-                          <span 
+                          <span
                             key={idx}
                             className="px-2 py-1 bg-white/5 text-white/60 text-xs rounded-md"
                           >
@@ -133,7 +152,7 @@ export default function BlogPageEN() {
                 <p className="text-white/70 mb-6">
                   Consult your web development and graphic design needs with our professional team
                 </p>
-                <Button 
+                <Button
                   asChild
                   className="bg-[#3B82F6] hover:bg-[#3B82F6]/90 text-white px-8 py-6 text-base rounded-full shadow-lg shadow-[#3B82F6]/30"
                 >
