@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { Particles } from "@/components/ui/shadcn-io/particles";
 import { useIsMobile } from "@/hooks/useIsMobile";
 
@@ -21,9 +22,14 @@ export default function OptimizedParticles({
   className = "absolute inset-0",
 }: OptimizedParticlesProps) {
   const isMobile = useIsMobile();
+  const [hasMounted, setHasMounted] = useState(false);
 
-  // Don't render particles on mobile for better performance
-  if (isMobile) {
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  // Don't render particles on mobile or before mounting for better performance
+  if (!hasMounted || isMobile) {
     return null;
   }
 

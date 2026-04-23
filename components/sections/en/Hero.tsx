@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Particles } from "@/components/ui/shadcn-io/particles";
@@ -11,8 +11,13 @@ import { useInView } from "framer-motion";
 
 export default function HeroEN() {
   const isMobile = useIsMobile();
+  const [hasMounted, setHasMounted] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { margin: "200px" });
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
 
   return (
     <section
@@ -21,7 +26,7 @@ export default function HeroEN() {
       aria-label="Professional Website and Graphic Design Services"
     >
       {/* Background Beams - Desktop Only */}
-      {!isMobile && <BackgroundBeams className="absolute inset-0" />}
+      {hasMounted && !isMobile && <BackgroundBeams className="absolute inset-0" />}
 
       {/* Gradient overlay for better text readability and smooth bottom transition */}
       <div className="absolute inset-0 bg-linear-to-b from-[#0A192F]/50 via-[#0A192F]/10 to-transparent pointer-events-none z-0" />
@@ -77,10 +82,10 @@ export default function HeroEN() {
       </div>
 
       {/* Interactive Particles - Desktop Only */}
-      {!isMobile && (
+      {hasMounted && !isMobile && (
         <Particles
           className="absolute inset-0 z-[1]"
-          quantity={40}
+          quantity={30}
           ease={80}
           staticity={50}
           color="#FFFFFF"
