@@ -2,9 +2,8 @@
 
 import { useEffect, useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Particles } from "@/components/ui/shadcn-io/particles";
-import { BackgroundBeams } from "@/components/ui/shadcn-io/background-beams";
 import { useIsMobile } from "@/hooks/useIsMobile";
 import AnimatedSection from "@/components/AnimatedSection";
 import { useInView } from "framer-motion";
@@ -25,9 +24,6 @@ export default function HeroEN() {
       className="relative min-h-screen pt-20 pb-16 bg-[#0A192F] overflow-hidden flex items-center justify-center"
       aria-label="Professional Website and Graphic Design Services"
     >
-      {/* Background Beams - Desktop Only */}
-      {hasMounted && !isMobile && <BackgroundBeams className="absolute inset-0" />}
-
       {/* Gradient overlay for better text readability and smooth bottom transition */}
       <div className="absolute inset-0 bg-linear-to-b from-[#0A192F]/50 via-[#0A192F]/10 to-transparent pointer-events-none z-0" />
       <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0A192F] to-transparent pointer-events-none z-0" />
@@ -58,22 +54,25 @@ export default function HeroEN() {
 
             {/* CTA Buttons */}
             <AnimatedSection animation="fade-up" delay={450} duration={800}>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-sm mx-auto sm:max-w-none">
+              <div className="flex flex-col sm:flex-row gap-5 justify-center items-center w-full">
                 <Button
                   asChild
-                  className="bg-[#3B82F6] hover:bg-[#3B82F6]/90 text-white px-8 py-6 text-lg rounded-full group shadow-lg shadow-[#3B82F6]/30 hover:shadow-xl hover:shadow-[#3B82F6]/40 transition-all w-full sm:w-auto"
+                  className="bg-[#3B82F6] hover:bg-[#2563EB] text-white px-7 py-6 text-base rounded-full group shadow-lg shadow-[#3B82F6]/25 hover:shadow-xl hover:shadow-[#3B82F6]/40 hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto min-w-[200px]"
                 >
-                  <a href="#contact">
-                    Start Free Consultation
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  <a href="#contact" className="flex items-center justify-center gap-2">
+                    <span>Start Consultation</span>
+                    <ArrowUpRight className="h-5 w-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
                   </a>
                 </Button>
                 <Button
                   asChild
                   variant="outline"
-                  className="border-white/20 !text-white hover:bg-white/10 hover:!text-white px-8 py-6 text-lg rounded-full backdrop-blur-sm w-full sm:w-auto"
+                  className="border-white/20 text-white hover:bg-white/10 hover:text-white hover:border-white/40 px-7 py-6 text-base rounded-full backdrop-blur-sm w-full sm:w-auto min-w-[180px] group transition-all duration-300 hover:-translate-y-0.5"
                 >
-                  <a href="#projects" className="text-white">View Portfolio</a>
+                  <a href="#projects" className="flex items-center justify-center gap-2">
+                    <span>View Portfolio</span>
+                    <ArrowUpRight className="h-5 w-5 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
+                  </a>
                 </Button>
               </div>
             </AnimatedSection>

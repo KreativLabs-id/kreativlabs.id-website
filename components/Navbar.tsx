@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { Menu, X, Globe } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
@@ -79,23 +79,26 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-999 transition-all duration-500 ${
-        isScrolled || isMobileMenuOpen
-          ? "bg-[#0A192F]/95 backdrop-blur-xl shadow-lg shadow-[#3B82F6]/5"
-          : "bg-transparent"
+      className={`fixed left-0 right-0 z-50 transition-all duration-500 ease-out ${
+        isScrolled
+          ? "top-4 px-4 sm:px-6 lg:px-8"
+          : "top-0 px-0"
       }`}
-      style={{ position: 'fixed' }}
     >
-      <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-20 relative">
+      <div className={`mx-auto transition-all duration-500 ease-out ${
+        isScrolled
+          ? "max-w-5xl bg-[#0A192F]/90 backdrop-blur-xl rounded-full px-6"
+          : "max-w-7xl bg-transparent px-6"
+      }`}>
+        <div className="flex items-center justify-between h-16 relative">
           {/* Logo - Left */}
           <a href="#" className="flex items-center z-10">
-            <Image 
-              src="/logokreativ.png" 
-              alt="KreativLabs.id" 
-              width={40} 
-              height={40}
-              className="h-10 w-auto"
+            <Image
+              src="/logokreativ.png"
+              alt="KreativLabs.id"
+              width={32}
+              height={32}
+              className="h-8 w-auto"
               priority
             />
           </a>
@@ -126,15 +129,8 @@ export default function Navbar() {
             })}
           </div>
 
-          {/* Language Switcher & CTA - Right */}
+          {/* CTA - Right */}
           <div className="hidden md:flex items-center gap-3">
-            <Link 
-              href="/en"
-              className="flex items-center gap-2 px-4 py-2 text-white/70 hover:text-[#3B82F6] transition-colors rounded-lg hover:bg-white/5"
-            >
-              <Globe className="w-4 h-4" />
-              <span className="text-sm">EN</span>
-            </Link>
             <Button asChild className="bg-[#3B82F6] hover:bg-[#3B82F6]/90 text-white rounded-full px-6">
               <a href={pathname !== '/' ? '/#contact' : '#contact'}>Mulai Sekarang</a>
             </Button>
@@ -183,16 +179,6 @@ export default function Navbar() {
                   </a>
                 );
               })}
-              
-              {/* Language Switcher Mobile */}
-              <Link 
-                href="/en"
-                className="flex items-center gap-2 px-6 py-3 mx-2 text-white/70 hover:text-[#3B82F6] hover:bg-white/5 rounded-lg transition-all"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                <Globe className="w-4 h-4" />
-                <span className="text-base">English</span>
-              </Link>
 
               <div className="px-4 pt-4 mt-2 border-t border-white/5">
                 <Button 

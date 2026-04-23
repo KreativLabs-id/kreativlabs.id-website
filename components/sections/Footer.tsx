@@ -1,6 +1,6 @@
 "use client";
 
-import { Instagram, Mail, Github } from "lucide-react";
+import { Instagram, Mail, Github, Globe } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -164,10 +164,18 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10">
-          <div className="text-center">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-white/60 text-sm">
               © {new Date().getFullYear()} KreativLabs.id. All rights reserved.
             </p>
+            {/* Language Switcher */}
+            <Link
+              href="/en"
+              className="flex items-center gap-2 px-4 py-2 text-white/70 hover:text-[#3B82F6] transition-colors rounded-lg hover:bg-white/5 border border-white/10"
+            >
+              <Globe className="w-4 h-4" />
+              <span className="text-sm">English (EN)</span>
+            </Link>
           </div>
         </div>
       </div>
