@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/sections/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import BackToTop from "@/components/BackToTop";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
@@ -129,33 +128,33 @@ const benefits = [
 
 export default function WebsiteServicesPage() {
     return (
-        <main className="min-h-screen bg-[#0A192F]">
+        <main className="min-h-screen bg-background">
             <Navbar />
 
             {/* Hero Section */}
             <section className="pt-32 pb-20 px-6">
                 <div className="container mx-auto max-w-6xl">
                     <div className="text-center mb-16">
-                        <span className="inline-block py-1 px-3 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-4">
+                        <span className="inline-block py-1 px-3 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-4">
                             Jasa Website Profesional
                         </span>
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
                             Jasa Pembuatan Website
                             <br />
-                            <span className="text-blue-400">Murah & Berkualitas</span>
+                            <span className="text-primary">Murah & Berkualitas</span>
                         </h1>
-                        <p className="text-slate-400 text-lg max-w-3xl mx-auto leading-relaxed mb-8">
-                            Butuh website untuk bisnis Anda? KreativLabs.id menyediakan <strong className="text-white">jasa pembuatan website murah di Semarang</strong> dengan kualitas premium.
+                        <p className="text-foreground/60 text-lg max-w-3xl mx-auto leading-relaxed mb-8">
+                            Butuh website untuk bisnis Anda? KreativLabs.id menyediakan <strong className="text-foreground">jasa pembuatan website murah di Semarang</strong> dengan kualitas premium.
                             Landing page, company profile, hingga toko online dengan harga terjangkau untuk UMKM dan bisnis!
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Button asChild className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-6 text-lg rounded-full">
+                            <Button asChild className="bg-primary hover:bg-primary/80 text-primary-foreground px-8 py-6 text-lg rounded-full">
                                 <a href="https://wa.me/6281327862503?text=Halo,%20saya%20tertarik%20dengan%20jasa%20pembuatan%20website" target="_blank" rel="noopener noreferrer">
                                     Konsultasi Gratis
                                     <ArrowRight className="ml-2 h-5 w-5" />
                                 </a>
                             </Button>
-                            <Button asChild variant="outline" className="border-white/20 text-white hover:bg-white/10 px-8 py-6 text-lg rounded-full">
+                            <Button asChild variant="outline" className="border-foreground/20 text-foreground hover:bg-foreground/10 px-8 py-6 text-lg rounded-full">
                                 <Link href="/#projects">
                                     Lihat Portfolio
                                 </Link>
@@ -166,13 +165,13 @@ export default function WebsiteServicesPage() {
             </section>
 
             {/* Services Section */}
-            <section className="py-20 px-6 bg-[#112240]/50">
+            <section className="py-20 px-6 bg-muted/50">
                 <div className="container mx-auto max-w-6xl">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                             Paket Jasa Website
                         </h2>
-                        <p className="text-slate-400 max-w-2xl mx-auto">
+                        <p className="text-foreground/60 max-w-2xl mx-auto">
                             Pilih paket yang sesuai dengan kebutuhan bisnis Anda
                         </p>
                     </div>
@@ -183,35 +182,35 @@ export default function WebsiteServicesPage() {
                             return (
                                 <Card
                                     key={index}
-                                    className={`relative bg-[#0A192F] border-white/10 p-8 rounded-3xl hover:border-blue-500/50 transition-all duration-300 ${service.popular ? 'border-blue-500 ring-2 ring-blue-500/20' : ''
+                                    className={`relative bg-background border-foreground/10 p-8 rounded-3xl hover:border-primary/50 transition-all duration-300 ${service.popular ? 'border-primary ring-2 ring-primary/20' : ''
                                         }`}
                                 >
                                     {service.popular && (
                                         <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                                            <span className="bg-blue-500 text-white text-sm font-medium px-4 py-1 rounded-full">
+                                            <span className="bg-primary text-primary-foreground text-sm font-medium px-4 py-1 rounded-full">
                                                 Paling Populer
                                             </span>
                                         </div>
                                     )}
 
-                                    <div className="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6">
-                                        <Icon className="w-7 h-7 text-blue-400" />
+                                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+                                        <Icon className="w-7 h-7 text-primary" />
                                     </div>
 
-                                    <h3 className="text-2xl font-bold text-white mb-2">{service.title}</h3>
-                                    <p className="text-blue-400 font-semibold mb-4">{service.price}</p>
-                                    <p className="text-slate-400 mb-6">{service.description}</p>
+                                    <h3 className="text-2xl font-bold text-foreground mb-2">{service.title}</h3>
+                                    <p className="text-primary font-semibold mb-4">{service.price}</p>
+                                    <p className="text-foreground/60 mb-6">{service.description}</p>
 
                                     <ul className="space-y-3 mb-8">
                                         {service.features.map((feature, idx) => (
-                                            <li key={idx} className="flex items-center text-slate-300 text-sm">
-                                                <CheckCircle2 className="w-4 h-4 mr-3 text-blue-500" />
+                                            <li key={idx} className="flex items-center text-foreground/70 text-sm">
+                                                <CheckCircle2 className="w-4 h-4 mr-3 text-primary" />
                                                 {feature}
                                             </li>
                                         ))}
                                     </ul>
 
-                                    <Button asChild className="w-full bg-blue-500 hover:bg-blue-600 text-white rounded-full">
+                                    <Button asChild className="w-full bg-primary hover:bg-primary/80 text-primary-foreground rounded-full">
                                         <a href={`https://wa.me/6281327862503?text=Halo,%20saya%20tertarik%20dengan%20${encodeURIComponent(service.title)}`} target="_blank" rel="noopener noreferrer">
                                             Pesan Sekarang
                                         </a>
@@ -227,10 +226,10 @@ export default function WebsiteServicesPage() {
             <section className="py-20 px-6">
                 <div className="container mx-auto max-w-6xl">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                             Mengapa Pilih KreativLabs?
                         </h2>
-                        <p className="text-slate-400 max-w-2xl mx-auto">
+                        <p className="text-foreground/60 max-w-2xl mx-auto">
                             Keunggulan jasa pembuatan website kami
                         </p>
                     </div>
@@ -240,11 +239,11 @@ export default function WebsiteServicesPage() {
                             const Icon = benefit.icon;
                             return (
                                 <div key={index} className="text-center p-6">
-                                    <div className="w-16 h-16 rounded-full bg-blue-500/10 flex items-center justify-center mx-auto mb-4">
-                                        <Icon className="w-8 h-8 text-blue-400" />
+                                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                                        <Icon className="w-8 h-8 text-primary" />
                                     </div>
-                                    <h3 className="text-xl font-bold text-white mb-2">{benefit.title}</h3>
-                                    <p className="text-slate-400 text-sm">{benefit.description}</p>
+                                    <h3 className="text-xl font-bold text-foreground mb-2">{benefit.title}</h3>
+                                    <p className="text-foreground/60 text-sm">{benefit.description}</p>
                                 </div>
                             );
                         })}
@@ -253,15 +252,15 @@ export default function WebsiteServicesPage() {
             </section>
 
             {/* CTA Section */}
-            <section className="py-20 px-6 bg-blue-500/10">
+            <section className="py-20 px-6 bg-primary/10">
                 <div className="container mx-auto max-w-4xl text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                    <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                         Siap Memiliki Website Profesional?
                     </h2>
-                    <p className="text-slate-400 text-lg mb-8">
+                    <p className="text-foreground/60 text-lg mb-8">
                         Konsultasikan kebutuhan website Anda dengan tim kami secara GRATIS!
                     </p>
-                    <Button asChild className="bg-blue-500 hover:bg-blue-600 text-white px-10 py-6 text-lg rounded-full">
+                    <Button asChild className="bg-primary hover:bg-primary/80 text-primary-foreground px-10 py-6 text-lg rounded-full">
                         <a href="https://wa.me/6281327862503?text=Halo,%20saya%20ingin%20konsultasi%20pembuatan%20website" target="_blank" rel="noopener noreferrer">
                             Hubungi Kami Sekarang
                             <ArrowRight className="ml-2 h-5 w-5" />
@@ -272,7 +271,6 @@ export default function WebsiteServicesPage() {
 
             <Footer />
             <WhatsAppButton />
-            <BackToTop />
         </main>
     );
 }

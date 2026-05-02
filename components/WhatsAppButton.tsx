@@ -24,7 +24,7 @@ export default function WhatsAppButton() {
   return (
     <button
       onClick={handleClick}
-      className={`fixed bottom-24 right-8 z-[100] w-14 h-14 bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-full shadow-lg shadow-[#25D366]/30 transition-all duration-500 hover:scale-110 flex items-center justify-center group ${
+      className={`fixed bottom-8 right-8 z-[100] w-14 h-14 bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-full shadow-lg shadow-[#25D366]/30 transition-all duration-500 hover:scale-110 flex items-center justify-center group ${
         isVisible
           ? "opacity-100 translate-y-0"
           : "opacity-0 translate-y-4"
@@ -43,7 +43,7 @@ export default function WhatsAppButton() {
       </svg>
       
       {/* Tooltip */}
-      <span className="absolute right-16 bg-[#25D366] text-white text-sm px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+      <span className="absolute right-16 bg-[#25D366] text-white text-sm px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-md">
         Chat via WhatsApp
       </span>
       

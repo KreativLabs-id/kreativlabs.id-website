@@ -126,23 +126,23 @@ export default function Pricing() {
   };
 
   return (
-    <section id="pricing" className="relative py-24 bg-[#0A192F] overflow-hidden overflow-x-hidden w-full">
+    <section id="pricing" className="relative py-24 bg-background overflow-hidden overflow-x-hidden w-full">
       {/* Lighting Effect */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#3B82F6] rounded-full blur-[120px] opacity-10"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary rounded-full blur-[120px] opacity-10"></div>
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-16">
             <div className="inline-block mb-4">
-            <div className="bg-[#3B82F6]/10 border border-[#3B82F6]/30 rounded-full px-4 py-2">
-              <span className="text-[#3B82F6] font-semibold text-sm">💰 Harga Spesial - Terbatas!</span>
+            <div className="bg-primary/10 border border-primary/30 rounded-full px-4 py-2">
+              <span className="text-primary font-semibold text-sm">💰 Harga Spesial - Terbatas!</span>
             </div>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Mulai dari <span className="text-[#3B82F6]">50 Ribu</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            Mulai dari <span className="text-primary">50 Ribu</span>
           </h2>
-          <p className="text-white/70 text-lg max-w-2xl mx-auto">
+          <p className="text-foreground/70 text-lg max-w-2xl mx-auto">
             Harga terjangkau untuk Website Development & Graphic Design. Investasi terbaik untuk bisnis Anda!
           </p>
           </div>
@@ -154,17 +154,17 @@ export default function Pricing() {
             <FadeInStagger key={index} index={index} delay={100}>
             <Card
               key={index}
-              className={`relative bg-[#0F1E37] border-white/10 p-8 transition-all duration-300 flex flex-col h-full ${
+              className={`relative bg-card border-foreground/10 p-8 transition-all duration-300 flex flex-col h-full ${
                 plan.popular
-                  ? "border-[#3B82F6] transform scale-105 shadow-xl shadow-[#3B82F6]/20"
-                  : "hover:border-[#3B82F6]/50"
+                  ? "border-primary transform scale-105 shadow-xl shadow-primary/20"
+                  : "hover:border-primary/50"
               }`}
             >
               {/* Badge */}
               {(plan.popular || plan.badge) && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <div className={`text-white text-sm font-semibold px-4 py-1 rounded-full ${
-                    plan.popular ? "bg-gradient-to-r from-purple-500 to-pink-500" : "bg-[#3B82F6]"
+                  <div className={`text-foreground text-sm font-semibold px-4 py-1 rounded-full ${
+                    plan.popular ? "bg-gradient-to-r from-purple-500 to-pink-500" : "bg-primary"
                   }`}>
                     {plan.badge || "Most Popular"}
                   </div>
@@ -172,27 +172,27 @@ export default function Pricing() {
               )}
 
               {/* Plan Name */}
-              <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
-              <p className="text-white/60 text-sm mb-6">{plan.description}</p>
+              <h3 className="text-2xl font-bold text-foreground mb-2">{plan.name}</h3>
+              <p className="text-foreground/60 text-sm mb-6">{plan.description}</p>
 
               {/* Price */}
               <div className="mb-8">
                 {plan.originalPrice && (
                   <div className="mb-2">
-                    <span className="text-white/40 line-through text-lg">Rp {plan.originalPrice}</span>
+                    <span className="text-foreground/40 line-through text-lg">Rp {plan.originalPrice}</span>
                     <span className="ml-2 bg-red-500/20 text-red-400 text-xs px-2 py-1 rounded-full">Hemat {calculateSavings(plan.originalPrice, plan.price)}%</span>
                   </div>
                 )}
                 <div>
                   {(plan.name === "Landing Page" || plan.name === "Fullstack Website" || plan.name === "Website Custom") && (
-                    <p className="text-white/70 text-sm mb-1">Mulai dari</p>
+                    <p className="text-foreground/70 text-sm mb-1">Mulai dari</p>
                   )}
                   <div className="flex items-baseline">
-                    <span className="text-4xl font-bold text-white">
+                    <span className="text-4xl font-bold text-foreground">
                       {plan.price.includes("Mulai") ? plan.price : `Rp ${plan.price}`}
                     </span>
                     {!plan.price.includes("Mulai") && (
-                      <span className="text-white/60 ml-2 text-sm">/project</span>
+                      <span className="text-foreground/60 ml-2 text-sm">/project</span>
                     )}
                   </div>
                 </div>
@@ -202,10 +202,10 @@ export default function Pricing() {
               <ul className="space-y-4 mb-8 flex-grow">
                 {plan.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start">
-                    <div className="shrink-0 w-5 h-5 bg-[#3B82F6]/20 rounded-full flex items-center justify-center mr-3 mt-0.5">
-                      <Check className="w-3 h-3 text-[#3B82F6]" />
+                    <div className="shrink-0 w-5 h-5 bg-primary/20 rounded-full flex items-center justify-center mr-3 mt-0.5">
+                      <Check className="w-3 h-3 text-primary" />
                     </div>
-                    <span className="text-white/70 text-sm">{feature}</span>
+                    <span className="text-foreground/70 text-sm">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -215,8 +215,8 @@ export default function Pricing() {
                 asChild
                 className={`w-full ${
                   plan.popular
-                    ? "bg-[#3B82F6] hover:bg-[#3B82F6]/90 text-white"
-                    : "bg-white/10 hover:bg-white/20 text-white border border-white/20"
+                    ? "bg-primary hover:bg-primary/90 text-primary-foreground"
+                    : "bg-foreground/10 hover:bg-foreground/20 text-foreground border border-foreground/20"
                 }`}
               >
                 <a href="#contact">Pesan Sekarang</a>
@@ -229,11 +229,11 @@ export default function Pricing() {
         {/* Additional Info */}
         <AnimatedSection animation="fade-up" delay={400}>
           <div className="text-center mt-12">
-            <div className="bg-[#3B82F6]/5 border border-[#3B82F6]/20 rounded-xl p-6 max-w-3xl mx-auto">
-              <p className="text-white/90 text-base mb-2">
+            <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 max-w-3xl mx-auto">
+              <p className="text-foreground/90 text-base mb-2">
                 ✨ <strong>Bonus:</strong> Konsultasi gratis + Free domain .com (paket Professional ke atas)
               </p>
-              <p className="text-white/60 text-sm">
+              <p className="text-foreground/60 text-sm">
                 Butuh custom package atau fitur khusus? Hubungi kami untuk penawaran terbaik!
               </p>
             </div>

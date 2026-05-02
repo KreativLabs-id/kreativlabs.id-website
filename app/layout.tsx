@@ -4,6 +4,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import SEOSchema from "@/components/SEOSchema";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta-sans",
@@ -124,14 +125,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className="overflow-x-hidden">
+    <html lang="id" className="overflow-x-hidden" suppressHydrationWarning>
       <body
         className={`${plusJakartaSans.variable} antialiased font-sans overflow-x-hidden`}
       >
-        <SEOSchema />
-        <SmoothScroll />
-        {children}
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || ""} />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <SEOSchema />
+          <SmoothScroll />
+          {children}
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || ""} />
+        </ThemeProvider>
       </body>
     </html>
   );

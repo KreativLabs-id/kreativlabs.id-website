@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { Particles } from "@/components/ui/shadcn-io/particles";
 import { useIsMobile } from "@/hooks/useIsMobile";
+import { useTheme } from "next-themes";
 import AnimatedSection from "@/components/AnimatedSection";
 import FadeInStagger from "@/components/FadeInStagger";
 
@@ -37,15 +38,17 @@ const faqs = [
 export default function FAQEN() {
   const isMobile = useIsMobile();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const { resolvedTheme } = useTheme();
+  const particleColor = resolvedTheme === "dark" ? "#FFFFFF" : "#94A3B8";
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <section id="faq" className="relative py-24 bg-[#0A192F] overflow-hidden overflow-x-hidden w-full">
+    <section id="faq" className="relative py-24 bg-background overflow-hidden overflow-x-hidden w-full">
       {/* Lighting Effect */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#3B82F6] rounded-full blur-[120px] opacity-10"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-primary rounded-full blur-[120px] opacity-10"></div>
       
       {/* Particles - Desktop Only */}
       {!isMobile && (
@@ -54,7 +57,7 @@ export default function FAQEN() {
           quantity={80}
           ease={80}
           staticity={50}
-          color="#FFFFFF"
+          color={particleColor}
           size={0.6}
         />
       )}
@@ -63,10 +66,10 @@ export default function FAQEN() {
         {/* Section Header */}
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Frequently Asked <span className="text-[#3B82F6]">Questions</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              Frequently Asked <span className="text-primary">Questions</span>
             </h2>
-            <p className="text-white/70 text-lg max-w-2xl mx-auto">
+            <p className="text-foreground/70 text-lg max-w-2xl mx-auto">
               Common questions about our services
             </p>
           </div>
@@ -78,17 +81,17 @@ export default function FAQEN() {
             <FadeInStagger key={index} index={index} delay={80}>
             <div
               key={index}
-              className="bg-[#0F1E37] border border-white/10 rounded-lg overflow-hidden hover:border-[#3B82F6]/50 transition-all duration-300"
+              className="bg-card border border-foreground/10 rounded-lg overflow-hidden hover:border-primary/50 transition-all duration-300"
             >
               <button
                 onClick={() => toggleFAQ(index)}
                 className="w-full px-6 py-5 flex items-center justify-between text-left group"
               >
-                <span className="text-white font-semibold pr-8 group-hover:text-[#3B82F6] transition-colors">
+                <span className="text-foreground font-semibold pr-8 group-hover:text-primary transition-colors">
                   {faq.question}
                 </span>
                 <ChevronDown
-                  className={`w-5 h-5 text-[#3B82F6] shrink-0 transition-transform duration-300 ${
+                  className={`w-5 h-5 text-primary shrink-0 transition-transform duration-300 ${
                     openIndex === index ? "rotate-180" : ""
                   }`}
                 />
@@ -99,7 +102,7 @@ export default function FAQEN() {
                   openIndex === index ? "max-h-96" : "max-h-0"
                 }`}
               >
-                <div className="px-6 pb-5 text-white/70 leading-relaxed">
+                <div className="px-6 pb-5 text-foreground/70 leading-relaxed">
                   {faq.answer}
                 </div>
               </div>
@@ -111,12 +114,12 @@ export default function FAQEN() {
         {/* CTA */}
         <AnimatedSection animation="fade-up" delay={300}>
           <div className="text-center mt-12">
-          <p className="text-white/60 mb-4">
+          <p className="text-foreground/60 mb-4">
             Have more questions?
           </p>
           <a
             href="#contact"
-            className="inline-block text-[#3B82F6] hover:text-[#3B82F6]/80 font-semibold transition-colors"
+            className="inline-block text-primary hover:text-primary/80 font-semibold transition-colors"
           >
             Contact Us →
           </a>

@@ -1,5 +1,4 @@
 import NavbarEN from "@/components/NavbarEN";
-import BackToTop from "@/components/BackToTop";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import HeroEN from "@/components/sections/en/Hero";
 import HotProductsEN from "@/components/sections/en/HotProducts";
@@ -15,7 +14,7 @@ import FooterEN from "@/components/sections/en/Footer";
 
 export default function HomeEN() {
   return (
-    <main className="min-h-screen bg-[#0A192F] overflow-x-hidden w-full max-w-[100vw]">
+    <main className="min-h-screen bg-background overflow-x-hidden w-full max-w-[100vw]">
       <NavbarEN />
       <HeroEN />
       <HotProductsEN />
@@ -29,7 +28,6 @@ export default function HomeEN() {
       <ContactEN />
       <FooterEN />
       <WhatsAppButton />
-      <BackToTop />
     </main>
   );
 }

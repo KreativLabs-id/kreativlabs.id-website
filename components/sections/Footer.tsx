@@ -1,8 +1,11 @@
 "use client";
 
-import { Instagram, Mail, Github, Globe } from "lucide-react";
+import { Instagram, Mail, Twitter, Facebook, Globe } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTheme } from "next-themes";
+import { useState, useEffect } from "react";
+import { ThemeToggle } from "../ThemeToggle";
 
 // TikTok Icon Component
 const TikTokIcon = ({ className }: { className?: string }) => (
@@ -23,15 +26,20 @@ const socialLinks = [
     label: "TikTok",
   },
   {
-    icon: Github,
-    href: "https://github.com/KreativLabs-id",
-    label: "GitHub",
+    icon: Twitter,
+    href: "https://x.com/kreativlabsid",
+    label: "X/Twitter",
+  },
+  {
+    icon: Facebook,
+    href: "https://facebook.com/kreativlabs.id",
+    label: "Facebook",
   },
   {
     icon: Mail,
     href: "mailto:hello@kreativlabs.my.id",
     label: "Email",
-  },
+  }
 ];
 
 const footerLinks = {
@@ -60,10 +68,14 @@ const footerLinks = {
 };
 
 export default function Footer() {
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme } = useTheme();
+  const logoSrc = mounted && resolvedTheme === "light" ? "/logokreativlabsterang.png" : "/logokreativ.png";
+  useEffect(() => { setMounted(true); }, []);
   return (
-    <footer className="relative bg-[#0A192F] border-t border-white/10 overflow-hidden overflow-x-hidden w-full">
+    <footer className="relative bg-background border-t border-foreground/10 overflow-hidden overflow-x-hidden w-full">
       {/* Lighting Effect */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#3B82F6] rounded-full blur-[120px] opacity-5"></div>
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary rounded-full blur-[120px] opacity-5"></div>
 
       <div className="container mx-auto px-6 py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
@@ -71,14 +83,14 @@ export default function Footer() {
           <div>
             <div className="mb-6">
               <Image
-                src="/logokreativ.png"
+                src={logoSrc}
                 alt="KreativLabs.id"
-                width={80}
-                height={80}
+                width={160}
+                height={60}
                 className="h-20 w-auto"
               />
             </div>
-            <p className="text-white/70 text-sm mb-6 leading-relaxed">
+            <p className="text-foreground/70 text-sm mb-6 leading-relaxed">
               Solusi digital modern untuk bisnis Anda. Kami menciptakan website dan design yang menarik, fungsional, dan menghasilkan konversi.
             </p>
             {/* Social Links */}
@@ -91,10 +103,10 @@ export default function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 bg-white/5 hover:bg-[#3B82F6]/20 border border-white/10 hover:border-[#3B82F6] rounded-lg flex items-center justify-center transition-all duration-300 group"
+                    className="w-10 h-10 bg-foreground/5 hover:bg-primary/20 border border-foreground/10 hover:border-primary rounded-lg flex items-center justify-center transition-all duration-300 group"
                     aria-label={social.label}
                   >
-                    <Icon className="w-5 h-5 text-white/70 group-hover:text-[#3B82F6] transition-colors" />
+                    <Icon className="w-5 h-5 text-foreground/70 group-hover:text-primary transition-colors" />
                   </a>
                 );
               })}
@@ -103,21 +115,21 @@ export default function Footer() {
 
           {/* Company Links */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Company</h4>
+            <h4 className="text-foreground font-semibold mb-4">Company</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link, index) => (
                 <li key={index}>
                   {link.href.startsWith('#') ? (
                     <a
                       href={link.href}
-                      className="text-white/70 hover:text-[#3B82F6] text-sm transition-colors"
+                      className="text-foreground/70 hover:text-primary text-sm transition-colors"
                     >
                       {link.name}
                     </a>
                   ) : (
                     <Link
                       href={link.href}
-                      className="text-white/70 hover:text-[#3B82F6] text-sm transition-colors"
+                      className="text-foreground/70 hover:text-primary text-sm transition-colors"
                     >
                       {link.name}
                     </Link>
@@ -129,13 +141,13 @@ export default function Footer() {
 
           {/* Services Links */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Services</h4>
+            <h4 className="text-foreground font-semibold mb-4">Services</h4>
             <ul className="space-y-3">
               {footerLinks.services.map((link, index) => (
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-white/70 hover:text-[#3B82F6] text-sm transition-colors"
+                    className="text-foreground/70 hover:text-primary text-sm transition-colors"
                   >
                     {link.name}
                   </a>
@@ -146,13 +158,13 @@ export default function Footer() {
 
           {/* Legal Links */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Legal</h4>
+            <h4 className="text-foreground font-semibold mb-4">Legal</h4>
             <ul className="space-y-3">
               {footerLinks.legal.map((link, index) => (
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-white/70 hover:text-[#3B82F6] text-sm transition-colors"
+                    className="text-foreground/70 hover:text-primary text-sm transition-colors"
                   >
                     {link.name}
                   </a>
@@ -163,19 +175,22 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/10">
+        <div className="pt-8 border-t border-foreground/10">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-white/60 text-sm">
+            <p className="text-foreground/60 text-sm">
               © {new Date().getFullYear()} KreativLabs.id. All rights reserved.
             </p>
-            {/* Language Switcher */}
-            <Link
-              href="/en"
-              className="flex items-center gap-2 px-4 py-2 text-white/70 hover:text-[#3B82F6] transition-colors rounded-lg hover:bg-white/5 border border-white/10"
-            >
-              <Globe className="w-4 h-4" />
-              <span className="text-sm">English (EN)</span>
-            </Link>
+            {/* Actions */}
+            <div className="flex items-center gap-3">
+              <ThemeToggle />
+              <Link
+                href="/en"
+                className="flex items-center gap-2 px-4 py-2 text-foreground/70 hover:text-primary transition-colors rounded-lg hover:bg-foreground/5 border border-foreground/10"
+              >
+                <Globe className="w-4 h-4" />
+                <span className="text-sm">English (EN)</span>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

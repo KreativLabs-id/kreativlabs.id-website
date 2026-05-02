@@ -87,19 +87,19 @@ export default function ContactEN() {
   };
 
   return (
-    <section id="contact" className="relative py-24 bg-[#0A192F] overflow-hidden overflow-x-hidden w-full">
+    <section id="contact" className="relative py-24 bg-background overflow-hidden overflow-x-hidden w-full">
       {/* Lighting Effects */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-[#3B82F6] rounded-full blur-[120px] opacity-10"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#3B82F6] rounded-full blur-[120px] opacity-10"></div>
+      <div className="absolute top-0 left-0 w-96 h-96 bg-primary rounded-full blur-[120px] opacity-10"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary rounded-full blur-[120px] opacity-10"></div>
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Get In <span className="text-[#3B82F6]">Touch</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              Get In <span className="text-primary">Touch</span>
             </h2>
-            <p className="text-white/70 text-lg max-w-2xl mx-auto">
+            <p className="text-foreground/70 text-lg max-w-2xl mx-auto">
               Have a project or question? Don't hesitate to contact us
             </p>
           </div>
@@ -115,19 +115,19 @@ export default function ContactEN() {
                   return (
                     <Card
                       key={index}
-                      className="bg-[#0F1E37] border-white/10 p-6 hover:border-[#3B82F6]/50 transition-all duration-300"
+                      className="bg-card border-foreground/10 p-6 hover:border-primary/50 transition-all duration-300"
                     >
                       <div className="flex items-start space-x-4">
-                        <div className="shrink-0 w-12 h-12 bg-[#3B82F6]/10 rounded-lg flex items-center justify-center">
-                          <Icon className="w-6 h-6 text-[#3B82F6]" />
+                        <div className="shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                          <Icon className="w-6 h-6 text-primary" />
                         </div>
                         <div>
-                          <h3 className="text-white font-semibold mb-1">
+                          <h3 className="text-foreground font-semibold mb-1">
                             {info.title}
                           </h3>
                           <a
                             href={info.link}
-                            className="text-white/70 text-sm hover:text-[#3B82F6] transition-colors"
+                            className="text-foreground/70 text-sm hover:text-primary transition-colors"
                           >
                             {info.value}
                           </a>
@@ -140,12 +140,12 @@ export default function ContactEN() {
 
               {/* Contact Form */}
               <div className="lg:col-span-2">
-                <Card className="bg-[#0F1E37] border-white/10 p-8">
+                <Card className="bg-card border-foreground/10 p-8">
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
                       <label
                         htmlFor="name"
-                        className="block text-white font-medium mb-2"
+                        className="block text-foreground font-medium mb-2"
                       >
                         Name
                       </label>
@@ -156,7 +156,7 @@ export default function ContactEN() {
                         placeholder="Your Name"
                         value={formData.name}
                         onChange={handleChange}
-                        className="bg-[#0A192F] border-white/10 text-white placeholder:text-white/40 focus:border-[#3B82F6]"
+                        className="bg-background border-foreground/10 text-foreground placeholder:text-foreground/40 focus:border-primary"
                         required
                       />
                     </div>
@@ -164,7 +164,7 @@ export default function ContactEN() {
                     <div>
                       <label
                         htmlFor="email"
-                        className="block text-white font-medium mb-2"
+                        className="block text-foreground font-medium mb-2"
                       >
                         Email
                       </label>
@@ -175,7 +175,7 @@ export default function ContactEN() {
                         placeholder="email@example.com"
                         value={formData.email}
                         onChange={handleChange}
-                        className="bg-[#0A192F] border-white/10 text-white placeholder:text-white/40 focus:border-[#3B82F6]"
+                        className="bg-background border-foreground/10 text-foreground placeholder:text-foreground/40 focus:border-primary"
                         required
                       />
                     </div>
@@ -183,7 +183,7 @@ export default function ContactEN() {
                     <div>
                       <label
                         htmlFor="message"
-                        className="block text-white font-medium mb-2"
+                        className="block text-foreground font-medium mb-2"
                       >
                         Message
                       </label>
@@ -193,7 +193,7 @@ export default function ContactEN() {
                         placeholder="Tell us about your project..."
                         value={formData.message}
                         onChange={handleChange}
-                        className="bg-[#0A192F] border-white/10 text-white placeholder:text-white/40 focus:border-[#3B82F6] min-h-[150px]"
+                        className="bg-background border-foreground/10 text-foreground placeholder:text-foreground/40 focus:border-primary min-h-[150px]"
                         required
                       />
                     </div>
@@ -202,8 +202,8 @@ export default function ContactEN() {
                     {submitStatus.type && (
                       <div
                         className={`flex items-center gap-2 p-4 rounded-lg ${submitStatus.type === "success"
-                            ? "bg-green-500/10 border border-green-500/20 text-green-400"
-                            : "bg-red-500/10 border border-red-500/20 text-red-400"
+                          ? "bg-green-500/10 border border-green-500/20 text-green-400"
+                          : "bg-red-500/10 border border-red-500/20 text-red-400"
                           }`}
                       >
                         {submitStatus.type === "success" ? (
@@ -218,7 +218,7 @@ export default function ContactEN() {
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-[#3B82F6] hover:bg-[#3B82F6]/90 text-white group disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground group disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isSubmitting ? (
                         <>

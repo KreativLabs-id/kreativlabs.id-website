@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import { useTheme } from "next-themes";
 
 const navLinks = [
   { name: "Beranda", href: "#" },
@@ -21,6 +22,11 @@ export default function Navbar() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme } = useTheme();
+  const logoSrc = mounted && resolvedTheme === "light" ? "/logokreativlabsterang.png" : "/logokreativ.png";
+
+  useEffect(() => { setMounted(true); }, []);
   
   // Derive active section from pathname instead of using effect
   const getInitialActiveSection = () => {
@@ -87,17 +93,17 @@ export default function Navbar() {
     >
       <div className={`mx-auto transition-all duration-500 ease-out ${
         isScrolled
-          ? "max-w-5xl bg-[#0A192F]/90 backdrop-blur-xl rounded-full px-6"
+          ? "max-w-5xl bg-background/90 backdrop-blur-xl rounded-full px-6"
           : "max-w-7xl bg-transparent px-6"
       }`}>
         <div className="flex items-center justify-between h-16 relative">
           {/* Logo - Left */}
           <a href="#" className="flex items-center z-10">
             <Image
-              src="/logokreativ.png"
+              src={logoSrc}
               alt="KreativLabs.id"
-              width={32}
-              height={32}
+              width={140}
+              height={40}
               className="h-8 w-auto"
               priority
             />
@@ -116,12 +122,12 @@ export default function Navbar() {
                   href={href}
                   className={`text-sm font-medium relative group transition-colors ${
                     isActive
-                      ? "text-[#3B82F6]"
-                      : "text-white/80 hover:text-[#3B82F6]"
+                      ? "text-primary"
+                      : "text-foreground/80 hover:text-primary"
                   }`}
                 >
                   {link.name}
-                  <span className={`absolute -bottom-1 left-0 h-0.5 bg-[#3B82F6] transition-all duration-300 ${
+                  <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${
                     isActive ? "w-full" : "w-0 group-hover:w-full"
                   }`}></span>
                 </a>
@@ -131,19 +137,23 @@ export default function Navbar() {
 
           {/* CTA - Right */}
           <div className="hidden md:flex items-center gap-3">
-            <Button asChild className="bg-[#3B82F6] hover:bg-[#3B82F6]/90 text-white rounded-full px-6">
-              <a href={pathname !== '/' ? '/#contact' : '#contact'}>Mulai Sekarang</a>
-            </Button>
+            {mounted && (
+              <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6">
+                <Link href={pathname !== '/' ? '/#contact' : '#contact'}>Mulai Sekarang</Link>
+              </Button>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-white z-10 p-2 hover:bg-white/10 rounded-lg transition-colors"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="md:hidden flex items-center gap-2 z-10">
+            <button
+              className="text-foreground p-2 hover:bg-foreground/10 rounded-lg transition-colors"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -154,7 +164,7 @@ export default function Navbar() {
               : 'max-h-0 opacity-0'
           }`}
         >
-          <div className="py-6 bg-[#0A192F] backdrop-blur-xl rounded-b-2xl shadow-xl">
+          <div className="py-6 bg-background backdrop-blur-xl rounded-b-2xl shadow-xl">
             <div className="flex flex-col space-y-1">
               {navLinks.map((link, index) => {
                 const isExternal = link.href.startsWith('/');
@@ -167,8 +177,8 @@ export default function Navbar() {
                     href={href}
                     className={`text-base font-medium px-6 py-3 rounded-lg mx-2 transition-all ${
                       isActive
-                        ? "text-[#3B82F6] bg-white/10"
-                        : "text-white hover:text-[#3B82F6] hover:bg-white/5"
+                        ? "text-primary bg-foreground/10"
+                        : "text-foreground hover:text-primary hover:bg-foreground/5"
                     }`}
                     onClick={() => setIsMobileMenuOpen(false)}
                     style={{
@@ -180,13 +190,15 @@ export default function Navbar() {
                 );
               })}
 
-              <div className="px-4 pt-4 mt-2 border-t border-white/5">
-                <Button 
-                  asChild
-                  className="bg-[#3B82F6] hover:bg-[#3B82F6]/90 text-white w-full rounded-full py-6 text-base font-medium shadow-lg shadow-[#3B82F6]/30"
-                >
-                  <a href={pathname !== '/' ? '/#contact' : '#contact'} onClick={() => setIsMobileMenuOpen(false)}>Mulai Sekarang</a>
-                </Button>
+              <div className="px-4 pt-4 mt-2 border-t border-foreground/5">
+                {mounted && (
+                  <Button 
+                    asChild
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground w-full rounded-full py-6 text-base font-medium shadow-lg shadow-primary/30"
+                  >
+                    <Link href={pathname !== '/' ? '/#contact' : '#contact'} onClick={() => setIsMobileMenuOpen(false)}>Mulai Sekarang</Link>
+                  </Button>
+                )}
               </div>
             </div>
           </div>

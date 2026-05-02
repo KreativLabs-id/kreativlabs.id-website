@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Star } from "lucide-react";
 import { Particles } from "@/components/ui/shadcn-io/particles";
 import { useIsMobile } from "@/hooks/useIsMobile";
+import { useTheme } from "next-themes";
 import AnimatedSection from "@/components/AnimatedSection";
 import FadeInStagger from "@/components/FadeInStagger";
 
@@ -33,11 +34,13 @@ const testimonials = [
 
 export default function Testimonials() {
   const isMobile = useIsMobile();
+  const { resolvedTheme } = useTheme();
+  const particleColor = resolvedTheme === "dark" ? "#FFFFFF" : "#94A3B8";
   
   return (
-    <section id="testimonials" className="relative py-24 bg-[#0A192F] overflow-hidden overflow-x-hidden w-full">
+    <section id="testimonials" className="relative py-24 bg-background overflow-hidden overflow-x-hidden w-full">
       {/* Lighting Effect */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#3B82F6] rounded-full blur-[120px] opacity-10"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary rounded-full blur-[120px] opacity-10"></div>
       
       {/* Particles - Desktop Only */}
       {!isMobile && (
@@ -46,7 +49,7 @@ export default function Testimonials() {
           quantity={80}
           ease={80}
           staticity={50}
-          color="#FFFFFF"
+          color={particleColor}
           size={0.6}
         />
       )}
@@ -55,10 +58,10 @@ export default function Testimonials() {
         {/* Section Header */}
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Client <span className="text-[#3B82F6]">Testimonials</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              Client <span className="text-primary">Testimonials</span>
             </h2>
-            <p className="text-white/70 text-lg max-w-2xl mx-auto">
+            <p className="text-foreground/70 text-lg max-w-2xl mx-auto">
               Apa kata mereka yang telah mempercayai kami
             </p>
           </div>
@@ -70,32 +73,32 @@ export default function Testimonials() {
             <FadeInStagger key={index} index={index} delay={100}>
             <Card
               key={index}
-              className="bg-[#0F1E37] border-white/10 p-6 hover:border-[#3B82F6]/50 transition-all duration-300"
+              className="bg-card border-foreground/10 p-6 hover:border-primary/50 transition-all duration-300"
             >
               {/* Rating */}
               <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-[#3B82F6] text-[#3B82F6]" />
+                  <Star key={i} className="w-5 h-5 fill-primary text-primary" />
                 ))}
               </div>
 
               {/* Content */}
-              <p className="text-white/80 text-sm mb-6 leading-relaxed italic">
+              <p className="text-foreground/80 text-sm mb-6 leading-relaxed italic">
                 &ldquo;{testimonial.content}&rdquo;
               </p>
 
               {/* Author */}
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-[#3B82F6]/20 rounded-full flex items-center justify-center">
-                  <span className="text-[#3B82F6] font-bold text-lg">
+                <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                  <span className="text-primary font-bold text-lg">
                     {testimonial.name.charAt(0)}
                   </span>
                 </div>
                 <div>
-                  <div className="text-white font-semibold text-sm">
+                  <div className="text-foreground font-semibold text-sm">
                     {testimonial.name}
                   </div>
-                  <div className="text-white/60 text-xs">
+                  <div className="text-foreground/60 text-xs">
                     {testimonial.role}
                   </div>
                 </div>
