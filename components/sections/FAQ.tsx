@@ -10,28 +10,28 @@ import FadeInStagger from "@/components/FadeInStagger";
 
 const faqs = [
   {
-    question: "Berapa lama waktu pengerjaan website?",
-    answer: "Waktu pengerjaan bervariasi tergantung kompleksitas project. Untuk landing page sederhana sekitar 1-2 minggu, website company profile 2-4 minggu, dan e-commerce 4-8 minggu. Kami akan memberikan timeline yang jelas di awal project.",
+    question: "Berapa lama proses implementasi sistem di toko kami?",
+    answer: "Proses implementasi sangat cepat. Setelah Anda memilih paket berlangganan, tim kami akan melakukan setup sistem dalam 1-3 hari kerja. Anda dan karyawan bisa langsung menggunakan sistem pada hari yang sama.",
   },
   {
-    question: "Apakah harga sudah termasuk domain dan hosting?",
-    answer: "Harga yang tertera adalah untuk pembuatan website saja. Domain dan hosting dapat kami bantu setup dengan biaya terpisah, atau Anda bisa menggunakan provider pilihan sendiri. Kami akan berikan rekomendasi terbaik sesuai kebutuhan.",
+    question: "Apakah data transaksi kami aman tersimpan di cloud?",
+    answer: "Sangat aman. Seluruh data penjualan, stok, dan pelanggan Anda dienkripsi dan disimpan di server cloud berspesifikasi enterprise kami yang memiliki backup otomatis setiap jam.",
   },
   {
-    question: "Apakah website yang dibuat mobile-friendly?",
-    answer: "Ya, semua website yang kami buat sudah responsive dan mobile-friendly. Kami menggunakan pendekatan mobile-first untuk memastikan tampilan optimal di semua perangkat.",
+    question: "Apakah sistem ini bisa diakses lewat HP atau tablet oleh karyawan?",
+    answer: "Tentu saja. Ekosistem perangkat lunak kami berbasis web dan cloud (SaaS), sehingga bisa diakses dari perangkat apapun (HP, Tablet, PC/Laptop) cukup dengan koneksi internet, tanpa perlu instalasi rumit.",
   },
   {
-    question: "Bagaimana proses revisi website?",
-    answer: "Setiap paket memiliki jumlah revisi yang berbeda. Kami akan melakukan review berkala dengan Anda dan melakukan revisi sesuai feedback. Revisi tambahan di luar paket dapat dikenakan biaya tambahan.",
+    question: "Bagaimana jika ada kendala teknis atau mati lampu di lapangan?",
+    answer: "Aplikasi kasir kami memiliki mode offline ringan yang memungkinkan transaksi tetap berjalan saat internet terputus, dan akan otomatis tersinkronisasi saat online kembali. Tim support teknis kami juga bersiaga untuk membantu kapan pun.",
   },
   {
-    question: "Apakah saya bisa update konten website sendiri?",
-    answer: "Ya, kami bisa integrasikan CMS (Content Management System) seperti WordPress atau custom admin panel agar Anda bisa update konten sendiri. Kami juga akan berikan training singkat cara penggunaannya.",
+    question: "Apakah saya bisa melacak stok banyak cabang secara real-time?",
+    answer: "Ya, dengan paket AppGrowth dan AppScale, Anda mendapatkan kontrol penuh multi-cabang. Anda bisa memantau pergerakan stok, tren penjualan, dan performa kasir setiap cabang secara real-time dari satu dashboard utama.",
   },
   {
-    question: "Apakah ada garansi setelah website selesai?",
-    answer: "Ya, kami memberikan support dan maintenance sesuai dengan paket yang dipilih. Untuk bug fixing dan technical support, kami siap membantu selama periode yang telah disepakati.",
+    question: "Apakah ada biaya pemeliharaan tersembunyi?",
+    answer: "Tidak ada. Skema berlangganan kami bersifat flat dan transparan. Semua biaya server, pemeliharaan sistem, update fitur terbaru, dan dukungan teknis sudah termasuk di dalam paket langganan Anda.",
   },
 ];
 
@@ -70,7 +70,7 @@ export default function FAQ() {
               Frequently Asked <span className="text-primary">Questions</span>
             </h2>
             <p className="text-foreground/70 text-lg max-w-2xl mx-auto">
-              Pertanyaan yang sering ditanyakan seputar jasa kami
+              Pertanyaan yang sering ditanyakan seputar sistem dan integrasi
             </p>
           </div>
         </AnimatedSection>

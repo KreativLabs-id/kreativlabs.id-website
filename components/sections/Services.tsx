@@ -1,47 +1,47 @@
 "use client";
 
 import { Card } from "@/components/ui/card";
-import { Code, Palette, Instagram, CheckCircle2, ArrowRight, Globe, Cpu, PenTool } from "lucide-react";
+import { Utensils, ShoppingBag, Calendar, ShieldCheck, TrendingUp, MessageCircle, CheckCircle2 } from "lucide-react";
 import OptimizedParticles from "@/components/OptimizedParticles";
 import AnimatedSection from "@/components/AnimatedSection";
 import FadeInStagger from "@/components/FadeInStagger";
 
 const services = [
   {
-    icon: Code,
-    title: "Landing Page",
-    description: "Landing page responsif dan modern untuk meningkatkan konversi bisnis Anda.",
-    features: ["Responsive Design", "Fast Loading", "SEO Friendly", "Modern Template"],
+    icon: Utensils,
+    title: "RestoFlow AI",
+    description: "Otomasi alur pesanan meja ke dapur. Pantau stok bahan baku presisi dan kelola pesanan online/offline dalam satu layar.",
+    features: ["Manajemen Meja", "Stok Bahan Baku", "POS Integrasi", "Real-time Order"],
   },
   {
-    icon: Globe,
-    title: "Fullstack Website",
-    description: "Website lengkap dengan fitur backend dan database untuk kebutuhan bisnis yang lebih kompleks.",
-    features: ["Dynamic Content", "Database Integration", "Admin Dashboard", "Secure System"],
+    icon: ShoppingBag,
+    title: "OmniSell Pro",
+    description: "Sinkronisasi stok di semua marketplace (Offline, Shopee, Tokopedia, Web). Notifikasi stok rendah otomatis untuk cegah kehilangan peluang.",
+    features: ["Multi-Channel", "Sinkronisasi Stok", "Notifikasi Pintar", "Laporan Penjualan"],
   },
   {
-    icon: Cpu,
-    title: "Website Custom",
-    description: "Solusi pengembangan website yang disesuaikan sepenuhnya dengan kebutuhan spesifik Anda.",
-    features: ["Custom Features", "Scalable Architecture", "API Integration", "Premium Support"],
+    icon: Calendar,
+    title: "AutoReserve",
+    description: "Asisten reservasi 24/7. Izinkan pelanggan menjadwalkan layanan dan bayar dimuka. Hilangkan jadwal bentrok secara otomatis.",
+    features: ["Reservasi 24/7", "Pembayaran Dimuka", "Anti Jadwal Bentrok", "Pengingat Otomatis"],
   },
   {
-    icon: Palette,
-    title: "Design Logo",
-    description: "Desain logo profesional yang mencerminkan identitas dan nilai brand bisnis Anda.",
-    features: ["Original Concept", "Brand Identity", "Vector Files", "Copyright Ownership"],
+    icon: ShieldCheck,
+    title: "Zero-Downtime Guard",
+    description: "Perlindungan data tingkat tinggi dan pemeliharaan sistem agar bisnis tidak pernah berhenti beroperasi.",
+    features: ["High Availability", "Backup Otomatis", "Sistem Keamanan", "Pemeliharaan Rutin"],
   },
   {
-    icon: Instagram,
-    title: "Desain Social Media",
-    description: "Konten visual kreatif dan menarik untuk meningkatkan engagement di media sosial.",
-    features: ["Feed & Story", "Content Planning", "Visual Consistency", "Engagement Focused"],
+    icon: TrendingUp,
+    title: "Growth Consultation",
+    description: "Strategi implementasi fitur aplikasi untuk melipatgandakan produktivitas dan profit bisnis Anda.",
+    features: ["Audit Bisnis", "Strategi Digital", "Optimasi Proses", "Laporan Kinerja"],
   },
   {
-    icon: PenTool,
-    title: "UI/UX Design",
-    description: "Perancangan antarmuka dan pengalaman pengguna yang intuitif untuk aplikasi atau website.",
-    features: ["User Research", "Wireframing", "Prototyping", "High Fidelity Design"],
+    icon: MessageCircle,
+    title: "WhatsApp Auto-Pilot",
+    description: "Kirim nota otomatis, pengingat pembayaran, dan notifikasi status pesanan langsung ke WhatsApp pelanggan.",
+    features: ["Bot Broadcast", "Pengingat Bayar", "Notifikasi Status", "Pesan Custom"],
   },
 ];
 
@@ -63,7 +63,7 @@ export default function Services() {
               Solusi Digital <span className="text-primary">Terintegrasi</span>
             </h2>
             <p className="text-foreground/60 text-lg max-w-2xl mx-auto leading-relaxed">
-              Kami menghadirkan solusi Website Development & Graphic Design yang tidak hanya estetis, tetapi juga fungsional untuk pertumbuhan bisnis Anda.
+              Tinggalkan sistem manual yang rumit. Kami membangun ekosistem aplikasi cerdas yang terintegrasi penuh untuk berbagai sektor industri.
             </p>
           </div>
         </AnimatedSection>
@@ -106,6 +106,15 @@ export default function Services() {
             );
           })}
         </div>
+
+        {/* CTA Section */}
+        <AnimatedSection animation="fade-up" delay={200}>
+          <div className="text-center mt-16">
+            <a href="#contact" className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-medium rounded-full shadow-lg shadow-primary/25 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              Mulai Proyek Anda
+            </a>
+          </div>
+        </AnimatedSection>
       </div>
 
       {/* Interactive Particles - Desktop Only */}

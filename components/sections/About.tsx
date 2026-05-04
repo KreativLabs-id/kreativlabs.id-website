@@ -53,7 +53,7 @@ export default function About() {
                       <div className="w-2 h-2 rounded-full bg-primary/60 animate-pulse" style={{animationDelay: '0.2s'}}></div>
                       <div className="w-2 h-2 rounded-full bg-primary/30 animate-pulse" style={{animationDelay: '0.4s'}}></div>
                     </div>
-                    <span className="text-foreground/40 text-xs font-medium">Mitra Digital Terpercaya</span>
+                    <span className="text-foreground/40 text-xs font-medium">Startup B2B Spesialis UMKM</span>
                   </div>
                 </div>
               </div>
@@ -65,28 +65,28 @@ export default function About() {
                 {/* Founded Info */}
                 <div className="space-y-4">
                   <p className="text-foreground/80 text-base leading-relaxed">
-                    Didirikan pada <span className="text-foreground font-semibold">2025</span>, KreativLabs.id hadir dengan visi menjadi <span className="text-foreground font-semibold">mitra digital terpercaya</span> yang memberdayakan bisnis di Indonesia untuk tumbuh dan unggul melalui solusi teknologi yang inovatif dan berorientasi hasil.
+                    Didirikan pada <span className="text-foreground font-semibold">2025</span>, KreativLabs hadir dengan visi menjadi <span className="text-foreground font-semibold">Startup B2B spesialis otomatisasi</span> yang memberdayakan bisnis UMKM di Indonesia untuk menskalakan operasional mereka melalui ekosistem perangkat lunak cerdas.
                   </p>
                 </div>
 
                 {/* Premium Solutions */}
                 <div className="space-y-4">
                   <p className="text-foreground/80 text-base leading-relaxed">
-                    Kami mengembangkan <span className="text-foreground font-semibold">website, aplikasi mobile, dan platform e-commerce</span> kustom dengan standar coding tertinggi, performa optimal dengan <span className="text-foreground font-semibold">Fast Loading</span>, dan keamanan terdepan yang memberikan pengalaman digital premium untuk bisnis Anda.
+                    Kami mengembangkan <span className="text-foreground font-semibold">sistem kasir pintar, manajemen inventori real-time, dan platform reservasi otomatis</span> yang terintegrasi penuh. Sistem kami dirancang dengan arsitektur <span className="text-foreground font-semibold">Cloud-Native</span> untuk menjamin keamanan data tingkat tinggi dan performa anti-lelet saat toko Anda sedang ramai.
                   </p>
                 </div>
 
                 {/* UX & Partnership */}
                 <div className="space-y-4">
                   <p className="text-foreground/80 text-base leading-relaxed">
-                    Dengan menerapkan desain <span className="text-foreground font-semibold">UI/UX yang intuitif, modern, dan minimalis</span>, kami memaksimalkan user engagement dan mendorong konversi. Kami membangun proses kerja yang transparan, komunikatif, dan efisien dengan <span className="text-foreground font-semibold">Fast Delivery</span>, memposisikan klien sebagai bagian dari tim.
+                    Dengan menerapkan antarmuka yang sangat <span className="text-foreground font-semibold">intuitif dan mudah dipahami</span>, kami memastikan sistem aplikasi kami dapat langsung digunakan oleh kasir atau karyawan Anda tanpa memerlukan pelatihan khusus. Kami memfokuskan hasil akhir pada <span className="text-foreground font-semibold">peningkatan efisiensi</span> dan kecepatan transaksi operasional harian.
                   </p>
                 </div>
 
                 {/* Impact & Innovation */}
                 <div className="space-y-4">
                   <p className="text-foreground/80 text-base leading-relaxed">
-                    Kami menerapkan strategi <span className="text-foreground font-semibold">SEO dan best practices digital</span> untuk memastikan setiap solusi memberikan hasil terukur bagi pertumbuhan bisnis klien. Secara konsisten mengadopsi teknologi terbaru dan mengembangkan keahlian tim untuk memberikan solusi yang relevan dan <span className="text-foreground font-semibold">future-proof</span>.
+                    Infrastruktur kami didukung oleh server <span className="text-foreground font-semibold">skalabel dan stabil</span> untuk mencegah kebocoran data. Kami konsisten mengembangkan teknologi otomasi terbaru yang <span className="text-foreground font-semibold">future-proof</span>, memastikan bisnis klien kami selalu memimpin satu langkah di depan kompetitor dalam hal teknologi operasional.
                   </p>
                 </div>
               </div>

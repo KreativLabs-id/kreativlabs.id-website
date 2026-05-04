@@ -9,24 +9,24 @@ import FadeInStagger from "@/components/FadeInStagger";
 
 const principles = [
   {
+    icon: TrendingUp,
+    title: "Cegah Kebocoran Profit",
+    description: "Transparansi kas 100% dan sinkronisasi stok presisi untuk memastikan setiap rupiah masuk ke kantong Anda.",
+  },
+  {
     icon: Zap,
-    title: "Fast & Efficient",
-    description: "Kami mengutamakan kecepatan dan efisiensi dalam setiap project yang dikerjakan",
+    title: "Otomatisasi 24/7",
+    description: "Hemat biaya admin dengan asisten reservasi cerdas dan bot WhatsApp yang bekerja tanpa henti.",
   },
   {
     icon: Shield,
-    title: "Quality First",
-    description: "Kualitas adalah prioritas utama kami dalam menghasilkan produk digital",
+    title: "Keputusan Berbasis Data",
+    description: "Laporan analitik harian visual, tidak lagi beroperasi berdasarkan sekadar 'feeling' semata.",
   },
   {
     icon: Heart,
-    title: "Client Satisfaction",
-    description: "Kepuasan klien adalah tujuan kami, dengan komunikasi yang transparan",
-  },
-  {
-    icon: TrendingUp,
-    title: "Continuous Innovation",
-    description: "Selalu mengikuti perkembangan teknologi terbaru untuk hasil yang optimal",
+    title: "Dukungan Teknis Prioritas",
+    description: "Sistem anti-downtime dan tim support berdedikasi memastikan kasir Anda tidak pernah offline.",
   },
 ];
 
@@ -56,12 +56,9 @@ export default function Principles() {
         {/* Section Header */}
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Engineering <span className="text-primary">Principles</span>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+              Alasan Bisnis Anda <span className="text-primary">Membutuhkan KreativLabs</span>
             </h2>
-            <p className="text-foreground/70 text-lg max-w-2xl mx-auto">
-              Prinsip-prinsip yang kami pegang dalam setiap project
-            </p>
           </div>
         </AnimatedSection>
 

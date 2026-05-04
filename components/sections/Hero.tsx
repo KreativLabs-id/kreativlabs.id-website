@@ -37,10 +37,10 @@ export default function Hero() {
             {/* Main Heading */}
             <AnimatedSection animation="fade-up" delay={150} duration={800}>
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-foreground mb-6 leading-[1.15] tracking-tight">
-                Website & <br className="block md:hidden" /> Desain Grafis
+                Otomatisasi Operasional <br className="block md:hidden" /> Bisnis Anda
                 <br />
                 <span className="relative inline-block mt-2">
-                  <span className="text-primary">Untuk Bisnis Anda</span>
+                  <span className="text-primary">Dalam Satu Sistem</span>
                   <svg className="absolute -bottom-2 left-0 w-full" height="10" viewBox="0 0 300 8" fill="none">
                     <path d="M1 6C50 2 100 1 150 2C200 3 250 4 299 6" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
                   </svg>
@@ -51,7 +51,7 @@ export default function Hero() {
             {/* Subheading */}
             <AnimatedSection animation="fade-up" delay={300} duration={800}>
               <p className="text-lg md:text-xl text-foreground/70 mb-10 max-w-2xl mx-auto leading-relaxed px-2">
-                Jasa pembuatan website profesional dan desain grafis (logo, poster, sosmed, packaging) dengan harga terjangkau mulai dari 50 ribu!
+                KreativLabs menghadirkan aplikasi kasir, manajemen stok, dan sistem reservasi pintar untuk menghentikan kebocoran profit dan melipatgandakan produktivitas UMKM Anda.
               </p>
             </AnimatedSection>
 
@@ -63,7 +63,7 @@ export default function Hero() {
                   className="bg-primary hover:bg-primary/80 text-primary-foreground px-7 py-6 text-base rounded-full group shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto min-w-[200px]"
                 >
                   <a href="#contact" className="flex items-center justify-center gap-2">
-                    <span>Mulai Konsultasi</span>
+                    <span>Jadwalkan Konsultasi Gratis</span>
                     <ArrowUpRight className="h-5 w-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
                   </a>
                 </Button>
@@ -73,7 +73,7 @@ export default function Hero() {
                   className="border-foreground/20 text-foreground hover:bg-foreground/10 hover:text-foreground hover:border-foreground/40 px-7 py-6 text-base rounded-full backdrop-blur-sm w-full sm:w-auto min-w-[180px] group transition-all duration-300 hover:-translate-y-0.5"
                 >
                   <a href="#projects" className="flex items-center justify-center gap-2">
-                    <span>Lihat Portfolio</span>
+                    <span>Lihat Solusi Industri</span>
                     <ArrowUpRight className="h-5 w-5 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
                   </a>
                 </Button>

@@ -91,7 +91,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-foreground/70 text-sm mb-6 leading-relaxed">
-              Solusi digital modern untuk bisnis Anda. Kami menciptakan website dan design yang menarik, fungsional, dan menghasilkan konversi.
+              KreativLabs: Mitra Strategis Digital Anda. Kami menciptakan sistem yang menarik, fungsional, dan menghasilkan konversi tinggi.
             </p>
             {/* Social Links */}
             <div className="flex space-x-4">
