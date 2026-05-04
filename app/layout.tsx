@@ -62,13 +62,6 @@ export const metadata: Metadata = {
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
   },
-  alternates: {
-    canonical: "https://kreativlabs.my.id",
-    languages: {
-      'id-ID': 'https://kreativlabs.my.id',
-      'en-US': 'https://kreativlabs.my.id/en',
-    },
-  },
   icons: {
     icon: [
       { url: '/favicon.png', type: 'image/png', sizes: '32x32' },

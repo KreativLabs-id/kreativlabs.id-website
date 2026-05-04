@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
-import emailjs from "@emailjs/browser";
 import OptimizedParticles from "@/components/OptimizedParticles";
 import AnimatedSection from "@/components/AnimatedSection";
 
@@ -36,6 +35,7 @@ export default function Contact() {
     name: "",
     email: "",
     message: "",
+    website: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{
@@ -49,31 +49,31 @@ export default function Contact() {
     setSubmitStatus({ type: null, message: "" });
 
     try {
-      // Send email using EmailJS
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        {
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-        },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-      );
-
-      setSubmitStatus({
-        type: "success",
-        message: "Pesan berhasil dikirim! Kami akan segera menghubungi Anda.",
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
 
-      // Reset form
-      setFormData({ name: "", email: "", message: "" });
-    } catch (error) {
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: "success",
+          message: "Pesan berhasil dikirim! Kami akan segera menghubungi Anda.",
+        });
+        setFormData({ name: "", email: "", message: "", website: "" });
+      } else {
+        setSubmitStatus({
+          type: "error",
+          message: data.error || "Gagal mengirim pesan. Silakan coba lagi.",
+        });
+      }
+    } catch {
       setSubmitStatus({
         type: "error",
         message: "Gagal mengirim pesan. Silakan coba lagi atau hubungi kami via WhatsApp.",
       });
-      console.error("EmailJS Error:", error);
     } finally {
       setIsSubmitting(false);
     }
@@ -197,6 +197,18 @@ export default function Contact() {
                         onChange={handleChange}
                         className="bg-background border-foreground/10 text-foreground placeholder:text-foreground/40 focus:border-primary min-h-[150px]"
                         required
+                      />
+                    </div>
+
+                    {/* Honeypot - hidden field for bot detection */}
+                    <div className="hidden" aria-hidden="true">
+                      <Input
+                        type="text"
+                        name="website"
+                        value={formData.website}
+                        onChange={handleChange}
+                        tabIndex={-1}
+                        autoComplete="off"
                       />
                     </div>
 
