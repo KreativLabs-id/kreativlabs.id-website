@@ -43,7 +43,7 @@ export const metadata: Metadata = {
         url: "https://kreativlabs.my.id/services/website",
         images: [
             {
-                url: "https://kreativlabs.my.id/bannerkreativlabsid.png",
+                url: "https://kreativlabs.my.id/bannerkreatiflabsid.png",
                 width: 1200,
                 height: 630,
                 alt: "Jasa Pembuatan Website Murah Semarang",

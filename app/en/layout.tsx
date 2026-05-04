@@ -7,6 +7,13 @@ export const metadata: Metadata = {
     "Professional website development and graphic design services (logo, poster, social media, packaging) with affordable pricing starting from 50 thousand rupiah. Premium quality, friendly prices!",
   keywords:
     "website services, web development, graphic design, logo design, poster design, social media design, packaging design, affordable design services, cheap website development",
+  alternates: {
+    canonical: "https://kreativlabs.my.id/en",
+    languages: {
+      "en-US": "https://kreativlabs.my.id/en",
+      "id-ID": "https://kreativlabs.my.id/",
+    },
+  },
   authors: [{ name: "KreativLabs.id" }],
   openGraph: {
     title: "KreativLabs.id - Website & Graphic Design Starting from 50k",

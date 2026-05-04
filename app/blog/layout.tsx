@@ -7,6 +7,9 @@ export const metadata: Metadata = {
     "Temukan tips, tutorial, dan insight terbaru seputar web development, desain grafis, dan solusi bisnis digital dari KreativLabs.id",
   keywords:
     "blog web development, tips desain, tutorial website, desain grafis, digital marketing, kreativlabs blog",
+  alternates: {
+    canonical: "https://kreativlabs.my.id/blog",
+  },
   openGraph: {
     title: "Blog - KreativLabs.id | Tips Web Development & Desain",
     description:
@@ -17,7 +20,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://kreativlabs.my.id/bannerkreativlabsid.png",
+        url: "https://kreativlabs.my.id/bannerkreatiflabsid.png",
         width: 1200,
         height: 630,
         alt: "KreativLabs.id Blog - Tips Web Development & Desain",
@@ -29,7 +32,7 @@ export const metadata: Metadata = {
     title: "Blog - KreativLabs.id | Tips Web Development & Desain",
     description:
       "Temukan tips, tutorial, dan insight terbaru seputar web development, desain grafis, dan solusi bisnis digital",
-    images: ["https://kreativlabs.my.id/bannerkreativlabsid.png"],
+    images: ["https://kreativlabs.my.id/bannerkreatiflabsid.png"],
   },
 };
 

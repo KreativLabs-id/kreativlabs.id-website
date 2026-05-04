@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
-import emailjs from "@emailjs/browser";
 import OptimizedParticles from "@/components/OptimizedParticles";
 import AnimatedSection from "@/components/AnimatedSection";
 
@@ -36,6 +35,7 @@ export default function ContactEN() {
     name: "",
     email: "",
     message: "",
+    website: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{
@@ -49,29 +49,31 @@ export default function ContactEN() {
     setSubmitStatus({ type: null, message: "" });
 
     try {
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        {
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-        },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-      );
-
-      setSubmitStatus({
-        type: "success",
-        message: "Message sent successfully! We will contact you soon.",
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
 
-      setFormData({ name: "", email: "", message: "" });
-    } catch (error) {
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: "success",
+          message: "Message sent successfully! We will contact you soon.",
+        });
+        setFormData({ name: "", email: "", message: "", website: "" });
+      } else {
+        setSubmitStatus({
+          type: "error",
+          message: data.error || "Failed to send message. Please try again.",
+        });
+      }
+    } catch {
       setSubmitStatus({
         type: "error",
         message: "Failed to send message. Please try again or contact us via WhatsApp.",
       });
-      console.error("EmailJS Error:", error);
     } finally {
       setIsSubmitting(false);
     }
@@ -100,7 +102,7 @@ export default function ContactEN() {
               Get In <span className="text-primary">Touch</span>
             </h2>
             <p className="text-foreground/70 text-lg max-w-2xl mx-auto">
-              Have a project or question? Don't hesitate to contact us
+              Have a project or question? Don&apos;t hesitate to contact us
             </p>
           </div>
         </AnimatedSection>
@@ -195,6 +197,18 @@ export default function ContactEN() {
                         onChange={handleChange}
                         className="bg-background border-foreground/10 text-foreground placeholder:text-foreground/40 focus:border-primary min-h-[150px]"
                         required
+                      />
+                    </div>
+
+                    {/* Honeypot - hidden field for bot detection */}
+                    <div className="hidden" aria-hidden="true">
+                      <Input
+                        type="text"
+                        name="website"
+                        value={formData.website}
+                        onChange={handleChange}
+                        tabIndex={-1}
+                        autoComplete="off"
                       />
                     </div>
 

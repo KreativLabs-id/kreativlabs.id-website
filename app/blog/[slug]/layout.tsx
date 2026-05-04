@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const baseUrl = "https://kreativlabs.my.id";
   const fullUrl = `${baseUrl}/blog/${post.slug}`;
-  const imageUrl = `${baseUrl}/bannerkreativlabsid.png`;
+  const imageUrl = `${baseUrl}/bannerkreatiflabsid.png`;
 
   return {
     metadataBase: new URL(baseUrl),

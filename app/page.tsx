@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Hero from "@/components/sections/Hero";
@@ -11,6 +12,16 @@ import Testimonials from "@/components/sections/Testimonials";
 import FAQ from "@/components/sections/FAQ";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://kreativlabs.my.id/",
+    languages: {
+      "id-ID": "https://kreativlabs.my.id/",
+      "en-US": "https://kreativlabs.my.id/en",
+    },
+  },
+};
 
 export default function Home() {
   return (
