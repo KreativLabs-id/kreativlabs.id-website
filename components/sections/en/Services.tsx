@@ -69,38 +69,42 @@ export default function ServicesEN() {
         </AnimatedSection>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
               <FadeInStagger key={index} index={index} delay={index * 20}>
                 <div className="group relative h-full">
-                  <Card className="h-full bg-card/50 backdrop-blur-sm border-foreground/5 group-hover:border-primary/30 p-8 rounded-3xl transition-all duration-300 hover:-translate-y-2 overflow-hidden relative flex flex-col">
-
-                    {/* Icon */}
-                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
-                      <Icon className="w-7 h-7 text-primary group-hover:text-primary/80 transition-colors" />
+                  <div className="h-full flex flex-col p-8 rounded-[2rem] bg-card border border-border/50 hover:border-primary/30 hover:shadow-sm transition-all duration-500">
+                    
+                    <div className="flex items-start justify-between mb-8">
+                      <div className="p-3 bg-secondary/50 rounded-2xl group-hover:scale-110 group-hover:bg-primary/10 group-hover:text-primary transition-all duration-500">
+                        <Icon strokeWidth={1.5} className="w-6 h-6 text-foreground group-hover:text-primary transition-colors" />
+                      </div>
+                      <div className="h-8 w-8 rounded-full border border-border/50 flex items-center justify-center opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:border-primary/30 transition-all duration-500">
+                        <ArrowRight strokeWidth={1.5} className="w-4 h-4 text-foreground group-hover:text-primary transition-colors" />
+                      </div>
                     </div>
 
-                    {/* Content */}
-                    <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                    <h3 className="text-xl font-semibold text-foreground tracking-tight mb-3">
                       {service.title}
                     </h3>
-                    <p className="text-foreground/60 mb-6 leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed text-sm mb-8 flex-grow">
                       {service.description}
                     </p>
 
-                    {/* Features */}
-                    <ul className="space-y-3 mb-8 flex-grow">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-foreground/70 text-sm">
-                          <CheckCircle2 className="w-4 h-4 mr-3 text-primary/70" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="pt-6 border-t border-border/50">
+                      <ul className="space-y-3">
+                        {service.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-center text-muted-foreground text-sm font-medium">
+                            <span className="w-1.5 h-1.5 rounded-full bg-primary/40 mr-3" />
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
 
-                  </Card>
+                  </div>
                 </div>
               </FadeInStagger>
             );

@@ -66,32 +66,29 @@ export default function PrinciplesEN() {
         </AnimatedSection>
 
         {/* Principles Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 max-w-5xl mx-auto mt-12">
           {principles.map((principle, index) => {
             const Icon = principle.icon;
             return (
-              <FadeInStagger key={index} index={index} delay={100}>
-                <div className="group text-center">
-                {/* Icon Container */}
-                <div className="relative mb-6 inline-block">
-                  {/* Glow Effect */}
-                  <div className="absolute inset-0 bg-primary rounded-full blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
-                  
-                  {/* Icon */}
-                  <div className="relative w-20 h-20 bg-card border-2 border-primary/30 rounded-full flex items-center justify-center group-hover:border-primary transition-all duration-300">
-                    <Icon className="w-10 h-10 text-primary" />
+              <FadeInStagger key={index} index={index} delay={index * 20}>
+                <div className="group relative flex flex-col pt-8">
+                  {/* Subtle and Animated Top Line */}
+                  <div className="absolute top-0 left-0 w-full h-px bg-border/50"></div>
+                  <div className="absolute top-0 left-0 w-0 h-[2px] bg-primary group-hover:w-full transition-all duration-700 ease-out"></div>
+
+                  <div className="flex items-start gap-6">
+                    <div className="flex-shrink-0 mt-1">
+                      <Icon strokeWidth={1.5} className="w-9 h-9 text-muted-foreground group-hover:text-primary transition-colors duration-500" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-foreground tracking-tight mb-3 group-hover:text-primary transition-colors duration-500">
+                        {principle.title}
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {principle.description}
+                      </p>
+                    </div>
                   </div>
-                </div>
-
-                {/* Title */}
-                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                  {principle.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-foreground/70 text-sm leading-relaxed">
-                  {principle.description}
-                </p>
                 </div>
               </FadeInStagger>
             );

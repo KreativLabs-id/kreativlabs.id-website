@@ -150,48 +150,45 @@ export default function NavbarEN() {
 
         {/* Mobile Menu */}
         <div 
-          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out absolute left-0 right-0 ${
+            isScrolled ? 'top-[calc(100%+0.5rem)]' : 'top-full'
+          } ${
             isMobileMenuOpen 
               ? 'max-h-[600px] opacity-100' 
               : 'max-h-0 opacity-0'
           }`}
         >
-          <div className="py-6 bg-background backdrop-blur-xl rounded-b-2xl shadow-xl">
-            <div className="flex flex-col space-y-1">
-              {navLinks.map((link, index) => {
-                const isExternal = link.href.startsWith('/');
-                const href = isExternal ? link.href : (pathname !== '/en' ? `/en/${link.href}` : link.href);
-                const isActive = activeSection === link.href || (link.href.startsWith('/') && pathname.startsWith(link.href));
-                
-                return (
-                  <a
-                    key={link.name}
-                    href={href}
-                    className={`text-base font-medium px-6 py-3 rounded-lg mx-2 transition-all ${
-                      isActive
-                        ? "text-primary bg-foreground/10"
-                        : "text-foreground hover:text-primary hover:bg-foreground/5"
-                    }`}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    style={{
-                      animationDelay: `${index * 50}ms`,
-                    }}
-                  >
-                    {link.name}
-                  </a>
-                );
-              })}
+          <div className="bg-background/95 backdrop-blur-xl border border-border/50 shadow-2xl rounded-2xl mx-4 mt-2 p-6 flex flex-col space-y-2 relative z-50">
+            {navLinks.map((link, index) => {
+              const isExternal = link.href.startsWith('/');
+              const href = isExternal ? link.href : (pathname !== '/en' ? `/en/${link.href}` : link.href);
+              const isActive = activeSection === link.href || (link.href.startsWith('/') && pathname.startsWith(link.href));
+              
+              return (
+                <a
+                  key={link.name}
+                  href={href}
+                  className={`text-base font-medium px-4 py-3 rounded-xl transition-all ${
+                    isActive
+                      ? "text-primary bg-primary/10"
+                      : "text-muted-foreground hover:text-primary hover:bg-secondary/80"
+                  }`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.name}
+                </a>
+              );
+            })}
 
-              <div className="px-4 pt-4 mt-2 border-t border-foreground/5">
-                {mounted && (
-                  <Button 
-                    asChild
-                    className="bg-primary hover:bg-primary/90 text-primary-foreground w-full rounded-full py-6 text-base font-medium shadow-lg shadow-primary/30"
-                  >
-                    <Link href={pathname !== '/en' ? '/en/#contact' : '#contact'} onClick={() => setIsMobileMenuOpen(false)}>Get Started</Link>
-                  </Button>
-                )}
-              </div>
+            <div className="pt-6 mt-4 border-t border-border/50">
+              {mounted && (
+                <Button 
+                  asChild
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground w-full rounded-xl py-6 text-sm font-medium shadow-none hover:shadow-lg transition-all"
+                >
+                  <Link href={pathname !== '/en' ? '/en/#contact' : '#contact'} onClick={() => setIsMobileMenuOpen(false)}>Get Started</Link>
+                </Button>
+              )}
             </div>
           </div>
         </div>
