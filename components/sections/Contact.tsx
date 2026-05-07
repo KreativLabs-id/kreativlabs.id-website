@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -30,6 +31,10 @@ const contactInfo = [
   },
 ];
 
+const emailJsServiceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+const emailJsTemplateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+const emailJsPublicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -55,7 +60,7 @@ export default function Contact() {
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
+      const data = await response.json().catch(() => ({}));
 
       if (response.ok) {
         setSubmitStatus({
@@ -64,6 +69,31 @@ export default function Contact() {
         });
         setFormData({ name: "", email: "", message: "", website: "" });
       } else {
+        if (emailJsServiceId && emailJsTemplateId && emailJsPublicKey) {
+          await emailjs.send(
+            emailJsServiceId,
+            emailJsTemplateId,
+            {
+              name: formData.name,
+              from_name: formData.name,
+              email: formData.email,
+              from_email: formData.email,
+              message: formData.message,
+              reply_to: formData.email,
+            },
+            {
+              publicKey: emailJsPublicKey,
+            }
+          );
+
+          setSubmitStatus({
+            type: "success",
+            message: "Pesan berhasil dikirim! Kami akan segera menghubungi Anda.",
+          });
+          setFormData({ name: "", email: "", message: "", website: "" });
+          return;
+        }
+
         setSubmitStatus({
           type: "error",
           message: data.error || "Gagal mengirim pesan. Silakan coba lagi.",
