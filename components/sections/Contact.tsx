@@ -21,7 +21,7 @@ const contactInfo = [
     icon: Phone,
     title: "Phone",
     value: "+62 838-2478-7997",
-    link: "tel:+628382478799",
+    link: "tel:+6283824787997",
   },
   {
     icon: MapPin,
