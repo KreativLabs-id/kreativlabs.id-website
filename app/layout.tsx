@@ -71,7 +71,7 @@ export const metadata: Metadata = {
         url: "https://kreativlabs.my.id/bannerkreatiflabsid.png",
         width: 1200,
         height: 630,
-        alt: "KreativLabs.id - Jasa Website Murah & Desain Grafis Mulai 50rb",
+        alt: "KreativLabs.id - Sistem Otomatisasi & Aplikasi UMKM Terbaik",
         type: "image/png",
       },
     ],

@@ -19,7 +19,7 @@ export default function SEOSchema({
         "@type": "Organization",
         "@id": "https://kreativlabs.my.id/#organization",
         "name": "KreativLabs.id",
-        "alternateName": ["Kreativ Labs", "KreativLabs", "Jasa Website Semarang", "Jasa Desain Semarang"],
+        "alternateName": ["Kreativ Labs", "KreativLabs", "Sistem Otomatisasi UMKM", "Aplikasi Kasir UMKM"],
         "url": "https://kreativlabs.my.id",
         "logo": {
             "@type": "ImageObject",
@@ -28,9 +28,9 @@ export default function SEOSchema({
             "height": 512
         },
         "image": "https://kreativlabs.my.id/bannerkreatiflabsid.png",
-        "description": "Jasa pembuatan website murah dan desain grafis profesional di Semarang. Landing page, company profile, e-commerce, desain logo, poster, dan social media mulai dari Rp 50.000.",
-        "email": "kreativlabsid@gmail.com",
-        "telephone": "+6281327862503",
+        "description": "Startup B2B spesialis otomatisasi yang memberdayakan bisnis UMKM di Indonesia dengan sistem kasir pintar, manajemen inventori real-time, dan platform reservasi otomatis.",
+        "email": "hello@kreativlabs.my.id",
+        "telephone": "+6283824787997",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Semarang",
@@ -45,25 +45,13 @@ export default function SEOSchema({
             "longitude": "110.416664"
         },
         "areaServed": [
-            {
-                "@type": "City",
-                "name": "Semarang"
-            },
-            {
-                "@type": "State",
-                "name": "Jawa Tengah"
-            },
-            {
-                "@type": "Country",
-                "name": "Indonesia"
-            }
+            { "@type": "Country", "name": "Indonesia" }
         ],
         "sameAs": [
             "https://instagram.com/kreativlabs.id",
-            "https://wa.me/6281327862503"
+            "https://wa.me/6283824787997"
         ],
-        "priceRange": "Rp 50.000 - Rp 5.000.000",
-        "paymentAccepted": ["Cash", "Bank Transfer", "QRIS", "E-Wallet"],
+        "paymentAccepted": ["Bank Transfer", "QRIS"],
         "currenciesAccepted": "IDR",
         "openingHours": "Mo-Su 08:00-22:00"
     };
@@ -71,218 +59,44 @@ export default function SEOSchema({
     // LocalBusiness Schema - untuk Local SEO
     const localBusinessSchema = {
         "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "@id": "https://kreativlabs.my.id/#localbusiness",
-        "name": "KreativLabs.id - Jasa Website & Desain Grafis Semarang",
-        "alternateName": ["Jasa Website Murah Semarang", "Jasa Desain Grafis Semarang", "Jasa Pembuatan Website Semarang"],
+        "@type": "SoftwareApplication",
+        "@id": "https://kreativlabs.my.id/#software",
+        "name": "KreativLabs.id - Sistem Otomatisasi & Aplikasi UMKM",
+        "applicationCategory": "BusinessApplication",
         "url": "https://kreativlabs.my.id",
-        "logo": "https://kreativlabs.my.id/logokreativ.png",
         "image": [
-            "https://kreativlabs.my.id/bannerkreatiflabsid.png",
-            "https://kreativlabs.my.id/companyprofile.png",
-            "https://kreativlabs.my.id/ecommerce.png"
+            "https://kreativlabs.my.id/bannerkreatiflabsid.png"
         ],
-        "description": "Jasa pembuatan website profesional dan desain grafis murah di Semarang. Melayani landing page, company profile, toko online, desain logo, poster, social media content. Harga mulai 50rb!",
-        "telephone": "+6281327862503",
-        "email": "kreativlabsid@gmail.com",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Semarang",
-            "addressLocality": "Semarang",
-            "addressRegion": "Jawa Tengah",
-            "postalCode": "50000",
-            "addressCountry": "ID"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "-6.966667",
-            "longitude": "110.416664"
-        },
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Layanan Digital KreativLabs",
-            "itemListElement": [
+        "description": "Solusi otomatisasi operasional bisnis UMKM. Dari aplikasi kasir pintar, manajemen stok, hingga sistem reservasi. Melipatgandakan produktivitas dan mencegah kebocoran profit.",
+        "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "IDR",
+            "offerCount": 3,
+            "offers": [
                 {
-                    "@type": "OfferCatalog",
-                    "name": "Jasa Pembuatan Website",
-                    "itemListElement": [
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "Jasa Landing Page Murah",
-                                "description": "Pembuatan landing page profesional, responsif, dan SEO friendly untuk meningkatkan konversi bisnis"
-                            },
-                            "priceSpecification": {
-                                "@type": "PriceSpecification",
-                                "priceCurrency": "IDR",
-                                "price": "350000",
-                                "minPrice": "350000"
-                            }
-                        },
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "Jasa Company Profile Website",
-                                "description": "Website company profile profesional untuk bisnis dan perusahaan"
-                            }
-                        },
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "Jasa Toko Online / E-Commerce",
-                                "description": "Pembuatan website toko online lengkap dengan sistem pembayaran dan manajemen produk"
-                            }
-                        },
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "Jasa Website Custom",
-                                "description": "Pengembangan website custom sesuai kebutuhan bisnis Anda"
-                            }
-                        }
-                    ]
+                    "@type": "Offer",
+                    "name": "AppStarter",
+                    "description": "Fondasi digital untuk UMKM yang siap meninggalkan sistem manual."
                 },
                 {
-                    "@type": "OfferCatalog",
-                    "name": "Jasa Desain Grafis",
-                    "itemListElement": [
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "Jasa Desain Logo Murah",
-                                "description": "Desain logo profesional yang mencerminkan identitas brand bisnis Anda"
-                            },
-                            "priceSpecification": {
-                                "@type": "PriceSpecification",
-                                "priceCurrency": "IDR",
-                                "price": "50000",
-                                "minPrice": "50000"
-                            }
-                        },
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "Jasa Desain Poster",
-                                "description": "Desain poster promosi, event, dan marketing untuk bisnis"
-                            },
-                            "priceSpecification": {
-                                "@type": "PriceSpecification",
-                                "priceCurrency": "IDR",
-                                "price": "50000",
-                                "minPrice": "50000"
-                            }
-                        },
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "Jasa Desain Social Media Content",
-                                "description": "Desain konten Instagram, Facebook, TikTok untuk meningkatkan engagement"
-                            },
-                            "priceSpecification": {
-                                "@type": "PriceSpecification",
-                                "priceCurrency": "IDR",
-                                "price": "50000",
-                                "minPrice": "50000"
-                            }
-                        },
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "Jasa Desain UI/UX",
-                                "description": "Perancangan user interface dan user experience untuk aplikasi dan website"
-                            }
-                        }
-                    ]
+                    "@type": "Offer",
+                    "name": "AppGrowth",
+                    "description": "Akselerasi performa bisnis dengan kekuatan data dan sinkronisasi multi-cabang."
+                },
+                {
+                    "@type": "Offer",
+                    "name": "AppScale",
+                    "description": "Sistem manajemen enterprise untuk skalabilitas tanpa batas."
                 }
             ]
         },
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.9",
-            "ratingCount": "50",
+            "ratingCount": "150",
             "bestRating": "5",
             "worstRating": "1"
-        },
-        "review": [
-            {
-                "@type": "Review",
-                "author": {
-                    "@type": "Person",
-                    "name": "Budi Santoso"
-                },
-                "datePublished": "2025-10-15",
-                "reviewBody": "Website toko online saya jadi lebih profesional dan penjualan meningkat 200%. Harga terjangkau, hasil maksimal!",
-                "reviewRating": {
-                    "@type": "Rating",
-                    "ratingValue": "5",
-                    "bestRating": "5"
-                }
-            },
-            {
-                "@type": "Review",
-                "author": {
-                    "@type": "Person",
-                    "name": "Sarah Fitri"
-                },
-                "datePublished": "2025-11-20",
-                "reviewBody": "Desain logo dan social media content nya bagus banget! Cocok untuk UMKM yang cari jasa desain murah tapi berkualitas.",
-                "reviewRating": {
-                    "@type": "Rating",
-                    "ratingValue": "5",
-                    "bestRating": "5"
-                }
-            }
-        ],
-        "priceRange": "Rp 50.000 - Rp 5.000.000",
-        "paymentAccepted": ["Cash", "Bank Transfer", "QRIS", "GoPay", "OVO", "Dana"],
-        "currenciesAccepted": "IDR",
-        "openingHoursSpecification": [
-            {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-                "opens": "08:00",
-                "closes": "22:00"
-            }
-        ],
-        "areaServed": [
-            {
-                "@type": "City",
-                "name": "Semarang"
-            },
-            {
-                "@type": "City",
-                "name": "Jakarta"
-            },
-            {
-                "@type": "City",
-                "name": "Surabaya"
-            },
-            {
-                "@type": "City",
-                "name": "Bandung"
-            },
-            {
-                "@type": "City",
-                "name": "Yogyakarta"
-            },
-            {
-                "@type": "State",
-                "name": "Jawa Tengah"
-            },
-            {
-                "@type": "Country",
-                "name": "Indonesia"
-            }
-        ],
-        "knowsLanguage": ["id", "en"]
+        }
     };
 
     // Website Schema
@@ -292,8 +106,8 @@ export default function SEOSchema({
         "@id": "https://kreativlabs.my.id/#website",
         "url": "https://kreativlabs.my.id",
         "name": "KreativLabs.id",
-        "alternateName": "Jasa Website Murah Semarang",
-        "description": "Jasa pembuatan website murah dan desain grafis profesional mulai dari 50rb. Melayani landing page, company profile, e-commerce, desain logo, poster, social media.",
+        "alternateName": "Sistem Otomatisasi UMKM",
+        "description": "Startup B2B spesialis otomatisasi yang memberdayakan bisnis UMKM di Indonesia dengan sistem perangkat lunak cerdas.",
         "publisher": {
             "@id": "https://kreativlabs.my.id/#organization"
         },
@@ -305,57 +119,41 @@ export default function SEOSchema({
         }
     };
 
-    // FAQ Schema - untuk Rich Snippets di Google
+    // FAQ Schema
     const faqSchema = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "Berapa harga jasa pembuatan website di KreativLabs?",
+                "name": "Berapa lama proses implementasi sistem di toko kami?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Harga jasa pembuatan website di KreativLabs mulai dari Rp 350.000 untuk landing page. Untuk company profile mulai Rp 750.000, dan e-commerce/toko online mulai Rp 1.500.000. Semua sudah termasuk desain responsif dan SEO friendly."
+                    "text": "Proses implementasi sangat cepat. Setelah Anda memilih paket berlangganan, tim kami akan melakukan setup sistem dalam 1-3 hari kerja. Anda dan karyawan bisa langsung menggunakan sistem pada hari yang sama."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Berapa harga jasa desain grafis di KreativLabs?",
+                "name": "Apakah data transaksi kami aman tersimpan di cloud?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Jasa desain grafis di KreativLabs sangat terjangkau, mulai dari Rp 50.000 untuk desain logo, poster, dan konten social media. Cocok untuk UMKM dan bisnis yang mencari jasa desain murah berkualitas."
+                    "text": "Sangat aman. Seluruh data penjualan, stok, dan pelanggan Anda dienkripsi dan disimpan di server cloud berspesifikasi enterprise kami yang memiliki backup otomatis setiap jam."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Apakah KreativLabs melayani jasa website di Semarang?",
+                "name": "Apakah sistem ini bisa diakses lewat HP atau tablet oleh karyawan?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Ya, KreativLabs berbasis di Semarang dan melayani jasa pembuatan website serta desain grafis untuk klien di Semarang, Jawa Tengah, dan seluruh Indonesia secara online."
+                    "text": "Tentu saja. Ekosistem perangkat lunak kami berbasis web dan cloud (SaaS), sehingga bisa diakses dari perangkat apapun (HP, Tablet, PC/Laptop) cukup dengan koneksi internet, tanpa perlu instalasi rumit."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Berapa lama waktu pengerjaan website?",
+                "name": "Bagaimana jika ada kendala teknis atau mati lampu di lapangan?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Waktu pengerjaan bervariasi: landing page 1-2 minggu, company profile 2-4 minggu, dan e-commerce 4-8 minggu. Kami memberikan timeline yang jelas di awal project."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Apakah website yang dibuat mobile-friendly?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Ya, semua website yang kami buat sudah responsive dan mobile-friendly. Kami menggunakan pendekatan mobile-first untuk memastikan tampilan optimal di semua perangkat."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Apa saja layanan yang tersedia di KreativLabs?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "KreativLabs menyediakan jasa pembuatan website (landing page, company profile, e-commerce, web custom), desain grafis (logo, poster, social media content, packaging), dan UI/UX design dengan harga terjangkau mulai 50rb."
+                    "text": "Aplikasi kasir kami memiliki mode offline ringan yang memungkinkan transaksi tetap berjalan saat internet terputus, dan akan otomatis tersinkronisasi saat online kembali. Tim support teknis kami juga bersiaga untuk membantu kapan pun."
                 }
             }
         ]
@@ -381,65 +179,14 @@ export default function SEOSchema({
             {
                 "@type": "ListItem",
                 "position": 3,
-                "name": "Portfolio",
-                "item": "https://kreativlabs.my.id#projects"
+                "name": "Pricing",
+                "item": "https://kreativlabs.my.id#pricing"
             },
             {
                 "@type": "ListItem",
                 "position": 4,
                 "name": "Kontak",
                 "item": "https://kreativlabs.my.id#contact"
-            }
-        ]
-    };
-
-    // Service Schema - untuk setiap layanan
-    const serviceSchema = {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "itemListElement": [
-            {
-                "@type": "Service",
-                "position": 1,
-                "name": "Jasa Pembuatan Website Murah",
-                "description": "Jasa pembuatan website profesional dengan harga terjangkau. Landing page, company profile, e-commerce, dan website custom untuk bisnis Anda.",
-                "provider": {
-                    "@id": "https://kreativlabs.my.id/#organization"
-                },
-                "areaServed": "Indonesia",
-                "serviceType": "Web Development",
-                "offers": {
-                    "@type": "Offer",
-                    "priceCurrency": "IDR",
-                    "price": "350000"
-                }
-            },
-            {
-                "@type": "Service",
-                "position": 2,
-                "name": "Jasa Desain Grafis Murah",
-                "description": "Jasa desain grafis profesional mulai 50rb. Desain logo, poster, konten social media, dan packaging untuk bisnis dan UMKM.",
-                "provider": {
-                    "@id": "https://kreativlabs.my.id/#organization"
-                },
-                "areaServed": "Indonesia",
-                "serviceType": "Graphic Design",
-                "offers": {
-                    "@type": "Offer",
-                    "priceCurrency": "IDR",
-                    "price": "50000"
-                }
-            },
-            {
-                "@type": "Service",
-                "position": 3,
-                "name": "Jasa Website Semarang",
-                "description": "Jasa pembuatan website di Semarang. Melayani bisnis lokal dan nasional dengan kualitas premium dan harga bersahabat.",
-                "provider": {
-                    "@id": "https://kreativlabs.my.id/#organization"
-                },
-                "areaServed": ["Semarang", "Jawa Tengah", "Indonesia"],
-                "serviceType": "Web Development"
             }
         ]
     };
@@ -475,12 +222,6 @@ export default function SEOSchema({
                 type="application/ld+json"
                 strategy="afterInteractive"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-            />
-            <Script
-                id="service-schema"
-                type="application/ld+json"
-                strategy="afterInteractive"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
             />
         </>
     );
