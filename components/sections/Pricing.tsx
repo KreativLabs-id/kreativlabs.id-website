@@ -34,7 +34,7 @@ const pricingPlans = [
       "Analitik & Tren Pelanggan",
     ],
     popular: true,
-    badge: "Most Popular",
+    badge: "Paling Populer",
   },
   {
     name: "AppScale",
@@ -42,10 +42,10 @@ const pricingPlans = [
     originalPrice: "",
     description: "Sistem manajemen enterprise untuk skalabilitas tanpa batas. Kontrol penuh multi-cabang dan integrasi API menyeluruh untuk ekosistem bisnis sinkron.",
     features: [
-      "Unlimited User/Kasir",
-      "Custom API Gateway",
+      "User/Kasir Tak Terbatas",
+      "API Gateway Kustom",
       "Integrasi Marketplace (Shopee/Tokped)",
-      "Dedicated Server & Support 24/7",
+      "Server Dedikasi & Dukungan 24/7",
     ],
     popular: false,
     badge: "Skala Enterprise",
@@ -110,7 +110,7 @@ export default function Pricing() {
                   <div className={`text-foreground text-sm font-semibold px-4 py-1 rounded-full ${
                     plan.popular ? "bg-gradient-to-r from-purple-500 to-pink-500" : "bg-primary"
                   }`}>
-                    {plan.badge || "Most Popular"}
+                    {plan.badge || "Paling Populer"}
                   </div>
                 </div>
               )}

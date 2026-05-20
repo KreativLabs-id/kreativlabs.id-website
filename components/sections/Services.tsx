@@ -11,13 +11,13 @@ const services = [
     icon: Utensils,
     title: "RestoFlow AI",
     description: "Otomasi alur pesanan meja ke dapur. Pantau stok bahan baku presisi dan kelola pesanan online/offline dalam satu layar.",
-    features: ["Manajemen Meja", "Stok Bahan Baku", "POS Integrasi", "Real-time Order"],
+    features: ["Manajemen Meja", "Stok Bahan Baku", "POS Integrasi", "Pesanan Real-time"],
   },
   {
     icon: ShoppingBag,
     title: "OmniSell Pro",
     description: "Sinkronisasi stok di semua marketplace (Offline, Shopee, Tokopedia, Web). Notifikasi stok rendah otomatis untuk cegah kehilangan peluang.",
-    features: ["Multi-Channel", "Sinkronisasi Stok", "Notifikasi Pintar", "Laporan Penjualan"],
+    features: ["Multi-Kanal", "Sinkronisasi Stok", "Notifikasi Pintar", "Laporan Penjualan"],
   },
   {
     icon: Calendar,
@@ -29,7 +29,7 @@ const services = [
     icon: ShieldCheck,
     title: "Zero-Downtime Guard",
     description: "Perlindungan data tingkat tinggi dan pemeliharaan sistem agar bisnis tidak pernah berhenti beroperasi.",
-    features: ["High Availability", "Backup Otomatis", "Sistem Keamanan", "Pemeliharaan Rutin"],
+    features: ["Ketersediaan Tinggi", "Backup Otomatis", "Sistem Keamanan", "Pemeliharaan Rutin"],
   },
   {
     icon: TrendingUp,
@@ -41,7 +41,7 @@ const services = [
     icon: MessageCircle,
     title: "WhatsApp Auto-Pilot",
     description: "Kirim nota otomatis, pengingat pembayaran, dan notifikasi status pesanan langsung ke WhatsApp pelanggan.",
-    features: ["Bot Broadcast", "Pengingat Bayar", "Notifikasi Status", "Pesan Custom"],
+    features: ["Siaran Bot", "Pengingat Bayar", "Notifikasi Status", "Pesan Kustom"],
   },
 ];
 

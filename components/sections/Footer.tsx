@@ -44,26 +44,26 @@ const socialLinks = [
 
 const footerLinks = {
   company: [
-    { name: "About Us", href: "#about" },
-    { name: "Our Services", href: "#services" },
-    { name: "Portfolio", href: "#projects" },
+    { name: "Tentang Kami", href: "#about" },
+    { name: "Layanan Kami", href: "#services" },
+    { name: "Portofolio", href: "#projects" },
     { name: "FAQ", href: "#faq" },
-    { name: "Contact", href: "#contact" },
+    { name: "Kontak", href: "#contact" },
     { name: "Blog", href: "/blog" },
   ],
   services: [
     { name: "Landing Page", href: "#services" },
-    { name: "Web Development", href: "#services" },
-    { name: "Fullstack Development", href: "#services" },
-    { name: "Company Profile", href: "#services" },
+    { name: "Pengembangan Web", href: "#services" },
+    { name: "Pengembangan Fullstack", href: "#services" },
+    { name: "Profil Perusahaan", href: "#services" },
     { name: "Desain Grafis", href: "#services" },
     { name: "Desain Sosial Media", href: "#services" },
     { name: "Desain Flyer & Poster", href: "#services" },
   ],
   legal: [
-    { name: "Privacy Policy", href: "/legal/privacy-policy" },
-    { name: "Terms of Service", href: "/legal/terms-of-service" },
-    { name: "Cookie Policy", href: "/legal/cookie-policy" },
+    { name: "Kebijakan Privasi", href: "/legal/privacy-policy" },
+    { name: "Ketentuan Layanan", href: "/legal/terms-of-service" },
+    { name: "Kebijakan Cookie", href: "/legal/cookie-policy" },
   ],
 };
 
@@ -115,7 +115,7 @@ export default function Footer() {
 
           {/* Company Links */}
           <div>
-            <h4 className="text-foreground font-semibold mb-4">Company</h4>
+            <h4 className="text-foreground font-semibold mb-4">Perusahaan</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link, index) => (
                 <li key={index}>
@@ -141,7 +141,7 @@ export default function Footer() {
 
           {/* Services Links */}
           <div>
-            <h4 className="text-foreground font-semibold mb-4">Services</h4>
+            <h4 className="text-foreground font-semibold mb-4">Layanan</h4>
             <ul className="space-y-3">
               {footerLinks.services.map((link, index) => (
                 <li key={index}>
@@ -158,7 +158,7 @@ export default function Footer() {
 
           {/* Legal Links */}
           <div>
-            <h4 className="text-foreground font-semibold mb-4">Legal</h4>
+            <h4 className="text-foreground font-semibold mb-4">Legalitas</h4>
             <ul className="space-y-3">
               {footerLinks.legal.map((link, index) => (
                 <li key={index}>
@@ -178,7 +178,7 @@ export default function Footer() {
         <div className="pt-8 border-t border-foreground/10">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-foreground/60 text-sm">
-              © {new Date().getFullYear()} KreativLabs.id. All rights reserved.
+              © {new Date().getFullYear()} KreativLabs.id. Hak cipta dilindungi undang-undang.
             </p>
             {/* Actions */}
             <div className="flex items-center gap-3">

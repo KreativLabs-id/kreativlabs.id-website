@@ -20,7 +20,7 @@ export default function Projects() {
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Case <span className="text-primary">Studies</span>
+              Studi <span className="text-primary">Kasus</span>
             </h2>
             <p className="text-foreground/70 text-lg max-w-2xl mx-auto">
               Portofolio implementasi sistem yang telah berhasil mentransformasi bisnis klien kami

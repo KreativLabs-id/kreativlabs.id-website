@@ -67,7 +67,7 @@ export default function FAQ() {
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Frequently Asked <span className="text-primary">Questions</span>
+              Pertanyaan yang Sering <span className="text-primary">Ditanyakan</span>
             </h2>
             <p className="text-foreground/70 text-lg max-w-2xl mx-auto">
               Pertanyaan yang sering ditanyakan seputar sistem dan integrasi
