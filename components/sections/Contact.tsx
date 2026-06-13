@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -19,13 +19,13 @@ const contactInfo = [
   },
   {
     icon: Phone,
-    title: "Phone",
+    title: "Telepon",
     value: "+62 838-2478-7997",
     link: "tel:+6283824787997",
   },
   {
     icon: MapPin,
-    title: "Location",
+    title: "Lokasi",
     value: "Semarang, Indonesia",
     link: "#",
   },
@@ -47,6 +47,16 @@ export default function Contact() {
     type: "success" | "error" | null;
     message: string;
   }>({ type: null, message: "" });
+
+  useEffect(() => {
+    if (!submitStatus.type) return;
+
+    const timeout = window.setTimeout(() => {
+      setSubmitStatus({ type: null, message: "" });
+    }, 7000);
+
+    return () => window.clearTimeout(timeout);
+  }, [submitStatus.type, submitStatus.message]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

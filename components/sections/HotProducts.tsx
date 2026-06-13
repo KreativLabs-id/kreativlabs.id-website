@@ -20,7 +20,7 @@ export default function HotProducts() {
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/[0.03] border border-foreground/10 rounded-full mb-6 backdrop-blur-md">
               <Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-[10px] tracking-[0.2em] text-foreground/60 font-bold uppercase">Featured Product</span>
+              <span className="text-[10px] tracking-[0.2em] text-foreground/60 font-bold uppercase">Produk Pilihan</span>
             </div>
             <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
               Produk <span className="text-primary">Unggulan</span>
@@ -52,7 +52,7 @@ export default function HotProducts() {
                   <div className="absolute top-12 left-12 z-10">
                     <div className="flex items-center gap-2 px-4 py-2 bg-foreground/10 backdrop-blur-md border border-foreground/10 rounded-full">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
-                      <span className="text-foreground text-[11px] font-bold tracking-wider uppercase">Best Seller</span>
+                      <span className="text-foreground text-[11px] font-bold tracking-wider uppercase">Terlaris</span>
                     </div>
                   </div>
                 </div>
@@ -61,7 +61,7 @@ export default function HotProducts() {
                 <div className="lg:col-span-5 p-8 lg:p-12 flex flex-col justify-center">
                   <div className="mb-8">
                     <span className="text-primary text-xs font-bold tracking-[0.1em] uppercase">
-                      Management System
+                      Sistem Manajemen
                     </span>
                     <h3 className="text-3xl lg:text-4xl font-bold text-foreground mt-4 mb-6 leading-tight">
                       Aplikasi Kasir <br />
@@ -74,10 +74,10 @@ export default function HotProducts() {
                     {/* Minimalist Feature List */}
                     <div className="grid grid-cols-1 gap-4 mb-10">
                       {[
-                        "Smart Inventory Tracking",
-                        "Automated Sales Reports",
-                        "Cloud-based Accessibility",
-                        "Secure Multi-user Access"
+                        "Pelacakan Stok Pintar",
+                        "Laporan Penjualan Otomatis",
+                        "Akses Berbasis Cloud",
+                        "Akses Multi-pengguna Aman"
                       ].map((feature, index) => (
                         <div key={index} className="flex items-center gap-3 group/item">
                           <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20 transition-colors group-hover/item:bg-primary/20">
@@ -96,7 +96,7 @@ export default function HotProducts() {
                       className="bg-primary hover:bg-primary/80 text-primary-foreground px-8 py-6 rounded-2xl group/btn transition-all duration-300 w-full sm:w-auto"
                     >
                       <Link href="/blog/aplikasi-kasir-web-modern" className="flex items-center gap-2">
-                        <span className="font-semibold">Explore Product</span>
+                        <span className="font-semibold">Jelajahi Produk</span>
                         <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                       </Link>
                     </Button>
@@ -105,7 +105,7 @@ export default function HotProducts() {
                       variant="ghost"
                       className="text-foreground/60 hover:text-foreground hover:bg-foreground/5 px-8 py-6 rounded-2xl transition-all duration-300 w-full sm:w-auto"
                     >
-                      <a href="#contact">Contact Sales</a>
+                      <a href="#contact">Hubungi Sales</a>
                     </Button>
                   </div>
                 </div>
@@ -121,7 +121,7 @@ export default function HotProducts() {
               href="#projects" 
               className="group inline-flex items-center gap-2 text-foreground/30 hover:text-primary transition-all duration-300"
             >
-              <span className="text-sm font-medium tracking-wide">Browse all digital solutions</span>
+              <span className="text-sm font-medium tracking-wide">Lihat semua solusi digital</span>
               <div className="w-8 h-[1px] bg-foreground/10 group-hover:bg-primary transition-all duration-300 group-hover:w-12"></div>
             </Link>
           </div>
