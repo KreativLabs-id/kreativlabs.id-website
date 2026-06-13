@@ -11,22 +11,22 @@ import FadeInStagger from "@/components/FadeInStagger";
 const testimonials = [
   {
     name: "Pak Alex",
-    role: "Owner, Martabak & Terang Bulan Tip Top",
-    content: "Sejak pakai RestoFlow AI, antrean panjang di toko kami teratasi dan kasir tidak pernah salah hitung lagi. Sangat praktis!",
+    role: "UMKM Martabak & Terang Bulan Tip Top",
+    content: "Aplikasi nya sangat membantu untuk mempermudah bisnis saya",
     rating: 5,
     image: "/api/placeholder/80/80",
   },
   {
     name: "Siti Nurhaliza",
-    role: "Founder, Fashion Store",
-    content: "Sistem manajemen stok OmniSell Pro sangat akurat. Saya bisa pantau 3 cabang sekaligus dari satu HP tanpa takut barang hilang.",
+    role: "Owner, Fashion Store",
+    content: "Desain website yang modern dan user-friendly. Tim sangat responsif dan memahami kebutuhan bisnis kami.",
     rating: 5,
     image: "/api/placeholder/80/80",
   },
   {
     name: "Ahmad Wijaya",
-    role: "Owner, Digital Agency",
-    content: "AutoReserve benar-benar menyelamatkan waktu saya. Klien bisa booking jadwal otomatis dan bayar di muka tanpa ribet.",
+    role: "Founder, Digital Agency",
+    content: "Kualitas kerja yang luar biasa dengan harga yang kompetitif. Highly recommended!",
     rating: 5,
     image: "/api/placeholder/80/80",
   },
@@ -62,7 +62,7 @@ export default function Testimonials() {
               Client <span className="text-primary">Testimonials</span>
             </h2>
             <p className="text-foreground/70 text-lg max-w-2xl mx-auto">
-              Kisah sukses para pebisnis yang telah mentransformasi operasional mereka
+              Apa kata mereka yang telah mempercayai kami
             </p>
           </div>
         </AnimatedSection>

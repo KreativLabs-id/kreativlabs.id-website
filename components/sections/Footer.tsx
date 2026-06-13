@@ -52,12 +52,13 @@ const footerLinks = {
     { name: "Blog", href: "/blog" },
   ],
   services: [
-    { name: "RestoFlow AI", href: "#services" },
-    { name: "OmniSell Pro", href: "#services" },
-    { name: "AutoReserve", href: "#services" },
-    { name: "WhatsApp Auto-Pilot", href: "#services" },
-    { name: "Zero-Downtime Guard", href: "#services" },
-    { name: "Growth Consultation", href: "#services" },
+    { name: "Landing Page", href: "#services" },
+    { name: "Web Development", href: "#services" },
+    { name: "Fullstack Development", href: "#services" },
+    { name: "Company Profile", href: "#services" },
+    { name: "Desain Grafis", href: "#services" },
+    { name: "Desain Sosial Media", href: "#services" },
+    { name: "Desain Flyer & Poster", href: "#services" },
   ],
   legal: [
     { name: "Privacy Policy", href: "/legal/privacy-policy" },
@@ -90,7 +91,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-foreground/70 text-sm mb-6 leading-relaxed">
-              KreativLabs: Mitra Strategis Digital Anda. Kami menciptakan sistem yang menarik, fungsional, dan menghasilkan konversi tinggi.
+              Solusi digital modern untuk bisnis Anda. Kami menciptakan website dan design yang menarik, fungsional, dan menghasilkan konversi.
             </p>
             {/* Social Links */}
             <div className="flex space-x-4">

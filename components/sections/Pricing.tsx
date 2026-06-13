@@ -9,46 +9,102 @@ import FadeInStagger from "@/components/FadeInStagger";
 
 const pricingPlans = [
   {
-    name: "AppStarter",
-    price: "Hubungi Kami",
-    originalPrice: "",
-    description: "Fondasi digital untuk UMKM yang siap meninggalkan sistem manual. Kelola operasional harian dan bangun kredibilitas profesional dalam satu platform.",
+    name: "Landing Page",
+    price: "99k",
+    originalPrice: "500k",
+    description: "Landing page sederhana untuk bisnis Anda",
     features: [
-      "Maksimal 3 User/Kasir",
-      "Laporan Penjualan Harian",
-      "Integrasi Printer Thermal",
-      "Cloud Database 5GB",
+      "Landing Page Responsif",
+      "Template Modern",
+      "Fast Loading",
+      "1 Minggu Support",
+      "2 Kali Revisi",
+      "Domain Terpisah",
     ],
     popular: false,
-    badge: "Mulai Transformasi",
+    badge: "Best untuk UMKM",
   },
   {
-    name: "AppGrowth",
-    price: "Hubungi Kami",
-    originalPrice: "",
-    description: "Akselerasi performa bisnis dengan kekuatan data. Otomatisasi laporan penjualan dan analisis tren pelanggan secara real-time untuk keputusan akurat.",
+    name: "Fullstack Website",
+    price: "469k",
+    originalPrice: "2jt",
+    description: "Website lengkap dengan backend & database",
     features: [
-      "Maksimal 10 User/Kasir",
-      "Sinkronisasi Multi-Cabang",
-      "Manajemen Stok Real-time",
-      "Analitik & Tren Pelanggan",
+      "Multi-page Website",
+      "Responsive Design",
+      "Modern & Fast Loading",
+      "SEO Friendly",
+      "Domain Terpisah",
+      "2 Bulan Support",
+      "3 Kali Revisi",
     ],
     popular: true,
     badge: "Most Popular",
   },
   {
-    name: "AppScale",
-    price: "Hubungi Kami",
-    originalPrice: "",
-    description: "Sistem manajemen enterprise untuk skalabilitas tanpa batas. Kontrol penuh multi-cabang dan integrasi API menyeluruh untuk ekosistem bisnis sinkron.",
+    name: "Website Custom",
+    price: "2,899k",
+    originalPrice: "6jt",
+    description: "Website custom sesuai kebutuhan bisnis",
     features: [
-      "Unlimited User/Kasir",
-      "Custom API Gateway",
-      "Integrasi Marketplace (Shopee/Tokped)",
-      "Dedicated Server & Support 24/7",
+      "Custom Website Development",
+      "Advanced Features",
+      "E-Commerce Integration",
+      "SEO Optimization",
+      "Free Domain .com",
+      "3 Bulan Support",
+      "Unlimited Revisi",
     ],
     popular: false,
-    badge: "Skala Enterprise",
+    badge: "Best Value",
+  },
+  {
+    name: "Design Logo",
+    price: "50k",
+    originalPrice: "250k",
+    description: "Desain logo profesional untuk branding",
+    features: [
+      "Logo Design Profesional",
+      "3 Konsep Awal",
+      "High Quality Output",
+      "File Source (AI/PSD)",
+      "3 Kali Revisi",
+      "Fast Response",
+    ],
+    popular: false,
+    badge: "Mulai dari",
+  },
+  {
+    name: "Desain Social Media",
+    price: "150k",
+    originalPrice: "300k",
+    description: "Desain konten social media yang menarik",
+    features: [
+      "Design 5 Post Social Media",
+      "Modern & Eye-catching",
+      "High Quality Output",
+      "File Source (AI/PSD)",
+      "2 Kali Revisi",
+      "Fast Response",
+    ],
+    popular: false,
+    badge: "Mulai dari",
+  },
+  {
+    name: "UI/UX Design",
+    price: "500k",
+    originalPrice: "1jt",
+    description: "Desain UI/UX profesional untuk aplikasi",
+    features: [
+      "UI/UX Design Lengkap",
+      "Wireframe & Prototype",
+      "High Fidelity Mockup",
+      "Design System",
+      "3 Kali Revisi",
+      "Fast Response",
+    ],
+    popular: false,
+    badge: "Mulai dari",
   },
 ];
 
@@ -84,10 +140,10 @@ export default function Pricing() {
             </div>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Paket <span className="text-primary">Layanan Terintegrasi</span>
+            Mulai dari <span className="text-primary">50 Ribu</span>
           </h2>
           <p className="text-foreground/70 text-lg max-w-2xl mx-auto">
-            Pilih paket yang paling sesuai dengan tingkat pertumbuhan dan kebutuhan bisnis Anda saat ini.
+            Harga terjangkau untuk Website Development & Graphic Design. Investasi terbaik untuk bisnis Anda!
           </p>
           </div>
         </AnimatedSection>
@@ -128,10 +184,16 @@ export default function Pricing() {
                   </div>
                 )}
                 <div>
+                  {(plan.name === "Landing Page" || plan.name === "Fullstack Website" || plan.name === "Website Custom") && (
+                    <p className="text-foreground/70 text-sm mb-1">Mulai dari</p>
+                  )}
                   <div className="flex items-baseline">
-                    <span className="text-3xl font-bold text-foreground">
-                      {plan.price}
+                    <span className="text-4xl font-bold text-foreground">
+                      {plan.price.includes("Mulai") ? plan.price : `Rp ${plan.price}`}
                     </span>
+                    {!plan.price.includes("Mulai") && (
+                      <span className="text-foreground/60 ml-2 text-sm">/project</span>
+                    )}
                   </div>
                 </div>
               </div>
@@ -169,10 +231,10 @@ export default function Pricing() {
           <div className="text-center mt-12">
             <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 max-w-3xl mx-auto">
               <p className="text-foreground/90 text-base mb-2">
-                ✨ <strong>Bonus:</strong> Sesi Konsultasi Strategi Digital Eksklusif
+                ✨ <strong>Bonus:</strong> Konsultasi gratis + Free domain .com (paket Professional ke atas)
               </p>
               <p className="text-foreground/60 text-sm">
-                Hubungi kami untuk mendapatkan penawaran harga terbaik yang disesuaikan dengan kebutuhan Anda.
+                Butuh custom package atau fitur khusus? Hubungi kami untuk penawaran terbaik!
               </p>
             </div>
           </div>

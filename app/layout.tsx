@@ -1,46 +1,60 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import SEOSchema from "@/components/SEOSchema";
 import { ThemeProvider } from "@/components/theme-provider";
 
-const inter = Inter({
-  variable: "--font-inter",
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta-sans",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://kreativlabs.my.id'),
   title: {
-    default: "KreativLabs | Sistem Otomatisasi & Aplikasi UMKM Terbaik",
+    default: "Jasa Website Murah & Desain Grafis | KreativLabs.id - Mulai 50rb",
     template: "%s | KreativLabs.id"
   },
   description:
-    "Solusi otomatisasi operasional bisnis UMKM. Dari aplikasi kasir pintar, manajemen stok, hingga sistem reservasi. Melipatgandakan produktivitas dan mencegah kebocoran profit.",
+    "Jasa pembuatan website murah & desain grafis profesional mulai 50rb. Landing page, company profile, toko online, desain logo, poster, social media. Kualitas premium, harga UMKM friendly!",
   keywords: [
-    // Primary Keywords - Sistem UMKM
-    "aplikasi kasir umkm",
-    "sistem erp mini",
-    "software manajemen restoran",
-    "otomatisasi bisnis",
-    "sistem pos umkm",
-    "aplikasi kasir online",
-    "sistem manajemen stok",
-    
-    // Secondary Keywords - Solusi Bisnis
-    "software pembukuan umkm",
-    "aplikasi reservasi otomatis",
-    "sistem order meja",
-    "integrasi marketplace umkm",
-    "aplikasi kasir pintar",
+    // Primary Keywords - Jasa Website
+    "jasa website murah",
+    "jasa pembuatan website",
+    "jasa website semarang",
+    "jasa bikin website",
+    "jasa buat website murah",
+    "jasa landing page",
+    "jasa company profile",
+    "jasa toko online",
+    "jasa e-commerce",
+    "jasa website umkm",
+
+    // Primary Keywords - Jasa Design
+    "jasa design",
+    "jasa desain grafis",
+    "jasa desain logo",
+    "jasa desain murah",
+    "jasa desain poster",
+    "jasa desain social media",
+    "jasa desain semarang",
+    "jasa design murah",
+
+    // Location Keywords
+    "jasa website jawa tengah",
+    "web developer semarang",
+    "desainer grafis semarang",
+    "freelance website semarang",
 
     // Long-tail Keywords
-    "cara mencegah kebocoran stok",
-    "aplikasi kasir restoran terbaik",
-    "sistem otomatisasi bisnis umkm",
-    "software manajemen banyak cabang"
+    "bikin website murah berkualitas",
+    "harga jasa pembuatan website",
+    "jasa desain logo murah berkualitas",
+    "paket website umkm murah",
+    "jasa website profesional murah"
   ],
   authors: [{ name: "KreativLabs.id", url: "https://kreativlabs.my.id" }],
   creator: "KreativLabs.id",
@@ -58,9 +72,9 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "KreativLabs | Sistem Otomatisasi & Aplikasi UMKM Terbaik",
+    title: "Jasa Website Murah & Desain Grafis | KreativLabs.id",
     description:
-      "Solusi otomatisasi operasional bisnis UMKM. Dari aplikasi kasir pintar, manajemen stok, hingga sistem reservasi.",
+      "Jasa pembuatan website murah & desain grafis profesional mulai 50rb. Landing page, company profile, e-commerce, desain logo, poster, social media. Melayani di seluruh Indonesia!",
     url: "https://kreativlabs.my.id",
     siteName: "KreativLabs.id",
     locale: "id_ID",
@@ -71,16 +85,16 @@ export const metadata: Metadata = {
         url: "https://kreativlabs.my.id/bannerkreatiflabsid.png",
         width: 1200,
         height: 630,
-        alt: "KreativLabs.id - Sistem Otomatisasi & Aplikasi UMKM Terbaik",
+        alt: "KreativLabs.id - Jasa Website Murah & Desain Grafis Mulai 50rb",
         type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "KreativLabs | Sistem Otomatisasi & Aplikasi UMKM Terbaik",
+    title: "Jasa Website Murah & Desain Grafis | KreativLabs.id",
     description:
-      "Solusi otomatisasi operasional bisnis UMKM. Tingkatkan produktivitas bisnis Anda.",
+      "Jasa pembuatan website & desain grafis profesional mulai 50rb. Melayani di seluruh Indonesia!",
     images: ["https://kreativlabs.my.id/bannerkreatiflabsid.png"],
     creator: "@kreativlabsid",
   },
@@ -105,7 +119,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" className="overflow-x-hidden" suppressHydrationWarning>
-      <body className={`${inter.variable} antialiased font-sans overflow-x-hidden`}>
+      <body
+        className={`${plusJakartaSans.variable} antialiased font-sans overflow-x-hidden`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

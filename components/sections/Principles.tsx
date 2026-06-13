@@ -9,24 +9,24 @@ import FadeInStagger from "@/components/FadeInStagger";
 
 const principles = [
   {
-    icon: TrendingUp,
-    title: "Cegah Kebocoran Profit",
-    description: "Transparansi kas 100% dan sinkronisasi stok presisi untuk memastikan setiap rupiah masuk ke kantong Anda.",
-  },
-  {
     icon: Zap,
-    title: "Otomatisasi 24/7",
-    description: "Hemat biaya admin dengan asisten reservasi cerdas dan bot WhatsApp yang bekerja tanpa henti.",
+    title: "Fast & Efficient",
+    description: "Kami mengutamakan kecepatan dan efisiensi dalam setiap project yang dikerjakan",
   },
   {
     icon: Shield,
-    title: "Keputusan Berbasis Data",
-    description: "Laporan analitik harian visual, tidak lagi beroperasi berdasarkan sekadar 'feeling' semata.",
+    title: "Quality First",
+    description: "Kualitas adalah prioritas utama kami dalam menghasilkan produk digital",
   },
   {
     icon: Heart,
-    title: "Dukungan Teknis Prioritas",
-    description: "Sistem anti-downtime dan tim support berdedikasi memastikan kasir Anda tidak pernah offline.",
+    title: "Client Satisfaction",
+    description: "Kepuasan klien adalah tujuan kami, dengan komunikasi yang transparan",
+  },
+  {
+    icon: TrendingUp,
+    title: "Continuous Innovation",
+    description: "Selalu mengikuti perkembangan teknologi terbaru untuk hasil yang optimal",
   },
 ];
 
@@ -56,36 +56,42 @@ export default function Principles() {
         {/* Section Header */}
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
-              Alasan Bisnis Anda <span className="text-primary">Membutuhkan KreativLabs</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              Engineering <span className="text-primary">Principles</span>
             </h2>
+            <p className="text-foreground/70 text-lg max-w-2xl mx-auto">
+              Prinsip-prinsip yang kami pegang dalam setiap project
+            </p>
           </div>
         </AnimatedSection>
 
         {/* Principles Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 max-w-5xl mx-auto mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
           {principles.map((principle, index) => {
             const Icon = principle.icon;
             return (
-              <FadeInStagger key={index} index={index} delay={index * 20}>
-                <div className="group relative flex flex-col pt-8">
-                  {/* Subtle and Animated Top Line */}
-                  <div className="absolute top-0 left-0 w-full h-px bg-border/50"></div>
-                  <div className="absolute top-0 left-0 w-0 h-[2px] bg-primary group-hover:w-full transition-all duration-700 ease-out"></div>
-
-                  <div className="flex items-start gap-6">
-                    <div className="flex-shrink-0 mt-1">
-                      <Icon strokeWidth={1.5} className="w-9 h-9 text-muted-foreground group-hover:text-primary transition-colors duration-500" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-foreground tracking-tight mb-3 group-hover:text-primary transition-colors duration-500">
-                        {principle.title}
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        {principle.description}
-                      </p>
-                    </div>
+              <FadeInStagger key={index} index={index} delay={100}>
+                <div className="group text-center">
+                {/* Icon Container */}
+                <div className="relative mb-6 inline-block">
+                  {/* Glow Effect */}
+                  <div className="absolute inset-0 bg-primary rounded-full blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+                  
+                  {/* Icon */}
+                  <div className="relative w-20 h-20 bg-card border-2 border-primary/30 rounded-full flex items-center justify-center group-hover:border-primary transition-all duration-300">
+                    <Icon className="w-10 h-10 text-primary" />
                   </div>
+                </div>
+
+                {/* Title */}
+                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                  {principle.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-foreground/70 text-sm leading-relaxed">
+                  {principle.description}
+                </p>
                 </div>
               </FadeInStagger>
             );

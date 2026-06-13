@@ -1,47 +1,47 @@
 "use client";
 
 import { Card } from "@/components/ui/card";
-import { Utensils, ShoppingBag, Calendar, ShieldCheck, TrendingUp, MessageCircle, CheckCircle2, ArrowRight } from "lucide-react";
+import { Code, Palette, Instagram, CheckCircle2, ArrowRight, Globe, Cpu, PenTool } from "lucide-react";
 import OptimizedParticles from "@/components/OptimizedParticles";
 import AnimatedSection from "@/components/AnimatedSection";
 import FadeInStagger from "@/components/FadeInStagger";
 
 const services = [
   {
-    icon: Utensils,
-    title: "RestoFlow AI",
-    description: "Otomasi alur pesanan meja ke dapur. Pantau stok bahan baku presisi dan kelola pesanan online/offline dalam satu layar.",
-    features: ["Manajemen Meja", "Stok Bahan Baku", "POS Integrasi", "Real-time Order"],
+    icon: Code,
+    title: "Landing Page",
+    description: "Landing page responsif dan modern untuk meningkatkan konversi bisnis Anda.",
+    features: ["Responsive Design", "Fast Loading", "SEO Friendly", "Modern Template"],
   },
   {
-    icon: ShoppingBag,
-    title: "OmniSell Pro",
-    description: "Sinkronisasi stok di semua marketplace (Offline, Shopee, Tokopedia, Web). Notifikasi stok rendah otomatis untuk cegah kehilangan peluang.",
-    features: ["Multi-Channel", "Sinkronisasi Stok", "Notifikasi Pintar", "Laporan Penjualan"],
+    icon: Globe,
+    title: "Fullstack Website",
+    description: "Website lengkap dengan fitur backend dan database untuk kebutuhan bisnis yang lebih kompleks.",
+    features: ["Dynamic Content", "Database Integration", "Admin Dashboard", "Secure System"],
   },
   {
-    icon: Calendar,
-    title: "AutoReserve",
-    description: "Asisten reservasi 24/7. Izinkan pelanggan menjadwalkan layanan dan bayar dimuka. Hilangkan jadwal bentrok secara otomatis.",
-    features: ["Reservasi 24/7", "Pembayaran Dimuka", "Anti Jadwal Bentrok", "Pengingat Otomatis"],
+    icon: Cpu,
+    title: "Website Custom",
+    description: "Solusi pengembangan website yang disesuaikan sepenuhnya dengan kebutuhan spesifik Anda.",
+    features: ["Custom Features", "Scalable Architecture", "API Integration", "Premium Support"],
   },
   {
-    icon: ShieldCheck,
-    title: "Zero-Downtime Guard",
-    description: "Perlindungan data tingkat tinggi dan pemeliharaan sistem agar bisnis tidak pernah berhenti beroperasi.",
-    features: ["High Availability", "Backup Otomatis", "Sistem Keamanan", "Pemeliharaan Rutin"],
+    icon: Palette,
+    title: "Design Logo",
+    description: "Desain logo profesional yang mencerminkan identitas dan nilai brand bisnis Anda.",
+    features: ["Original Concept", "Brand Identity", "Vector Files", "Copyright Ownership"],
   },
   {
-    icon: TrendingUp,
-    title: "Growth Consultation",
-    description: "Strategi implementasi fitur aplikasi untuk melipatgandakan produktivitas dan profit bisnis Anda.",
-    features: ["Audit Bisnis", "Strategi Digital", "Optimasi Proses", "Laporan Kinerja"],
+    icon: Instagram,
+    title: "Desain Social Media",
+    description: "Konten visual kreatif dan menarik untuk meningkatkan engagement di media sosial.",
+    features: ["Feed & Story", "Content Planning", "Visual Consistency", "Engagement Focused"],
   },
   {
-    icon: MessageCircle,
-    title: "WhatsApp Auto-Pilot",
-    description: "Kirim nota otomatis, pengingat pembayaran, dan notifikasi status pesanan langsung ke WhatsApp pelanggan.",
-    features: ["Bot Broadcast", "Pengingat Bayar", "Notifikasi Status", "Pesan Custom"],
+    icon: PenTool,
+    title: "UI/UX Design",
+    description: "Perancangan antarmuka dan pengalaman pengguna yang intuitif untuk aplikasi atau website.",
+    features: ["User Research", "Wireframing", "Prototyping", "High Fidelity Design"],
   },
 ];
 
@@ -63,62 +63,49 @@ export default function Services() {
               Solusi Digital <span className="text-primary">Terintegrasi</span>
             </h2>
             <p className="text-foreground/60 text-lg max-w-2xl mx-auto leading-relaxed">
-              Tinggalkan sistem manual yang rumit. Kami membangun ekosistem aplikasi cerdas yang terintegrasi penuh untuk berbagai sektor industri.
+              Kami menghadirkan solusi Website Development & Graphic Design yang tidak hanya estetis, tetapi juga fungsional untuk pertumbuhan bisnis Anda.
             </p>
           </div>
         </AnimatedSection>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
               <FadeInStagger key={index} index={index} delay={index * 20}>
                 <div className="group relative h-full">
-                  <div className="h-full flex flex-col p-8 rounded-[2rem] bg-card border border-border/50 hover:border-primary/30 hover:shadow-sm transition-all duration-500">
-                    
-                    <div className="flex items-start justify-between mb-8">
-                      <div className="p-3 bg-secondary/50 rounded-2xl group-hover:scale-110 group-hover:bg-primary/10 group-hover:text-primary transition-all duration-500">
-                        <Icon strokeWidth={1.5} className="w-6 h-6 text-foreground group-hover:text-primary transition-colors" />
-                      </div>
-                      <div className="h-8 w-8 rounded-full border border-border/50 flex items-center justify-center opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:border-primary/30 transition-all duration-500">
-                        <ArrowRight strokeWidth={1.5} className="w-4 h-4 text-foreground group-hover:text-primary transition-colors" />
-                      </div>
+                  <Card className="h-full bg-card/50 backdrop-blur-sm border-foreground/5 group-hover:border-primary/30 p-8 rounded-3xl transition-all duration-300 hover:-translate-y-2 overflow-hidden relative flex flex-col">
+
+                    {/* Icon */}
+                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
+                      <Icon className="w-7 h-7 text-primary group-hover:text-primary/80 transition-colors" />
                     </div>
 
-                    <h3 className="text-xl font-semibold text-foreground tracking-tight mb-3">
+                    {/* Content */}
+                    <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
                       {service.title}
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed text-sm mb-8 flex-grow">
+                    <p className="text-foreground/60 mb-6 leading-relaxed">
                       {service.description}
                     </p>
 
-                    <div className="pt-6 border-t border-border/50">
-                      <ul className="space-y-3">
-                        {service.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-center text-muted-foreground text-sm font-medium">
-                            <span className="w-1.5 h-1.5 rounded-full bg-primary/40 mr-3" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    {/* Features */}
+                    <ul className="space-y-3 mb-8 flex-grow">
+                      {service.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-center text-foreground/70 text-sm">
+                          <CheckCircle2 className="w-4 h-4 mr-3 text-primary/70" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
 
-                  </div>
+                  </Card>
                 </div>
               </FadeInStagger>
             );
           })}
         </div>
-
-        {/* CTA Section */}
-        <AnimatedSection animation="fade-up" delay={200}>
-          <div className="text-center mt-16">
-            <a href="#contact" className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-medium rounded-full shadow-lg shadow-primary/25 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              Mulai Proyek Anda
-            </a>
-          </div>
-        </AnimatedSection>
       </div>
 
       {/* Interactive Particles - Desktop Only */}

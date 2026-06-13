@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
-export const alt = 'KreativLabs.id - Sistem Otomatisasi & Aplikasi UMKM Terbaik';
+export const alt = 'KreativLabs.id - Jasa Website & Desain Grafis Mulai 50rb';
 export const size = {
   width: 1200,
   height: 630,
@@ -55,19 +55,19 @@ export default async function Image() {
             lineHeight: 1.2,
           }}
         >
-          Sistem Otomatisasi & Aplikasi UMKM
+          Jasa Website & Desain Grafis
         </div>
 
         {/* Subtitle */}
         <div
           style={{
             fontSize: '36px',
-            color: '#3B82F6',
+            color: '#F59E0B',
             fontWeight: 'bold',
             marginBottom: '32px',
           }}
         >
-          Tingkatkan Profit Bisnis Anda
+          Mulai 50rb
         </div>
 
         {/* Description */}
@@ -80,7 +80,7 @@ export default async function Image() {
             lineHeight: 1.4,
           }}
         >
-          Aplikasi kasir pintar, manajemen stok real-time, dan ekosistem bisnis terintegrasi.
+          Jasa pembuatan website dan desain grafis profesional dengan harga terjangkau
         </div>
 
         {/* Decorative Elements */}
@@ -103,7 +103,7 @@ export default async function Image() {
             left: '40px',
             width: '250px',
             height: '250px',
-            background: 'rgba(245, 158, 11, 0.1)',
+            background: 'rgba(245, 158, 11, 0.2)',
             borderRadius: '50%',
             filter: 'blur(80px)',
           }}
