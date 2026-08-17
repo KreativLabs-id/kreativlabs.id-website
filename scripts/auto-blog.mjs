@@ -14,7 +14,8 @@ const genAI = new GoogleGenerativeAI(apiKey);
 async function generateBlog() {
   try {
     const model = genAI.getGenerativeModel({
-      model: 'gemini-1.5-flash',
+      model: 'gemini-3.1-flash-lite',
+      tools: [{ googleSearch: {} }],
       systemInstruction: 'Anda adalah seorang penulis blog (*copywriter*) profesional yang ahli dalam bercerita secara natural (humanized content) layaknya manusia sungguhan. Tulisan Anda tidak kaku dan tidak terdengar seperti robot. Anda menulis untuk audiens pebisnis, UMKM, dan pengusaha di Indonesia.',
     });
 
