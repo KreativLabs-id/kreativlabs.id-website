@@ -81,17 +81,17 @@ export default function FooterEN() {
   const { resolvedTheme } = useTheme();
   const logoSrc = mounted && resolvedTheme === "light" ? "/logokreativlabsterang.png" : "/logokreativ.png";
 
-  useEffect(() => { 
-    setMounted(true); 
+  useEffect(() => {
+    setMounted(true);
   }, []);
 
   return (
     <RuixenGradientFooter gradientHeight="160px" className="relative bg-background border-t border-border/80 overflow-hidden w-full">
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 pt-16 pb-4 relative z-10">
-        
+
         {/* Main Grid */}
         <div className="grid gap-10 pb-12 sm:grid-cols-2 lg:grid-cols-6">
-          
+
           {/* Brand & Bio (2 Columns) */}
           <div className="lg:col-span-3 space-y-4">
             <div className="mb-4">
@@ -105,7 +105,7 @@ export default function FooterEN() {
                 />
               </Link>
             </div>
-            
+
             <p className="max-w-sm text-xs sm:text-sm text-foreground/70 leading-relaxed">
               Modern digital solutions for your business. We engineer functional websites and craft professional visual designs that deliver real results.
             </p>

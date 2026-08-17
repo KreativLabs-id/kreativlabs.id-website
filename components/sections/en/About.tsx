@@ -1,6 +1,7 @@
 "use client";
 
 import AnimatedSection from "@/components/AnimatedSection";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
@@ -9,28 +10,24 @@ export default function AboutEN() {
     <section id="about" className="relative py-16 md:py-24 bg-background overflow-hidden w-full scroll-mt-24">
       <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-6xl">
         
-        {/* Asymmetrical 2-Column Tech Company Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+        {/* Asymmetrical 2-Column Tech Studio Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
           {/* Left Column: Brand Statement & Story (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
             <AnimatedSection animation="fade-up">
-              <span className="text-xs font-semibold text-primary uppercase tracking-widest block">
-                About KreativLabs
-              </span>
-              
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight leading-[1.18] mt-2">
-                Engineering high-performance web products for growing businesses.
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight leading-[1.18]">
+                Building high-performance digital products engineered for real growth.
               </h2>
             </AnimatedSection>
 
             <AnimatedSection animation="fade-up" delay={80}>
               <p className="text-sm sm:text-base text-foreground/75 leading-relaxed">
-                We are more than just a web design studio. KreativLabs partners with ambitious brands to engineer digital experiences that prioritize loading speed, ease of management, and measurable customer conversion.
+                We are more than just a web studio. KreativLabs serves as your dedicated digital engineering partner, prioritizing lightning-fast performance, intuitive content workflows, and undisputed market credibility.
               </p>
               
               <p className="text-sm sm:text-base text-foreground/75 leading-relaxed mt-3">
-                From high-converting landing pages to custom web applications, everything we build is powered by clean, scalable, and secure modern code.
+                From high-converting promotional landing pages to custom web applications and full brand identities, every solution is engineered from the ground up without dependency on bloated templates.
               </p>
             </AnimatedSection>
 
@@ -42,7 +39,7 @@ export default function AboutEN() {
                     &lt; 2s
                   </div>
                   <div className="text-[11px] text-foreground/60 font-medium mt-0.5">
-                    Fast Page Speed
+                    Fast Page Load
                   </div>
                 </div>
 
@@ -60,7 +57,7 @@ export default function AboutEN() {
                     24/7
                   </div>
                   <div className="text-[11px] text-foreground/60 font-medium mt-0.5">
-                    Technical Support
+                    Support & Warranty
                   </div>
                 </div>
               </div>
@@ -72,70 +69,28 @@ export default function AboutEN() {
                   href="/en#contact"
                   className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-primary hover:text-primary/80 transition-colors group"
                 >
-                  <span>Discuss Your Next Project</span>
+                  <span>Start a Project Consultation</span>
                   <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Link>
               </div>
             </AnimatedSection>
           </div>
 
-          {/* Right Column: Bento Features Grid (7 cols) */}
-          <div className="lg:col-span-7 space-y-4">
-            
-            {/* Bento Card 1 - Featured Wide */}
-            <AnimatedSection animation="fade-up" delay={60}>
-              <div className="bg-card border border-border/80 hover:border-primary/50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 transition-all duration-200 hover:shadow-md">
-                <span className="text-[11px] font-semibold text-primary uppercase tracking-wider block mb-2">
-                  Architecture & Code Quality
-                </span>
-                <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2">
-                  Modern, Resilient Web Technologies
-                </h3>
-                <p className="text-xs sm:text-sm text-foreground/75 leading-relaxed">
-                  We build with modern frameworks (Next.js, TypeScript, Tailwind CSS) to guarantee instant performance, clean SEO architectures, and rock-solid security without bloat.
-                </p>
+          {/* Right Column: Pure Clean Studio Visual (7 cols) */}
+          <div className="lg:col-span-7">
+            <AnimatedSection animation="fade-up" delay={100}>
+              <div className="relative rounded-3xl overflow-hidden border border-border/80 bg-card shadow-sm group">
+                <div className="relative w-full aspect-4/3 sm:aspect-[16/11] bg-secondary overflow-hidden">
+                  <Image
+                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1000&auto=format&fit=crop&q=80"
+                    alt="KreativLabs team architecting scalable software and UI/UX design systems"
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-102"
+                    sizes="(max-width: 768px) 100vw, 55vw"
+                  />
+                </div>
               </div>
             </AnimatedSection>
-
-            {/* Bento Cards 2 & 3 - Two Columns */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              
-              {/* Card 2 */}
-              <AnimatedSection animation="fade-up" delay={100}>
-                <div className="h-full bg-card border border-border/80 hover:border-primary/50 rounded-2xl sm:rounded-3xl p-6 transition-all duration-200 hover:shadow-md flex flex-col justify-between">
-                  <div>
-                    <span className="text-[11px] font-semibold text-primary uppercase tracking-wider block mb-2">
-                      Execution Speed
-                    </span>
-                    <h4 className="text-base font-bold text-foreground mb-2">
-                      Transparent Timelines
-                    </h4>
-                    <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed">
-                      Agreed schedules and transparent delivery milestones with zero bureaucratic friction.
-                    </p>
-                  </div>
-                </div>
-              </AnimatedSection>
-
-              {/* Card 3 */}
-              <AnimatedSection animation="fade-up" delay={140}>
-                <div className="h-full bg-card border border-border/80 hover:border-primary/50 rounded-2xl sm:rounded-3xl p-6 transition-all duration-200 hover:shadow-md flex flex-col justify-between">
-                  <div>
-                    <span className="text-[11px] font-semibold text-primary uppercase tracking-wider block mb-2">
-                      Full Onboarding
-                    </span>
-                    <h4 className="text-base font-bold text-foreground mb-2">
-                      End-to-End Support
-                    </h4>
-                    <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed">
-                      From domain and cloud configuration to guided team onboarding, we ensure your team is confident with the new platform.
-                    </p>
-                  </div>
-                </div>
-              </AnimatedSection>
-
-            </div>
-
           </div>
 
         </div>

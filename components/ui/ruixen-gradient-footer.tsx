@@ -38,7 +38,7 @@ export const KREATIVLABS_LIGHT_STOPS: Stop[] = [
   { offset: 1, color: "#E2EDF200" },
 ];
 
-export const KREATIVLABS_STOPS = KREATIVLABS_DARK_STOPS;
+export const KREATIVLABS_STOPS = KREATIVLABS_LIGHT_STOPS;
 
 function bellHeights(n: number, peak: number, valley: number): number[] {
   const out: number[] = [];
@@ -83,8 +83,8 @@ export function RuixenGradientFooter({
     setMounted(true);
   }, []);
 
-  const isLight = mounted && resolvedTheme === "light";
-  const themeKey = mounted ? (resolvedTheme || "dark") : "dark";
+  const isLight = !mounted || resolvedTheme === "light";
+  const themeKey = mounted ? (resolvedTheme || "light") : "light";
   const activeStops = stops
     ? stops
     : isLight

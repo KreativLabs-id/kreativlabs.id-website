@@ -77,9 +77,6 @@ export default function Testimonials() {
           viewport={{ once: true }}
           className="flex flex-col items-center justify-center max-w-2xl mx-auto text-center mb-12"
         >
-          <span className="text-xs font-semibold text-primary uppercase tracking-widest block mb-2.5">
-            Testimoni Klien
-          </span>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-3">
             Apa Kata <span className="text-primary">Klien Kami</span>
           </h2>
