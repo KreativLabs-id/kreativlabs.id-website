@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://kreativlabs.id/bannerkreatiflabsid.png",
+        url: "https://kreativlabs.id/og-image.png",
         width: 1200,
         height: 630,
         alt: "KreativLabs.id Blog - Tips Web Development & Desain",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: "Blog - KreativLabs.id | Tips Web Development & Desain",
     description:
       "Temukan tips, tutorial, dan insight terbaru seputar web development, desain grafis, dan solusi bisnis digital",
-    images: ["https://kreativlabs.id/bannerkreatiflabsid.png"],
+    images: ["https://kreativlabs.id/og-image.png"],
   },
 };
 

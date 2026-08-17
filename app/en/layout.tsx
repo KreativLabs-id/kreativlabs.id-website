@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://kreativlabs.id/bannerkreatiflabsen.png",
+        url: "https://kreativlabs.id/og-image.png",
         width: 1200,
         height: 630,
         alt: "KreativLabs.id - Website & Graphic Design Starting from 50k",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title: "KreativLabs.id - Website & Graphic Design Starting from 50k",
     description:
       "Professional website development and graphic design services with affordable pricing",
-    images: ["https://kreativlabs.id/bannerkreatiflabsen.png"],
+    images: ["https://kreativlabs.id/og-image.png"],
   },
 };
 

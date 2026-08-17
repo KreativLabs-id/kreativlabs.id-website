@@ -27,7 +27,7 @@ export default function SEOSchema({
             "width": 512,
             "height": 512
         },
-        "image": "https://kreativlabs.id/bannerkreatiflabsid.png",
+        "image": "https://kreativlabs.id/og-image.png",
         "description": "Jasa pembuatan website murah dan desain grafis profesional di Semarang. Landing page, company profile, e-commerce, desain logo, poster, dan social media mulai dari Rp 50.000.",
         "email": "kreativlabsid@gmail.com",
         "telephone": "+6285872381791",
@@ -78,7 +78,7 @@ export default function SEOSchema({
         "url": "https://kreativlabs.id",
         "logo": "https://kreativlabs.id/logokreativ.png",
         "image": [
-            "https://kreativlabs.id/bannerkreatiflabsid.png",
+            "https://kreativlabs.id/og-image.png",
             "https://kreativlabs.id/companyprofile.png",
             "https://kreativlabs.id/ecommerce.png"
         ],
