@@ -13,8 +13,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    value: "hello@kreativlabs.my.id",
-    link: "mailto:hello@kreativlabs.my.id",
+    value: "hello@kreativlabs.id",
+    link: "mailto:hello@kreativlabs.id",
   },
   {
     icon: Phone,

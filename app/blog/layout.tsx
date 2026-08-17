@@ -1,26 +1,26 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://kreativlabs.my.id'),
+  metadataBase: new URL('https://kreativlabs.id'),
   title: "Blog - KreativLabs.id | Tips Web Development & Desain",
   description:
     "Temukan tips, tutorial, dan insight terbaru seputar web development, desain grafis, dan solusi bisnis digital dari KreativLabs.id",
   keywords:
     "blog web development, tips desain, tutorial website, desain grafis, digital marketing, kreativlabs blog",
   alternates: {
-    canonical: "https://kreativlabs.my.id/blog",
+    canonical: "https://kreativlabs.id/blog",
   },
   openGraph: {
     title: "Blog - KreativLabs.id | Tips Web Development & Desain",
     description:
       "Temukan tips, tutorial, dan insight terbaru seputar web development, desain grafis, dan solusi bisnis digital",
-    url: "https://kreativlabs.my.id/blog",
+    url: "https://kreativlabs.id/blog",
     siteName: "KreativLabs.id",
     locale: "id_ID",
     type: "website",
     images: [
       {
-        url: "https://kreativlabs.my.id/bannerkreatiflabsid.png",
+        url: "https://kreativlabs.id/bannerkreatiflabsid.png",
         width: 1200,
         height: 630,
         alt: "KreativLabs.id Blog - Tips Web Development & Desain",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: "Blog - KreativLabs.id | Tips Web Development & Desain",
     description:
       "Temukan tips, tutorial, dan insight terbaru seputar web development, desain grafis, dan solusi bisnis digital",
-    images: ["https://kreativlabs.my.id/bannerkreatiflabsid.png"],
+    images: ["https://kreativlabs.id/bannerkreatiflabsid.png"],
   },
 };
 

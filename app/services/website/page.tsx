@@ -40,10 +40,10 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Jasa Pembuatan Website Murah Semarang | KreativLabs.id",
         description: "Jasa pembuatan website murah di Semarang mulai 350rb. Landing page, company profile, toko online. Responsif, SEO friendly!",
-        url: "https://kreativlabs.my.id/services/website",
+        url: "https://kreativlabs.id/services/website",
         images: [
             {
-                url: "https://kreativlabs.my.id/bannerkreatiflabsid.png",
+                url: "https://kreativlabs.id/bannerkreatiflabsid.png",
                 width: 1200,
                 height: 630,
                 alt: "Jasa Pembuatan Website Murah Semarang",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
         ],
     },
     alternates: {
-        canonical: "https://kreativlabs.my.id/services/website",
+        canonical: "https://kreativlabs.id/services/website",
     },
 };
 

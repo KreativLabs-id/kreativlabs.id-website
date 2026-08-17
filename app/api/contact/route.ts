@@ -22,11 +22,11 @@ function getClientIp(request: NextRequest): string {
 
 function getSiteOrigin(): string {
   const siteUrl = getEnvValue("NEXT_PUBLIC_SITE_URL");
-  if (!siteUrl) return "https://kreativlabs.my.id";
+  if (!siteUrl) return "https://kreativlabs.id";
   try {
     return new URL(siteUrl).origin;
   } catch {
-    return "https://kreativlabs.my.id";
+    return "https://kreativlabs.id";
   }
 }
 
@@ -36,8 +36,8 @@ function isAllowedOrigin(request: NextRequest): boolean {
   const expectedOrigin = getSiteOrigin();
   const defaultOrigins = [
     expectedOrigin,
-    "https://kreativlabs.my.id",
-    "https://www.kreativlabs.my.id",
+    "https://kreativlabs.id",
+    "https://www.kreativlabs.id",
   ];
   const additionalAllowed = (getEnvValue("ALLOWED_ORIGINS") || "")
     .split(",")

@@ -13,7 +13,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://kreativlabs.my.id'),
+  metadataBase: new URL('https://kreativlabs.id'),
   title: {
     default: "Jasa Website Murah & Desain Grafis | KreativLabs.id - Mulai 50rb",
     template: "%s | KreativLabs.id"
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     "paket website umkm murah",
     "jasa website profesional murah"
   ],
-  authors: [{ name: "KreativLabs.id", url: "https://kreativlabs.my.id" }],
+  authors: [{ name: "KreativLabs.id", url: "https://kreativlabs.id" }],
   creator: "KreativLabs.id",
   publisher: "KreativLabs.id",
   verification: {
@@ -75,14 +75,14 @@ export const metadata: Metadata = {
     title: "Jasa Website Murah & Desain Grafis | KreativLabs.id",
     description:
       "Jasa pembuatan website murah & desain grafis profesional mulai 50rb. Landing page, company profile, e-commerce, desain logo, poster, social media. Melayani di seluruh Indonesia!",
-    url: "https://kreativlabs.my.id",
+    url: "https://kreativlabs.id",
     siteName: "KreativLabs.id",
     locale: "id_ID",
     alternateLocale: "en_US",
     type: "website",
     images: [
       {
-        url: "https://kreativlabs.my.id/bannerkreatiflabsid.png",
+        url: "https://kreativlabs.id/bannerkreatiflabsid.png",
         width: 1200,
         height: 630,
         alt: "KreativLabs.id - Jasa Website Murah & Desain Grafis Mulai 50rb",
@@ -95,7 +95,7 @@ export const metadata: Metadata = {
     title: "Jasa Website Murah & Desain Grafis | KreativLabs.id",
     description:
       "Jasa pembuatan website & desain grafis profesional mulai 50rb. Melayani di seluruh Indonesia!",
-    images: ["https://kreativlabs.my.id/bannerkreatiflabsid.png"],
+    images: ["https://kreativlabs.id/bannerkreatiflabsid.png"],
     creator: "@kreativlabsid",
   },
   robots: {

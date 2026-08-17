@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://kreativlabs.my.id'),
+  metadataBase: new URL('https://kreativlabs.id'),
   title: "Blog - KreativLabs.id | Web Development & Design Tips",
   description:
     "Discover the latest tips, tutorials, and insights about web development, graphic design, and digital business solutions from KreativLabs.id",
@@ -11,13 +11,13 @@ export const metadata: Metadata = {
     title: "Blog - KreativLabs.id | Web Development & Design Tips",
     description:
       "Discover the latest tips, tutorials, and insights about web development, graphic design, and digital business solutions",
-    url: "https://kreativlabs.my.id/en/blog",
+    url: "https://kreativlabs.id/en/blog",
     siteName: "KreativLabs.id",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "https://kreativlabs.my.id/bannerkreatiflabsen.png",
+        url: "https://kreativlabs.id/bannerkreatiflabsen.png",
         width: 1200,
         height: 630,
         alt: "KreativLabs.id Blog - Web Development & Design Tips",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Blog - KreativLabs.id | Web Development & Design Tips",
     description:
       "Discover the latest tips, tutorials, and insights about web development, graphic design, and digital business solutions",
-    images: ["https://kreativlabs.my.id/bannerkreatiflabsen.png"],
+    images: ["https://kreativlabs.id/bannerkreatiflabsen.png"],
   },
 };
 

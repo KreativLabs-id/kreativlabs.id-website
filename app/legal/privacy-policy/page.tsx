@@ -68,7 +68,7 @@ export default function PrivacyPolicyPage() {
       title: "Hubungi Kami",
       content: [
         "Jika Anda memiliki pertanyaan tentang kebijakan privasi ini, silakan hubungi kami:",
-        "Email: hello@kreativlabs.my.id",
+        "Email: hello@kreativlabs.id",
         "Instagram: @kreativlabs.id",
         "Kami akan merespons pertanyaan Anda dalam waktu 2-3 hari kerja"
       ]

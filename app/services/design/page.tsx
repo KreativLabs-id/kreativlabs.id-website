@@ -39,10 +39,10 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Jasa Desain Grafis Murah Semarang | KreativLabs.id",
         description: "Jasa desain grafis murah di Semarang mulai 50rb. Desain logo, poster, social media. Kualitas profesional!",
-        url: "https://kreativlabs.my.id/services/design",
+        url: "https://kreativlabs.id/services/design",
         images: [
             {
-                url: "https://kreativlabs.my.id/bannerkreatiflabsid.png",
+                url: "https://kreativlabs.id/bannerkreatiflabsid.png",
                 width: 1200,
                 height: 630,
                 alt: "Jasa Desain Grafis Murah Semarang",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
         ],
     },
     alternates: {
-        canonical: "https://kreativlabs.my.id/services/design",
+        canonical: "https://kreativlabs.id/services/design",
     },
 };
 

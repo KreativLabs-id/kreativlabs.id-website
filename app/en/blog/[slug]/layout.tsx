@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const baseUrl = "https://kreativlabs.my.id";
+  const baseUrl = "https://kreativlabs.id";
   const fullUrl = `${baseUrl}/en/blog/${post.slug}`;
   const imageUrl = `${baseUrl}/bannerkreatiflabsen.png`;
 

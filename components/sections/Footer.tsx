@@ -37,7 +37,7 @@ const socialLinks = [
   },
   {
     icon: Mail,
-    href: "mailto:hello@kreativlabs.my.id",
+    href: "mailto:hello@kreativlabs.id",
     label: "Email",
   }
 ];

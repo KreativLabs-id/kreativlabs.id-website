@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/admin/'],
     },
-    host: 'https://kreativlabs.my.id',
-    sitemap: 'https://kreativlabs.my.id/sitemap.xml',
+    host: 'https://kreativlabs.id',
+    sitemap: 'https://kreativlabs.id/sitemap.xml',
   }
 }

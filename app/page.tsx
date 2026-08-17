@@ -15,10 +15,10 @@ import Footer from "@/components/sections/Footer";
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: "https://kreativlabs.my.id/",
+    canonical: "https://kreativlabs.id/",
     languages: {
-      "id-ID": "https://kreativlabs.my.id/",
-      "en-US": "https://kreativlabs.my.id/en",
+      "id-ID": "https://kreativlabs.id/",
+      "en-US": "https://kreativlabs.id/en",
     },
   },
 };
