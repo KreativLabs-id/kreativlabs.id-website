@@ -1,107 +1,80 @@
 "use client";
 
-import { Zap, Shield, Heart, TrendingUp } from "lucide-react";
-import { Particles } from "@/components/ui/shadcn-io/particles";
-import { useIsMobile } from "@/hooks/useIsMobile";
-import { useTheme } from "next-themes";
+import { Clock, ShieldCheck, MessageSquare, FolderKey } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import FadeInStagger from "@/components/FadeInStagger";
 
-const principles = [
+const principlesEN = [
   {
-    icon: Zap,
-    title: "Fast & Efficient",
-    description: "We prioritize speed and efficiency in every project we undertake",
+    icon: Clock,
+    title: "On-Time Delivery",
+    description: "Clear, agreed timelines with transparent milestone updates so your project launches right on schedule.",
   },
   {
-    icon: Shield,
-    title: "Quality First",
-    description: "Quality is our top priority in producing digital products",
+    icon: ShieldCheck,
+    title: "Quality & High Performance",
+    description: "Websites built with clean, modern code for fast loading, and original high-resolution graphic designs.",
   },
   {
-    icon: Heart,
-    title: "Client Satisfaction",
-    description: "Client satisfaction is our goal, with transparent communication",
+    icon: MessageSquare,
+    title: "Direct & Friendly Communication",
+    description: "Straightforward communication without unnecessary red tape. We listen closely to tailor the best solutions.",
   },
   {
-    icon: TrendingUp,
-    title: "Continuous Innovation",
-    description: "Always following the latest technology developments for optimal results",
+    icon: FolderKey,
+    title: "100% Asset Ownership",
+    description: "Full handover of all vector master files, source code, and commercial copyright directly to you.",
   },
 ];
 
 export default function PrinciplesEN() {
-  const isMobile = useIsMobile();
-  const { resolvedTheme } = useTheme();
-  const particleColor = resolvedTheme === "dark" ? "#FFFFFF" : "#94A3B8";
-  
   return (
-    <section className="relative py-24 bg-background overflow-hidden overflow-x-hidden w-full">
-      {/* Lighting Effects */}
-      <div className="absolute top-1/2 right-0 w-96 h-96 bg-primary rounded-full blur-[120px] opacity-10"></div>
-      
-      {/* Particles - Desktop Only */}
-      {!isMobile && (
-        <Particles
-          className="absolute inset-0"
-          quantity={80}
-          ease={80}
-          staticity={50}
-          color={particleColor}
-          size={0.6}
-        />
-      )}
-
-      <div className="container mx-auto px-6 relative z-10">
+    <section className="relative py-16 md:py-20 bg-background overflow-hidden w-full">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-6xl">
+        
         {/* Section Header */}
         <AnimatedSection animation="fade-up">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Engineering <span className="text-primary">Principles</span>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 tracking-tight">
+              Our Commitment to Every <span className="text-primary">Project</span>
             </h2>
-            <p className="text-foreground/70 text-lg max-w-2xl mx-auto">
-              The principles we uphold in every project
+            <p className="text-foreground/70 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+              Core work principles we uphold to deliver high-quality, transparent results that create real value for your business.
             </p>
           </div>
         </AnimatedSection>
 
         {/* Principles Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-          {principles.map((principle, index) => {
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+          {principlesEN.map((principle, index) => {
             const Icon = principle.icon;
             return (
-              <FadeInStagger key={index} index={index} delay={100}>
-                <div className="group text-center">
-                {/* Icon Container */}
-                <div className="relative mb-6 inline-block">
-                  {/* Glow Effect */}
-                  <div className="absolute inset-0 bg-primary rounded-full blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
-                  
-                  {/* Icon */}
-                  <div className="relative w-20 h-20 bg-card border-2 border-primary/30 rounded-full flex items-center justify-center group-hover:border-primary transition-all duration-300">
-                    <Icon className="w-10 h-10 text-primary" />
+              <FadeInStagger key={index} index={index} delay={40}>
+                <div className="group h-full flex flex-col justify-between bg-card border border-border/80 hover:border-primary/50 rounded-2xl p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
+                  <div>
+                    {/* Top Row: Icon */}
+                    <div className="flex items-center justify-between mb-5">
+                      <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                        <Icon className="w-5 h-5" />
+                      </div>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-base sm:text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                      {principle.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-foreground/70 text-xs sm:text-sm leading-relaxed">
+                      {principle.description}
+                    </p>
                   </div>
-                </div>
-
-                {/* Title */}
-                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                  {principle.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-foreground/70 text-sm leading-relaxed">
-                  {principle.description}
-                </p>
                 </div>
               </FadeInStagger>
             );
           })}
         </div>
 
-        {/* Bottom Divider */}
-        <div className="mt-16 flex items-center justify-center">
-          <div className="h-px w-32 bg-linear-to-r from-transparent via-primary to-transparent"></div>
-        </div>
       </div>
     </section>
   );

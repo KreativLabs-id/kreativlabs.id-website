@@ -1,107 +1,80 @@
 "use client";
 
-import { Zap, Shield, Heart, TrendingUp } from "lucide-react";
-import { Particles } from "@/components/ui/shadcn-io/particles";
-import { useIsMobile } from "@/hooks/useIsMobile";
-import { useTheme } from "next-themes";
+import { Clock, ShieldCheck, MessageSquare, FolderKey } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import FadeInStagger from "@/components/FadeInStagger";
 
 const principles = [
   {
-    icon: Zap,
-    title: "Fast & Efficient",
-    description: "Kami mengutamakan kecepatan dan efisiensi dalam setiap project yang dikerjakan",
+    icon: Clock,
+    title: "Pengerjaan Tepat Waktu",
+    description: "Timeline pengerjaan disepakati di awal secara transparan dengan laporan berkala agar project selesai sesuai jadwal.",
   },
   {
-    icon: Shield,
-    title: "Quality First",
-    description: "Kualitas adalah prioritas utama kami dalam menghasilkan produk digital",
+    icon: ShieldCheck,
+    title: "Kualitas & Performa Teruji",
+    description: "Website dibuat dengan standar koding modern yang ringan dan cepat, serta desain grafis yang original dan beresolusi tinggi.",
   },
   {
-    icon: Heart,
-    title: "Client Satisfaction",
-    description: "Kepuasan klien adalah tujuan kami, dengan komunikasi yang transparan",
+    icon: MessageSquare,
+    title: "Komunikasi Terbuka & Ramah",
+    description: "Konsultasi langsung tanpa birokrasi rumit. Kami siap mendengarkan kebutuhan Anda dan memberikan solusi terbaik.",
   },
   {
-    icon: TrendingUp,
-    title: "Continuous Innovation",
-    description: "Selalu mengikuti perkembangan teknologi terbaru untuk hasil yang optimal",
+    icon: FolderKey,
+    title: "100% Hak Milik Klien",
+    description: "Semua file master (vektor, source code, aset desain) diserahkan penuh kepada Anda tanpa biaya tersembunyi.",
   },
 ];
 
 export default function Principles() {
-  const isMobile = useIsMobile();
-  const { resolvedTheme } = useTheme();
-  const particleColor = resolvedTheme === "dark" ? "#FFFFFF" : "#94A3B8";
-  
   return (
-    <section className="relative py-24 bg-background overflow-hidden overflow-x-hidden w-full">
-      {/* Lighting Effects */}
-      <div className="absolute top-1/2 right-0 w-96 h-96 bg-primary rounded-full blur-[120px] opacity-10"></div>
-      
-      {/* Particles - Desktop Only */}
-      {!isMobile && (
-        <Particles
-          className="absolute inset-0"
-          quantity={80}
-          ease={80}
-          staticity={50}
-          color={particleColor}
-          size={0.6}
-        />
-      )}
+    <section className="relative py-16 md:py-20 bg-background overflow-hidden w-full">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-6xl">
 
-      <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <AnimatedSection animation="fade-up">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Engineering <span className="text-primary">Principles</span>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 tracking-tight">
+              Komitmen Kami di Setiap <span className="text-primary">Project</span>
             </h2>
-            <p className="text-foreground/70 text-lg max-w-2xl mx-auto">
-              Prinsip-prinsip yang kami pegang dalam setiap project
+            <p className="text-foreground/70 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+              Prinsip kerja yang kami pegang untuk memastikan hasil akhir memuaskan, transparan, dan memberikan dampak nyata bagi bisnis Anda.
             </p>
           </div>
         </AnimatedSection>
 
         {/* Principles Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
           {principles.map((principle, index) => {
             const Icon = principle.icon;
             return (
-              <FadeInStagger key={index} index={index} delay={100}>
-                <div className="group text-center">
-                {/* Icon Container */}
-                <div className="relative mb-6 inline-block">
-                  {/* Glow Effect */}
-                  <div className="absolute inset-0 bg-primary rounded-full blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
-                  
-                  {/* Icon */}
-                  <div className="relative w-20 h-20 bg-card border-2 border-primary/30 rounded-full flex items-center justify-center group-hover:border-primary transition-all duration-300">
-                    <Icon className="w-10 h-10 text-primary" />
+              <FadeInStagger key={index} index={index} delay={40}>
+                <div className="group h-full flex flex-col justify-between bg-card border border-border/80 hover:border-primary/50 rounded-2xl p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
+                  <div>
+                    {/* Top Row: Icon + Number */}
+                    <div className="flex items-center justify-between mb-5">
+                      <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                        <Icon className="w-5 h-5" />
+                      </div>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-base sm:text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                      {principle.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-foreground/70 text-xs sm:text-sm leading-relaxed">
+                      {principle.description}
+                    </p>
                   </div>
-                </div>
-
-                {/* Title */}
-                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                  {principle.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-foreground/70 text-sm leading-relaxed">
-                  {principle.description}
-                </p>
                 </div>
               </FadeInStagger>
             );
           })}
         </div>
 
-        {/* Bottom Divider */}
-        <div className="mt-16 flex items-center justify-center">
-          <div className="h-px w-32 bg-linear-to-r from-transparent via-primary to-transparent"></div>
-        </div>
       </div>
     </section>
   );

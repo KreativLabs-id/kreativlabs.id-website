@@ -2,129 +2,114 @@
 
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import { Particles } from "@/components/ui/shadcn-io/particles";
-import { useIsMobile } from "@/hooks/useIsMobile";
-import { useTheme } from "next-themes";
+import { motion, AnimatePresence } from "motion/react";
 import AnimatedSection from "@/components/AnimatedSection";
 import FadeInStagger from "@/components/FadeInStagger";
 
-const faqs = [
+const faqsEN = [
   {
-    question: "How long does it take to build a website?",
-    answer: "Development time varies depending on project complexity. For a simple landing page around 1-2 weeks, company profile website 2-4 weeks, and e-commerce 4-8 weeks. We will provide a clear timeline at the beginning of the project.",
+    question: "How long does it take to develop a website?",
+    answer: "A standard Landing Page is typically completed in 3–5 business days. Corporate Websites and custom platforms require 1–3 weeks. We establish and agree on clear milestones at project kickoff.",
   },
   {
-    question: "Does the price include domain and hosting?",
-    answer: "The listed price is for website development only. We can help setup domain and hosting with separate costs, or you can use your own preferred provider. We will provide the best recommendations according to your needs.",
+    question: "Are domain and cloud hosting included?",
+    answer: "Selected plans (such as Custom Systems and special packages) include domain setup. For standard plans, we guide and handle complete registration and hosting setup directly for you.",
   },
   {
-    question: "Are the websites mobile-friendly?",
-    answer: "Yes, all websites we create are responsive and mobile-friendly. We use a mobile-first approach to ensure optimal display on all devices.",
+    question: "Will the website be mobile-friendly?",
+    answer: "Yes, 100% responsive. We rigorously test all pages across various smartphone, tablet, and desktop viewports to ensure seamless user navigation and rapid loading speeds.",
   },
   {
-    question: "How does the website revision process work?",
-    answer: "Each package has a different number of revisions. We will conduct regular reviews with you and make revisions based on feedback. Additional revisions outside the package may incur additional costs.",
+    question: "What is your revision process?",
+    answer: "We provide structured preview and revision cycles based on your package. You can supply itemized feedback, and our team will implement refinements until specifications are met.",
   },
   {
-    question: "Can I update the website content myself?",
-    answer: "Yes, we can integrate a CMS (Content Management System) like WordPress or a custom admin panel so you can update content yourself. We will also provide brief training on how to use it.",
+    question: "Can I manage and update content independently?",
+    answer: "Yes. For dynamic web platforms, we provide an intuitive admin dashboard and a quick walkthrough guide so you can edit text, publish articles, and update assets effortlessly.",
   },
   {
-    question: "Is there a warranty after the website is completed?",
-    answer: "Yes, we provide support and maintenance according to the selected package. For bug fixing and technical support, we are ready to help during the agreed period.",
+    question: "Do you offer post-launch warranty and technical support?",
+    answer: "Yes, we include post-delivery technical warranty and ongoing maintenance support to guarantee continuous uptime and stable performance.",
   },
 ];
 
 export default function FAQEN() {
-  const isMobile = useIsMobile();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const { resolvedTheme } = useTheme();
-  const particleColor = resolvedTheme === "dark" ? "#FFFFFF" : "#94A3B8";
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <section id="faq" className="relative py-24 bg-background overflow-hidden overflow-x-hidden w-full">
-      {/* Lighting Effect */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-primary rounded-full blur-[120px] opacity-10"></div>
-      
-      {/* Particles - Desktop Only */}
-      {!isMobile && (
-        <Particles
-          className="absolute inset-0"
-          quantity={80}
-          ease={80}
-          staticity={50}
-          color={particleColor}
-          size={0.6}
-        />
-      )}
+    <section id="faq" className="relative py-16 md:py-20 bg-background overflow-hidden w-full scroll-mt-24">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-4xl">
 
-      <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <AnimatedSection animation="fade-up">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 tracking-tight">
               Frequently Asked <span className="text-primary">Questions</span>
             </h2>
-            <p className="text-foreground/70 text-lg max-w-2xl mx-auto">
-              Common questions about our services
+            <p className="text-foreground/70 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+              Find clear answers regarding our development workflow, revision cycles, and asset ownership.
             </p>
           </div>
         </AnimatedSection>
 
         {/* FAQ Items */}
-        <div className="max-w-3xl mx-auto space-y-4">
-          {faqs.map((faq, index) => (
-            <FadeInStagger key={index} index={index} delay={80}>
-            <div
-              key={index}
-              className="bg-card border border-foreground/10 rounded-lg overflow-hidden hover:border-primary/50 transition-all duration-300"
-            >
-              <button
-                onClick={() => toggleFAQ(index)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left group"
-              >
-                <span className="text-foreground font-semibold pr-8 group-hover:text-primary transition-colors">
-                  {faq.question}
-                </span>
-                <ChevronDown
-                  className={`w-5 h-5 text-primary shrink-0 transition-transform duration-300 ${
-                    openIndex === index ? "rotate-180" : ""
+        <div className="space-y-3.5">
+          {faqsEN.map((faq, index) => {
+            const isOpen = openIndex === index;
+            return (
+              <FadeInStagger key={index} index={index} delay={25}>
+                <div
+                  className={`bg-card border rounded-2xl overflow-hidden transition-all duration-200 ${
+                    isOpen
+                      ? "border-primary/50 shadow-xs"
+                      : "border-border/80 hover:border-primary/40"
                   }`}
-                />
-              </button>
-              
-              <div
-                className={`overflow-hidden transition-all duration-300 ${
-                  openIndex === index ? "max-h-96" : "max-h-0"
-                }`}
-              >
-                <div className="px-6 pb-5 text-foreground/70 leading-relaxed">
-                  {faq.answer}
-                </div>
-              </div>
-            </div>
-            </FadeInStagger>
-          ))}
-        </div>
+                >
+                  <button
+                    type="button"
+                    onClick={() => toggleFAQ(index)}
+                    className="w-full px-5 sm:px-6 py-4 sm:py-5 flex items-center justify-between text-left gap-4 group"
+                  >
+                    <span className="text-sm sm:text-base font-semibold text-foreground group-hover:text-primary transition-colors">
+                      {faq.question}
+                    </span>
+                    <div
+                      className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-secondary/80 flex items-center justify-center shrink-0 transition-all ${
+                        isOpen ? "bg-primary text-primary-foreground" : "text-foreground/70 group-hover:text-primary"
+                      }`}
+                    >
+                      <ChevronDown
+                        className={`w-4 h-4 transition-transform duration-300 ${
+                          isOpen ? "rotate-180" : ""
+                        }`}
+                      />
+                    </div>
+                  </button>
 
-        {/* CTA */}
-        <AnimatedSection animation="fade-up" delay={300}>
-          <div className="text-center mt-12">
-          <p className="text-foreground/60 mb-4">
-            Have more questions?
-          </p>
-          <a
-            href="#contact"
-            className="inline-block text-primary hover:text-primary/80 font-semibold transition-colors"
-          >
-            Contact Us →
-          </a>
-          </div>
-        </AnimatedSection>
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-5 sm:px-6 pb-5 pt-1 text-foreground/75 text-xs sm:text-sm leading-relaxed border-t border-border/40">
+                          {faq.answer}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </FadeInStagger>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

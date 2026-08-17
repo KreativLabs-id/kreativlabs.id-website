@@ -1,131 +1,109 @@
 "use client";
 
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Flame, CheckCircle2, ArrowUpRight, Sparkles } from "lucide-react";
-import AnimatedSection from "@/components/AnimatedSection";
-import FadeInStagger from "@/components/FadeInStagger";
 import Image from "next/image";
 import Link from "next/link";
+import { Check } from "lucide-react";
+import AnimatedSection from "@/components/AnimatedSection";
+import FadeInStagger from "@/components/FadeInStagger";
+
+const featuresEN = [
+  "Fast transaction records & receipt printing",
+  "Automated daily & monthly sales turnover reports",
+  "Menu management, product variants, and inventory control",
+  "Seamless access via mobile, tablet, or laptop (web-based)",
+];
 
 export default function HotProductsEN() {
-  return (
-    <section id="hot-products" className="relative py-24 bg-background overflow-hidden">
-      {/* Subtle Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary rounded-full blur-[150px] opacity-[0.03] pointer-events-none"></div>
+  const waUrl = `https://wa.me/6285872381791?text=${encodeURIComponent("Hello KreativLabs, I would like to try a demo of the Tip Top Web Cashier application.")}`;
 
-      <div className="container mx-auto px-6 relative z-10">
+  return (
+    <section id="hot-products" className="relative py-16 md:py-20 bg-background overflow-hidden w-full scroll-mt-24">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-5xl">
+        
         {/* Section Header */}
         <AnimatedSection animation="fade-up">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/[0.03] border border-foreground/10 rounded-full mb-6 backdrop-blur-md">
-              <Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-[10px] tracking-[0.2em] text-foreground/60 font-bold uppercase">Featured Product</span>
-            </div>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
+          <div className="text-center mb-10 sm:mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 tracking-tight">
               Featured <span className="text-primary">Solution</span>
             </h2>
+            <p className="text-foreground/70 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+              A ready-to-deploy web cashier and inventory management system built to streamline daily store operations.
+            </p>
           </div>
         </AnimatedSection>
 
-        {/* Hot Product Card - Redesigned for Minimalist Clean Look */}
-        <div className="max-w-6xl mx-auto">
-          <FadeInStagger index={0} delay={100}>
-            <div className="group relative bg-white/[0.02] border border-foreground/5 hover:border-foreground/10 transition-all duration-500 rounded-[2rem] overflow-hidden">
-              <div className="grid lg:grid-cols-12 gap-0">
-                {/* Left Side - Image with Floating Effect */}
-                <div className="lg:col-span-7 relative min-h-[400px] lg:min-h-[500px] flex items-center justify-center p-8 lg:p-12 bg-gradient-to-br from-white/[0.03] to-transparent">
-                  <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
-                    <Image
-                      src="/tiptopframe.png"
-                      alt="Modern Web POS Application"
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 60vw"
-                      priority
-                    />
-                    {/* Minimalist Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent"></div>
-                  </div>
-
-                  {/* Minimalist Best Seller Badge */}
-                  <div className="absolute top-12 left-12 z-10">
-                    <div className="flex items-center gap-2 px-4 py-2 bg-foreground/10 backdrop-blur-md border border-foreground/10 rounded-full">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
-                      <span className="text-foreground text-[11px] font-bold tracking-wider uppercase">Best Seller</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Right Side - Content with Clean Typography */}
-                <div className="lg:col-span-5 p-8 lg:p-12 flex flex-col justify-center">
-                  <div className="mb-8">
-                    <span className="text-primary text-xs font-bold tracking-[0.1em] uppercase">
-                      Management System
-                    </span>
-                    <h3 className="text-3xl lg:text-4xl font-bold text-foreground mt-4 mb-6 leading-tight">
-                      Modern Web <br />
-                      <span className="text-foreground/40">POS Application</span>
-                    </h3>
-                    <p className="text-foreground/50 text-base leading-relaxed mb-8">
-                      Streamline your retail operations with real-time inventory tracking, deep analytics reports, and a highly intuitive user interface.
-                    </p>
-
-                    {/* Minimalist Feature List */}
-                    <div className="grid grid-cols-1 gap-4 mb-10">
-                      {[
-                        "Smart Inventory Tracking",
-                        "Automated Sales Reports",
-                        "Cloud-based Accessibility",
-                        "Secure Multi-user Access"
-                      ].map((feature, index) => (
-                        <div key={index} className="flex items-center gap-3 group/item">
-                          <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20 transition-colors group-hover/item:bg-primary/20">
-                            <CheckCircle2 className="w-3 h-3 text-primary" />
-                          </div>
-                          <span className="text-foreground/70 text-sm group-hover/item:text-foreground transition-colors">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Actions - Clean Buttons */}
-                  <div className="flex flex-col sm:flex-row items-center gap-4">
-                    <Button
-                      asChild
-                      className="bg-primary hover:bg-primary/80 text-primary-foreground px-8 py-6 rounded-2xl group/btn transition-all duration-300 w-full sm:w-auto"
-                    >
-                      <Link href="/en/blog/modern-web-pos-application" className="flex items-center gap-2">
-                        <span className="font-semibold">Explore Product</span>
-                        <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
-                      </Link>
-                    </Button>
-                    <Button
-                      asChild
-                      variant="ghost"
-                      className="text-foreground/60 hover:text-foreground hover:bg-foreground/5 px-8 py-6 rounded-2xl transition-all duration-300 w-full sm:w-auto"
-                    >
-                      <a href="#contact">Contact Sales</a>
-                    </Button>
-                  </div>
+        {/* Featured Product Card */}
+        <FadeInStagger index={0} delay={60}>
+          <div className="bg-card border border-border/80 hover:border-primary/50 rounded-2xl p-6 sm:p-8 transition-all duration-200 hover:shadow-md">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              
+              {/* Product Preview Image (Left) */}
+              <div className="lg:col-span-6">
+                <div className="relative aspect-4/3 w-full rounded-xl overflow-hidden border border-border/80 bg-secondary/30">
+                  <Image
+                    src="/tiptopframe.png"
+                    alt="Tip Top Web POS System Preview"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    priority
+                  />
                 </div>
               </div>
-            </div>
-          </FadeInStagger>
-        </div>
 
-        {/* Footer Link - Minimalist */}
-        <AnimatedSection animation="fade-up" delay={200}>
-          <div className="mt-20 text-center">
-            <Link 
-              href="#projects" 
-              className="group inline-flex items-center gap-2 text-foreground/30 hover:text-primary transition-all duration-300"
-            >
-              <span className="text-sm font-medium tracking-wide">Browse all digital solutions</span>
-              <div className="w-8 h-[1px] bg-foreground/10 group-hover:bg-primary transition-all duration-300 group-hover:w-12"></div>
-            </Link>
+              {/* Product Information (Right) */}
+              <div className="lg:col-span-6 flex flex-col justify-between">
+                <div>
+                  <span className="text-xs font-semibold text-primary uppercase tracking-wider">
+                    Web Cashier & POS System
+                  </span>
+
+                  <h3 className="text-xl sm:text-2xl font-bold text-foreground mt-2 mb-3 tracking-tight">
+                    Tip Top Web POS Application
+                  </h3>
+
+                  <p className="text-foreground/70 text-xs sm:text-sm leading-relaxed mb-6">
+                    A practical web-based POS software engineered for culinary and retail businesses. Simplify daily cashier workflows without complicated installations.
+                  </p>
+
+                  {/* Feature Checklist */}
+                  <ul className="space-y-2.5 mb-8">
+                    {featuresEN.map((feature, idx) => (
+                      <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-foreground/80">
+                        <div className="w-4 h-4 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5">
+                          <Check className="w-2.5 h-2.5 stroke-[3]" />
+                        </div>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Call to Actions */}
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+                  <Link
+                    href="/en/blog/modern-web-pos-application"
+                    className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors whitespace-nowrap text-center"
+                  >
+                    View Details
+                  </Link>
+
+                  <a
+                    href={waUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-secondary border border-border hover:border-primary/40 text-foreground text-sm font-medium hover:text-primary transition-colors whitespace-nowrap text-center"
+                  >
+                    Try Cashier Demo
+                  </a>
+                </div>
+
+              </div>
+
+            </div>
           </div>
-        </AnimatedSection>
+        </FadeInStagger>
+
       </div>
     </section>
   );

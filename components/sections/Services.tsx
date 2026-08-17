@@ -1,115 +1,176 @@
 "use client";
 
-import { Card } from "@/components/ui/card";
-import { Code, Palette, Instagram, CheckCircle2, ArrowRight, Globe, Cpu, PenTool } from "lucide-react";
-import OptimizedParticles from "@/components/OptimizedParticles";
+import {
+  LayoutTemplate,
+  Globe,
+  Cpu,
+  Palette,
+  Instagram,
+  PenTool,
+  ArrowRight
+} from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import FadeInStagger from "@/components/FadeInStagger";
+import Link from "next/link";
 
 const services = [
   {
-    icon: Code,
+    icon: LayoutTemplate,
     title: "Landing Page",
-    description: "Landing page responsif dan modern untuk meningkatkan konversi bisnis Anda.",
-    features: ["Responsive Design", "Fast Loading", "SEO Friendly", "Modern Template"],
+    description: "Website satu halaman yang cepat, responsif di HP, dan dirancang langsung untuk menarik pelanggan ke WhatsApp.",
+    points: [
+      "Tampilan responsif di HP & desktop",
+      "Loading cepat & ramah SEO Google",
+      "Tombol WhatsApp langsung",
+      "Domain & hosting siap pakai"
+    ],
+    detailHref: "/services/website",
+    waMessage: "Halo KreativLabs, saya ingin tanya-tanya tentang jasa pembuatan Landing Page."
   },
   {
     icon: Globe,
-    title: "Fullstack Website",
-    description: "Website lengkap dengan fitur backend dan database untuk kebutuhan bisnis yang lebih kompleks.",
-    features: ["Dynamic Content", "Database Integration", "Admin Dashboard", "Secure System"],
+    title: "Website Profil & Bisnis",
+    description: "Website resmi untuk memperkenalkan profil perusahaan, portofolio, dan layanan bisnis Anda agar terlihat lebih terpercaya.",
+    points: [
+      "Halaman lengkap (Tentang, Layanan, Kontak)",
+      "Desain profesional & mudah dibaca",
+      "Integrasi formulir kontak & maps",
+      "Bisa update konten sendiri"
+    ],
+    detailHref: "/services/website",
+    waMessage: "Halo KreativLabs, saya ingin tanya-tanya tentang jasa pembuatan Website Profil / Bisnis."
   },
   {
     icon: Cpu,
     title: "Website Custom",
-    description: "Solusi pengembangan website yang disesuaikan sepenuhnya dengan kebutuhan spesifik Anda.",
-    features: ["Custom Features", "Scalable Architecture", "API Integration", "Premium Support"],
+    description: "Pembuatan website dengan fitur khusus sesuai kebutuhan alur kerja bisnis, seperti sistem kasir, booking, atau portal internal.",
+    points: [
+      "Fitur dibuat sesuai kebutuhan",
+      "Database & dashboard admin",
+      "Bisa integrasi sistem pembayaran / API",
+      "Performa aman & stabil"
+    ],
+    detailHref: "/services/website",
+    waMessage: "Halo KreativLabs, saya ingin konsultasi pembuatan Website Custom."
   },
   {
     icon: Palette,
-    title: "Design Logo",
-    description: "Desain logo profesional yang mencerminkan identitas dan nilai brand bisnis Anda.",
-    features: ["Original Concept", "Brand Identity", "Vector Files", "Copyright Ownership"],
+    title: "Desain Logo",
+    description: "Desain logo original dan profesional yang mencerminkan karakter bisnis Anda, lengkap dengan file master untuk cetak maupun digital.",
+    points: [
+      "Konsep original & tidak pasaran",
+      "File master lengkap (AI, SVG, PNG)",
+      "Panduan warna & jenis font",
+      "Bebas revisi sampai sesuai"
+    ],
+    detailHref: "/services/design",
+    waMessage: "Halo KreativLabs, saya ingin pesan jasa Desain Logo."
   },
   {
     icon: Instagram,
     title: "Desain Social Media",
-    description: "Konten visual kreatif dan menarik untuk meningkatkan engagement di media sosial.",
-    features: ["Feed & Story", "Content Planning", "Visual Consistency", "Engagement Focused"],
+    description: "Konten visual menarik untuk postingan feed, story, dan banner promosi agar media sosial bisnis Anda terlihat aktif dan rapi.",
+    points: [
+      "Desain feed & carousel terstruktur",
+      "Template story promosi",
+      "Banner iklan & diskon",
+      "File siap posting resolusi tinggi"
+    ],
+    detailHref: "/services/design",
+    waMessage: "Halo KreativLabs, saya ingin pesan jasa Desain Social Media."
   },
   {
     icon: PenTool,
     title: "UI/UX Design",
-    description: "Perancangan antarmuka dan pengalaman pengguna yang intuitif untuk aplikasi atau website.",
-    features: ["User Research", "Wireframing", "Prototyping", "High Fidelity Design"],
-  },
+    description: "Perancangan tampilan dan alur aplikasi mobile atau website di Figma agar mudah dan nyaman digunakan oleh pengguna.",
+    points: [
+      "Riset alur pengguna (User Flow)",
+      "Wireframe & mockup interaktif",
+      "File Figma rapi & siap coding",
+      "Desain modern & intuitif"
+    ],
+    detailHref: "/services/design",
+    waMessage: "Halo KreativLabs, saya ingin konsultasi jasa UI/UX Design."
+  }
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="relative py-32 bg-background overflow-hidden w-full">
-      {/* Background Elements */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[128px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[128px] pointer-events-none" />
+    <section id="services" className="relative py-16 md:py-20 bg-background overflow-hidden w-full scroll-mt-24">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-6xl">
 
-      <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <AnimatedSection animation="fade-up">
-          <div className="text-center mb-20">
-            <span className="inline-block py-1 px-3 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-4">
-              Layanan Kami
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 tracking-tight">
-              Solusi Digital <span className="text-primary">Terintegrasi</span>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 tracking-tight">
+              Jasa Pembuatan <span className="text-primary">Website & Desain</span>
             </h2>
-            <p className="text-foreground/60 text-lg max-w-2xl mx-auto leading-relaxed">
-              Kami menghadirkan solusi Website Development & Graphic Design yang tidak hanya estetis, tetapi juga fungsional untuk pertumbuhan bisnis Anda.
+            <p className="text-foreground/70 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+              Kami membantu bisnis dan UMKM memiliki website yang bekerja dengan baik serta desain visual yang rapi dan profesional.
             </p>
           </div>
         </AnimatedSection>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {services.map((service, index) => {
             const Icon = service.icon;
-            return (
-              <FadeInStagger key={index} index={index} delay={index * 20}>
-                <div className="group relative h-full">
-                  <Card className="h-full bg-card/50 backdrop-blur-sm border-foreground/5 group-hover:border-primary/30 p-8 rounded-3xl transition-all duration-300 hover:-translate-y-2 overflow-hidden relative flex flex-col">
+            const waUrl = `https://wa.me/6285872381791?text=${encodeURIComponent(service.waMessage)}`;
 
+            return (
+              <FadeInStagger key={index} index={index} delay={40}>
+                <div className="group h-full flex flex-col justify-between bg-card border border-border/80 hover:border-primary/50 rounded-2xl p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
+                  <div>
                     {/* Icon */}
-                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
-                      <Icon className="w-7 h-7 text-primary group-hover:text-primary/80 transition-colors" />
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                      <Icon className="w-5 h-5" />
                     </div>
 
-                    {/* Content */}
-                    <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                    {/* Title */}
+                    <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                       {service.title}
                     </h3>
-                    <p className="text-foreground/60 mb-6 leading-relaxed">
+
+                    {/* Description */}
+                    <p className="text-foreground/70 text-sm leading-relaxed mb-4">
                       {service.description}
                     </p>
 
-                    {/* Features */}
-                    <ul className="space-y-3 mb-8 flex-grow">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-foreground/70 text-sm">
-                          <CheckCircle2 className="w-4 h-4 mr-3 text-primary/70" />
-                          {feature}
+                    {/* Points */}
+                    <ul className="space-y-2 mb-6 text-xs sm:text-[13px] text-foreground/70">
+                      {service.points.map((point, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary/80 mt-1.5 shrink-0" />
+                          <span>{point}</span>
                         </li>
                       ))}
                     </ul>
+                  </div>
 
-                  </Card>
+                  {/* Footer Action */}
+                  <div className="pt-4 border-t border-border/60 flex items-center justify-between text-xs mt-auto">
+                    <Link
+                      href={service.detailHref}
+                      className="text-foreground/60 hover:text-foreground font-medium transition-colors"
+                    >
+                      Lihat detail
+                    </Link>
+                    <a
+                      href={waUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:text-primary/80 font-semibold flex items-center gap-1 transition-colors"
+                    >
+                      <span>Tanya Layanan</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
                 </div>
               </FadeInStagger>
             );
           })}
         </div>
       </div>
-
-      {/* Interactive Particles - Desktop Only */}
-      <OptimizedParticles quantity={30} />
     </section>
   );
 }

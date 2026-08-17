@@ -3,12 +3,11 @@
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 
-const navLinks = [
+const navLinksEN = [
   { name: "Home", href: "#" },
   { name: "Projects", href: "#projects" },
   { name: "About", href: "#about" },
@@ -26,37 +25,31 @@ export default function NavbarEN() {
   const { resolvedTheme } = useTheme();
   const logoSrc = mounted && resolvedTheme === "light" ? "/logokreativlabsterang.png" : "/logokreativ.png";
 
-  useEffect(() => { setMounted(true); }, []);
-  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const getInitialActiveSection = () => {
-    if (pathname.startsWith('/en/blog')) return '/en/blog';
-    if (pathname === '/en') return '#';
-    return '';
+    if (pathname.startsWith("/en/blog")) return "/en/blog";
+    if (pathname === "/en") return "#";
+    return "";
   };
-  
+
   const [activeSection, setActiveSection] = useState(getInitialActiveSection);
 
   useEffect(() => {
-    const checkScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    
-    checkScroll();
-    window.addEventListener("scroll", checkScroll);
-    return () => window.removeEventListener("scroll", checkScroll);
-  }, []);
-
-  useEffect(() => {
-    if (pathname !== '/en') return;
-
     const handleScroll = () => {
-      const sections = navLinks.map(link => link.href.replace('#', ''));
-      const scrollPosition = window.scrollY + 100;
+      setIsScrolled(window.scrollY > 20);
+
+      if (pathname !== "/en") return;
+
+      const sections = navLinksEN.map((link) => link.href.replace("#", ""));
+      const scrollPosition = window.scrollY + 120;
 
       for (const section of sections) {
-        if (section === '') {
-          if (window.scrollY < 100) {
-            setActiveSection('#');
+        if (section === "") {
+          if (window.scrollY < 120) {
+            setActiveSection("#");
           }
           continue;
         }
@@ -72,127 +65,120 @@ export default function NavbarEN() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [pathname]);
 
   return (
-    <nav
-      className={`fixed left-0 right-0 z-50 transition-all duration-500 ease-out ${
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 w-full transition-colors duration-200 ${
         isScrolled
-          ? "top-4 px-4 sm:px-6 lg:px-8"
-          : "top-0 px-0"
+          ? "bg-background/90 backdrop-blur-md border-b border-border/80 shadow-xs"
+          : "bg-background/70 backdrop-blur-xs border-b border-border/40"
       }`}
     >
-      <div className={`mx-auto transition-all duration-500 ease-out ${
-        isScrolled
-          ? "max-w-5xl bg-background/90 backdrop-blur-xl rounded-full px-6"
-          : "max-w-7xl bg-transparent px-6"
-      }`}>
-        <div className="flex items-center justify-between h-16 relative">
-          {/* Logo - Left */}
-          <Link href="/en" className="flex items-center z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 sm:h-18">
+          
+          {/* Logo (Left) */}
+          <Link href="/en" className="flex items-center shrink-0">
             <Image
               src={logoSrc}
               alt="KreativLabs.id"
               width={140}
               height={40}
-              className="h-8 w-auto"
+              className="h-8 sm:h-9 w-auto"
               priority
             />
           </Link>
 
-          {/* Desktop Navigation - Centered */}
-          <div className="hidden md:flex items-center space-x-8 absolute left-1/2 -translate-x-1/2">
-            {navLinks.map((link) => {
-              const isExternal = link.href.startsWith('/');
-              const href = isExternal ? link.href : (pathname !== '/en' ? `/en/${link.href}` : link.href);
-              const isActive = activeSection === link.href || (link.href.startsWith('/') && pathname.startsWith(link.href));
-              
+          {/* Desktop Navigation Links (Center) */}
+          <nav className="hidden md:flex items-center space-x-7 lg:space-x-8">
+            {navLinksEN.map((link) => {
+              const isExternal = link.href.startsWith("/");
+              const href = isExternal ? link.href : (pathname !== "/en" ? `/en/${link.href}` : link.href);
+              const isActive = activeSection === link.href || (link.href.startsWith("/") && pathname.startsWith(link.href));
+
               return (
                 <a
                   key={link.name}
                   href={href}
-                  className={`text-sm font-medium relative group transition-colors ${
+                  className={`text-sm font-medium transition-colors relative py-1 ${
                     isActive
-                      ? "text-primary"
-                      : "text-foreground/80 hover:text-primary"
+                      ? "text-primary font-semibold"
+                      : "text-foreground/75 hover:text-foreground"
                   }`}
                 >
                   {link.name}
-                  <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${
-                    isActive ? "w-full" : "w-0 group-hover:w-full"
-                  }`}></span>
+                  {isActive && (
+                    <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full" />
+                  )}
                 </a>
               );
             })}
-          </div>
+          </nav>
 
-          {/* CTA - Right */}
+          {/* CTA Action Button (Right) */}
           <div className="hidden md:flex items-center gap-3">
-            {mounted && (
-              <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6">
-                <Link href={pathname !== '/en' ? '/en/#contact' : '#contact'}>Get Started</Link>
-              </Button>
-            )}
+            <Link
+              href={pathname !== "/en" ? "/en/#contact" : "#contact"}
+              className="inline-flex items-center justify-center px-5 py-2 rounded-full bg-primary text-primary-foreground text-xs sm:text-sm font-semibold hover:bg-primary/90 transition-all hover:shadow-xs hover:-translate-y-0.5 whitespace-nowrap"
+            >
+              Get Started
+            </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-foreground z-10 p-2 hover:bg-foreground/10 rounded-lg transition-colors"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        <div 
-          className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out absolute left-0 right-0 ${
-            isScrolled ? 'top-[calc(100%+0.5rem)]' : 'top-full'
-          } ${
-            isMobileMenuOpen 
-              ? 'max-h-[600px] opacity-100' 
-              : 'max-h-0 opacity-0'
-          }`}
-        >
-          <div className="bg-background/95 backdrop-blur-xl border border-border/50 shadow-2xl rounded-2xl mx-4 mt-2 p-6 flex flex-col space-y-2 relative z-50">
-            {navLinks.map((link, index) => {
-              const isExternal = link.href.startsWith('/');
-              const href = isExternal ? link.href : (pathname !== '/en' ? `/en/${link.href}` : link.href);
-              const isActive = activeSection === link.href || (link.href.startsWith('/') && pathname.startsWith(link.href));
-              
-              return (
-                <a
-                  key={link.name}
-                  href={href}
-                  className={`text-base font-medium px-4 py-3 rounded-xl transition-all ${
-                    isActive
-                      ? "text-primary bg-primary/10"
-                      : "text-muted-foreground hover:text-primary hover:bg-secondary/80"
-                  }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.name}
-                </a>
-              );
-            })}
-
-            <div className="pt-6 mt-4 border-t border-border/50">
-              {mounted && (
-                <Button 
-                  asChild
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground w-full rounded-xl py-6 text-sm font-medium shadow-none hover:shadow-lg transition-all"
-                >
-                  <Link href={pathname !== '/en' ? '/en/#contact' : '#contact'} onClick={() => setIsMobileMenuOpen(false)}>Get Started</Link>
-                </Button>
-              )}
-            </div>
+          {/* Mobile Menu Toggle Button */}
+          <div className="md:hidden flex items-center">
+            <button
+              type="button"
+              className="text-foreground p-2 rounded-lg hover:bg-secondary transition-colors"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle navigation menu"
+            >
+              {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
           </div>
+
         </div>
       </div>
-    </nav>
+
+      {/* Mobile Dropdown Menu (Standard full-width below header) */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden border-b border-border/80 bg-background/98 backdrop-blur-xl shadow-lg px-4 sm:px-6 py-4 space-y-1">
+          {navLinksEN.map((link) => {
+            const isExternal = link.href.startsWith("/");
+            const href = isExternal ? link.href : (pathname !== "/en" ? `/en/${link.href}` : link.href);
+            const isActive = activeSection === link.href || (link.href.startsWith("/") && pathname.startsWith(link.href));
+
+            return (
+              <a
+                key={link.name}
+                href={href}
+                className={`block px-3 py-2.5 rounded-xl text-sm font-medium transition-colors ${
+                  isActive
+                    ? "text-primary bg-primary/10 font-semibold"
+                    : "text-foreground/80 hover:bg-secondary"
+                }`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {link.name}
+              </a>
+            );
+          })}
+
+          <div className="pt-3 border-t border-border/60 mt-2">
+            <Link
+              href={pathname !== "/en" ? "/en/#contact" : "#contact"}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="w-full inline-flex items-center justify-center py-2.5 px-4 rounded-xl bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors text-center"
+            >
+              Get Started
+            </Link>
+          </div>
+        </div>
+      )}
+    </header>
   );
 }

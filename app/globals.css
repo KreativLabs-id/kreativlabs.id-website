@@ -374,14 +374,14 @@
 
   /* Blog Content Styling */
   .blog-content {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--foreground);
     line-height: 1.75;
   }
 
   .blog-content h1 {
     font-size: 1.875rem;
     font-weight: 700;
-    color: white;
+    color: var(--foreground);
     margin-bottom: 1.5rem;
     margin-top: 2rem;
     line-height: 1.25;
@@ -396,7 +396,7 @@
   .blog-content h2 {
     font-size: 1.5rem;
     font-weight: 700;
-    color: white;
+    color: var(--foreground);
     margin-bottom: 1rem;
     margin-top: 2rem;
     line-height: 1.25;
@@ -411,7 +411,7 @@
   .blog-content h3 {
     font-size: 1.25rem;
     font-weight: 700;
-    color: white;
+    color: var(--foreground);
     margin-bottom: 0.75rem;
     margin-top: 1.5rem;
     line-height: 1.25;
@@ -426,7 +426,7 @@
   .blog-content h4 {
     font-size: 1.125rem;
     font-weight: 700;
-    color: white;
+    color: var(--foreground);
     margin-bottom: 0.75rem;
     margin-top: 1rem;
   }
@@ -438,7 +438,7 @@
   }
 
   .blog-content p {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--foreground);
     font-size: 1rem;
     line-height: 1.75;
     margin-bottom: 1.25rem;
@@ -465,7 +465,7 @@
     list-style-type: decimal;
     list-style-position: inside;
     margin-bottom: 1.5rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--foreground);
   }
 
   .blog-content ol li {
@@ -473,7 +473,7 @@
   }
 
   .blog-content li {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--foreground);
     font-size: 1rem;
     line-height: 1.75;
   }
@@ -492,7 +492,7 @@
 
   .blog-content ul > li::before {
     content: "•";
-    color: #3B82F6;
+    color: var(--primary);
     font-size: 1.25rem;
     font-weight: 700;
     flex-shrink: 0;
@@ -501,26 +501,26 @@
 
   .blog-content strong,
   .blog-content b {
-    color: white;
+    color: var(--foreground);
     font-weight: 700;
   }
 
   .blog-content em,
   .blog-content i {
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--foreground);
     font-style: italic;
   }
 
   .blog-content blockquote {
-    border-left: 4px solid #3B82F6;
+    border-left: 4px solid var(--primary);
     padding-left: 1.5rem;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
-    background-color: rgba(15, 30, 55, 0.5);
+    background-color: var(--secondary);
     border-radius: 0 0.5rem 0.5rem 0;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--foreground);
     font-style: italic;
   }
 
@@ -529,24 +529,24 @@
   }
 
   .blog-content hr {
-    border-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--border);
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
 
   .blog-content a {
-    color: #3B82F6;
+    color: var(--primary);
     text-decoration: underline;
     transition: color 0.2s;
   }
 
   .blog-content a:hover {
-    color: #60A5FA;
+    color: var(--accent);
   }
 
   .blog-content code {
-    background-color: #0F1E37;
-    color: #3B82F6;
+    background-color: var(--card);
+    color: var(--primary);
     padding: 0.25rem 0.5rem;
     border-radius: 0.25rem;
     font-size: 0.875rem;
@@ -554,18 +554,18 @@
   }
 
   .blog-content pre {
-    background-color: #0F1E37;
+    background-color: var(--card);
     padding: 1rem;
     border-radius: 0.5rem;
     overflow-x: auto;
     margin-bottom: 1.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border);
   }
 
   .blog-content pre code {
     background-color: transparent;
     padding: 0;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--foreground);
   }
 
   .blog-content img {
@@ -589,24 +589,24 @@
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 1.5rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--foreground);
   }
 
   .blog-content th {
-    background-color: #0F1E37;
-    color: white;
+    background-color: var(--card);
+    color: var(--foreground);
     font-weight: 700;
     padding: 0.75rem;
     text-align: left;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border);
   }
 
   .blog-content td {
     padding: 0.75rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border);
   }
 
   .blog-content tr:hover {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--muted);
   }
 }

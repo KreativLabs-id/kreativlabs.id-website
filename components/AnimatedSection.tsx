@@ -36,7 +36,7 @@ export default function AnimatedSection({
         }
       },
       {
-        threshold: 0.05,
+        threshold: 0,
         rootMargin: "0px 0px 50px 0px",
       }
     );
@@ -57,11 +57,11 @@ export default function AnimatedSection({
     const baseClasses = "transition-all ease-out";
     
     if (isVisible) {
-      return `${baseClasses} duration-[${mobileDuration}ms] opacity-100 translate-x-0 translate-y-0 scale-100`;
+      return `${baseClasses} opacity-100 translate-x-0 translate-y-0 scale-100`;
     }
 
     // Use fixed Tailwind classes for better performance
-    const baseHidden = `${baseClasses} duration-[${mobileDuration}ms] opacity-0`;
+    const baseHidden = `${baseClasses} opacity-0`;
     
     switch (animation) {
       case "fade-up":
@@ -86,6 +86,7 @@ export default function AnimatedSection({
       className={`${getAnimationClasses()} ${className}`}
       style={{ 
         transitionDelay: `${mobileDelay}ms`,
+        transitionDuration: `${mobileDuration}ms`,
         willChange: isVisible ? 'auto' : 'opacity, transform'
       }}
     >

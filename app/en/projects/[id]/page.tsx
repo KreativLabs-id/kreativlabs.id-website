@@ -7,7 +7,7 @@ import Link from "next/link";
 import { ArrowLeft, Check, MessageSquare } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 
-export default function ProjectDetail() {
+export default function ProjectDetailEN() {
   const params = useParams();
   const project = getProjectById(params.id as string);
 
@@ -15,22 +15,22 @@ export default function ProjectDetail() {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center px-4">
         <div className="text-center max-w-md">
-          <h1 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">Project Tidak Ditemukan</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">Project Not Found</h1>
           <p className="text-foreground/70 text-sm mb-6">
-            Halaman studi kasus yang Anda cari tidak tersedia atau telah dipindahkan.
+            The case study page you are looking for is unavailable or has been relocated.
           </p>
           <Link
-            href="/#projects"
+            href="/en#projects"
             className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors"
           >
-            Kembali ke Portofolio
+            Back to Portfolio
           </Link>
         </div>
       </div>
     );
   }
 
-  const waUrl = `https://wa.me/6285872381791?text=${encodeURIComponent(`Halo KreativLabs, saya tertarik dengan project ${project.title} dan ingin konsultasi project serupa.`)}`;
+  const waUrl = `https://wa.me/6285872381791?text=${encodeURIComponent(`Hello KreativLabs, I am interested in your project ${project.title} and would like to inquire about a similar solution.`)}`;
 
   return (
     <div className="min-h-screen bg-background pt-24 pb-20">
@@ -40,11 +40,11 @@ export default function ProjectDetail() {
         <AnimatedSection animation="fade-up">
           <div className="mb-6">
             <Link
-              href="/#projects"
+              href="/en#projects"
               className="inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-foreground/60 hover:text-primary transition-colors mb-6 group"
             >
               <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-              <span>Kembali ke Portofolio</span>
+              <span>Back to Portfolio</span>
             </Link>
 
             <span className="text-xs font-semibold text-primary uppercase tracking-widest block mb-2.5">
@@ -63,7 +63,7 @@ export default function ProjectDetail() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 py-5 border-y border-border/70 my-8">
               <div>
                 <span className="text-[11px] font-medium text-foreground/50 block uppercase tracking-wider mb-1">
-                  Klien
+                  Client
                 </span>
                 <span className="text-sm font-semibold text-foreground">
                   {project.client}
@@ -72,7 +72,7 @@ export default function ProjectDetail() {
 
               <div>
                 <span className="text-[11px] font-medium text-foreground/50 block uppercase tracking-wider mb-1">
-                  Kategori
+                  Category
                 </span>
                 <span className="text-sm font-semibold text-foreground">
                   {project.category}
@@ -81,7 +81,7 @@ export default function ProjectDetail() {
 
               <div>
                 <span className="text-[11px] font-medium text-foreground/50 block uppercase tracking-wider mb-1">
-                  Durasi Pengerjaan
+                  Timeline
                 </span>
                 <span className="text-sm font-semibold text-foreground">
                   {project.duration}
@@ -90,7 +90,7 @@ export default function ProjectDetail() {
 
               <div>
                 <span className="text-[11px] font-medium text-foreground/50 block uppercase tracking-wider mb-1">
-                  Tahun
+                  Year
                 </span>
                 <span className="text-sm font-semibold text-foreground">
                   {project.year}
@@ -124,7 +124,7 @@ export default function ProjectDetail() {
             <AnimatedSection animation="fade-up">
               <div>
                 <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-3 tracking-tight">
-                  Tentang Proyek
+                  Project Overview
                 </h2>
                 <p className="text-foreground/75 text-sm sm:text-base leading-relaxed">
                   {project.fullDescription}
@@ -137,7 +137,7 @@ export default function ProjectDetail() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="bg-card border border-border/80 rounded-2xl p-6">
                   <h3 className="text-sm font-bold text-foreground mb-2 uppercase tracking-wider">
-                    Tantangan
+                    The Challenge
                   </h3>
                   <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed">
                     {project.challenge}
@@ -146,7 +146,7 @@ export default function ProjectDetail() {
 
                 <div className="bg-card border border-border/80 rounded-2xl p-6">
                   <h3 className="text-sm font-bold text-primary mb-2 uppercase tracking-wider">
-                    Solusi Kami
+                    Our Solution
                   </h3>
                   <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed">
                     {project.solution}
@@ -160,7 +160,7 @@ export default function ProjectDetail() {
               <AnimatedSection animation="fade-up" delay={120}>
                 <div>
                   <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4 tracking-tight">
-                    Hasil & Dampak
+                    Results & Impact
                   </h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                     {project.results.map((result, idx) => (
@@ -186,7 +186,7 @@ export default function ProjectDetail() {
               <AnimatedSection animation="fade-up" delay={160}>
                 <div>
                   <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4 tracking-tight">
-                    Fitur yang Dikembangkan
+                    Engineered Features
                   </h2>
                   <div className="bg-card border border-border/80 rounded-2xl p-6">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -207,7 +207,7 @@ export default function ProjectDetail() {
               <AnimatedSection animation="fade-up" delay={200}>
                 <div>
                   <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4 tracking-tight">
-                    Tampilan & Mockup
+                    Screenshots & Showcase
                   </h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {project.gallery.map((img, idx) => (
@@ -238,7 +238,7 @@ export default function ProjectDetail() {
               {/* Tech Stack Card */}
               <div className="bg-card border border-border/80 rounded-2xl p-6">
                 <h3 className="text-xs font-bold text-foreground mb-4 uppercase tracking-wider">
-                  Teknologi & Tools
+                  Technology Stack
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {project.techStack.map((tech, idx) => (
@@ -253,12 +253,12 @@ export default function ProjectDetail() {
               </div>
 
               {/* Consultation Card */}
-              <div className="bg-card border border-border/80 rounded-2xl p-6">
+              <div className="bg-card border border-primary/30 rounded-2xl p-6">
                 <h3 className="text-base font-bold text-foreground mb-2">
-                  Tertarik dengan Project Serupa?
+                  Interested in a Similar Project?
                 </h3>
                 <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed mb-5">
-                  Konsultasikan kebutuhan website atau aplikasi bisnis Anda langsung dengan tim kami untuk mendapatkan estimasi dan solusi terbaik.
+                  Consult your website or web app requirements directly with our team to get the best roadmap and timeline.
                 </p>
                 
                 <a
@@ -268,7 +268,7 @@ export default function ProjectDetail() {
                   className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-primary text-primary-foreground text-xs sm:text-sm font-semibold hover:bg-primary/90 transition-colors"
                 >
                   <MessageSquare className="w-4 h-4" />
-                  <span>Konsultasi via WhatsApp</span>
+                  <span>Consult via WhatsApp</span>
                 </a>
               </div>
 
@@ -281,10 +281,10 @@ export default function ProjectDetail() {
         <AnimatedSection animation="fade-up" delay={200}>
           <div className="bg-card border border-border/80 rounded-2xl p-8 sm:p-12 text-center mt-16">
             <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3 tracking-tight">
-              Siap Mewujudkan Website Impian Bisnis Anda?
+              Ready to Build Your Next Digital Product?
             </h2>
             <p className="text-xs sm:text-sm sm:text-base text-foreground/70 max-w-xl mx-auto leading-relaxed mb-6">
-              Mari diskusikan konsep, fitur, dan timeline pengerjaan yang pas untuk bisnis Anda bersama tim KreativLabs.
+              Let’s discuss your concept, required features, and deployment schedule with the KreativLabs team.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -294,14 +294,14 @@ export default function ProjectDetail() {
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3 rounded-xl bg-primary text-primary-foreground text-xs sm:text-sm font-semibold hover:bg-primary/90 transition-colors"
               >
-                Mulai Konsultasi Gratis
+                Start Free Consultation
               </a>
 
               <Link
-                href="/#projects"
+                href="/en#projects"
                 className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3 rounded-xl bg-secondary border border-border hover:border-primary/40 text-foreground text-xs sm:text-sm font-medium hover:text-primary transition-colors"
               >
-                Lihat Proyek Lainnya
+                View More Projects
               </Link>
             </div>
           </div>

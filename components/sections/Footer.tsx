@@ -1,11 +1,12 @@
 "use client";
 
-import { Instagram, Mail, Twitter, Facebook, Globe } from "lucide-react";
+import { Instagram, Mail, Twitter, Facebook, Globe, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 import { ThemeToggle } from "../ThemeToggle";
+import { RuixenGradientFooter } from "@/components/ui/ruixen-gradient-footer";
 
 // TikTok Icon Component
 const TikTokIcon = ({ className }: { className?: string }) => (
@@ -42,59 +43,73 @@ const socialLinks = [
   }
 ];
 
-const footerLinks = {
-  company: [
-    { name: "Tentang Kami", href: "#about" },
-    { name: "Layanan Kami", href: "#services" },
-    { name: "Portofolio", href: "#projects" },
-    { name: "FAQ", href: "#faq" },
-    { name: "Kontak", href: "#contact" },
-    { name: "Blog", href: "/blog" },
-  ],
-  services: [
-    { name: "Landing Page", href: "#services" },
-    { name: "Web Development", href: "#services" },
-    { name: "Fullstack Development", href: "#services" },
-    { name: "Company Profile", href: "#services" },
-    { name: "Desain Grafis", href: "#services" },
-    { name: "Desain Sosial Media", href: "#services" },
-    { name: "Desain Flyer & Poster", href: "#services" },
-  ],
-  legal: [
-    { name: "Kebijakan Privasi", href: "/legal/privacy-policy" },
-    { name: "Ketentuan Layanan", href: "/legal/terms-of-service" },
-    { name: "Kebijakan Cookie", href: "/legal/cookie-policy" },
-  ],
-};
+const footerColumns = [
+  {
+    title: "Perusahaan",
+    links: [
+      { name: "Tentang Kami", href: "/#about" },
+      { name: "Layanan", href: "/#services" },
+      { name: "Portofolio", href: "/#projects" },
+      { name: "FAQ", href: "/#faq" },
+      { name: "Kontak", href: "/#contact" },
+      { name: "Blog", href: "/blog" },
+    ],
+  },
+  {
+    title: "Layanan",
+    links: [
+      { name: "Landing Page", href: "/services/website" },
+      { name: "Website Profil", href: "/services/website" },
+      { name: "Website Custom", href: "/services/website" },
+      { name: "Desain Logo", href: "/services/design" },
+      { name: "Desain Sosmed", href: "/services/design" },
+      { name: "UI/UX Design", href: "/services/design" },
+    ],
+  },
+  {
+    title: "Legalitas",
+    links: [
+      { name: "Kebijakan Privasi", href: "/legal/privacy-policy" },
+      { name: "Ketentuan Layanan", href: "/legal/terms-of-service" },
+      { name: "Kebijakan Cookie", href: "/legal/cookie-policy" },
+    ],
+  },
+];
 
 export default function Footer() {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme } = useTheme();
   const logoSrc = mounted && resolvedTheme === "light" ? "/logokreativlabsterang.png" : "/logokreativ.png";
-  useEffect(() => { setMounted(true); }, []);
-  return (
-    <footer className="relative bg-background border-t border-foreground/10 overflow-hidden overflow-x-hidden w-full">
-      {/* Lighting Effect */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary rounded-full blur-[120px] opacity-5"></div>
 
-      <div className="container mx-auto px-6 py-16 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          {/* Brand */}
-          <div>
-            <div className="mb-6">
+  useEffect(() => { 
+    setMounted(true); 
+  }, []);
+
+  return (
+    <RuixenGradientFooter gradientHeight="160px" className="relative bg-background border-t border-border/80 overflow-hidden w-full">
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 pt-16 pb-4 relative z-10">
+        
+        {/* Main Grid */}
+        <div className="grid gap-10 pb-12 sm:grid-cols-2 lg:grid-cols-6">
+          
+          {/* Brand & Bio (2 Columns) */}
+          <div className="lg:col-span-3 space-y-4">
+            <div className="mb-4">
               <Image
                 src={logoSrc}
                 alt="KreativLabs.id"
-                width={160}
-                height={60}
-                className="h-20 w-auto"
+                width={150}
+                height={50}
+                className="h-12 w-auto"
               />
             </div>
-            <p className="text-foreground/70 text-sm mb-6 leading-relaxed">
-              Solusi digital modern untuk bisnis Anda. Kami menciptakan website dan design yang menarik, fungsional, dan menghasilkan konversi.
+            
+            <p className="max-w-sm text-xs sm:text-sm text-foreground/70 leading-relaxed">
+              Solusi pembuatan website profesional dan kebutuhan desain grafis untuk membantu bisnis Anda tampil lebih terpercaya dan menghasilkan konversi.
             </p>
-            {/* Social Links */}
-            <div className="flex space-x-4">
+
+            {/* Social Icons */}
+            <div className="flex items-center gap-2.5 pt-2">
               {socialLinks.map((social, index) => {
                 const Icon = social.icon;
                 return (
@@ -103,97 +118,69 @@ export default function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 bg-foreground/5 hover:bg-primary/20 border border-foreground/10 hover:border-primary rounded-lg flex items-center justify-center transition-all duration-300 group"
+                    className="w-9 h-9 rounded-xl bg-secondary hover:bg-primary/15 border border-border/80 hover:border-primary/40 flex items-center justify-center transition-all group"
                     aria-label={social.label}
                   >
-                    <Icon className="w-5 h-5 text-foreground/70 group-hover:text-primary transition-colors" />
+                    <Icon className="w-4 h-4 text-foreground/70 group-hover:text-primary transition-colors" />
                   </a>
                 );
               })}
             </div>
           </div>
 
-          {/* Company Links */}
-          <div>
-            <h4 className="text-foreground font-semibold mb-4">Perusahaan</h4>
-            <ul className="space-y-3">
-              {footerLinks.company.map((link, index) => (
-                <li key={index}>
-                  {link.href.startsWith('#') ? (
-                    <a
-                      href={link.href}
-                      className="text-foreground/70 hover:text-primary text-sm transition-colors"
-                    >
-                      {link.name}
-                    </a>
-                  ) : (
-                    <Link
-                      href={link.href}
-                      className="text-foreground/70 hover:text-primary text-sm transition-colors"
-                    >
-                      {link.name}
-                    </Link>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Nav Columns (3 Columns) */}
+          <nav className="grid grid-cols-2 sm:grid-cols-3 gap-8 lg:col-span-3">
+            {footerColumns.map((col) => (
+              <div key={col.title}>
+                <h4 className="text-xs font-bold uppercase tracking-wider text-foreground mb-4">
+                  {col.title}
+                </h4>
+                <ul className="flex flex-col gap-2.5 text-xs sm:text-sm">
+                  {col.links.map((link) => (
+                    <li key={link.name}>
+                      {link.href.startsWith("#") ? (
+                        <a
+                          href={link.href}
+                          className="text-foreground/70 hover:text-primary transition-colors"
+                        >
+                          {link.name}
+                        </a>
+                      ) : (
+                        <Link
+                          href={link.href}
+                          className="text-foreground/70 hover:text-primary transition-colors"
+                        >
+                          {link.name}
+                        </Link>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </nav>
 
-          {/* Services Links */}
-          <div>
-            <h4 className="text-foreground font-semibold mb-4">Layanan</h4>
-            <ul className="space-y-3">
-              {footerLinks.services.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-foreground/70 hover:text-primary text-sm transition-colors"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Legal Links */}
-          <div>
-            <h4 className="text-foreground font-semibold mb-4">Legalitas</h4>
-            <ul className="space-y-3">
-              {footerLinks.legal.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-foreground/70 hover:text-primary text-sm transition-colors"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-foreground/10">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-foreground/60 text-sm">
-              © {new Date().getFullYear()} KreativLabs.id. Hak cipta dilindungi undang-undang.
-            </p>
-            {/* Actions */}
-            <div className="flex items-center gap-3">
-              <ThemeToggle />
-              <Link
-                href="/en"
-                className="flex items-center gap-2 px-4 py-2 text-foreground/70 hover:text-primary transition-colors rounded-lg hover:bg-foreground/5 border border-foreground/10"
-              >
-                <Globe className="w-4 h-4" />
-                <span className="text-sm">English (EN)</span>
-              </Link>
-            </div>
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-border/60 pt-6 text-xs text-foreground/60">
+          <div>
+            © {new Date().getFullYear()} KreativLabs.id. Hak cipta dilindungi undang-undang.
+          </div>
+
+          <div className="flex items-center gap-3">
+            <ThemeToggle />
+            <Link
+              href="/en"
+              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-foreground/70 hover:text-primary transition-colors rounded-lg bg-secondary border border-border"
+            >
+              <Globe className="w-3.5 h-3.5" />
+              <span>English (EN)</span>
+            </Link>
           </div>
         </div>
+
       </div>
-    </footer>
+    </RuixenGradientFooter>
   );
 }

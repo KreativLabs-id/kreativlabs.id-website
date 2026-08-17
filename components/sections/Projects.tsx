@@ -1,81 +1,78 @@
 "use client";
 
-import { Card } from "@/components/ui/card";
-import { ExternalLink } from "lucide-react";
-import OptimizedParticles from "@/components/OptimizedParticles";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import FadeInStagger from "@/components/FadeInStagger";
-import Link from "next/link";
 import { projects } from "@/data/projects";
 
 export default function Projects() {
   return (
-    <section id="projects" className="relative py-24 bg-background overflow-hidden overflow-x-hidden w-full">
-      {/* Lighting Effect */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-primary rounded-full blur-[120px] opacity-10"></div>
-
-      <div className="container mx-auto px-6 relative z-10">
+    <section id="projects" className="relative py-16 md:py-20 bg-background overflow-hidden w-full scroll-mt-24">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-6xl">
+        
         {/* Section Header */}
         <AnimatedSection animation="fade-up">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Proyek <span className="text-primary">Kami</span>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 tracking-tight">
+              Portofolio & <span className="text-primary">Hasil Proyek</span>
             </h2>
-            <p className="text-foreground/70 text-lg max-w-2xl mx-auto">
-              Beberapa project yang telah kami kerjakan dengan hasil yang memuaskan
+            <p className="text-foreground/70 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+              Koleksi website dan sistem digital yang telah kami kerjakan dengan performa tinggi dan desain profesional.
             </p>
           </div>
         </AnimatedSection>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {projects.map((project, index) => (
-            <FadeInStagger key={project.id} index={index} delay={100}>
-              <Link href={`/projects/${project.id}`}>
-                <Card
-                  className="group bg-card border-foreground/10 hover:border-primary/50 transition-all duration-300 overflow-hidden cursor-pointer"
-                >
-                {/* Project Image */}
-                <div className="relative w-full aspect-video bg-secondary overflow-hidden">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    width={1920}
-                    height={1080}
-                    className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-card via-transparent to-transparent opacity-60"></div>
-                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                    <div className="bg-primary p-2 rounded-full shadow-lg">
-                      <ExternalLink className="w-5 h-5 text-foreground" />
+            <FadeInStagger key={project.id} index={index} delay={40}>
+              <Link href={`/projects/${project.id}`} className="block h-full">
+                <div className="group h-full flex flex-col justify-between bg-card border border-border/80 hover:border-primary/50 rounded-2xl overflow-hidden transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
+                  
+                  {/* Project Image */}
+                  <div className="relative w-full aspect-[16/10] bg-secondary/40 overflow-hidden border-b border-border/50">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/30 via-transparent to-transparent pointer-events-none" />
+                  </div>
+
+                  {/* Project Info */}
+                  <div className="p-5 sm:p-6 flex flex-col justify-between grow">
+                    <div>
+                      <span className="text-[11px] font-semibold text-primary uppercase tracking-wider">
+                        {project.category}
+                      </span>
+                      
+                      <h3 className="text-base sm:text-lg font-bold text-foreground mt-1 mb-2 group-hover:text-primary transition-colors">
+                        {project.title}
+                      </h3>
+                      
+                      <p className="text-foreground/70 text-xs sm:text-sm line-clamp-2 leading-relaxed">
+                        {project.description}
+                      </p>
+                    </div>
+
+                    {/* Footer link */}
+                    <div className="mt-4 pt-3 border-t border-border/40 flex items-center justify-between text-xs font-semibold text-primary">
+                      <span>Lihat Detail Studi Kasus</span>
+                      <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </div>
                   </div>
-                </div>
 
-                {/* Project Info */}
-                <div className="p-6">
-                  <div className="text-primary text-sm font-semibold mb-2">
-                    {project.category}
-                  </div>
-                  <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-foreground/70 text-sm">
-                    {project.description}
-                  </p>
                 </div>
-              </Card>
               </Link>
             </FadeInStagger>
           ))}
         </div>
+
       </div>
-      
-      {/* Interactive Particles - Desktop Only */}
-      <OptimizedParticles quantity={50} />
     </section>
   );
 }

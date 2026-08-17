@@ -1,102 +1,146 @@
 "use client";
 
-import OptimizedParticles from "@/components/OptimizedParticles";
 import AnimatedSection from "@/components/AnimatedSection";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 export default function About() {
   return (
-    <section id="about" className="relative py-24 bg-background overflow-hidden overflow-x-hidden w-full">
-      {/* Lighting Effect */}
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary rounded-full blur-[120px] opacity-10"></div>
+    <section id="about" className="relative py-16 md:py-24 bg-background overflow-hidden w-full scroll-mt-24">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-6xl">
+        
+        {/* Asymmetrical 2-Column Tech Company Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+          
+          {/* Left Column: Brand Statement & Story (5 cols) */}
+          <div className="lg:col-span-5 space-y-6">
+            <AnimatedSection animation="fade-up">
+              <span className="text-xs font-semibold text-primary uppercase tracking-widest block">
+                Tentang KreativLabs
+              </span>
+              
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight leading-[1.18] mt-2">
+                Membangun website modern dengan standar tinggi untuk bisnis Anda.
+              </h2>
+            </AnimatedSection>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <AnimatedSection animation="fade-right">
-              <div className="relative">
-                {/* Decorative Background Elements */}
-                <div className="absolute -top-20 -left-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
-                <div className="absolute top-40 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-2xl"></div>
-                
-                <div className="relative space-y-6">
+            <AnimatedSection animation="fade-up" delay={80}>
+              <p className="text-sm sm:text-base text-foreground/75 leading-relaxed">
+                Kami bukan sekadar pembuat halaman web. KreativLabs hadir sebagai partner teknologi yang memikirkan performa kecepatan, kemudahan pengelolaan, dan kredibilitas brand Anda di mata calon pelanggan.
+              </p>
+              
+              <p className="text-sm sm:text-base text-foreground/75 leading-relaxed mt-3">
+                Dari landing page konversi tinggi hingga aplikasi kasir web, setiap produk kami rancang dengan kode yang bersih, aman, dan siap menunjang operasional bisnis harian Anda.
+              </p>
+            </AnimatedSection>
 
-                  {/* Main Heading with gradient accent */}
-                  <div className="space-y-3">
-                    <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-                      <span className="text-foreground">Tentang</span>
-                      <br />
-                      <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                        KreativLabs
-                      </span>
-                    </h2>
-                    <div className="h-1 w-20 bg-gradient-to-r from-primary to-transparent rounded-full"></div>
+            {/* Impact Metrics Row */}
+            <AnimatedSection animation="fade-up" delay={120}>
+              <div className="grid grid-cols-3 gap-3 pt-6 border-t border-border/70">
+                <div>
+                  <div className="text-xl sm:text-2xl font-extrabold text-foreground">
+                    &lt; 2s
                   </div>
-
-                  {/* Image Section */}
-                  <div className="relative pt-4">
-                    <div className="relative aspect-[3/2] max-w-lg rounded-2xl overflow-hidden border-2 border-primary/30 shadow-2xl shadow-primary/20">
-                      <img
-                        src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop&q=80"
-                        alt="KreativLabs Team"
-                        className="w-full h-full object-cover"
-                      />
-                      {/* Overlay Gradient */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent"></div>
-                    </div>
+                  <div className="text-[11px] text-foreground/60 font-medium mt-0.5">
+                    Waktu Muat Cepat
                   </div>
+                </div>
 
-                  {/* Additional decorative element */}
-                  <div className="flex items-center gap-3 pt-4">
-                    <div className="flex gap-2">
-                      <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
-                      <div className="w-2 h-2 rounded-full bg-primary/60 animate-pulse" style={{animationDelay: '0.2s'}}></div>
-                      <div className="w-2 h-2 rounded-full bg-primary/30 animate-pulse" style={{animationDelay: '0.4s'}}></div>
-                    </div>
-                    <span className="text-foreground/40 text-xs font-medium">Mitra Digital Terpercaya</span>
+                <div>
+                  <div className="text-xl sm:text-2xl font-extrabold text-foreground">
+                    100%
+                  </div>
+                  <div className="text-[11px] text-foreground/60 font-medium mt-0.5">
+                    Kepemilikan Aset
+                  </div>
+                </div>
+
+                <div>
+                  <div className="text-xl sm:text-2xl font-extrabold text-foreground">
+                    24/7
+                  </div>
+                  <div className="text-[11px] text-foreground/60 font-medium mt-0.5">
+                    Garansi & Support
                   </div>
                 </div>
               </div>
             </AnimatedSection>
 
-            {/* Right Content - Description */}
-            <AnimatedSection animation="fade-left" delay={200}>
-              <div className="space-y-6">
-                {/* Founded Info */}
-                <div className="space-y-4">
-                  <p className="text-foreground/80 text-base leading-relaxed">
-                    Didirikan pada <span className="text-foreground font-semibold">2025</span>, KreativLabs.id hadir dengan visi menjadi <span className="text-foreground font-semibold">mitra digital terpercaya</span> yang memberdayakan bisnis di Indonesia untuk tumbuh dan unggul melalui solusi teknologi yang inovatif dan berorientasi hasil.
-                  </p>
-                </div>
-
-                {/* Premium Solutions */}
-                <div className="space-y-4">
-                  <p className="text-foreground/80 text-base leading-relaxed">
-                    Kami mengembangkan <span className="text-foreground font-semibold">website, aplikasi mobile, dan platform e-commerce</span> kustom dengan standar coding tertinggi, performa optimal dengan <span className="text-foreground font-semibold">Fast Loading</span>, dan keamanan terdepan yang memberikan pengalaman digital premium untuk bisnis Anda.
-                  </p>
-                </div>
-
-                {/* UX & Partnership */}
-                <div className="space-y-4">
-                  <p className="text-foreground/80 text-base leading-relaxed">
-                    Dengan menerapkan desain <span className="text-foreground font-semibold">UI/UX yang intuitif, modern, dan minimalis</span>, kami memaksimalkan user engagement dan mendorong konversi. Kami membangun proses kerja yang transparan, komunikatif, dan efisien dengan <span className="text-foreground font-semibold">Fast Delivery</span>, memposisikan klien sebagai bagian dari tim.
-                  </p>
-                </div>
-
-                {/* Impact & Innovation */}
-                <div className="space-y-4">
-                  <p className="text-foreground/80 text-base leading-relaxed">
-                    Kami menerapkan strategi <span className="text-foreground font-semibold">SEO dan best practices digital</span> untuk memastikan setiap solusi memberikan hasil terukur bagi pertumbuhan bisnis klien. Secara konsisten mengadopsi teknologi terbaru dan mengembangkan keahlian tim untuk memberikan solusi yang relevan dan <span className="text-foreground font-semibold">future-proof</span>.
-                  </p>
-                </div>
+            <AnimatedSection animation="fade-up" delay={160}>
+              <div className="pt-2">
+                <Link
+                  href="#contact"
+                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-primary hover:text-primary/80 transition-colors group"
+                >
+                  <span>Mulai Diskusi Project Anda</span>
+                  <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </Link>
               </div>
             </AnimatedSection>
           </div>
+
+          {/* Right Column: Bento Features Grid (7 cols) */}
+          <div className="lg:col-span-7 space-y-4">
+            
+            {/* Bento Card 1 - Featured Wide */}
+            <AnimatedSection animation="fade-up" delay={60}>
+              <div className="bg-card border border-border/80 hover:border-primary/50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 transition-all duration-200 hover:shadow-md">
+                <span className="text-[11px] font-semibold text-primary uppercase tracking-wider block mb-2">
+                  Arsitektur & Kualitas Kode
+                </span>
+                <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2">
+                  Teknologi Modern yang Cepat & Aman
+                </h3>
+                <p className="text-xs sm:text-sm text-foreground/75 leading-relaxed">
+                  Kami membangun setiap website menggunakan stack terkini (Next.js, TypeScript, dan Tailwind CSS) untuk memastikan performa loading instan, struktur SEO yang rapi, dan keamanan data tanpa beban plugin berlebih.
+                </p>
+              </div>
+            </AnimatedSection>
+
+            {/* Bento Cards 2 & 3 - Two Columns */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              
+              {/* Card 2 */}
+              <AnimatedSection animation="fade-up" delay={100}>
+                <div className="h-full bg-card border border-border/80 hover:border-primary/50 rounded-2xl sm:rounded-3xl p-6 transition-all duration-200 hover:shadow-md flex flex-col justify-between">
+                  <div>
+                    <span className="text-[11px] font-semibold text-primary uppercase tracking-wider block mb-2">
+                      Kecepatan Eksekusi
+                    </span>
+                    <h4 className="text-base font-bold text-foreground mb-2">
+                      Timeline Transparan
+                    </h4>
+                    <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed">
+                      Jadwal kerja dan rincian pengerjaan disepakati di awal. Tanpa proses berbelit dan selalu tepat waktu.
+                    </p>
+                  </div>
+                </div>
+              </AnimatedSection>
+
+              {/* Card 3 */}
+              <AnimatedSection animation="fade-up" delay={140}>
+                <div className="h-full bg-card border border-border/80 hover:border-primary/50 rounded-2xl sm:rounded-3xl p-6 transition-all duration-200 hover:shadow-md flex flex-col justify-between">
+                  <div>
+                    <span className="text-[11px] font-semibold text-primary uppercase tracking-wider block mb-2">
+                      Dukungan Nyata
+                    </span>
+                    <h4 className="text-base font-bold text-foreground mb-2">
+                      Pendampingan Penuh
+                    </h4>
+                    <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed">
+                      Kami membantu setup domain, hosting, hingga pelatihan singkat agar Anda dapat mengelola website secara mandiri.
+                    </p>
+                  </div>
+                </div>
+              </AnimatedSection>
+
+            </div>
+
+          </div>
+
         </div>
+
       </div>
-      
-      {/* Interactive Particles - Desktop Only */}
-      <OptimizedParticles quantity={50} />
     </section>
   );
 }

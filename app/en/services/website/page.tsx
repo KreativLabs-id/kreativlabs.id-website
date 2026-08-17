@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/sections/Footer";
+import NavbarEN from "@/components/NavbarEN";
+import Footer from "@/components/sections/en/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import {
   Code,
@@ -8,133 +8,121 @@ import {
   Cpu,
   CheckCircle2,
   ArrowRight,
-  ShieldCheck,
-  Zap,
-  Layers,
-  Sparkles
 } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Jasa Pembuatan Website & Aplikasi Web Profesional | KreativLabs",
-  description: "Layanan pembuatan website profesional untuk bisnis dan UMKM. Dari landing page konversi tinggi, profil perusahaan, hingga aplikasi web dan sistem kustom.",
-  keywords: [
-    "jasa pembuatan website",
-    "jasa website profesional",
-    "jasa landing page",
-    "jasa company profile",
-    "jasa web application",
-    "kreativlabs website"
-  ],
+  title: "Professional Website & Web App Development Services | KreativLabs",
+  description: "High-performance web development solutions for ambitious businesses. From high-converting landing pages to custom web applications.",
   alternates: {
-    canonical: "https://kreativlabs.id/services/website",
+    canonical: "https://kreativlabs.id/en/services/website",
   },
 };
 
-const websiteServices = [
+const websiteServicesEN = [
   {
     icon: Code,
-    title: "Landing Page Bisnis & Promosi",
-    description: "Satu halaman website yang dirancang terstruktur khusus untuk promosi produk, campaign iklan, dan mengarahkan calon pembeli langsung menghubungi WhatsApp Anda.",
+    title: "Business & Promotional Landing Pages",
+    description: "Structured single-page websites engineered specifically for marketing campaigns, high conversion rates, and direct WhatsApp lead generation.",
     deliverables: [
-      "Struktur konten persuasif & berorientasi konversi",
-      "Waktu muat super cepat (Fast Loading Speed)",
-      "Desain adaptif & responsif di semua ukuran layar",
-      "Integrasi tombol WhatsApp & formulir leads",
-      "Setup domain, hosting, dan SSL siap pakai",
-      "Struktur SEO on-page ramah pencarian Google"
+      "Persuasive layout structured for high conversions",
+      "Near-instant page load speed on modern devices",
+      "Adaptive & mobile-first responsive architecture",
+      "Direct WhatsApp and lead capture integration",
+      "Turnkey domain, hosting, and SSL setup",
+      "Clean on-page Google SEO structure"
     ],
-    waMessage: "Halo KreativLabs, saya ingin konsultasi pembuatan Landing Page untuk bisnis saya."
+    waMessage: "Hello KreativLabs, I would like to inquire about Landing Page development."
   },
   {
     icon: Globe,
-    title: "Website Profil Perusahaan (Company Profile)",
-    description: "Website multi-halaman resmi untuk memperkuat identitas brand, memamerkan portofolio dan legalitas, serta membangun rasa percaya bagi calon mitra dan klien Anda.",
+    title: "Corporate & Business Websites",
+    description: "Official multi-page websites designed to establish brand credibility, showcase service portfolios, and earn the trust of corporate clients.",
     deliverables: [
-      "Halaman lengkap (Beranda, Tentang Kami, Layanan, Portofolio, Kontak)",
-      "Tipografi dan tata letak elegan mencerminkan profesionalisme",
-      "Kemudahan update konten dan artikel blog secara mandiri",
-      "Integrasi peta lokasi Google Maps, formulir, & email bisnis",
-      "Optimasi performa & keamanan standar industri",
-      "Panduan pengelolaan website setelah selesai"
+      "Complete multi-page structure (About, Services, Portfolio, Contact)",
+      "Editorial typography that communicates corporate trust",
+      "Intuitive CMS for effortless internal content updates",
+      "Integrated contact forms, corporate email, and Google Maps",
+      "Enterprise-grade performance and data security",
+      "Comprehensive onboarding and maintenance guide"
     ],
-    waMessage: "Halo KreativLabs, saya ingin membuat Website Company Profile untuk perusahaan."
+    waMessage: "Hello KreativLabs, I would like to build a Corporate / Business Website."
   },
   {
     icon: Cpu,
-    title: "Website Kustom & Sistem Web (Web App)",
-    description: "Pengembangan sistem digital dengan logika bisnis khusus, mulai dari sistem kasir (POS), portal reservasi online, direktori data, hingga dashboard operasional internal.",
+    title: "Custom Web Applications & Portals",
+    description: "Custom-tailored software systems built to automate business operations, such as cloud POS cashiers, reservation systems, or internal portals.",
     deliverables: [
-      "Arsitektur Next.js, TypeScript, & database modern",
-      "Dashboard admin dengan hak akses pengguna yang fleksibel",
-      "Integrasi payment gateway, WhatsApp API, atau sistem pihak ketiga",
-      "Keamanan database dan pencadangan data otomatis",
-      "Desain antarmuka UI/UX yang intuitif bagi operator dan admin",
-      "Garansi pemeliharaan teknis & perbaikan bug"
+      "Next.js, TypeScript, and modern scalable databases",
+      "Role-based access control and intuitive admin dashboards",
+      "Seamless payment gateway and third-party API integrations",
+      "Automated database backups and encrypted security",
+      "Intuitive UX tailored for operators and daily staff",
+      "Technical warranty and continuous bug-fix support"
     ],
-    waMessage: "Halo KreativLabs, saya ingin konsultasi pengembangan Website Kustom / Web App."
+    waMessage: "Hello KreativLabs, I would like to discuss a Custom Web App project."
   }
 ];
 
-const workflow = [
+const workflowEN = [
   {
     step: "01",
-    title: "Konsultasi & Penentuan Kebutuhan",
-    description: "Kami mendiskusikan tujuan website Anda, target audiens, serta referensi fitur yang dibutuhkan."
+    title: "Consultation & Scope",
+    description: "We align on your digital goals, target audience, and required feature specifications."
   },
   {
     step: "02",
-    title: "Perancangan UI & Struktur Konten",
-    description: "Penyusunan tata letak, copywriting, dan visual awal agar alur navigasi terasa natural dan terarah."
+    title: "UI Design & Wireframing",
+    description: "Structuring user journeys, copywriting, and visual prototypes for seamless clarity."
   },
   {
     step: "03",
-    title: "Development & Integrasi Fitur",
-    description: "Pemrograman dengan kode bersih, optimasi kecepatan akses, dan integrasi database serta formulir."
+    title: "Development & Integration",
+    description: "Clean engineering, database configuration, performance optimization, and testing."
   },
   {
     step: "04",
-    title: "Uji Coba, Revisi, & Go-Live",
-    description: "Pengujian responsif di berbagai perangkat, penyempurnaan revisi, setup domain, hingga website resmi aktif."
+    title: "Testing, Revisions, & Launch",
+    description: "Cross-device responsiveness tests, client revisions, domain setup, and official deployment."
   }
 ];
 
-export default function WebsiteServicesPage() {
+export default function WebsiteServicesPageEN() {
   return (
     <main className="min-h-screen bg-background">
-      <Navbar />
+      <NavbarEN />
 
       {/* Hero Header */}
       <section className="pt-28 pb-14 px-4 sm:px-6">
         <div className="container mx-auto max-w-5xl text-center">
           <span className="text-xs font-semibold text-primary uppercase tracking-widest block mb-2.5">
-            Layanan Pembuatan Website
+            Web Development Services
           </span>
           
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-foreground tracking-tight leading-[1.18] mb-4">
-            Website Berkinerja Tinggi untuk <br className="hidden sm:block" />
-            <span className="text-primary">Mendorong Pertumbuhan Bisnis Anda.</span>
+            High-Performance Websites Engineered to <br className="hidden sm:block" />
+            <span className="text-primary">Drive Measurable Growth for Your Business.</span>
           </h1>
 
           <p className="text-sm sm:text-base md:text-lg text-foreground/75 max-w-2xl mx-auto leading-relaxed mb-8">
-            Kami merancang dan mengembangkan website yang cepat dimuat, mudah dikelola, dan dirancang khusus untuk meningkatkan kredibilitas dan konversi penjualan Anda.
+            We engineer websites that load instantly, convert visitors into loyal clients, and provide seamless content management.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
-              href="https://wa.me/6285872381791?text=Halo%20KreativLabs,%20saya%20tertarik%20untuk%20konsultasi%20pembuatan%20website"
+              href="https://wa.me/6285872381791?text=Hello%20KreativLabs,%20I%20would%20like%20to%20consult%20about%20a%20website"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3 rounded-full bg-primary text-primary-foreground text-xs sm:text-sm font-semibold hover:bg-primary/90 transition-all hover:shadow-md hover:-translate-y-0.5"
             >
-              Mulai Konsultasi Gratis
+              Start Free Consultation
             </a>
 
             <Link
-              href="/#projects"
+              href="/en#projects"
               className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3 rounded-full bg-secondary border border-border hover:border-primary/50 text-foreground text-xs sm:text-sm font-medium hover:text-primary transition-all hover:-translate-y-0.5"
             >
-              Lihat Hasil Portofolio
+              View Our Work
             </Link>
           </div>
         </div>
@@ -145,15 +133,15 @@ export default function WebsiteServicesPage() {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-2 tracking-tight">
-              Pilihan Solusi Website Sesuai Kebutuhan
+              Tailored Web Solutions
             </h2>
             <p className="text-xs sm:text-sm text-foreground/70 max-w-xl mx-auto">
-              Setiap paket dikerjakan secara kustom dengan teknologi web modern tanpa menggunakan template usang.
+              Every solution is crafted with modern engineering standards, free from bloated legacy templates.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {websiteServices.map((service, index) => {
+            {websiteServicesEN.map((service, index) => {
               const Icon = service.icon;
               const waUrl = `https://wa.me/6285872381791?text=${encodeURIComponent(service.waMessage)}`;
 
@@ -177,7 +165,7 @@ export default function WebsiteServicesPage() {
 
                     <div className="space-y-2.5 pt-4 border-t border-border/60 mb-6">
                       <span className="text-[11px] font-semibold text-foreground/50 uppercase tracking-wider block mb-2">
-                        Fitur & Kelengkapan:
+                        Deliverables & Features:
                       </span>
                       {service.deliverables.map((item, idx) => (
                         <div key={idx} className="flex items-start gap-2 text-xs sm:text-[13px] text-foreground/80">
@@ -194,7 +182,7 @@ export default function WebsiteServicesPage() {
                     rel="noopener noreferrer"
                     className="w-full inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-xl bg-primary text-primary-foreground text-xs sm:text-sm font-semibold hover:bg-primary/90 transition-colors"
                   >
-                    <span>Konsultasi Paket Ini</span>
+                    <span>Inquire About This Package</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </a>
                 </div>
@@ -209,15 +197,15 @@ export default function WebsiteServicesPage() {
         <div className="container mx-auto max-w-5xl">
           <div className="text-center mb-12">
             <span className="text-xs font-semibold text-primary uppercase tracking-widest block mb-1">
-              Alur Kerja
+              Development Lifecycle
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight">
-              Bagaimana Kami Mewujudkan Website Anda
+              Our Proven Web Engineering Process
             </h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {workflow.map((item, index) => (
+            {workflowEN.map((item, index) => (
               <div key={index} className="bg-card border border-border/80 rounded-2xl p-5">
                 <span className="text-xl font-extrabold text-primary block mb-2">
                   {item.step}
@@ -239,18 +227,18 @@ export default function WebsiteServicesPage() {
         <div className="container mx-auto max-w-4xl">
           <div className="bg-card border border-border/80 rounded-2xl p-8 sm:p-12 text-center">
             <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3 tracking-tight">
-              Siap Memulai Proyek Website Bisnis Anda?
+              Ready to Build Your Digital Platform?
             </h2>
             <p className="text-xs sm:text-sm text-foreground/70 max-w-lg mx-auto leading-relaxed mb-6">
-              Konsultasikan ide Anda bersama tim developer KreativLabs tanpa biaya awal. Kami bantu berikan estimasi timeline dan rekomendasi terbaik.
+              Consult your specifications directly with the KreativLabs team. We will provide honest technical guidance and an accurate project timeline.
             </p>
             <a
-              href="https://wa.me/6285872381791?text=Halo%20KreativLabs,%20saya%20ingin%20diskusi%20tentang%20pembuatan%20website"
+              href="https://wa.me/6285872381791?text=Hello%20KreativLabs,%20I%20would%20like%20to%20discuss%20a%20website%20project"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-primary text-primary-foreground text-xs sm:text-sm font-semibold hover:bg-primary/90 transition-all hover:shadow-md hover:-translate-y-0.5"
             >
-              Diskusi via WhatsApp
+              Discuss via WhatsApp
             </a>
           </div>
         </div>

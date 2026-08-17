@@ -1,102 +1,146 @@
 "use client";
 
-import OptimizedParticles from "@/components/OptimizedParticles";
 import AnimatedSection from "@/components/AnimatedSection";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 export default function AboutEN() {
   return (
-    <section id="about" className="relative py-24 bg-background overflow-hidden overflow-x-hidden w-full">
-      {/* Lighting Effect */}
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary rounded-full blur-[120px] opacity-10"></div>
+    <section id="about" className="relative py-16 md:py-24 bg-background overflow-hidden w-full scroll-mt-24">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-6xl">
+        
+        {/* Asymmetrical 2-Column Tech Company Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+          
+          {/* Left Column: Brand Statement & Story (5 cols) */}
+          <div className="lg:col-span-5 space-y-6">
+            <AnimatedSection animation="fade-up">
+              <span className="text-xs font-semibold text-primary uppercase tracking-widest block">
+                About KreativLabs
+              </span>
+              
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight leading-[1.18] mt-2">
+                Engineering high-performance web products for growing businesses.
+              </h2>
+            </AnimatedSection>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <AnimatedSection animation="fade-right">
-              <div className="relative">
-                {/* Decorative Background Elements */}
-                <div className="absolute -top-20 -left-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
-                <div className="absolute top-40 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-2xl"></div>
-                
-                <div className="relative space-y-6">
+            <AnimatedSection animation="fade-up" delay={80}>
+              <p className="text-sm sm:text-base text-foreground/75 leading-relaxed">
+                We are more than just a web design studio. KreativLabs partners with ambitious brands to engineer digital experiences that prioritize loading speed, ease of management, and measurable customer conversion.
+              </p>
+              
+              <p className="text-sm sm:text-base text-foreground/75 leading-relaxed mt-3">
+                From high-converting landing pages to custom web applications, everything we build is powered by clean, scalable, and secure modern code.
+              </p>
+            </AnimatedSection>
 
-                  {/* Main Heading with gradient accent */}
-                  <div className="space-y-3">
-                    <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-                      <span className="text-foreground">About</span>
-                      <br />
-                      <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                        KreativLabs
-                      </span>
-                    </h2>
-                    <div className="h-1 w-20 bg-gradient-to-r from-primary to-transparent rounded-full"></div>
+            {/* Impact Metrics Row */}
+            <AnimatedSection animation="fade-up" delay={120}>
+              <div className="grid grid-cols-3 gap-3 pt-6 border-t border-border/70">
+                <div>
+                  <div className="text-xl sm:text-2xl font-extrabold text-foreground">
+                    &lt; 2s
                   </div>
-
-                  {/* Image Section */}
-                  <div className="relative pt-4">
-                    <div className="relative aspect-[3/2] max-w-lg rounded-2xl overflow-hidden border-2 border-primary/30 shadow-2xl shadow-primary/20">
-                      <img
-                        src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop&q=80"
-                        alt="KreativLabs Team"
-                        className="w-full h-full object-cover"
-                      />
-                      {/* Overlay Gradient */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent"></div>
-                    </div>
+                  <div className="text-[11px] text-foreground/60 font-medium mt-0.5">
+                    Fast Page Speed
                   </div>
+                </div>
 
-                  {/* Additional decorative element */}
-                  <div className="flex items-center gap-3 pt-4">
-                    <div className="flex gap-2">
-                      <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
-                      <div className="w-2 h-2 rounded-full bg-primary/60 animate-pulse" style={{animationDelay: '0.2s'}}></div>
-                      <div className="w-2 h-2 rounded-full bg-primary/30 animate-pulse" style={{animationDelay: '0.4s'}}></div>
-                    </div>
-                    <span className="text-foreground/40 text-xs font-medium">Trusted Digital Partner</span>
+                <div>
+                  <div className="text-xl sm:text-2xl font-extrabold text-foreground">
+                    100%
+                  </div>
+                  <div className="text-[11px] text-foreground/60 font-medium mt-0.5">
+                    Asset Ownership
+                  </div>
+                </div>
+
+                <div>
+                  <div className="text-xl sm:text-2xl font-extrabold text-foreground">
+                    24/7
+                  </div>
+                  <div className="text-[11px] text-foreground/60 font-medium mt-0.5">
+                    Technical Support
                   </div>
                 </div>
               </div>
             </AnimatedSection>
 
-            {/* Right Content - Description */}
-            <AnimatedSection animation="fade-left" delay={200}>
-              <div className="space-y-6">
-                {/* Founded Info */}
-                <div className="space-y-4">
-                  <p className="text-foreground/80 text-base leading-relaxed">
-                    Founded in <span className="text-foreground font-semibold">2025</span>, KreativLabs.id emerged with a vision to become a <span className="text-foreground font-semibold">trusted digital partner</span> that empowers businesses in Indonesia to grow and excel through innovative and results-oriented technology solutions.
-                  </p>
-                </div>
-
-                {/* Premium Solutions */}
-                <div className="space-y-4">
-                  <p className="text-foreground/80 text-base leading-relaxed">
-                    We develop custom <span className="text-foreground font-semibold">websites, mobile applications, and e-commerce platforms</span> with the highest coding standards, optimal performance with <span className="text-foreground font-semibold">Fast Loading</span>, and cutting-edge security that delivers premium digital experiences for your business.
-                  </p>
-                </div>
-
-                {/* UX & Partnership */}
-                <div className="space-y-4">
-                  <p className="text-foreground/80 text-base leading-relaxed">
-                    By implementing <span className="text-foreground font-semibold">intuitive, modern, and minimalist UI/UX design</span>, we maximize user engagement and drive conversions. We build transparent, communicative, and efficient workflows with <span className="text-foreground font-semibold">Fast Delivery</span>, positioning clients as part of the team.
-                  </p>
-                </div>
-
-                {/* Impact & Innovation */}
-                <div className="space-y-4">
-                  <p className="text-foreground/80 text-base leading-relaxed">
-                    We implement <span className="text-foreground font-semibold">SEO strategies and digital best practices</span> to ensure every solution delivers measurable results for client business growth. Consistently adopting the latest technologies and developing team expertise to provide relevant and <span className="text-foreground font-semibold">future-proof</span> solutions.
-                  </p>
-                </div>
+            <AnimatedSection animation="fade-up" delay={160}>
+              <div className="pt-2">
+                <Link
+                  href="/en#contact"
+                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-primary hover:text-primary/80 transition-colors group"
+                >
+                  <span>Discuss Your Next Project</span>
+                  <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </Link>
               </div>
             </AnimatedSection>
           </div>
+
+          {/* Right Column: Bento Features Grid (7 cols) */}
+          <div className="lg:col-span-7 space-y-4">
+            
+            {/* Bento Card 1 - Featured Wide */}
+            <AnimatedSection animation="fade-up" delay={60}>
+              <div className="bg-card border border-border/80 hover:border-primary/50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 transition-all duration-200 hover:shadow-md">
+                <span className="text-[11px] font-semibold text-primary uppercase tracking-wider block mb-2">
+                  Architecture & Code Quality
+                </span>
+                <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2">
+                  Modern, Resilient Web Technologies
+                </h3>
+                <p className="text-xs sm:text-sm text-foreground/75 leading-relaxed">
+                  We build with modern frameworks (Next.js, TypeScript, Tailwind CSS) to guarantee instant performance, clean SEO architectures, and rock-solid security without bloat.
+                </p>
+              </div>
+            </AnimatedSection>
+
+            {/* Bento Cards 2 & 3 - Two Columns */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              
+              {/* Card 2 */}
+              <AnimatedSection animation="fade-up" delay={100}>
+                <div className="h-full bg-card border border-border/80 hover:border-primary/50 rounded-2xl sm:rounded-3xl p-6 transition-all duration-200 hover:shadow-md flex flex-col justify-between">
+                  <div>
+                    <span className="text-[11px] font-semibold text-primary uppercase tracking-wider block mb-2">
+                      Execution Speed
+                    </span>
+                    <h4 className="text-base font-bold text-foreground mb-2">
+                      Transparent Timelines
+                    </h4>
+                    <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed">
+                      Agreed schedules and transparent delivery milestones with zero bureaucratic friction.
+                    </p>
+                  </div>
+                </div>
+              </AnimatedSection>
+
+              {/* Card 3 */}
+              <AnimatedSection animation="fade-up" delay={140}>
+                <div className="h-full bg-card border border-border/80 hover:border-primary/50 rounded-2xl sm:rounded-3xl p-6 transition-all duration-200 hover:shadow-md flex flex-col justify-between">
+                  <div>
+                    <span className="text-[11px] font-semibold text-primary uppercase tracking-wider block mb-2">
+                      Full Onboarding
+                    </span>
+                    <h4 className="text-base font-bold text-foreground mb-2">
+                      End-to-End Support
+                    </h4>
+                    <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed">
+                      From domain and cloud configuration to guided team onboarding, we ensure your team is confident with the new platform.
+                    </p>
+                  </div>
+                </div>
+              </AnimatedSection>
+
+            </div>
+
+          </div>
+
         </div>
+
       </div>
-      
-      {/* Interactive Particles - Desktop Only */}
-      <OptimizedParticles quantity={50} />
     </section>
   );
 }

@@ -5,19 +5,18 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Footer from "@/components/sections/Footer";
-import { Button } from "@/components/ui/button";
-import { Calendar, Clock, ArrowLeft, Share2, Tag, Check } from "lucide-react";
+import { ArrowLeft, Share2, Check, Clock, Calendar, Tag } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import Image from "next/image";
 import Link from "next/link";
-import { getBlogPostBySlug } from "../../../data/blogs";
+import { getBlogPostBySlug } from "@/data/blogs";
 import Markdown from "markdown-to-jsx";
 
 export default function BlogPostPage() {
   const params = useParams();
   const slug = params.slug as string;
   const post = getBlogPostBySlug(slug);
-  const [shareStatus, setShareStatus] = useState<'idle' | 'shared' | 'copied'>('idle');
+  const [shareStatus, setShareStatus] = useState<"idle" | "shared" | "copied">("idle");
 
   const handleShare = async () => {
     if (!post) return;
@@ -29,35 +28,33 @@ export default function BlogPostPage() {
     };
 
     try {
-      // Try Web Share API first (mobile devices)
       if (navigator.share) {
         await navigator.share(shareData);
-        setShareStatus('shared');
-        setTimeout(() => setShareStatus('idle'), 2000);
+        setShareStatus("shared");
+        setTimeout(() => setShareStatus("idle"), 2000);
       } else {
-        // Fallback: Copy to clipboard
         await navigator.clipboard.writeText(window.location.href);
-        setShareStatus('copied');
-        setTimeout(() => setShareStatus('idle'), 2000);
+        setShareStatus("copied");
+        setTimeout(() => setShareStatus("idle"), 2000);
       }
     } catch (error) {
-      console.error('Error sharing:', error);
+      console.error("Error sharing:", error);
     }
   };
 
   if (!post) {
     return (
-      <main className="min-h-screen bg-background overflow-x-hidden w-full max-w-[100vw]">
+      <main className="min-h-screen bg-background overflow-x-hidden w-full">
         <Navbar />
-        <div className="container mx-auto px-6 py-32 text-center">
-          <h1 className="text-4xl font-bold text-foreground mb-4">Artikel Tidak Ditemukan</h1>
-          <p className="text-foreground/70 mb-8">Maaf, artikel yang Anda cari tidak ditemukan.</p>
-          <Button asChild>
-            <Link href="/blog">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Kembali ke Blog
-            </Link>
-          </Button>
+        <div className="container mx-auto px-4 sm:px-6 py-32 text-center max-w-md">
+          <h1 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">Artikel Tidak Ditemukan</h1>
+          <p className="text-foreground/70 text-sm mb-6">Maaf, artikel yang Anda cari tidak tersedia.</p>
+          <Link
+            href="/blog"
+            className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-primary text-primary-foreground text-xs sm:text-sm font-semibold hover:bg-primary/90 transition-colors"
+          >
+            Kembali ke Blog
+          </Link>
         </div>
         <Footer />
       </main>
@@ -65,334 +62,211 @@ export default function BlogPostPage() {
   }
 
   return (
-    <main className="min-h-screen bg-background overflow-x-hidden w-full max-w-[100vw]">
+    <main className="min-h-screen bg-background overflow-x-hidden w-full">
       <Navbar />
       
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-12 bg-gradient-to-b from-background to-card">
-        <div className="absolute top-20 right-10 w-96 h-96 bg-primary rounded-full blur-[120px] opacity-10"></div>
-        
-        <div className="container mx-auto px-6 relative z-10">
+      {/* Header Section */}
+      <section className="relative pt-28 pb-6 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 max-w-4xl relative z-10">
           <AnimatedSection animation="fade-up">
-            <div className="max-w-4xl mx-auto">
-              {/* Back Button */}
-              <Link 
-                href="/blog"
-                className="inline-flex items-center gap-2 text-foreground/70 hover:text-primary transition-colors mb-8 group"
-              >
-                <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-                <span>Kembali ke Blog</span>
-              </Link>
+            
+            {/* Back link */}
+            <Link 
+              href="/blog"
+              className="inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-foreground/60 hover:text-primary transition-colors mb-6 group"
+            >
+              <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
+              <span>Kembali ke Semua Artikel</span>
+            </Link>
 
-              {/* Category Badge */}
-              <div className="mb-4">
-                <span className="inline-block px-4 py-2 bg-primary/20 text-primary text-sm font-semibold rounded-full border border-primary/30">
-                  {post.category}
-                </span>
-              </div>
+            {/* Category */}
+            <span className="text-xs font-semibold text-primary uppercase tracking-widest block mb-2.5">
+              {post.category}
+            </span>
 
-              {/* Title */}
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
-                {post.title}
-              </h1>
+            {/* Title */}
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-[1.2] mb-5">
+              {post.title}
+            </h1>
 
-              {/* Meta Info */}
-              <div className="flex flex-wrap items-center gap-6 text-foreground/60 mb-8">
-                <div className="flex items-center gap-2">
-                  <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
-                    <span className="text-primary font-bold text-sm">KL</span>
-                  </div>
-                  <span className="text-sm">{post.author}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Calendar className="w-4 h-4" />
-                  <span className="text-sm">{post.date}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4" />
-                  <span className="text-sm">{post.readTime} baca</span>
-                </div>
-              </div>
-
-              {/* Featured Image */}
-              <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-8">
-                <Image
-                  src={post.image}
-                  alt={post.title}
-                  width={1920}
-                  height={1080}
-                  className="object-cover w-full h-full"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent"></div>
-              </div>
+            {/* Meta Row */}
+            <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-foreground/60 pb-6 border-b border-border/70">
+              <span className="font-semibold text-foreground">{post.author}</span>
+              <span className="text-foreground/30">•</span>
+              <span className="flex items-center gap-1.5">
+                <Calendar className="w-3.5 h-3.5" />
+                {post.date}
+              </span>
+              <span className="text-foreground/30">•</span>
+              <span className="flex items-center gap-1.5">
+                <Clock className="w-3.5 h-3.5" />
+                {post.readTime} baca
+              </span>
             </div>
+
+            {/* Cover Image */}
+            <div className="relative w-full aspect-16/9 sm:aspect-21/9 rounded-2xl overflow-hidden border border-border/80 bg-secondary shadow-md my-8">
+              <Image
+                src={post.image}
+                alt={post.title}
+                fill
+                className="object-cover"
+                priority
+                sizes="(max-width: 1200px) 100vw, 1000px"
+              />
+            </div>
+
           </AnimatedSection>
         </div>
       </section>
 
-      {/* Content Section */}
-      <section className="py-12 bg-background">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-            {/* Main Content */}
+      {/* Article Content */}
+      <section className="py-4 pb-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
+            
+            {/* Main Article Body */}
             <div className="lg:col-span-8">
               <AnimatedSection animation="fade-up">
-                <article className="blog-content prose prose-invert max-w-none">
-                  {post.content && (
-                    <div className="text-foreground">
-                      <Markdown
-                        options={{
-                          wrapper: 'article',
-                          forceBlock: true,
-                          overrides: {
-                            h1: { 
-                              component: ({ children, ...props }) => (
-                                <h1 {...props} className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6 mt-6 md:mt-8">{children}</h1>
-                              )
-                            },
-                            h2: { 
-                              component: ({ children, ...props }) => (
-                                <h2 {...props} className="text-xl md:text-2xl lg:text-3xl font-bold text-foreground mb-3 md:mb-4 mt-6 md:mt-8">{children}</h2>
-                              )
-                            },
-                            h3: { 
-                              component: ({ children, ...props }) => (
-                                <h3 {...props} className="text-lg md:text-xl lg:text-2xl font-bold text-foreground mb-2 md:mb-3 mt-4 md:mt-6">{children}</h3>
-                              )
-                            },
-                            p: { 
-                              component: ({ children, ...props }) => (
-                                <p {...props} className="text-foreground/80 text-base md:text-lg mb-3 md:mb-4 leading-relaxed">{children}</p>
-                              )
-                            },
-                            ul: { 
-                              component: ({ children, ...props }) => (
-                                <ul {...props} className="pl-4 md:pl-6 text-foreground/80 mb-4 md:mb-6 space-y-2 md:space-y-3" style={{ listStyleType: 'disc', color: '#3B82F6' }}>{children}</ul>
-                              )
-                            },
-                            ol: { 
-                              component: ({ children, ...props }) => (
-                                <ol {...props} className="list-decimal pl-4 md:pl-6 text-foreground/80 mb-4 md:mb-6 space-y-2 md:space-y-3">{children}</ol>
-                              )
-                            },
-                            li: { 
-                              component: ({ children, ...props }) => (
-                                <li {...props} className="text-foreground/80 text-base md:text-lg leading-relaxed pl-1 md:pl-2">{children}</li>
-                              )
-                            },
-                            strong: { 
-                              component: ({ children, ...props }) => (
-                                <strong {...props} className="text-foreground font-bold">{children}</strong>
-                              )
-                            },
-                            a: { 
-                              component: ({ children, ...props }) => (
-                                <a {...props} className="text-primary underline hover:text-primary/80 break-all">{children}</a>
-                              )
-                            },
-                            hr: { 
-                              component: (props) => (
-                                <hr {...props} className="border-foreground/20 my-6 md:my-8" />
-                              )
-                            },
-                            img: {
-                              component: ({ src, alt, ...props }) => (
-                                <div className="my-6 md:my-8">
-                                  <Image
-                                    src={src}
-                                    alt={alt || "Blog image"}
-                                    width={800}
-                                    height={450}
-                                    className="w-full h-auto rounded-lg shadow-lg"
-                                    {...props}
-                                  />
-                                </div>
-                              )
-                            },
-                            code: {
-                              component: ({ children, ...props }) => (
-                                <code {...props} className="bg-secondary px-2 py-1 rounded text-sm font-mono break-all">{children}</code>
-                              )
-                            },
-                            pre: {
-                              component: ({ children, ...props }) => (
-                                <pre {...props} className="bg-secondary p-4 rounded-lg overflow-x-auto text-sm font-mono mb-4">{children}</pre>
-                              )
-                            },
-                          }
-                        }}
-                      >
-                        {post.content}
-                      </Markdown>
-                    </div>
-                  )}
-                  
-                  {!post.content && (
-                    <p className="text-foreground/60 text-center py-10">Konten tidak tersedia</p>
+                <article className="prose dark:prose-invert max-w-none text-foreground/85 leading-relaxed">
+                  {post.content ? (
+                    <Markdown
+                      options={{
+                        wrapper: "div",
+                        forceBlock: true,
+                        overrides: {
+                          h1: { component: ({ children }) => <h2 className="text-xl sm:text-2xl font-bold text-foreground mt-8 mb-4 tracking-tight">{children}</h2> },
+                          h2: { component: ({ children }) => <h2 className="text-xl sm:text-2xl font-bold text-foreground mt-8 mb-4 tracking-tight">{children}</h2> },
+                          h3: { component: ({ children }) => <h3 className="text-lg sm:text-xl font-bold text-foreground mt-6 mb-3 tracking-tight">{children}</h3> },
+                          p: { component: ({ children }) => <p className="text-sm sm:text-base text-foreground/80 leading-relaxed mb-4">{children}</p> },
+                          ul: { component: ({ children }) => <ul className="list-disc pl-5 text-sm sm:text-base text-foreground/80 mb-4 space-y-2">{children}</ul> },
+                          ol: { component: ({ children }) => <ol className="list-decimal pl-5 text-sm sm:text-base text-foreground/80 mb-4 space-y-2">{children}</ol> },
+                          li: { component: ({ children }) => <li className="leading-relaxed">{children}</li> },
+                          strong: { component: ({ children }) => <strong className="text-foreground font-bold">{children}</strong> },
+                          a: { component: ({ children, href }) => <a href={href} className="text-primary underline hover:text-primary/80 transition-colors">{children}</a> },
+                          hr: { component: () => <hr className="border-border/60 my-6" /> },
+                          code: { component: ({ children }) => <code className="bg-secondary px-2 py-0.5 rounded text-xs font-mono text-foreground/90">{children}</code> },
+                          pre: { component: ({ children }) => <pre className="bg-secondary p-4 rounded-xl overflow-x-auto text-xs font-mono mb-4">{children}</pre> },
+                        },
+                      }}
+                    >
+                      {post.content}
+                    </Markdown>
+                  ) : (
+                    <p className="text-foreground/60 text-center py-8">Konten artikel sedang disiapkan.</p>
                   )}
                 </article>
 
                 {/* Tags */}
-                <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-foreground/10">
-                  <div className="flex items-center gap-2 md:gap-3 flex-wrap">
-                    <Tag className="w-4 h-4 md:w-5 md:h-5 text-foreground/60" />
-                    {post.tags.map((tag: string, index: number) => (
-                      <span 
-                        key={index}
-                        className="px-2 md:px-3 py-1 md:py-1.5 bg-foreground/5 hover:bg-foreground/10 text-foreground/70 text-xs md:text-sm rounded-lg transition-colors cursor-pointer"
+                {post.tags && post.tags.length > 0 && (
+                  <div className="mt-10 pt-6 border-t border-border/60 flex items-center gap-2 flex-wrap">
+                    <Tag className="w-4 h-4 text-foreground/50" />
+                    {post.tags.map((tag, idx) => (
+                      <span
+                        key={idx}
+                        className="px-2.5 py-1 bg-secondary border border-border/80 text-foreground/75 text-xs rounded-lg"
                       >
                         #{tag}
                       </span>
                     ))}
                   </div>
-                </div>
+                )}
 
-                {/* Share Section */}
-                <div className="mt-6 md:mt-8 p-4 md:p-6 bg-card/50 rounded-xl border border-foreground/10">
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                    <div>
-                      <h4 className="text-foreground font-bold mb-1 text-sm md:text-base">Bagikan Artikel Ini</h4>
-                      <p className="text-foreground/60 text-xs md:text-sm">Bantu teman Anda menemukan artikel bermanfaat ini</p>
-                    </div>
-                    <Button
-                      onClick={handleShare}
-                      className={`${
-                        shareStatus !== 'idle'
-                          ? 'bg-green-600 hover:bg-green-600' 
-                          : 'bg-primary hover:bg-primary/90'
-                      } text-foreground transition-all duration-300 text-sm md:text-base`}
-                    >
-                      {shareStatus === 'shared' ? (
-                        <>
-                          <Check className="w-3 h-3 md:w-4 md:h-4 mr-2" />
-                          Dibagikan!
-                        </>
-                      ) : shareStatus === 'copied' ? (
-                        <>
-                          <Check className="w-3 h-3 md:w-4 md:h-4 mr-2" />
-                          Link Disalin!
-                        </>
-                      ) : (
-                        <>
-                          <Share2 className="w-3 h-3 md:w-4 md:h-4 mr-2" />
-                          Share
-                        </>
-                      )}
-                    </Button>
+                {/* Share Box */}
+                <div className="mt-8 p-5 bg-card border border-border/80 rounded-2xl flex items-center justify-between gap-4">
+                  <div>
+                    <h4 className="text-sm font-bold text-foreground mb-0.5">Bagikan Artikel Ini</h4>
+                    <p className="text-foreground/60 text-xs">Bagikan wawasan ini kepada rekan kerja atau tim Anda.</p>
                   </div>
+                  <button
+                    onClick={handleShare}
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-primary text-primary-foreground text-xs font-semibold hover:bg-primary/90 transition-colors shrink-0"
+                  >
+                    {shareStatus === "shared" ? (
+                      <>
+                        <Check className="w-3.5 h-3.5" />
+                        <span>Dibagikan!</span>
+                      </>
+                    ) : shareStatus === "copied" ? (
+                      <>
+                        <Check className="w-3.5 h-3.5" />
+                        <span>Link Disalin!</span>
+                      </>
+                    ) : (
+                      <>
+                        <Share2 className="w-3.5 h-3.5" />
+                        <span>Bagikan</span>
+                      </>
+                    )}
+                  </button>
                 </div>
               </AnimatedSection>
             </div>
 
-            {/* Sidebar */}
-            <div className="lg:col-span-4 order-first lg:order-last">
-              <div className="sticky top-24 space-y-4 md:space-y-6">
-                {/* CTA Card */}
-                <AnimatedSection animation="fade-up" delay={200}>
-                  <div className="bg-linear-to-br from-card to-[#1E3A5F] border border-foreground/10 rounded-xl p-4 md:p-6">
-                    <h3 className="text-lg md:text-xl font-bold text-foreground mb-2 md:mb-3">
-                      Tertarik dengan {post.title}?
-                    </h3>
-                    <p className="text-foreground/70 text-xs md:text-sm mb-3 md:mb-4">
-                      Dapatkan demo gratis dan konsultasi untuk kebutuhan bisnis Anda
-                    </p>
-                    <Button 
-                      asChild
-                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground text-sm md:text-base"
-                    >
-                      <Link href="/#contact">Hubungi Kami</Link>
-                    </Button>
-                  </div>
-                </AnimatedSection>
-
+            {/* Sidebar (4 Cols) */}
+            <div className="lg:col-span-4">
+              <div className="sticky top-24 space-y-6">
+                
                 {/* Author Card */}
-                <AnimatedSection animation="fade-up" delay={300}>
-                  <div className="bg-card border border-foreground/10 rounded-xl p-4 md:p-6">
-                    <h4 className="text-foreground font-bold mb-3 md:mb-4 text-sm md:text-base">Tentang Penulis</h4>
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 md:w-12 md:h-12 bg-primary/20 rounded-full flex items-center justify-center">
-                        <span className="text-primary font-bold text-sm md:text-base">KL</span>
-                      </div>
-                      <div>
-                        <p className="text-foreground font-semibold text-sm md:text-base">{post.author}</p>
-                        <p className="text-foreground/60 text-xs">Web Development Team</p>
-                      </div>
+                <div className="bg-card border border-border/80 rounded-2xl p-5 sm:p-6">
+                  <h4 className="text-xs font-bold text-foreground mb-3 uppercase tracking-wider">
+                    Tentang Penulis
+                  </h4>
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold text-sm shrink-0">
+                      KL
                     </div>
-                    <p className="text-foreground/70 text-xs md:text-sm">
-                      Tim profesional yang berpengalaman dalam web development dan solusi bisnis digital.
-                    </p>
+                    <div>
+                      <p className="text-sm font-bold text-foreground">{post.author}</p>
+                      <p className="text-foreground/50 text-xs">Studio Editorial KreativLabs</p>
+                    </div>
                   </div>
-                </AnimatedSection>
+                  <p className="text-foreground/70 text-xs leading-relaxed">
+                    Berbagi tips praktis dan panduan teknologi seputar website, UI/UX, dan pertumbuhan digital.
+                  </p>
+                </div>
 
-                {/* Quick Links */}
-                <AnimatedSection animation="fade-up" delay={400}>
-                  <div className="bg-card border border-foreground/10 rounded-xl p-4 md:p-6">
-                    <h4 className="text-foreground font-bold mb-3 md:mb-4 text-sm md:text-base">Quick Links</h4>
-                    <div className="space-y-2 md:space-y-3">
-                      <Link 
-                        href="/#projects"
-                        className="block text-foreground/70 hover:text-primary transition-colors text-xs md:text-sm"
-                      >
-                        → Lihat Portfolio
-                      </Link>
-                      <Link 
-                        href="/#services"
-                        className="block text-foreground/70 hover:text-primary transition-colors text-xs md:text-sm"
-                      >
-                        → Layanan Kami
-                      </Link>
-                      <Link 
-                        href="/#pricing"
-                        className="block text-foreground/70 hover:text-primary transition-colors text-xs md:text-sm"
-                      >
-                        → Harga & Paket
-                      </Link>
-                      <Link 
-                        href="/#contact"
-                        className="block text-foreground/70 hover:text-primary transition-colors text-xs md:text-sm"
-                      >
-                        → Hubungi Kami
-                      </Link>
-                    </div>
-                  </div>
-                </AnimatedSection>
+                {/* Consultation CTA */}
+                <div className="bg-card border border-primary/30 rounded-2xl p-5 sm:p-6">
+                  <h4 className="text-sm font-bold text-foreground mb-2">
+                    Butuh Solusi Web Profesional?
+                  </h4>
+                  <p className="text-xs text-foreground/70 leading-relaxed mb-4">
+                    Konsultasikan kebutuhan pembuatan website atau sistem kasir bisnis Anda langsung dengan kami.
+                  </p>
+                  <a
+                    href="https://wa.me/6285872381791?text=Halo%20KreativLabs,%20saya%20tertarik%20untuk%20konsultasi%20pembuatan%20website"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-primary text-primary-foreground text-xs font-semibold hover:bg-primary/90 transition-colors"
+                  >
+                    Konsultasi via WhatsApp
+                  </a>
+                </div>
+
               </div>
             </div>
-          </div>
-          </div>
-        </div>
-      </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-linear-to-b from-background to-card">
-        <div className="container mx-auto px-6">
-          <AnimatedSection animation="fade-up">
-            <div className="bg-linear-to-br from-card to-[#1E3A5F] border border-foreground/10 rounded-2xl p-10 max-w-4xl mx-auto text-center">
-              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-                Siap Meningkatkan Bisnis Anda?
-              </h3>
-              <p className="text-foreground/70 mb-6 max-w-2xl mx-auto">
-                Konsultasikan kebutuhan aplikasi kasir dan solusi bisnis digital Anda dengan tim profesional kami
+          </div>
+
+          {/* Bottom Banner */}
+          <AnimatedSection animation="fade-up" delay={150}>
+            <div className="bg-card border border-border/80 rounded-2xl p-8 sm:p-10 text-center mt-16">
+              <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
+                Jelajahi Artikel Lainnya
+              </h2>
+              <p className="text-xs sm:text-sm text-foreground/70 mb-5">
+                Temukan tips dan insight relevan lainnya untuk mendukung kemajuan bisnis Anda.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Button 
-                  asChild
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-base rounded-full shadow-lg shadow-primary/30"
-                >
-                  <Link href="/#contact">Hubungi Kami Sekarang</Link>
-                </Button>
-                <Button 
-                  asChild
-                  variant="outline"
-                  className="border-foreground/20 text-foreground hover:bg-foreground/10 px-8 py-6 text-base rounded-full"
-                >
-                  <Link href="/blog">Baca Artikel Lainnya</Link>
-                </Button>
-              </div>
+              <Link
+                href="/blog"
+                className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-secondary border border-border hover:border-primary/40 text-foreground text-xs sm:text-sm font-medium hover:text-primary transition-colors"
+              >
+                Lihat Semua Artikel
+              </Link>
             </div>
           </AnimatedSection>
+
         </div>
       </section>
 
