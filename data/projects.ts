@@ -247,6 +247,44 @@ export const projects: Project[] = [
       "Cloud-based Access"
     ],
     link: "#contact"
+  },
+  {
+    id: "personal-portfolio-miftahuddin",
+    title: "Website Personal Portofolio",
+    category: "Web Development",
+    description: "Website portofolio profesional untuk Social Media Specialist & Digital Communicator.",
+    image: "/portfolio1.png",
+    fullDescription: "Website personal portofolio yang dirancang khusus untuk memamerkan karya, pengalaman, dan keahlian seorang Social Media Specialist & Digital Communicator. Desain yang modern dan bersih (clean) membantu menonjolkan personal branding klien secara profesional.",
+    challenge: "Klien membutuhkan platform digital yang dapat merepresentasikan profil profesionalnya dengan elegan, sekaligus menjadi wadah untuk menampilkan portofolio kampanye media sosial yang pernah ditanganinya agar mudah diakses oleh calon klien atau perekrut.",
+    solution: "Kami merancang dan mengembangkan website portofolio dengan desain minimalis yang elegan, berfokus pada tipografi yang kuat dan tata letak yang rapi. Website ini juga dioptimalkan agar sepenuhnya responsif dan dilengkapi dengan animasi transisi yang mulus untuk memberikan kesan premium.",
+    results: [
+      "Meningkatkan visibilitas profil profesional klien",
+      "Desain responsif yang optimal di semua perangkat",
+      "Performa website sangat cepat (Fast Loading)",
+      "Kemudahan akses informasi kontak dan portofolio"
+    ],
+    techStack: [
+      "Next.js 14",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Vercel"
+    ],
+    duration: "14 hari",
+    client: "Miftahuddin Ahmad",
+    year: "2024",
+    gallery: [
+      "/portfolio1.png"
+    ],
+    features: [
+      "Desain Minimalis & Profesional",
+      "Responsif di Semua Perangkat",
+      "Optimasi SEO Personal Branding",
+      "Integrasi Portofolio Dinamis",
+      "Formulir Kontak Langsung",
+      "Animasi Transisi Mulus"
+    ],
+    link: "#contact"
   }
 ];
 

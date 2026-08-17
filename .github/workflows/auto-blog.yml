@@ -1,0 +1,36 @@
+name: Auto Generate Blog Post
+
+on:
+  schedule:
+    # Runs every 3 days at 00:00 UTC
+    - cron: '0 0 */3 * *'
+  workflow_dispatch: # Allows manual trigger from GitHub UI
+
+jobs:
+  write_blog:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run AI Blog Generator
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: node scripts/auto-blog.mjs
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "KreativLabs AI Bot"
+          git config --global user.email "bot@kreativlabs.id"
+          git add data/blogs.ts
+          git commit -m "📝 feat(blog): Auto-generate new AI blog post" || echo "No changes to commit"
+          git push
