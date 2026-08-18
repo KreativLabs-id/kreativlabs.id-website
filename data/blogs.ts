@@ -1051,7 +1051,7 @@ export const blogPosts: BlogPost[] = [
       "",
       "---",
       "",
-      "*Hubungi KreativLabs sekarang! WhatsApp: 081327862503*"
+      "*Hubungi KreativLabs sekarang! WhatsApp: +62 878-1627-0140*"
     ].join("\n")
   },
   {

@@ -235,7 +235,7 @@ export default function BlogPostPage() {
                     Konsultasikan kebutuhan pembuatan website atau sistem kasir bisnis Anda langsung dengan kami.
                   </p>
                   <a
-                    href="https://wa.me/6285872381791?text=Halo%20KreativLabs,%20saya%20tertarik%20untuk%20konsultasi%20pembuatan%20website"
+                    href="https://wa.me/6287816270140?text=Halo%20KreativLabs,%20saya%20tertarik%20untuk%20konsultasi%20pembuatan%20website"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-primary text-primary-foreground text-xs font-semibold hover:bg-primary/90 transition-colors"

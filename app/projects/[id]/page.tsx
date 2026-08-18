@@ -30,7 +30,7 @@ export default function ProjectDetail() {
     );
   }
 
-  const waUrl = `https://wa.me/6285872381791?text=${encodeURIComponent(`Halo KreativLabs, saya tertarik dengan project ${project.title} dan ingin konsultasi project serupa.`)}`;
+  const waUrl = `https://wa.me/6287816270140?text=${encodeURIComponent(`Halo KreativLabs, saya tertarik dengan project ${project.title} dan ingin konsultasi project serupa.`)}`;
 
   return (
     <div className="min-h-screen bg-background pt-24 pb-20">

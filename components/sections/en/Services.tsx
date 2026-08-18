@@ -115,7 +115,7 @@ export default function ServicesEN() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {servicesEN.map((service, index) => {
             const Icon = service.icon;
-            const waUrl = `https://wa.me/6285872381791?text=${encodeURIComponent(service.waMessage)}`;
+            const waUrl = `https://wa.me/6287816270140?text=${encodeURIComponent(service.waMessage)}`;
 
             return (
               <FadeInStagger key={index} index={index} delay={40}>
@@ -178,7 +178,7 @@ export default function ServicesEN() {
               Need custom requirements or want to discuss a tailored package?
             </p>
             <a
-              href="https://wa.me/6285872381791?text=Hello%20KreativLabs,%20I%20would%20like%20to%20discuss%20a%20project"
+              href="https://wa.me/6287816270140?text=Hello%20KreativLabs,%20I%20would%20like%20to%20discuss%20a%20project"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"

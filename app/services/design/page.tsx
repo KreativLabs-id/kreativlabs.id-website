@@ -120,7 +120,7 @@ export default function DesignServicesPage() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
-              href="https://wa.me/6285872381791?text=Halo%20KreativLabs,%20saya%20tertarik%20dengan%20jasa%20desain%20grafis"
+              href="https://wa.me/6287816270140?text=Halo%20KreativLabs,%20saya%20tertarik%20dengan%20jasa%20desain%20grafis"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3 rounded-full bg-primary text-primary-foreground text-xs sm:text-sm font-semibold hover:bg-primary/90 transition-all hover:shadow-md hover:-translate-y-0.5"
@@ -153,7 +153,7 @@ export default function DesignServicesPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {designServices.map((service, index) => {
               const Icon = service.icon;
-              const waUrl = `https://wa.me/6285872381791?text=${encodeURIComponent(service.waMessage)}`;
+              const waUrl = `https://wa.me/6287816270140?text=${encodeURIComponent(service.waMessage)}`;
 
               return (
                 <div
@@ -243,7 +243,7 @@ export default function DesignServicesPage() {
               Diskusikan kebutuhan logo, media sosial, atau antarmuka aplikasi bisnis Anda bersama tim desainer KreativLabs.
             </p>
             <a
-              href="https://wa.me/6285872381791?text=Halo%20KreativLabs,%20saya%20ingin%20konsultasi%20kebutuhan%20desain"
+              href="https://wa.me/6287816270140?text=Halo%20KreativLabs,%20saya%20ingin%20konsultasi%20kebutuhan%20desain"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-primary text-primary-foreground text-xs sm:text-sm font-semibold hover:bg-primary/90 transition-all hover:shadow-md hover:-translate-y-0.5"

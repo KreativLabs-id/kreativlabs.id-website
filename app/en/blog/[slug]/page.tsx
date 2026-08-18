@@ -235,7 +235,7 @@ export default function BlogPostPageEN() {
                     Consult your business requirements directly with our web engineering team.
                   </p>
                   <a
-                    href="https://wa.me/6285872381791?text=Hello%20KreativLabs,%20I%20would%20like%20to%20consult%20about%20a%20website%20project"
+                    href="https://wa.me/6287816270140?text=Hello%20KreativLabs,%20I%20would%20like%20to%20consult%20about%20a%20website%20project"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-primary text-primary-foreground text-xs font-semibold hover:bg-primary/90 transition-colors"

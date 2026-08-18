@@ -154,12 +154,12 @@ export default function Contact() {
                     <div>
                       <div className="text-xs text-foreground/60 font-medium">WhatsApp Resmi</div>
                       <a
-                        href="https://wa.me/6285872381791?text=Halo%20KreativLabs,%20saya%20ingin%20konsultasi%20project"
+                        href="https://wa.me/6287816270140?text=Halo%20KreativLabs,%20saya%20ingin%20konsultasi%20project"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-sm font-bold text-foreground hover:text-primary transition-colors inline-flex items-center gap-1.5"
                       >
-                        <span>+62 858-7238-1791</span>
+                        <span>+62 878-1627-0140</span>
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                       </a>
                     </div>
@@ -215,7 +215,7 @@ export default function Contact() {
                   Lebih suka diskusi langsung via WhatsApp? Dapatkan respon lebih cepat bersama tim kami.
                 </p>
                 <a
-                  href="https://wa.me/6285872381791?text=Halo%20KreativLabs,%20saya%20ingin%20konsultasi%20langsung"
+                  href="https://wa.me/6287816270140?text=Halo%20KreativLabs,%20saya%20ingin%20konsultasi%20langsung"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-xs sm:text-sm font-semibold hover:bg-primary/90 transition-all hover:shadow-md hover:-translate-y-0.5 text-center"

@@ -115,7 +115,7 @@ export default function Services() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {services.map((service, index) => {
             const Icon = service.icon;
-            const waUrl = `https://wa.me/6285872381791?text=${encodeURIComponent(service.waMessage)}`;
+            const waUrl = `https://wa.me/6287816270140?text=${encodeURIComponent(service.waMessage)}`;
 
             return (
               <FadeInStagger key={index} index={index} delay={40}>

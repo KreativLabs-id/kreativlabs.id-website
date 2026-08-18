@@ -193,7 +193,7 @@ export default function PricingEN() {
         {/* Pricing Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {filteredPlans.map((plan, index) => {
-            const waUrl = `https://wa.me/6285872381791?text=${encodeURIComponent(plan.waMessage)}`;
+            const waUrl = `https://wa.me/6287816270140?text=${encodeURIComponent(plan.waMessage)}`;
 
             return (
               <FadeInStagger key={plan.id} index={index} delay={40}>
@@ -300,7 +300,7 @@ export default function PricingEN() {
               </div>
 
               <a
-                href="https://wa.me/6285872381791?text=Hello%20KreativLabs,%20I%20would%20like%20to%20discuss%20a%20custom%20package"
+                href="https://wa.me/6287816270140?text=Hello%20KreativLabs,%20I%20would%20like%20to%20discuss%20a%20custom%20package"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-xs font-semibold hover:bg-primary/90 transition-all hover:shadow-md hover:-translate-y-0.5 whitespace-nowrap shrink-0"
