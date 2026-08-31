@@ -1199,6 +1199,33 @@ export const blogPosts: BlogPost[] = [
           "",
           "Gimana, sudah siap bikin bisnis lokal Sobat naik kelas dan kebanjiran orderan tahun ini? Kalau masih bingung mulai darimana dan nggak mau pusing mikirin ribetnya, yuk santai saja. Konsultasikan kebutuhan digital dan pembuatan website impian Sobat bareng tim KreativLabs sekarang juga, dan biar kami yang bantu urus semuanya sampai beres!"
     ].join("\n")
+  },
+  {
+    id: "rahasia-sulap-landing-page-jadi-mesin-uang-bisnis",
+    title: "Bikin Pengunjung Langsung Checkout: Rahasia Sulap Landing Page Jadi Mesin Uang Bisnis Kamu",
+    slug: "rahasia-sulap-landing-page-jadi-mesin-uang-bisnis",
+    excerpt: "Pernah ngalamin website rame pengunjung tapi sepi pembeli? Yuk, bongkar strategi jitu ubah klik jadi transaksi pakai psikologi harga dan branding yang kuat!",
+    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&h=630&fit=crop",
+    author: "KreativBot AI",
+    date: "31 Agustus 2026",
+    category: "Tips Bisnis",
+    tags: ["Landing Page","Strategi Konversi","Psikologi Harga","Branding Bisnis","Tips UMKM"],
+    readTime: "5 menit",
+    content: [
+          "Halo Sobat KreativLabs! Coba jujur deh,, berapa sering kamu ngeluarin budget buat iklan, medsos, atau bagi-bagi link produk, tapi pas dicek ke analytics, yang mampir ke website banyak banget tapi yang beli kok kayak 'numpang lewat' doang? Pasti nyesek banget rasanya. Tenang, kamu nggak sendirian kok. Banyak pelaku usaha ngalamin hal serupa karena mengira mendatangkan traffic itu segalanya, padahal pintu masuk sebenarnya ada di halaman utama alias landing page.",
+          "",
+          "Masalah utamanya seringkali bukan di produk kamu yang kurang bagus, tapi cara landing page kamu 'menyambut' tamu itu kurang greget. Bayangkan kalau ada orang masuk ke toko fisik tapi suasananya berantakan, pelayannya diem aja, dan harganya nggak jelas. Pasti mereka langsung ngibrit keluar, kan? Nah, website kamu juga gitu. Kalau tampilannya bikin bingung dalam 3 detik pertama, pengunjung bakal langsung nge-close tab browser tanpa pikir panjang.",
+          "",
+          "## Seni Mengatur Angka: Bikin Pembeli Manggut-Manggut Lewat Psikologi Harga",
+          "",
+          "Ngomongin soal jualan, harga itu ibarat pedang bermata dua. Salah pasang, calon pembeli langsung kabur. Tapi kalau ngerti trik psikologi harga, produk kamu bisa kelihatan jauh lebih menarik tanpa harus banting harga terlalu sadis. Contoh kecilnya, penggunaan harga coret atau penempatan produk paket (bundling) yang bikin opsi termahal jadi kelihatan paling 'pantes' dibeli. Intinya, buat otak bawah sadar pengunjung merasa kalau mereka lagi dapet 'harta karun' dengan harga yang sangat sepadan.",
+          "",
+          "## Branding Nggak Cuma Buat Perusahaan Besar, UMKM Wajib Punya!",
+          "",
+          "Selain harga, kunci utama orang mau transfer duit ke rekening brand yang baru mereka kenal adalah 'rasa percaya'. Di sinilah kekuatan branding website bermain. Website yang desainnya rapi, profesional, punya identitas visual jelas, dan bahasa copywriting yang manusiawi bakal langsung dapet respect dari pandangan pertama. Orang males belanja di tempat yang kelihatan asal-asalan karena takut kena tipu. Branding yang solid otomatis jadi jaminan mutu tanpa kamu harus koar-koar bilang kalau tokomu terpercaya.",
+          "",
+          "Udah saatnya ubah website bisnismu dari sekadar 'pajangan online' jadi mesin konversi yang beneran ngasilin cuan tiap hari. Kalau kamu pengen punya landing page berkelas yang nggak cuma estetik tapi juga gacor narik pembeli, yuk ngobrol santai bareng tim KreativLabs. Serahin urusan desain dan strategi web ke ahlinya, biar kamu tinggal fokus packing pesanan aja, Sobat KreativLabs!"
+    ].join("\n")
   }
 ];
 
