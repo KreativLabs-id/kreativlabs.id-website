@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import SEOSchema from "@/components/SEOSchema";
@@ -135,6 +136,7 @@ export default function RootLayout({
           <SEOSchema />
           <SmoothScroll />
           {children}
+          <Analytics />
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || ""} />
         </ThemeProvider>
       </body>
