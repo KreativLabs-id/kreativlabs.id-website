@@ -1168,6 +1168,33 @@ export const blogPosts: BlogPost[] = [
           "",
           "Tenang aja, bikin website buat bisnis sekarang nggak ribet kok. Sobat nggak perlu pusing mikirin istilah teknis yang bikin pusing kepala. Fokus saja urusin kualitas produk dan layanan, biar urusan bikin 'rumah digital' yang kece dan ngebut penjualannya diserahin ke ahlinya. Yuk, ngobrol santai bareng tim KreativLabs sekarang juga, dan kita mulai transformasi digital bisnis Sobat biar makin cuan di tahun 2026!"
     ].join("\n")
+  },
+  {
+    id: "kenapa-toko-ramai-di-medsos-tapi-sepi-pembeli",
+    title: "Kenapa Toko Ramai di Medsos Tapi Sepi Pembeli? Ini Rahasia Bisnis Lokal Naik Kelas di 2026",
+    slug: "kenapa-toko-ramai-di-medsos-tapi-sepi-pembeli",
+    excerpt: "Punya ribuan pengikut di media sosial tapi penjualan jalan terus di tempat? Saatnya Sobat KreativLabs tahu rahasia kenapa website profesional adalah kunci validitas bisnis lokal di tahun 2026.",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=630&fit=crop",
+    author: "KreativBot AI",
+    date: "31 Agustus 2026",
+    category: "Tips Bisnis",
+    tags: ["Digital Marketing","Bisnis UMKM","Website Profesional","Strategi Penjualan"],
+    readTime: "4 menit",
+    content: [
+          "Halo Sobat KreativLabs! Coba jujur deh, siapa di sini yang tiap hari rajin bikin konten reels, update story, sampai balas komentar netizen, tapi pas akhir bulan dihitung-hitung, omzetnya kok gitu-gitu aja? Rasanya capek banget kan, sudah energi terkuras habis, tapi penjualan rasanya susah banget naik level.",
+          "",
+          "Masalahnya, banyak pelaku UMKM kita yang terlalu fokus numpang di 'rumah orang lain' alias media sosial. Padahal, algoritma medsos itu labil banget. Hari ini konten kita bisa FYP, tapi minggu depan pas algoritma berubah, jangankan 1000 penonton, yang lihat 10 orang pun rasanya susah minta ampun. Belum lagi kalau akun tiba-tiba eror atau ke-banned, amsyar sudah semua database pelanggan.",
+          "",
+          "## Punya Website Sendiri Itu Ibarat Punya Ruko Milik Sendiri, Bukan Kontrakan",
+          "",
+          "Nah, memasuki tahun 2026 ini, peta persaingan bisnis digital makin ketat. Konsumen kita makin cerdas dan kritis. Sebelum memutuskan beli produk, entah itu kuliner, fashion, atau jasa, mereka biasanya Googling dulu buat ngecek 'seberapa bonafid' bisnis kita. Kalau dicari di Google yang muncul cuma akun medsos tanpa alamat yang jelas, jujur saja, kepercayaan konsumen bakal langsung turun drastis.",
+          "",
+          "Makanya, punya website resmi buat bisnis itu bukan lagi pilihan gengsi, tapi kebutuhan mutlak. Website itu ibarat ruko pribadi di pusat kota. Buka 24 jam non-stop, tampilannya bisa kitaatur sendiri sesuka hati biar estetik, dan yang paling penting: jadi aset digital jangka panjang yang sepenuhnya kita kontrol, bukan diatur-atur algoritma.",
+          "",
+          "Bayangkan betapa profesionalnya bisnis Sobat sekalian kalau calon pembeli tinggal klik satu link, langsung bisa lihat katalog produk rapi, baca testimoni jujur dari pelanggan lain, dan langsung checkout tanpa ribet. Bisnis sekecil apa pun kalau punya website sendiri, langsung kelihatan sekelas brand korporat besar!",
+          "",
+          "Gimana, sudah siap bikin bisnis lokal Sobat naik kelas dan kebanjiran orderan tahun ini? Kalau masih bingung mulai darimana dan nggak mau pusing mikirin ribetnya, yuk santai saja. Konsultasikan kebutuhan digital dan pembuatan website impian Sobat bareng tim KreativLabs sekarang juga, dan biar kami yang bantu urus semuanya sampai beres!"
+    ].join("\n")
   }
 ];
 
