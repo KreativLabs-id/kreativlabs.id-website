@@ -1,6 +1,11 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
+import { loadEnvFile } from 'node:process';
 import fs from 'fs';
 import path from 'path';
+
+if (fs.existsSync('.env.local')) {
+  loadEnvFile('.env.local');
+}
 
 // Get API Key from environment variable
 const apiKey = process.env.GEMINI_API_KEY;
@@ -14,7 +19,7 @@ const genAI = new GoogleGenerativeAI(apiKey);
 async function generateBlog() {
   try {
     const model = genAI.getGenerativeModel({
-      model: 'gemini-3.1-flash-lite',
+      model: 'gemini-3.5-flash-lite',
       tools: [{ googleSearch: {} }],
       systemInstruction: 'Anda adalah seorang penulis blog (*copywriter*) profesional yang ahli dalam bercerita secara natural (humanized content) layaknya manusia sungguhan. Tulisan Anda tidak kaku dan tidak terdengar seperti robot. Anda menulis untuk audiens pebisnis, UMKM, dan pengusaha di Indonesia.',
     });

@@ -72,15 +72,14 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 w-full transition-colors duration-200 ${
-        isScrolled
-          ? "bg-background/90 backdrop-blur-md border-b border-border/80 shadow-xs"
-          : "bg-background/70 backdrop-blur-xs border-b border-border/40"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 w-full transition-colors duration-200 ${isScrolled
+        ? "bg-background/90 backdrop-blur-md border-b border-border/80 shadow-xs"
+        : "bg-background/70 backdrop-blur-xs border-b border-border/40"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-18">
-          
+
           {/* Logo (Left) */}
           <Link href="/" className="flex items-center shrink-0">
             <Image
@@ -104,11 +103,10 @@ export default function Navbar() {
                 <a
                   key={link.name}
                   href={href}
-                  className={`text-sm font-medium transition-colors relative py-1 ${
-                    isActive
-                      ? "text-primary font-semibold"
-                      : "text-foreground/75 hover:text-foreground"
-                  }`}
+                  className={`text-sm font-medium transition-colors relative py-1 ${isActive
+                    ? "text-primary font-semibold"
+                    : "text-foreground/75 hover:text-foreground"
+                    }`}
                 >
                   {link.name}
                   {isActive && (
@@ -125,7 +123,7 @@ export default function Navbar() {
               href={pathname !== "/" ? "/#contact" : "#contact"}
               className="inline-flex items-center justify-center px-5 py-2 rounded-full bg-primary text-primary-foreground text-xs sm:text-sm font-semibold hover:bg-primary/90 transition-all hover:shadow-xs hover:-translate-y-0.5 whitespace-nowrap"
             >
-              Mulai Sekarang
+              Konsultasi Gratis
             </Link>
           </div>
 
@@ -156,11 +154,10 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={href}
-                className={`block px-3 py-2.5 rounded-xl text-sm font-medium transition-colors ${
-                  isActive
-                    ? "text-primary bg-primary/10 font-semibold"
-                    : "text-foreground/80 hover:bg-secondary"
-                }`}
+                className={`block px-3 py-2.5 rounded-xl text-sm font-medium transition-colors ${isActive
+                  ? "text-primary bg-primary/10 font-semibold"
+                  : "text-foreground/80 hover:bg-secondary"
+                  }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.name}
@@ -174,7 +171,7 @@ export default function Navbar() {
               onClick={() => setIsMobileMenuOpen(false)}
               className="w-full inline-flex items-center justify-center py-2.5 px-4 rounded-xl bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors text-center"
             >
-              Mulai Sekarang
+              Konsultasi Gratis
             </Link>
           </div>
         </div>
