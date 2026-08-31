@@ -1,46 +1,74 @@
-"use client";
-
-import { useParams } from "next/navigation";
-import { useState } from "react";
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Footer from "@/components/sections/Footer";
-import { ArrowLeft, Share2, Check, Clock, Calendar, Tag } from "lucide-react";
+import BlogShareButton from "@/components/BlogShareButton";
+import { ArrowLeft, Clock, Calendar, Tag } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import Image from "next/image";
 import Link from "next/link";
-import { getBlogPostBySlug } from "@/data/blogs";
+import { getBlogPostBySlug, getAllBlogSlugs } from "@/data/blogs";
 import Markdown from "markdown-to-jsx";
 
-export default function BlogPostPage() {
-  const params = useParams();
-  const slug = params.slug as string;
+interface Props {
+  params: Promise<{ slug: string }>;
+}
+
+export async function generateStaticParams() {
+  const slugs = getAllBlogSlugs();
+  return slugs.map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
   const post = getBlogPostBySlug(slug);
-  const [shareStatus, setShareStatus] = useState<"idle" | "shared" | "copied">("idle");
 
-  const handleShare = async () => {
-    if (!post) return;
-    
-    const shareData = {
-      title: post.title,
-      text: post.excerpt,
-      url: window.location.href,
+  if (!post) {
+    return {
+      title: "Artikel Tidak Ditemukan",
+      description: "Maaf, artikel yang Anda cari tidak tersedia.",
     };
+  }
 
-    try {
-      if (navigator.share) {
-        await navigator.share(shareData);
-        setShareStatus("shared");
-        setTimeout(() => setShareStatus("idle"), 2000);
-      } else {
-        await navigator.clipboard.writeText(window.location.href);
-        setShareStatus("copied");
-        setTimeout(() => setShareStatus("idle"), 2000);
-      }
-    } catch (error) {
-      console.error("Error sharing:", error);
-    }
+  const postUrl = `https://kreativlabs.id/blog/${post.slug}`;
+
+  return {
+    title: post.title,
+    description: post.excerpt,
+    keywords: post.tags,
+    authors: [{ name: post.author, url: "https://kreativlabs.id" }],
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: postUrl,
+      siteName: "KreativLabs.id",
+      type: "article",
+      locale: "id_ID",
+      publishedTime: post.date,
+      authors: [post.author],
+      tags: post.tags,
+      images: [
+        {
+          url: post.image,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: [post.image],
+      creator: "@kreativlabsid",
+    },
   };
+}
+
+export default async function BlogPostPage({ params }: Props) {
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
 
   if (!post) {
     return (
@@ -64,14 +92,14 @@ export default function BlogPostPage() {
   return (
     <main className="min-h-screen bg-background overflow-x-hidden w-full">
       <Navbar />
-      
+
       {/* Header Section */}
       <section className="relative pt-28 pb-6 bg-background">
         <div className="container mx-auto px-4 sm:px-6 max-w-4xl relative z-10">
           <AnimatedSection animation="fade-up">
-            
+
             {/* Back link */}
-            <Link 
+            <Link
               href="/blog"
               className="inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-foreground/60 hover:text-primary transition-colors mb-6 group"
             >
@@ -124,7 +152,7 @@ export default function BlogPostPage() {
       <section className="py-4 pb-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
-            
+
             {/* Main Article Body */}
             <div className="lg:col-span-8">
               <AnimatedSection animation="fade-up">
@@ -173,40 +201,14 @@ export default function BlogPostPage() {
                 )}
 
                 {/* Share Box */}
-                <div className="mt-8 p-5 bg-card border border-border/80 rounded-2xl flex items-center justify-between gap-4">
-                  <div>
-                    <h4 className="text-sm font-bold text-foreground mb-0.5">Bagikan Artikel Ini</h4>
-                    <p className="text-foreground/60 text-xs">Bagikan wawasan ini kepada rekan kerja atau tim Anda.</p>
-                  </div>
-                  <button
-                    onClick={handleShare}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-primary text-primary-foreground text-xs font-semibold hover:bg-primary/90 transition-colors shrink-0"
-                  >
-                    {shareStatus === "shared" ? (
-                      <>
-                        <Check className="w-3.5 h-3.5" />
-                        <span>Dibagikan!</span>
-                      </>
-                    ) : shareStatus === "copied" ? (
-                      <>
-                        <Check className="w-3.5 h-3.5" />
-                        <span>Link Disalin!</span>
-                      </>
-                    ) : (
-                      <>
-                        <Share2 className="w-3.5 h-3.5" />
-                        <span>Bagikan</span>
-                      </>
-                    )}
-                  </button>
-                </div>
+                <BlogShareButton title={post.title} excerpt={post.excerpt} />
               </AnimatedSection>
             </div>
 
             {/* Sidebar (4 Cols) */}
             <div className="lg:col-span-4">
               <div className="sticky top-24 space-y-6">
-                
+
                 {/* Author Card */}
                 <div className="bg-card border border-border/80 rounded-2xl p-5 sm:p-6">
                   <h4 className="text-xs font-bold text-foreground mb-3 uppercase tracking-wider">

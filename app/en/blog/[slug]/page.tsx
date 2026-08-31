@@ -1,46 +1,74 @@
-"use client";
-
-import { useParams } from "next/navigation";
-import { useState } from "react";
+import type { Metadata } from "next";
 import NavbarEN from "@/components/NavbarEN";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Footer from "@/components/sections/en/Footer";
-import { ArrowLeft, Share2, Check, Clock, Calendar, Tag } from "lucide-react";
+import BlogShareButton from "@/components/BlogShareButton";
+import { ArrowLeft, Clock, Calendar, Tag } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import Image from "next/image";
 import Link from "next/link";
-import { getBlogPostBySlug } from "@/data/blogs";
+import { getBlogPostBySlug, getAllBlogSlugs } from "@/data/blogs";
 import Markdown from "markdown-to-jsx";
 
-export default function BlogPostPageEN() {
-  const params = useParams();
-  const slug = params.slug as string;
+interface Props {
+  params: Promise<{ slug: string }>;
+}
+
+export async function generateStaticParams() {
+  const slugs = getAllBlogSlugs();
+  return slugs.map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
   const post = getBlogPostBySlug(slug);
-  const [shareStatus, setShareStatus] = useState<"idle" | "shared" | "copied">("idle");
 
-  const handleShare = async () => {
-    if (!post) return;
-    
-    const shareData = {
-      title: post.title,
-      text: post.excerpt,
-      url: window.location.href,
+  if (!post) {
+    return {
+      title: "Article Not Found",
+      description: "Sorry, the article you are looking for is not available.",
     };
+  }
 
-    try {
-      if (navigator.share) {
-        await navigator.share(shareData);
-        setShareStatus("shared");
-        setTimeout(() => setShareStatus("idle"), 2000);
-      } else {
-        await navigator.clipboard.writeText(window.location.href);
-        setShareStatus("copied");
-        setTimeout(() => setShareStatus("idle"), 2000);
-      }
-    } catch (error) {
-      console.error("Error sharing:", error);
-    }
+  const postUrl = `https://kreativlabs.id/en/blog/${post.slug}`;
+
+  return {
+    title: post.title,
+    description: post.excerpt,
+    keywords: post.tags,
+    authors: [{ name: post.author, url: "https://kreativlabs.id/en" }],
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: postUrl,
+      siteName: "KreativLabs.id",
+      type: "article",
+      locale: "en_US",
+      publishedTime: post.date,
+      authors: [post.author],
+      tags: post.tags,
+      images: [
+        {
+          url: post.image,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: [post.image],
+      creator: "@kreativlabsid",
+    },
   };
+}
+
+export default async function BlogPostPageEN({ params }: Props) {
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
 
   if (!post) {
     return (
@@ -48,7 +76,7 @@ export default function BlogPostPageEN() {
         <NavbarEN />
         <div className="container mx-auto px-4 sm:px-6 py-32 text-center max-w-md">
           <h1 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">Article Not Found</h1>
-          <p className="text-foreground/70 text-sm mb-6">Sorry, the article you are looking for does not exist.</p>
+          <p className="text-foreground/70 text-sm mb-6">Sorry, the article you are looking for is not available.</p>
           <Link
             href="/en/blog"
             className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-primary text-primary-foreground text-xs sm:text-sm font-semibold hover:bg-primary/90 transition-colors"
@@ -64,14 +92,14 @@ export default function BlogPostPageEN() {
   return (
     <main className="min-h-screen bg-background overflow-x-hidden w-full">
       <NavbarEN />
-      
+
       {/* Header Section */}
       <section className="relative pt-28 pb-6 bg-background">
         <div className="container mx-auto px-4 sm:px-6 max-w-4xl relative z-10">
           <AnimatedSection animation="fade-up">
-            
+
             {/* Back link */}
-            <Link 
+            <Link
               href="/en/blog"
               className="inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-foreground/60 hover:text-primary transition-colors mb-6 group"
             >
@@ -124,7 +152,7 @@ export default function BlogPostPageEN() {
       <section className="py-4 pb-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
-            
+
             {/* Main Article Body */}
             <div className="lg:col-span-8">
               <AnimatedSection animation="fade-up">
@@ -173,44 +201,18 @@ export default function BlogPostPageEN() {
                 )}
 
                 {/* Share Box */}
-                <div className="mt-8 p-5 bg-card border border-border/80 rounded-2xl flex items-center justify-between gap-4">
-                  <div>
-                    <h4 className="text-sm font-bold text-foreground mb-0.5">Share This Article</h4>
-                    <p className="text-foreground/60 text-xs">Spread these insights with your team and network.</p>
-                  </div>
-                  <button
-                    onClick={handleShare}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-primary text-primary-foreground text-xs font-semibold hover:bg-primary/90 transition-colors shrink-0"
-                  >
-                    {shareStatus === "shared" ? (
-                      <>
-                        <Check className="w-3.5 h-3.5" />
-                        <span>Shared!</span>
-                      </>
-                    ) : shareStatus === "copied" ? (
-                      <>
-                        <Check className="w-3.5 h-3.5" />
-                        <span>Link Copied!</span>
-                      </>
-                    ) : (
-                      <>
-                        <Share2 className="w-3.5 h-3.5" />
-                        <span>Share</span>
-                      </>
-                    )}
-                  </button>
-                </div>
+                <BlogShareButton title={post.title} excerpt={post.excerpt} isEn={true} />
               </AnimatedSection>
             </div>
 
             {/* Sidebar (4 Cols) */}
             <div className="lg:col-span-4">
               <div className="sticky top-24 space-y-6">
-                
+
                 {/* Author Card */}
                 <div className="bg-card border border-border/80 rounded-2xl p-5 sm:p-6">
                   <h4 className="text-xs font-bold text-foreground mb-3 uppercase tracking-wider">
-                    About Author
+                    About the Author
                   </h4>
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold text-sm shrink-0">
@@ -222,20 +224,20 @@ export default function BlogPostPageEN() {
                     </div>
                   </div>
                   <p className="text-foreground/70 text-xs leading-relaxed">
-                    Sharing actionable engineering and UI/UX design guides to elevate digital businesses.
+                    Sharing practical insights and technology guides for websites, UI/UX, and digital growth.
                   </p>
                 </div>
 
                 {/* Consultation CTA */}
                 <div className="bg-card border border-primary/30 rounded-2xl p-5 sm:p-6">
                   <h4 className="text-sm font-bold text-foreground mb-2">
-                    Need a Custom Web Solution?
+                    Need a Professional Web Solution?
                   </h4>
                   <p className="text-xs text-foreground/70 leading-relaxed mb-4">
-                    Consult your business requirements directly with our web engineering team.
+                    Consult your business website or POS system needs directly with our expert team.
                   </p>
                   <a
-                    href="https://wa.me/6287816270140?text=Hello%20KreativLabs,%20I%20would%20like%20to%20consult%20about%20a%20website%20project"
+                    href="https://wa.me/6287816270140?text=Hello%20KreativLabs,%20I'm%20interested%20in%20a%20website%20consultation"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-primary text-primary-foreground text-xs font-semibold hover:bg-primary/90 transition-colors"
@@ -256,7 +258,7 @@ export default function BlogPostPageEN() {
                 Explore More Articles
               </h2>
               <p className="text-xs sm:text-sm text-foreground/70 mb-5">
-                Find more insights and practical tutorials to support your digital roadmap.
+                Discover more practical tips and insights to accelerate your business growth.
               </p>
               <Link
                 href="/en/blog"
