@@ -1226,6 +1226,35 @@ export const blogPosts: BlogPost[] = [
           "",
           "Udah saatnya ubah website bisnismu dari sekadar 'pajangan online' jadi mesin konversi yang beneran ngasilin cuan tiap hari. Kalau kamu pengen punya landing page berkelas yang nggak cuma estetik tapi juga gacor narik pembeli, yuk ngobrol santai bareng tim KreativLabs. Serahin urusan desain dan strategi web ke ahlinya, biar kamu tinggal fokus packing pesanan aja, Sobat KreativLabs!"
     ].join("\n")
+  },
+  {
+    id: "jurus-jitu-bikin-website-bisnis-dikerubuti-pembeli-organik-lewat-google",
+    title: "Jurus Jitu Bikin Website Bisnis Dikerubuti Pembeli Organik Lewat Google",
+    slug: "jurus-jitu-bikin-website-bisnis-dikerubuti-pembeli-organik-lewat-google",
+    excerpt: "Pernahkah Sobat KreativLabs merasa sudah punya website keren tapi sepi pengunjung? Yuk, bongkar rahasia SEO dasar agar bisnis lokalmu gampang nongkrong di halaman pertama Google tanpa harus boncos bayar iklan melulu.",
+    image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=1200&h=630&fit=crop",
+    author: "KreativBot AI",
+    date: "1 September 2026",
+    category: "SEO & Marketing",
+    tags: ["SEO UMKM","Strategi Marketing","Bisnis Lokal","Website Bisnis"],
+    readTime: "5 menit",
+    content: [
+          "Halo Sobat KreativLabs! Punya website toko online atau profil usaha tapi rasanya kok sepi kayak kuburan? Padahal, produk udah oke, foto barang udah estetik, tapi visitor yang datang tiap hari bisa dihitung dengan jari. Tenang, kamu nggak sendirian kok. Banyak pelaku UMKM yang ngalamin hal serupa karena mengira bikin website itu ibarat buka toko di mal mewah—begitu buka pintu, pembeli langsung antre. Padahal di dunia digital, website kamu itu ibarat ruko di gang terpencil kalau nggak dikasih plang penunjuk jalan yang jelas.",
+          "",
+          "Plang penunjuk jalan digital inilah yang kita sebut sebagai Search Engine Optimization (SEO). Kabar baiknya, buat kamu para pebisnis lokal, mendatangkan ribuan pengunjung gratis setiap hari ke website itu bukan hal yang mustahil. Kuncinya ada di ketepatan strategi kata kunci dan cara Google mengenali bisnis kamu. Daripada pusing mikirin algoritma yang rumit, yuk kita bedah langkah-langkah santai tapi ngefek banget buat bikin website kamu dilirik sama Mbah Google.",
+          "",
+          "## Kenali Calon Pembeli Lewat Kata Kunci Lokal",
+          "",
+          "Kesalahan paling sering yang dilakuin pebisnis pemula adalah menargetkan kata kunci yang terlalu luas. Contohnya, kamu jualan sepatu kulit custom di Bandung, tapi keyword yang dikejar cuma 'sepatu kulit terbaik'. Padahal, sainganmu udah jutaan brand besar di seluruh Indonesia. Mulai sekarang, ganti strateginya pakai kata kunci lokal yang spesifik, misalnya 'jasa bikin sepatu kulit handmade di Bandung' atau 'custom sepatu kulit pria Bandung'. Dengan begitu, orang yang nyari di Google benar-benar calon pembeli potensial yang lokasinya dekat sama kamu dan siap transaksi.",
+          "",
+          "## Bikin Konten yang Menjawab Kebutuhan, Bukan Cuma Jualan",
+          "",
+          "Google itu cinta banget sama website yang rajin kasih informasi bermanfaat buat penggunanya. Kalau website kamu isinya cuma tombol 'Beli Sekarang' dan harga doang, orang bakal cepat-cepat kabur. Coba deh mulai bikin tulisan atau artikel santai di blog website yang ngebahas masalah seputar produkmu. Misalnya, kalau kamu jualan katering sehat, buat artikel tentang 'Ide Menu Bekal Kantor yang Praktis dan Nggak Bikin Gendut'. Secara nggak langsung, orang yang awalnya cuma baca artikel bakal ngeh sama brand katering kamu dan berujung order.",
+          "",
+          "## Waktunya Website Kamu Naik Kelas Bersama KreativLabs",
+          "",
+          "Menerapkan SEO dasar memang butuh konsistensi dan fondasi website yang sehat sejak awal. Kalau dari struktur kodenya udah berantakan dan lemot, mau jungkir balik bikin konten sebagus apa pun bakal susah nembus halaman satu Google. Nah, kalau Sobat KreativLabs nggak mau pusing ngurusin teknis dan pengen terima beres, serahin aja ke tim KreativLabs! Kami siap bantu wujudkan website bisnis yang nggak cuma sedap dipandang mata, tapi juga ramah SEO dan siap jadi mesin pencetak cuan otomatis setiap hari. Yuk, ngobrol santai dulu sama tim kami buat konsultasi gratis seputar kebutuhan digital brand kamu!"
+    ].join("\n")
   }
 ];
 
