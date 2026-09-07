@@ -30,13 +30,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const postUrl = `https://kreativlabs.id/blog/${post.slug}`;
+  const postUrl = `https://www.kreativlabs.id/blog/${post.slug}`;
 
   return {
     title: post.title,
     description: post.excerpt,
     keywords: post.tags,
-    authors: [{ name: post.author, url: "https://kreativlabs.id" }],
+    authors: [{ name: post.author, url: "https://www.kreativlabs.id" }],
     openGraph: {
       title: post.title,
       description: post.excerpt,
@@ -50,6 +50,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: [
         {
           url: post.image,
+          secureUrl: post.image,
           width: 1200,
           height: 630,
           alt: post.title,

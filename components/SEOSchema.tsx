@@ -17,17 +17,17 @@ export default function SEOSchema({
     const organizationSchema = {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "@id": "https://kreativlabs.id/#organization",
+        "@id": "https://www.kreativlabs.id/#organization",
         "name": "KreativLabs.id",
         "alternateName": ["Kreativ Labs", "KreativLabs", "Jasa Website Semarang", "Jasa Desain Semarang"],
-        "url": "https://kreativlabs.id",
+        "url": "https://www.kreativlabs.id",
         "logo": {
             "@type": "ImageObject",
-            "url": "https://kreativlabs.id/logokreativ.png",
+            "url": "https://www.kreativlabs.id/logokreativ.png",
             "width": 512,
             "height": 512
         },
-        "image": "https://kreativlabs.id/og-image.png",
+        "image": "https://www.kreativlabs.id/og-image.png",
         "description": "Jasa pembuatan website murah dan desain grafis profesional di Semarang. Landing page, company profile, e-commerce, desain logo, poster, dan social media mulai dari Rp 50.000.",
         "email": "kreativlabsid@gmail.com",
         "telephone": "+6287816270140",
@@ -72,15 +72,15 @@ export default function SEOSchema({
     const localBusinessSchema = {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
-        "@id": "https://kreativlabs.id/#localbusiness",
+        "@id": "https://www.kreativlabs.id/#localbusiness",
         "name": "KreativLabs.id - Jasa Website & Desain Grafis Semarang",
         "alternateName": ["Jasa Website Murah Semarang", "Jasa Desain Grafis Semarang", "Jasa Pembuatan Website Semarang"],
-        "url": "https://kreativlabs.id",
-        "logo": "https://kreativlabs.id/logokreativ.png",
+        "url": "https://www.kreativlabs.id",
+        "logo": "https://www.kreativlabs.id/logokreativ.png",
         "image": [
-            "https://kreativlabs.id/og-image.png",
-            "https://kreativlabs.id/companyprofile.png",
-            "https://kreativlabs.id/ecommerce.png"
+            "https://www.kreativlabs.id/og-image.png",
+            "https://www.kreativlabs.id/companyprofile.png",
+            "https://www.kreativlabs.id/ecommerce.png"
         ],
         "description": "Jasa pembuatan website profesional dan desain grafis murah di Semarang. Melayani landing page, company profile, toko online, desain logo, poster, social media content. Harga mulai 50rb!",
         "telephone": "+6287816270140",
@@ -289,18 +289,18 @@ export default function SEOSchema({
     const websiteSchema = {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "@id": "https://kreativlabs.id/#website",
-        "url": "https://kreativlabs.id",
+        "@id": "https://www.kreativlabs.id/#website",
+        "url": "https://www.kreativlabs.id",
         "name": "KreativLabs.id",
         "alternateName": "Jasa Website Murah Semarang",
         "description": "Jasa pembuatan website murah dan desain grafis profesional mulai dari 50rb. Melayani landing page, company profile, e-commerce, desain logo, poster, social media.",
         "publisher": {
-            "@id": "https://kreativlabs.id/#organization"
+            "@id": "https://www.kreativlabs.id/#organization"
         },
         "inLanguage": ["id-ID", "en-US"],
         "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://kreativlabs.id/blog?search={search_term_string}",
+            "target": "https://www.kreativlabs.id/blog?search={search_term_string}",
             "query-input": "required name=search_term_string"
         }
     };
@@ -370,25 +370,25 @@ export default function SEOSchema({
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://kreativlabs.id"
+                "item": "https://www.kreativlabs.id"
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Layanan",
-                "item": "https://kreativlabs.id#services"
+                "item": "https://www.kreativlabs.id#services"
             },
             {
                 "@type": "ListItem",
                 "position": 3,
                 "name": "Portfolio",
-                "item": "https://kreativlabs.id#projects"
+                "item": "https://www.kreativlabs.id#projects"
             },
             {
                 "@type": "ListItem",
                 "position": 4,
                 "name": "Kontak",
-                "item": "https://kreativlabs.id#contact"
+                "item": "https://www.kreativlabs.id#contact"
             }
         ]
     };
@@ -404,7 +404,7 @@ export default function SEOSchema({
                 "name": "Jasa Pembuatan Website Murah",
                 "description": "Jasa pembuatan website profesional dengan harga terjangkau. Landing page, company profile, e-commerce, dan website custom untuk bisnis Anda.",
                 "provider": {
-                    "@id": "https://kreativlabs.id/#organization"
+                    "@id": "https://www.kreativlabs.id/#organization"
                 },
                 "areaServed": "Indonesia",
                 "serviceType": "Web Development",
@@ -420,7 +420,7 @@ export default function SEOSchema({
                 "name": "Jasa Desain Grafis Murah",
                 "description": "Jasa desain grafis profesional mulai 50rb. Desain logo, poster, konten social media, dan packaging untuk bisnis dan UMKM.",
                 "provider": {
-                    "@id": "https://kreativlabs.id/#organization"
+                    "@id": "https://www.kreativlabs.id/#organization"
                 },
                 "areaServed": "Indonesia",
                 "serviceType": "Graphic Design",
@@ -436,7 +436,7 @@ export default function SEOSchema({
                 "name": "Jasa Website Semarang",
                 "description": "Jasa pembuatan website di Semarang. Melayani bisnis lokal dan nasional dengan kualitas premium dan harga bersahabat.",
                 "provider": {
-                    "@id": "https://kreativlabs.id/#organization"
+                    "@id": "https://www.kreativlabs.id/#organization"
                 },
                 "areaServed": ["Semarang", "Jawa Tengah", "Indonesia"],
                 "serviceType": "Web Development"

@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     "kreativlabs design"
   ],
   alternates: {
-    canonical: "https://kreativlabs.id/services/design",
+    canonical: "https://www.kreativlabs.id/services/design",
   },
 };
 

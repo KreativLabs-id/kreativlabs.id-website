@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: "Professional Graphic Design, Branding & UI/UX Services | KreativLabs",
   description: "Bespoke visual identity and digital design solutions for modern businesses. From brand logos to structured social media kits and Figma UI/UX design.",
   alternates: {
-    canonical: "https://kreativlabs.id/en/services/design",
+    canonical: "https://www.kreativlabs.id/en/services/design",
   },
 };
 

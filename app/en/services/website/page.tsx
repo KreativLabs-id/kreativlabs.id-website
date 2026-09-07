@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: "Professional Website & Web App Development Services | KreativLabs",
   description: "High-performance web development solutions for ambitious businesses. From high-converting landing pages to custom web applications.",
   alternates: {
-    canonical: "https://kreativlabs.id/en/services/website",
+    canonical: "https://www.kreativlabs.id/en/services/website",
   },
 };
 
