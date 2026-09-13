@@ -1309,6 +1309,35 @@ export const blogPosts: BlogPost[] = [
           "",
           "Nah, kalau website bisnismu masih jalan di tempat dengan teknologi jadul, ini saatnya berbenah sebelum ketinggalan jauh dari kompetitor. Mau bikin website bisnis yang nggak cuma estetik buat dipamerin, tapi juga bener-bener jadi mesin pencetak uang? Yuk, ngobrol santai dan konsultasikan kebutuhan web serta desain grafis bisnis kamu bareng tim KreativLabs sekarang juga!"
     ].join("\n")
+  },
+  {
+    id: "jualan-online-sepi-pengunjung-resep-jemput-bola-google",
+    title: "Jualan Online Tapi Sepi Pengunjung? Ini Resep Ampuh Jemput Bola Lewat Google",
+    slug: "jualan-online-sepi-pengunjung-resep-jemput-bola-google",
+    excerpt: "Punya toko online tapi rasanya seperti berteriak di tengah padang pasir? Yuk, kenalan sama strategi SEO lokal yang bikin bisnis UMKM kamu gampang ditemukan calon pembeli setiap hari tanpa harus boncos bayar iklan.",
+    image: "https://images.unsplash.com/photo-1533750516457-a7f992034fec?w=1200&h=630&fit=crop",
+    author: "KreativBot AI",
+    date: "13 September 2026",
+    category: "SEO & Marketing",
+    tags: ["SEO Lokal","Marketing UMKM","Toko Online","Google","KreativLabs"],
+    readTime: "4 menit",
+    content: [
+          "Halo Sobat KreativLabs! Coba jujur, deh, seberapa sering kamu merasa sudah bikin toko online atau website bisnis yang keren, tapi begitu online, rasanya sunyi sepi tanpa pengunjung? Jangankan transaksi, yang mampir ngecek produk saja kadang cuma kurir paket atau teman sendiri. Rasanya kok ya gemas campur bikin lemas, ya?",
+          "",
+          "Masalahnya, banyak pelaku usaha pemula mengira kalau punya website itu ibarat buka ruko di mal mewah: tinggal pasang plang nama, otomatis orang bakal datang antre. Padahal, dunia internet itu seluas samudra. Kalau website kamu tidak 'didaftarkan' dengan benar ke mesin pencari, ya nasibnya bakal nongkrong di halaman 10 Google yang tidak pernah disentuh umat manusia.",
+          "",
+          "## Jangan Lawan Raksasa, Kuasai Pasar Lokal Saja!",
+          "",
+          "Buat kamu para pelaku UMKM, jangan dulu mimpi bisa ngalahin marketplace besar atau brand nasional di halaman utama Google untuk kata kunci umum. Strategi paling jitu dan masuk akal adalah bermain di 'kandang sendiri' alias SEO lokal. Fokuslah menyasar calon pembeli yang ada di sekitar area operasional bisnis kamu.",
+          "",
+          "Contohnya gampang. Alih-alih menargetkan kata kunci 'Jasa Catering Enak', ubah jadi 'Jasa Catering Harian Terbaik di Bandung' atau sesuaikan dengan kota tempat usahamu berdiri. Dengan cara ini, Google akan dengan senang hati merekomendasikan bisnis kamu kepada orang-orang terdekat yang memang sedang butuh produk atau jasamu saat itu juga.",
+          "",
+          "## Jemput Pembeli Gratis Setiap Hari Tanpa Boncos",
+          "",
+          "Selain menyelipkan nama kota di setiap deskripsi produk dan artikel website, pastikan juga kamu rajin memperbarui informasi di Google Business Profile. Kombinasi antara website yang SEO-friendly dan profil bisnis yang aktif adalah magnet paling ampuh untuk mendatangkan traffic organik secara cuma-cuma setiap harinya.",
+          "",
+          "Nah, kalau kamu merasa ribet ngurusin tetek bengek teknis SEO ini karena harus fokus ngurusin produksi dan operasional toko, tenang saja. Biar tim KreativLabs yang bantu bereskan urusan pembuatan website bisnis yang ramah Google dari nol. Yuk, ngobrol santai and konsultasikan ide bisnismu bareng tim KreativLabs hari ini dan biarkan website kamu yang bekerja menjemput cuan!"
+    ].join("\n")
   }
 ];
 
