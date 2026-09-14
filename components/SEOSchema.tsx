@@ -60,6 +60,11 @@ export default function SEOSchema({
         ],
         "sameAs": [
             "https://instagram.com/kreativlabs.id",
+            "https://www.linkedin.com/company/kreativlabs-id/",
+            "https://www.threads.net/@kreativlabs.id",
+            "https://tiktok.com/@kreativlabs.id",
+            "https://x.com/kreativlabsid",
+            "https://facebook.com/kreativlabs.id",
             "https://wa.me/6287816270140"
         ],
         "priceRange": "Rp 50.000 - Rp 5.000.000",
