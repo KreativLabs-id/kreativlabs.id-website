@@ -1369,6 +1369,42 @@ export const blogPosts: BlogPost[] = [
           "",
           "Urusan bikin website yang nggak cuma estetik tapi juga jago 'ngobrol' sama calon pembeli memang butuh sentuhan tangan ahli. Kalau Sobat KreativLabs pengen bisnisnya naik level tanpa ribet ngurusin teknis sendirian, yuk ngobrol santai bareng tim KreativLabs. Kita siap bantu wujudkan website impian yang siap jadi mesin penjualan paling loyal buat bisnis kamu!"
     ].join("\n")
+  },
+  {
+    id: "kenapa-produk-murah-bisa-terkesan-mahal-psikologi-visual-toko-online",
+    title: "Kenapa Produk Murah Bisa Terkesan Mahal? Menguak Sihir Psikologi Visual Toko Online",
+    slug: "kenapa-produk-murah-bisa-terkesan-mahal-psikologi-visual-toko-online",
+    excerpt: "Pernah penasaran kenapa ada toko online yang jual barang biasa tapi laris manis dengan harga tinggi? Jawabannya ada pada strategi desain visual dan psikologi warna yang membius mata pelanggan sejak detik pertama.",
+    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&h=630&fit=crop",
+    author: "KreativBot AI",
+    date: "19 September 2026",
+    category: "Desain & Branding",
+    tags: ["Desain Visual","Psikologi Warna","Branding UMKM","Toko Online Terpercaya"],
+    readTime: "4 menit",
+    content: [
+          "Halo Sobat KreativLabs! Coba deh jujur, seberapa sering kamu batal beli barang di sebuah toko online cuma karena tampilan websitenya berantakan, font-nya bikin pusing, dan logonya kelihatan asal comot dari Google? Di dunia digital yang serba cepat ini, mata pelanggan kita adalah hakim yang sangat kejam. Kurang dari tiga detik, mereka sudah memutuskan apakah toko online kita ini 'layak dipercaya' atau 'lewatkan saja'.",
+          "",
+          "Banyak pelaku UMKM yang sering terjebak dalam anggapan keliru: \"Yang penting produknya bagus dan murah, urusan tampilan belakangan.\" Padahal, dalam psikologi konsumen, kemasan visual adalah cerminan kualitas produk itu sendiri. Kalau dari luar saja sudah terlihat tidak profesional, bagaimana bisa meyakinkan pembeli bahwa produk kita berkualitas tinggi?",
+          "",
+          "## Mengapa Logo & Desain Keren Bisa Bikin Produk Dinilai Lebih Mahal",
+          "",
+          "Pernah nggak mikir, kenapa air mineral botolan di pinggir jalan harganya cuma tiga ribu rupiah, tapi di hotel bintang lima bisa jadi tiga puluh ribu rupiah? Padahal isinya sama persis! Di ranah digital, prinsip yang sama berlaku untuk desain visual. Logo yang dirancang secara profesional, pemilihan palet warna yang pas, serta layout website yang bersih secara otomatis mendongkrak nilai persepsi harga di benak pembeli.",
+          "",
+          "",
+          "Ketika sebuah brand tampil konsisten dan elegan, otak bawah sadar konsumen langsung menterjemahkannya sebagai produk kelas atas. Mereka jadi tidak ragu merogoh kocek lebih dalam karena merasa \"membeli kualitas dan prestise\", bukan sekadar barang fungsional biasa.",
+          "",
+          "## Rahasia Warna UI/UX yang Bikin Jari Pembeli Gatal Ingin Checkout",
+          "",
+          "Bukan cuma soal estetika, pemilihan warna dalam tampilan toko online atau UI/UX punya andil besar dalam memengaruhi emosi pembeli. Warna biru sering dipakai untuk menciptakan rasa aman dan percaya (makanya banyak bank pakai warna ini). Sementara itu, warna oranye atau merah tua yang ditaruh di tombol 'Beli Sekarang' mampu memicu urgensi dan tindakan cepat.",
+          "",
+          "Bayangkan kalau toko online kamu pakai warna teks merah menyala berpadu dengan latar hijau terang yang bikin sakit mata. Bukannya transaksi yang terjadi, pengunjung malah buru-buru kabur karena pusing! Desain yang nyaman dipandang mata membuat pengunjung betah berlama-lama 'window shopping' di website kita.",
+          "",
+          "## Tips Kilat Bikin Toko Online Kamu Langsung Dilirik dan Dipercaya",
+          "",
+          "Supaya toko online Sobat KreativLabs nggak cuma numpang lewat doang, mulailah berinvestasi pada visual yang rapi. Gunakan foto produk beresolusi tinggi, pastikan navigasi website mudah digunakan di HP, dan miliki logo yang punya karakter kuat. Jangan biarkan calon pembeli kabur ke kompetitor hanya karena tampilan tokomu kelihatan kurang profesional.",
+          "",
+          "Mau bikin toko online atau websitemu punya visual berkelas yang sanggup menyihir pengunjung jadi pelanggan setia? Yuk, ngobrol santai dan konsultasikan kebutuhan desain serta pembuatan website bisnis kamu bareng tim KreativLabs sekarang juga! Biar urusan tampilan, serahin ke ahlinya, kamu fokus urus cuan aja."
+    ].join("\n")
   }
 ];
 
