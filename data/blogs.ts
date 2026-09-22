@@ -1405,6 +1405,33 @@ export const blogPosts: BlogPost[] = [
           "",
           "Mau bikin toko online atau websitemu punya visual berkelas yang sanggup menyihir pengunjung jadi pelanggan setia? Yuk, ngobrol santai dan konsultasikan kebutuhan desain serta pembuatan website bisnis kamu bareng tim KreativLabs sekarang juga! Biar urusan tampilan, serahin ke ahlinya, kamu fokus urus cuan aja."
     ].join("\n")
+  },
+  {
+    id: "jemput-pembeli-tanpa-bayar-iklan-kunci-ampuh-kuasai-pencarian-google-umkm",
+    title: "Jemput Pembeli Tanpa Bayar Iklan: Kunci Ampuh Kuasai Pencarian Google untuk UMKM",
+    slug: "jemput-pembeli-tanpa-bayar-iklan-kunci-ampuh-kuasai-pencarian-google-umkm",
+    excerpt: "Capek boncos pasang iklan berbayar terus tapi hasil pas-pasan? Saatnya buat bisnismu nongkrong di halaman depan Google secara gratis lewat strategi SEO lokal yang tepat sasaran.",
+    image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=1200&h=630&fit=crop",
+    author: "KreativBot AI",
+    date: "22 September 2026",
+    category: "SEO & Marketing",
+    tags: ["SEO UMKM","Google","Marketing Gratis","Bisnis Lokal","KreativLabs"],
+    readTime: "4 menit",
+    content: [
+          "Halo Sobat KreativLabs! Jujur deh, berapa banyak dari kamu yang sering merasa lelah karena anggaran bisnis habis cuma buat bayar iklan harian di media sosial? Pas iklan jalan, pesanan lumayan masuk. Tapi begitu dompet iklan menipis dan tombol 'pause' ditekan, toko online mendadak sunyi senyap kayak kuburan. Padahal, ada cara yang jauh lebih sehat dan berkelanjutan untuk mendatangkan calon pembeli setiap hari tanpa harus terus-terusan setor uang ke platform iklan.",
+          "",
+          "Banyak pelaku UMKM mengira kalau muncul di halaman pertama Google itu butuh keahlian tingkat dewa atau modal ratusan juta rupiah. Padahal, rahasianya tidak sedekat itu dengan urusan koding rumit. Google sebenarnya sangat mencintai bisnis lokal yang jujur memberikan informasi akurat bagi para pencarinya. Masalahnya, banyak yang belum tahu cara 'berkenalan' dengan mesin pencari raksasa ini.",
+          "",
+          "## Kenalan dengan SEO Lokal: Jurus Jitu Dikerubuti Tetangga Sendiri",
+          "",
+          "Strategi paling gampang buat bisnis lokal adalah bermain di area SEO lokal. Bayangkan ketika ada orang di kotamu mengetik 'kue tart enak terdekat' atau 'jasa renovasi rumah di [nama kota]' di kolom pencarian. Nah, tugas website bisnismu adalah hadir tepat di hadapan mereka saat mereka sedang lapar atau butuh jasa tersebut. Kuncinya ada pada pemilihan kata kunci yang spesifik, menyematkan lokasi secara natural di halaman website, dan melengkapi profil bisnis agar Google paham betul di mana lapakmu beroperasi.",
+          "",
+          "## Bikin Konten yang Menjawab Jeritan Hati Pelanggan",
+          "",
+          "Jangan cuma memajang foto produk dengan keterangan harga saja di website. Google sangat menghargai website yang aktif memberikan solusi atas masalah pelanggannya. Kalau kamu jualan produk herbal, buatlah artikel ringan tentang tips menjaga kesehatan tubuh atau cara mengatasi masuk angin secara alami. Ketika artikelmu dibaca banyak orang, otoritas websitemu di mata Google akan meroket naik secara otomatis.",
+          "",
+          "Mau bisnismu kebanjiran pengunjung organik setiap hari tanpa bikin boncos? Jangan biarkan websitemu cuma jadi pajangan digital yang sepi pengunjung. Yuk, diskusikan kebutuhan website dan strategi digital bisnismu bersama tim KreativLabs sekarang juga, biar kami yang bantu meracik fondasi digital yang kuat untuk merajai pencarian Google!"
+    ].join("\n")
   }
 ];
 
