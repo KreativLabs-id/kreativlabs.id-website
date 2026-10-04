@@ -1494,6 +1494,33 @@ export const blogPosts: BlogPost[] = [
           "",
           "Nah, kalau Sobat mau bisnisnya naik kelas dan punya tampilan visual sekelas brand besar tanpa ribet harus belajar desain dari nol, serahkan saja urusannya ke tim KreativLabs. Yuk, ngobrol santai bareng kami untuk konsultasi seputar pembuatan website profesional dan desain branding yang siap bikin omzet bisnis Sobat melesat tahun ini!"
     ].join("\n")
+  },
+  {
+    id: "sihir-angka-di-balik-keranjang-belanja-cara-bikin-pengunjung-nyaman-rogoh-kocek",
+    title: "Sihir Angka di Balik Keranjang Belanja: Cara Bikin Pengunjung Nyaman Rogoh Kocek",
+    slug: "sihir-angka-di-balik-keranjang-belanja-cara-bikin-pengunjung-nyaman-rogoh-kocek",
+    excerpt: "Pernah mikir kenapa ada toko online yang pasang harga agak tinggi tapi tetep laris manis? Jawabannya ada di seni penataan landing page dan trik psikologi harga yang bikin pembeli rela antre.",
+    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&h=630&fit=crop",
+    author: "KreativBot AI",
+    date: "4 Oktober 2026",
+    category: "Tips Bisnis",
+    tags: ["Landing Page","Psikologi Harga","Tips UMKM","Branding Bisnis"],
+    readTime: "4 menit",
+    content: [
+          "Halo Sobat KreativLabs! Coba deh jujur, sebagai pemilik usaha, seberapa sering kamu galau pas nentuin harga produk? Mau dipasang murah takut dibilang murahan dan nggak balik modal, tapi kalau dipasang mahal takut ditinggal kabur sama calon pembeli. Padahal, masalah utamanya sering kali bukan di nominal harganya, melainkan bagaimana cara kamu 'membungkus' nilai produk tersebut di hadapan pengunjung website.",
+          "",
+          "Banyak pelaku UMKM yang mengira kalau jualan online itu cukup pajang foto produk, kasih diskon gede-gedean, terus tunggu notifikasi transaksi masuk. Padahal, kenyataannya nggak semulus itu. Pengunjung yang datang ke website kamu ibarat tamu yang baru masuk ke toko fisik. Kalau sambutannya biasa saja, tampilannya berantakan, dan informasi harganya bikin pusing, ya jangan heran kalau mereka bakal langsung kabur tanpa ninggalin jejak.",
+          "",
+          "## Bedah Landing Page: Bukan Cuma Cantik, Tapi Harus Bikin Orang 'Ngebet' Beli",
+          "",
+          "Landing page yang handal itu mirip kayak SPG atau sales handal yang bisa jelasin produk tanpa bikin ngantuk. Sobat KreativLabs harus paham bahwa alur halaman website itu punya kekuatan hipnotis. Mulai dari headline di bagian paling atas yang langsung menjawab masalah pembeli, sampai tombol 'Beli Sekarang' yang warnanya kontras dan gampang diklik. Kalau alurnya ngaret dan bikin bingung, energi calon pembeli bakal habis duluan sebelum mereka sempat baca keunggulan produk kamu.",
+          "",
+          "## Seni Angka dan Branding: Bikin Harga Terasa Masuk Akal di Kepala Konsumen",
+          "",
+          "Nah, di sinilah ilmu psikologi harga main peran penting. Pernah lihat kan strategi harga Rp99.000 ketimbang Rp100.000? Otak kita secara otomatis membaca angka depan lebih dulu, jadi Rp99 ribu kesannya masih di kisaran puluhan ribu, bukan ratusan ribu. Selain itu, branding website yang kuat—mulai dari pilihan warna yang profesional, logo yang rapi, sampai testimoni asli—bisa bikin produk kamu naik kasta. Kalau websitenya kelihatan bonafide, orang bakal percaya dan nggak ragu buat rogoh kocek lebih dalam.",
+          "",
+          "Intinya, mengubah pengunjung iseng jadi pembeli setia itu butuh perpaduan antara desain landing page yang memikat, tata letak harga yang cerdas, dan branding yang meyakinkan. Mau bisnismu kebanjiran orderan dengan tampilan website yang kelihatan profesional tapi tetap ramah di kantong? Yuk, ngobrol santai dan konsultasikan kebutuhan website atau desain grafis kamu bareng tim KreativLabs sekarang juga!"
+    ].join("\n")
   }
 ];
 
