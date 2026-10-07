@@ -1521,6 +1521,35 @@ export const blogPosts: BlogPost[] = [
           "",
           "Intinya, mengubah pengunjung iseng jadi pembeli setia itu butuh perpaduan antara desain landing page yang memikat, tata letak harga yang cerdas, dan branding yang meyakinkan. Mau bisnismu kebanjiran orderan dengan tampilan website yang kelihatan profesional tapi tetap ramah di kantong? Yuk, ngobrol santai dan konsultasikan kebutuhan website atau desain grafis kamu bareng tim KreativLabs sekarang juga!"
     ].join("\n")
+  },
+  {
+    id: "jualan-online-tapi-sepi-saatnya-bikin-toko-google-anda-nangkring-di-halaman-utama",
+    title: "Jualan Online Tapi Sepi? Saatnya Bikin Toko Google Anda Nangkring di Halaman Utama",
+    slug: "jualan-online-tapi-sepi-saatnya-bikin-toko-google-anda-nangkring-di-halaman-utama",
+    excerpt: "Pernahkah Sobat KreativLabs merasa sudah punya website keren tapi pengunjungnya sepi bak kuburan? Tenang, rahasianya bukan pasang iklan mahal, tapi bagaimana membuat Google jatuh cinta pada bisnis lokal Anda.",
+    image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=1200&h=630&fit=crop",
+    author: "KreativBot AI",
+    date: "7 Oktober 2026",
+    category: "SEO & Marketing",
+    tags: ["SEO UMKM","Google Halaman 1","Strategi Bisnis Lokal","Jasa Pembuatan Website","KreativLabs"],
+    readTime: "4 menit",
+    content: [
+          "Halo Sobat KreativLabs! Coba jujur deh, berapa kali dalam seminggu Anda mengetik sesuatu di Google pas lagi butuh produk atau jasa tertentu? Pasti sering banget, kan? Nah, sekarang bayangkan kalau calon pembeli Anda sedang mengetik produk yang Anda jual di Google, tapi toko online Anda justru nyasar entah di halaman berapa—mungkin halaman lima atau enam yang bahkan tidak pernah disentuh orang.",
+          "",
+          "Kenyataan pahitnya, sebagus apapun produk UMKM yang Anda tawarkan, kalau nyempil di halaman belakang Google, ya sama saja seperti punya toko megah tapi di tengah hutan belantara. Orang mau mampir bagaimana kalau jalannya saja tidak kelihatan? Banyak pelaku usaha mikir kalau masuk halaman satu Google itu butuh ilmu sihir tingkat tinggi atau budget iklan yang bikin jantungan. Padahal, kuncinya ada di strategi SEO dasar yang ramah pemula.",
+          "",
+          "## Jangan Kejar Kata Kunci Nasional, Kuasai Dulu 'Gang' Sendiri",
+          "",
+          "Kesalahan paling klasik yang sering dilakukan pebisnis pemula adalah bernafsu mengejar kata kunci yang terlalu luas. Misalnya, jualan sepatu kulit tapi langsung menargetkan kata kunci 'sepatu kulit terbaik di Indonesia'. Wah, itu sih saingannya sudah pabrik raksasa yang iklannya miliaran rupiah! Sebagai pelaku UMKM, strategi paling cerdas adalah fokus ke kata kunci lokal.",
+          "",
+          "Bayangkan Anda jualan katering di Bandung. Jauh lebih efektif kalau Anda mengincar frasa seperti 'katering harian enak di Buah Batu Bandung' ketimbang cuma 'katering murah'. Calon pembeli yang mengetik lokasi spesifik biasanya punya niat belanja yang jauh lebih tinggi. Mereka bukan cuma cari informasi, tapi sudah siap transfer karena lokasinya dekat dan jelas.",
+          "",
+          "## Jemput Bola Tanpa Bayar Iklan Setiap Hari",
+          "",
+          "Bayangkan betapa bahagianya tiap pagi buka laptop dan melihat notifikasi pesanan masuk secara gratis, tanpa perlu pusing mikirin budget iklan harian yang bikin boncos. Itulah keajaiban trafik organik dari Google. Ketika website bisnis Anda berhasil nangkring di halaman pertama, ia akan bekerja jadi sales 24 jam nonstop buat Anda, bahkan saat Anda sedang tidur nyenyak di malam hari.",
+          "",
+          "Tentu saja, kunci utamanya ada pada fondasi website yang sehat, cepat, dan mudah dibaca oleh mesin pencari maupun manusia. Kalau dari awal struktur website Anda berantakan dan desainnya bikin pusing kepala, pengunjung bakal langsung kabur dalam hitungan detik. Mau dibantu meracik website bisnis yang ramah SEO sekaligus punya visual memukau? Yuk, ngobrol santai bareng tim KreativLabs untuk wujudkan website impian yang siap bikin omzet bisnis Anda melompat tinggi tahun ini!"
+    ].join("\n")
   }
 ];
 
