@@ -47,7 +47,7 @@ const testimonialsEN: TestimonialItem[] = [
     role: "Operations Head, Global Logistics",
   },
   {
-    text: "The UI/UX Figma design system delivered was modular with standard Auto Layout. Our engineering team implemented the frontend effortlessly.",
+    text: "The website layout and design system delivered was modular and clean. Our engineering team implemented the frontend effortlessly.",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80",
     name: "Zainab Hussain",
     role: "Product Manager, TechPlatform",

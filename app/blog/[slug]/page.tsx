@@ -225,7 +225,7 @@ export default async function BlogPostPage({ params }: Props) {
                     </div>
                   </div>
                   <p className="text-foreground/70 text-xs leading-relaxed">
-                    Berbagi tips praktis dan panduan teknologi seputar website, UI/UX, dan pertumbuhan digital.
+                    Berbagi tips praktis dan panduan teknologi seputar website, desain grafis, dan pertumbuhan digital.
                   </p>
                 </div>
 

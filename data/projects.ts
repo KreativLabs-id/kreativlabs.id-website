@@ -114,7 +114,7 @@ export const projects: Project[] = [
     image: "/chatly.png",
     fullDescription: "Website chat real-time untuk Chatly dengan interface yang modern dan fitur lengkap untuk komunikasi yang efisien.",
     challenge: "Website harus mudah digunakan oleh berbagai kalangan usia, dengan interface yang menarik namun tidak overwhelming. Perlu balance antara fitur lengkap dengan simplicity.",
-    solution: "Kami melakukan user research mendalam, membuat user persona, dan iterasi design berdasarkan feedback. Menggunakan design system yang konsisten dan mengikuti best practices mobile UI/UX.",
+    solution: "Kami melakukan user research mendalam, membuat user persona, dan iterasi design berdasarkan feedback. Menggunakan design system yang konsisten dan mengikuti best practices desain antarmuka mobile modern.",
     results: [
       "User satisfaction score 4.8/5",
       "Task completion rate 95%",

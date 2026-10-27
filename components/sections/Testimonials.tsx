@@ -47,7 +47,7 @@ const testimonialsID: TestimonialItem[] = [
     role: "Operasional, IndoSupply",
   },
   {
-    text: "Desain UI/UX di Figma yang diserahkan rapi dengan Auto Layout dan design system yang modular. Programmer kami bisa langsung implementasi tanpa bingung.",
+    text: "Desain antarmuka website yang diserahkan rapi dan modular. Programmer kami bisa langsung implementasi dan hasilnya sesuai ekspektasi.",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80",
     name: "Nadia Safitri",
     role: "Product Owner, Logistik Kita",

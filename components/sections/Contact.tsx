@@ -287,7 +287,7 @@ export default function Contact() {
                     <option value="custom-app">Website Kustom / Aplikasi Web (POS, Portal)</option>
                     <option value="branding">Desain Logo & Identitas Brand</option>
                     <option value="social-media">Desain Konten & Social Media Kit</option>
-                    <option value="uiux">Desain UI/UX (Figma Web & Mobile)</option>
+                    {/* <option value="uiux">Desain UI/UX (Figma Web & Mobile)</option> -- Dinonaktifkan sementara */}
                     <option value="other">Kebutuhan Lainnya</option>
                   </select>
                 </div>

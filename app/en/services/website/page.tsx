@@ -72,7 +72,7 @@ const workflowEN = [
   },
   {
     step: "02",
-    title: "UI Design & Wireframing",
+    title: "Layout & Wireframing",
     description: "Structuring user journeys, copywriting, and visual prototypes for seamless clarity."
   },
   {

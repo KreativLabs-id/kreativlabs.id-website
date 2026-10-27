@@ -52,7 +52,7 @@ const THEMES = [
   },
   {
     category: 'Desain & Branding',
-    focus: 'Pengaruh desain visual & logo profesional terhadap persepsi harga produk, psikologi warna dalam UI/UX, dan tips membuat tampilan toko online dipercaya pembeli.',
+    focus: 'Pengaruh desain visual & logo profesional terhadap persepsi harga produk, psikologi warna dalam desain visual, dan tips membuat tampilan toko online dipercaya pembeli.',
     imagePool: [
       'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&h=630&fit=crop',
       'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=1200&h=630&fit=crop',

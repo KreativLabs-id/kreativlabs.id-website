@@ -80,7 +80,7 @@ const footerColumns = [
       { name: "Website Custom", href: "/services/website" },
       { name: "Desain Logo", href: "/services/design" },
       { name: "Desain Sosmed", href: "/services/design" },
-      { name: "UI/UX Design", href: "/services/design" },
+      // { name: "UI/UX Design", href: "/services/design" }, // Dinonaktifkan sementara
     ],
   },
   {

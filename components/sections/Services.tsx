@@ -79,6 +79,7 @@ const services = [
     detailHref: "/services/design",
     waMessage: "Halo KreativLabs, saya ingin pesan jasa Desain Social Media."
   },
+  /* UI/UX Design - Dinonaktifkan sementara karena layanan sedang tidak tersedia
   {
     icon: PenTool,
     title: "UI/UX Design",
@@ -92,6 +93,7 @@ const services = [
     detailHref: "/services/design",
     waMessage: "Halo KreativLabs, saya ingin konsultasi jasa UI/UX Design."
   }
+  */
 ];
 
 export default function Services() {

@@ -110,6 +110,7 @@ const pricingPlansEN: PricingPlanEN[] = [
     ],
     waMessage: "Hello KreativLabs, I would like to order the Social Media Design package ($30)."
   },
+  /* UI/UX Design - Temporarily disabled
   {
     id: "uiux-design",
     name: "UI/UX Design",
@@ -128,6 +129,7 @@ const pricingPlansEN: PricingPlanEN[] = [
     ],
     waMessage: "Hello KreativLabs, I would like to inquire about the UI/UX Design package."
   }
+  */
 ];
 
 export default function PricingEN() {

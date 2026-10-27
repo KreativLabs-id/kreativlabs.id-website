@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/sections/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+// import {
+//   PenTool,
+// } from "lucide-react";
 import {
   Palette,
   Instagram,
-  PenTool,
   CheckCircle2,
   ArrowRight,
   Layers,
@@ -14,14 +16,14 @@ import {
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Jasa Desain Grafis, Branding & UI/UX Profesional | KreativLabs",
-  description: "Layanan desain grafis profesional dan identitas visual untuk bisnis. Desain logo, konten media sosial terstruktur, brand guideline, hingga desain antarmuka UI/UX di Figma.",
+  title: "Jasa Desain Grafis & Branding Profesional | KreativLabs",
+  description: "Layanan desain grafis profesional dan identitas visual untuk bisnis. Desain logo, konten media sosial terstruktur, brand guideline, hingga materi promosi visual.",
   keywords: [
     "jasa desain grafis",
     "jasa desain logo",
-    "jasa ui ux design",
     "jasa branding bisnis",
     "jasa desain instagram",
+    "jasa desain promosi",
     "kreativlabs design"
   ],
   alternates: {
@@ -58,6 +60,7 @@ const designServices = [
     ],
     waMessage: "Halo KreativLabs, saya ingin memesan paket Desain Konten Social Media."
   },
+  /* Desain UI/UX - Dinonaktifkan sementara karena layanan sedang tidak tersedia
   {
     icon: PenTool,
     title: "Desain Antarmuka UI/UX (Web & Mobile)",
@@ -72,6 +75,7 @@ const designServices = [
     ],
     waMessage: "Halo KreativLabs, saya ingin konsultasi jasa Desain UI/UX untuk aplikasi/website."
   }
+  */
 ];
 
 const workflow = [
@@ -106,7 +110,7 @@ export default function DesignServicesPage() {
       <section className="pt-28 pb-14 px-4 sm:px-6">
         <div className="container mx-auto max-w-5xl text-center">
           <span className="text-xs font-semibold text-primary uppercase tracking-widest block mb-2.5">
-            Layanan Desain Grafis & UI/UX
+            Layanan Desain Grafis & Branding
           </span>
           
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-foreground tracking-tight leading-[1.18] mb-4">
@@ -150,7 +154,7 @@ export default function DesignServicesPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto gap-6">
             {designServices.map((service, index) => {
               const Icon = service.icon;
               const waUrl = `https://wa.me/6287816270140?text=${encodeURIComponent(service.waMessage)}`;
@@ -240,7 +244,7 @@ export default function DesignServicesPage() {
               Ingin Meningkatkan Tampilan Visual Bisnis Anda?
             </h2>
             <p className="text-xs sm:text-sm text-foreground/70 max-w-lg mx-auto leading-relaxed mb-6">
-              Diskusikan kebutuhan logo, media sosial, atau antarmuka aplikasi bisnis Anda bersama tim desainer KreativLabs.
+              Diskusikan kebutuhan logo, identitas brand, atau materi promosi media sosial bisnis Anda bersama tim desainer KreativLabs.
             </p>
             <a
               href="https://wa.me/6287816270140?text=Halo%20KreativLabs,%20saya%20ingin%20konsultasi%20kebutuhan%20desain"

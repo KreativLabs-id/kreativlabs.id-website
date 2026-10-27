@@ -80,7 +80,7 @@ const footerColumnsEN = [
       { name: "Custom Systems", href: "/en/services/website" },
       { name: "Logo Design", href: "/en/services/design" },
       { name: "Social Media", href: "/en/services/design" },
-      { name: "UI/UX Design", href: "/en/services/design" },
+      // { name: "UI/UX Design", href: "/en/services/design" }, // Temporarily disabled
     ],
   },
   {

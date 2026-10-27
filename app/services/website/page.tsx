@@ -69,7 +69,7 @@ const websiteServices = [
       "Dashboard admin dengan hak akses pengguna yang fleksibel",
       "Integrasi payment gateway, WhatsApp API, atau sistem pihak ketiga",
       "Keamanan database dan pencadangan data otomatis",
-      "Desain antarmuka UI/UX yang intuitif bagi operator dan admin",
+      "Desain antarmuka yang intuitif bagi operator dan admin",
       "Garansi pemeliharaan teknis & perbaikan bug"
     ],
     waMessage: "Halo KreativLabs, saya ingin konsultasi pengembangan Website Kustom / Web App."
@@ -84,7 +84,7 @@ const workflow = [
   },
   {
     step: "02",
-    title: "Perancangan UI & Struktur Konten",
+    title: "Perancangan Layout & Struktur Konten",
     description: "Penyusunan tata letak, copywriting, dan visual awal agar alur navigasi terasa natural dan terarah."
   },
   {

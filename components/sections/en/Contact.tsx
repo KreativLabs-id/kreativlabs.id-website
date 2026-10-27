@@ -287,7 +287,7 @@ export default function ContactEN() {
                     <option value="custom-app">Custom Web Application (POS, Portals)</option>
                     <option value="branding">Logo & Brand Identity System</option>
                     <option value="social-media">Marketing Creative & Social Kit</option>
-                    <option value="uiux">UI/UX Design (Figma System)</option>
+                    {/* <option value="uiux">UI/UX Design (Figma System)</option> -- Temporarily disabled */}
                     <option value="other">Other Scope</option>
                   </select>
                 </div>

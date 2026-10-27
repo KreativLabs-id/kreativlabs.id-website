@@ -2,18 +2,20 @@ import type { Metadata } from "next";
 import NavbarEN from "@/components/NavbarEN";
 import Footer from "@/components/sections/en/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+// import {
+//   PenTool,
+// } from "lucide-react";
 import {
   Palette,
   Instagram,
-  PenTool,
   CheckCircle2,
   ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Professional Graphic Design, Branding & UI/UX Services | KreativLabs",
-  description: "Bespoke visual identity and digital design solutions for modern businesses. From brand logos to structured social media kits and Figma UI/UX design.",
+  title: "Professional Graphic Design & Branding Services | KreativLabs",
+  description: "Bespoke visual identity and digital design solutions for modern businesses. From brand logos to structured social media kits and brand guidelines.",
   alternates: {
     canonical: "https://www.kreativlabs.id/en/services/design",
   },
@@ -48,6 +50,7 @@ const designServicesEN = [
     ],
     waMessage: "Hello KreativLabs, I would like to order a Social Media Design package."
   },
+  /* UI/UX & Product Design - Temporarily disabled
   {
     icon: PenTool,
     title: "UI/UX & Product Design (Web & Mobile)",
@@ -62,6 +65,7 @@ const designServicesEN = [
     ],
     waMessage: "Hello KreativLabs, I would like to discuss a UI/UX Design project."
   }
+  */
 ];
 
 const workflowEN = [
@@ -96,7 +100,7 @@ export default function DesignServicesPageEN() {
       <section className="pt-28 pb-14 px-4 sm:px-6">
         <div className="container mx-auto max-w-5xl text-center">
           <span className="text-xs font-semibold text-primary uppercase tracking-widest block mb-2.5">
-            Graphic & UI/UX Design Services
+            Graphic Design & Branding Services
           </span>
           
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-foreground tracking-tight leading-[1.18] mb-4">
@@ -140,7 +144,7 @@ export default function DesignServicesPageEN() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto gap-6">
             {designServicesEN.map((service, index) => {
               const Icon = service.icon;
               const waUrl = `https://wa.me/6287816270140?text=${encodeURIComponent(service.waMessage)}`;
@@ -230,7 +234,7 @@ export default function DesignServicesPageEN() {
               Ready to Upgrade Your Brand Identity?
             </h2>
             <p className="text-xs sm:text-sm text-foreground/70 max-w-lg mx-auto leading-relaxed mb-6">
-              Discuss your visual identity or digital product interface with the KreativLabs design team.
+              Discuss your visual identity, branding, or social media content with the KreativLabs design team.
             </p>
             <a
               href="https://wa.me/6287816270140?text=Hello%20KreativLabs,%20I%20would%20like%20to%20discuss%20design%20services"

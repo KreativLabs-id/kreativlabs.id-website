@@ -111,6 +111,7 @@ const pricingPlans: PricingPlan[] = [
     ],
     waMessage: "Halo KreativLabs, saya ingin pesan paket Desain Social Media (Rp 150rb)."
   },
+  /* UI/UX Design - Dinonaktifkan sementara
   {
     id: "uiux-design",
     name: "UI/UX Design",
@@ -129,6 +130,7 @@ const pricingPlans: PricingPlan[] = [
     ],
     waMessage: "Halo KreativLabs, saya ingin konsultasi paket UI/UX Design."
   }
+  */
 ];
 
 export default function Pricing() {

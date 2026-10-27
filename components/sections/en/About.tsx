@@ -83,7 +83,7 @@ export default function AboutEN() {
                 <div className="relative w-full aspect-4/3 sm:aspect-[16/11] bg-secondary overflow-hidden">
                   <Image
                     src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1000&auto=format&fit=crop&q=80"
-                    alt="KreativLabs team architecting scalable software and UI/UX design systems"
+                    alt="KreativLabs team architecting scalable software and modern web systems"
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-102"
                     sizes="(max-width: 768px) 100vw, 55vw"

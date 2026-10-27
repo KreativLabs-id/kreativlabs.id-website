@@ -196,7 +196,9 @@ export default function SEOSchema({
                                 "price": "50000",
                                 "minPrice": "50000"
                             }
-                        },
+                        }
+                        /* Jasa Desain UI/UX - Dinonaktifkan sementara
+                        ,
                         {
                             "@type": "Offer",
                             "itemOffered": {
@@ -205,6 +207,7 @@ export default function SEOSchema({
                                 "description": "Perancangan user interface dan user experience untuk aplikasi dan website"
                             }
                         }
+                        */
                     ]
                 }
             ]
@@ -360,7 +363,7 @@ export default function SEOSchema({
                 "name": "Apa saja layanan yang tersedia di KreativLabs?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "KreativLabs menyediakan jasa pembuatan website (landing page, company profile, e-commerce, web custom), desain grafis (logo, poster, social media content, packaging), dan UI/UX design dengan harga terjangkau mulai 50rb."
+                    "text": "KreativLabs menyediakan jasa pembuatan website (landing page, company profile, e-commerce, web custom) dan desain grafis (logo, poster, social media content, packaging) dengan harga terjangkau mulai 50rb."
                 }
             }
         ]

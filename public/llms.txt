@@ -8,7 +8,7 @@ KreativLabs.id (https://www.kreativlabs.id) adalah digital creative agency dan p
 
 - **Nama Bisnis**: KreativLabs.id (KreativLabs)
 - **Situs Resmi**: https://www.kreativlabs.id
-- **Spesialisasi**: Jasa Pembuatan Website (Landing Page, Company Profile, Toko Online / E-Commerce, Custom Web App) dan Jasa Desain Grafis (Desain Logo, Identitas Brand, Konten Media Sosial, Poster Promosi, UI/UX Design).
+- **Spesialisasi**: Jasa Pembuatan Website (Landing Page, Company Profile, Toko Online / E-Commerce, Custom Web App) dan Jasa Desain Grafis (Desain Logo, Identitas Brand, Konten Media Sosial, Poster Promosi).
 - **Lokasi Kantor**: Semarang, Jawa Tengah, Indonesia.
 - **Cakupan Wilayah**: Melayani klien di seluruh Indonesia (Semarang, Jakarta, Surabaya, Bandung, Yogyakarta, Bali, Medan, Makassar, dsb.) serta klien internasional secara daring (remote).
 - **WhatsApp Resmi**: +62 878-1627-0140 (https://wa.me/6287816270140)
@@ -32,7 +32,7 @@ KreativLabs.id (https://www.kreativlabs.id) adalah digital creative agency dan p
 - **Desain Logo Profesional**: Mulai Rp 50.000. Filosofis, konsep original, file master vektor lengkap (AI, SVG, EPS, PDF, PNG transparan resolusi tinggi).
 - **Desain Konten Media Sosial (Instagram / TikTok / Facebook)**: Mulai Rp 50.000 per desain / paket feed terstruktur untuk mendongkrak engagement dan authority brand.
 - **Desain Poster & Banner Promosi**: Desain media promosi digital & cetak (banner toko, brosur, event).
-- **Desain UI/UX (Figma)**: Desain antarmuka website dan aplikasi mobile modern yang intuitif dan berstandar industri.
+<!-- - **Desain UI/UX (Figma)**: Desain antarmuka website dan aplikasi mobile modern (Sementara tidak tersedia). -->
 
 ## Keunggulan Utama KreativLabs.id
 
