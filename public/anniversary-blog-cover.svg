@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#b9d8e7"/>
+  <circle cx="1030" cy="130" r="280" fill="none" stroke="#234b63" stroke-opacity=".16" stroke-width="2"/>
+  <circle cx="1030" cy="130" r="240" fill="none" stroke="#234b63" stroke-opacity=".12" stroke-width="2"/>
+  <path d="M0 0 Q150 120 300 0 Q450 120 600 0 Q750 120 900 0 Q1050 120 1200 0" fill="none" stroke="#234b63" stroke-opacity=".4" stroke-width="2"/>
+  <g fill="#6995ad"><path d="M55 34l40 20-34 34zM355 34l40 20-34 34zM655 34l40 20-34 34zM955 34l40 20-34 34z"/></g>
+  <g fill="#239ea6"><path d="M145 60h40l-20 40zM445 60h40l-20 40zM745 60h40l-20 40zM1045 60h40l-20 40z"/></g>
+  <g fill="#eaf5f7"><path d="M235 54l40-20-6 54zM535 54l40-20-6 54zM835 54l40-20-6 54zM1135 54l40-20-6 54z"/></g>
+  <text x="80" y="205" fill="#39758c" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="4">KREATIVLABS · 1ST ANNIVERSARY</text>
+  <text x="80" y="320" fill="#234b63" font-family="Arial, sans-serif" font-size="82" font-weight="700">Satu tahun berkarya.</text>
+  <text x="80" y="405" fill="#234b63" font-family="Arial, sans-serif" font-size="52" font-weight="700">Terima kasih sudah bersama kami.</text>
+  <text x="80" y="505" fill="#234b63" font-family="Arial, sans-serif" font-size="26">5 NOVEMBER 2026 · PROMO ANNIVERSARY</text>
+</svg>

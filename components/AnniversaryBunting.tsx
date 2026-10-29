@@ -29,7 +29,7 @@ function Garland({ swags, className }: { swags: number; className: string }) {
 export default function AnniversaryBunting() {
   return (
     <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 z-20">
-      <Garland swags={3} className="block h-16 w-full sm:hidden" />
+      <Garland swags={2} className="block h-auto w-full sm:hidden" />
       <Garland swags={5} className="hidden h-20 w-full sm:block" />
     </div>
   );

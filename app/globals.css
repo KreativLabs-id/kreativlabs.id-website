@@ -632,6 +632,52 @@
   backface-visibility: hidden;
 }
 
+.coupon-perforation {
+  background: repeating-linear-gradient(to right, rgba(255, 255, 255, 0.55) 0 12px, transparent 12px 20px);
+}
+
+@media (min-width: 1024px) {
+  .coupon-perforation {
+    background: repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.55) 0 12px, transparent 12px 20px);
+  }
+}
+
+.anniversary-coupon::before,
+.anniversary-coupon::after {
+  content: "";
+  position: absolute;
+  z-index: 20;
+  top: 32px;
+  bottom: 32px;
+  width: 12px;
+  pointer-events: none;
+  background-size: 12px 42px;
+  background-repeat: repeat-y;
+}
+
+.anniversary-coupon::before {
+  left: 0;
+  background-image: radial-gradient(circle 8px at 0 21px, var(--background) 98%, transparent 100%);
+}
+
+.anniversary-coupon::after {
+  right: 0;
+  background-image: radial-gradient(circle 8px at 100% 21px, var(--background) 98%, transparent 100%);
+}
+
+@keyframes hero-entrance {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-entrance { animation: hero-entrance 500ms ease-out both; }
+  .hero-entrance-heading { animation-delay: 80ms; }
+  .hero-entrance-copy { animation-delay: 160ms; }
+  .hero-entrance-actions { animation-delay: 240ms; }
+  .hero-entrance-mascot { animation-delay: 320ms; }
+}
+
 @keyframes anniversary-mascot-float {
   0%, 100% { transform: translateY(0) rotate(-1deg); }
   50% { transform: translateY(-4px) rotate(1deg); }
