@@ -16,10 +16,10 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     id: "satu-tahun-kreativlabs-promo-anniversary",
-    title: "Menuju 1 Tahun KreativLabs: Ada Hadiah untuk Kamu!",
+    title: "1 Tahun KreativLabs: Promo Anniversary dan Landing Page Gratis",
     slug: "satu-tahun-kreativlabs-promo-anniversary",
     excerpt: "Tanggal 5 November nanti KreativLabs genap satu tahun. Ada kesempatan dapat landing page gratis, diskon paket, dan bonus untuk klien lama.",
-    image: "/anniversary-blog-cover.svg",
+    image: "/anniversary-blog-cover.png",
     author: "Tim KreativLabs",
     date: "29 Oktober 2026",
     category: "Cerita KreativLabs",
@@ -48,7 +48,7 @@ export const blogPosts: BlogPost[] = [
       "",
       "## Mau ikut?",
       "",
-      "Promo dan pengiriman cerita berlaku sampai **30 November 2026**. Lihat rincian penawarannya di [halaman promo anniversary](/#promo-anniversary), lalu hubungi kami lewat WhatsApp untuk bercerita atau bertanya.",
+      "Promo dan pengiriman cerita berlaku sampai **10 November 2026**. Lihat rincian penawarannya di [halaman promo anniversary](/promo-anniversary), lalu hubungi kami lewat WhatsApp untuk bercerita atau bertanya.",
       "",
       "Sampai ketemu di 5 November, ya. Terima kasih sudah menjadi bagian dari tahun pertama KreativLabs!"
     ].join("\n"),

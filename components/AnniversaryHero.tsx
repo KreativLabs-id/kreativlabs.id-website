@@ -1,5 +1,6 @@
 import Image from "next/image";
 import AnniversaryBunting from "@/components/AnniversaryBunting";
+import AnniversaryConfetti from "@/components/AnniversaryConfetti";
 
 export default function AnniversaryHero({ english = false }: { english?: boolean }) {
   return (
@@ -7,6 +8,7 @@ export default function AnniversaryHero({ english = false }: { english?: boolean
       aria-label={english ? "KreativLabs first anniversary" : "Anniversary pertama KreativLabs"}
       className="mx-auto w-full max-w-[1600px] px-4 pb-6 pt-20 sm:px-6 sm:pt-24 lg:px-8"
     >
+      <AnniversaryConfetti />
       <div className="relative isolate overflow-hidden rounded-[28px] bg-[#B9D8E7] text-[#234B63] sm:rounded-[40px]">
         <AnniversaryBunting />
         <span aria-hidden="true" className="pointer-events-none absolute -bottom-6 left-5 whitespace-nowrap text-[100px] font-extrabold leading-none tracking-[-0.07em] text-[#234B63]/8 sm:-bottom-8 sm:text-[180px] lg:text-[230px] xl:text-[280px]">
@@ -35,7 +37,7 @@ export default function AnniversaryHero({ english = false }: { english?: boolean
               <a href={english ? "/en#contact" : "#contact"} className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#234B63] px-4 text-xs font-semibold text-white transition-colors hover:bg-[#16394F] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#234B63] sm:min-h-12 sm:px-6 sm:text-sm">
                 {english ? "Let's talk" : "Yuk, ngobrol"}
               </a>
-              <a href="#promo-anniversary" className="inline-flex min-h-11 items-center justify-center rounded-full border border-[#234B63]/40 px-4 text-xs font-semibold text-[#234B63] transition-colors hover:bg-white/30 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#234B63] sm:min-h-12 sm:px-6 sm:text-sm">
+              <a href={english ? "/en/promo-anniversary" : "/promo-anniversary"} className="inline-flex min-h-11 items-center justify-center rounded-full border border-[#234B63]/40 px-4 text-xs font-semibold text-[#234B63] transition-colors hover:bg-white/30 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#234B63] sm:min-h-12 sm:px-6 sm:text-sm">
                 {english ? "See anniversary offers" : "Lihat Promo Anniversary"}
               </a>
             </div>

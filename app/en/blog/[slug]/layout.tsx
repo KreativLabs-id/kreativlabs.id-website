@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getBlogPostBySlug } from "@/data/blogs";
+import { blogDateToISO } from "@/lib/blog-date";
 
 type Props = {
   params: { slug: string };
@@ -25,6 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     metadataBase: new URL(baseUrl),
     title: `${post.title} - KreativLabs.id`,
     description: post.excerpt,
+    alternates: { canonical: `${baseUrl}/blog/${post.slug}` },
     keywords: post.tags.join(", "),
     authors: [{ name: post.author }],
     openGraph: {
@@ -34,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: "KreativLabs.id",
       locale: "en_US",
       type: "article",
-      publishedTime: post.date,
+      publishedTime: blogDateToISO(post.date),
       authors: [post.author],
       section: post.category,
       tags: post.tags,

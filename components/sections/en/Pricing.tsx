@@ -5,7 +5,7 @@ import { Check, ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AnimatedSection from "@/components/AnimatedSection";
 import FadeInStagger from "@/components/FadeInStagger";
-import AnniversaryPromo from "@/components/AnniversaryPromo";
+import Link from "next/link";
 
 interface PricingPlanEN {
   id: string;
@@ -162,7 +162,11 @@ export default function PricingEN() {
               Take a look at the prices and what is included. Not sure which one to choose? Just ask us.
             </p>
 
-            <AnniversaryPromo english />
+            <div id="promo-anniversary" className="mt-5 scroll-mt-24">
+              <Link href="/en/promo-anniversary" className="inline-flex min-h-11 items-center text-sm font-semibold text-primary underline underline-offset-4 hover:text-primary/80 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">
+                See anniversary offers
+              </Link>
+            </div>
 
             {/* Filter Tabs */}
             <div className="mt-7 inline-flex p-1 rounded-lg bg-secondary/80 border border-border">

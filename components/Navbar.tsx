@@ -103,7 +103,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation Links (Center) */}
-          <nav className="hidden md:flex items-center space-x-7 lg:space-x-8">
+          <nav className="hidden lg:flex items-center gap-3 xl:gap-6">
             {navLinks.map((link) => {
               const isExternal = link.href.startsWith("/");
               const href = isExternal ? link.href : (pathname !== "/" ? `/${link.href}` : link.href);
@@ -125,10 +125,13 @@ export default function Navbar() {
                 </a>
               );
             })}
+            <a href="/promo-anniversary" aria-current={pathname === "/promo-anniversary" ? "page" : undefined} className="inline-flex min-h-10 items-center gap-1.5 whitespace-nowrap rounded-full bg-primary/15 px-3 text-xs font-semibold text-primary transition-colors hover:bg-primary/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+              <span aria-hidden="true">✦</span> Promo Anniversary
+            </a>
           </nav>
 
           {/* CTA Action Button (Right) */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-3">
             <Link
               href={pathname !== "/" ? "/#contact" : "#contact"}
               className="inline-flex items-center justify-center px-5 py-2 rounded-full bg-primary text-primary-foreground text-xs sm:text-sm font-semibold hover:bg-primary/90 transition-all hover:shadow-xs hover:-translate-y-0.5 whitespace-nowrap"
@@ -138,12 +141,13 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu Toggle Button */}
-          <div className="md:hidden flex items-center">
+          <div className="lg:hidden flex items-center">
             <button
               type="button"
               className="text-foreground p-2 rounded-lg hover:bg-secondary transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Buka menu navigasi"
+              aria-expanded={isMobileMenuOpen}
             >
               {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -154,7 +158,7 @@ export default function Navbar() {
 
       {/* Mobile Dropdown Menu (Standard full-width below header) */}
       {isMobileMenuOpen && (
-        <div className="md:hidden border-b border-border/80 bg-background/98 backdrop-blur-xl shadow-lg px-4 sm:px-6 py-4 space-y-1">
+        <div className="lg:hidden border-b border-border/80 bg-background/98 backdrop-blur-xl shadow-lg px-4 sm:px-6 py-4 space-y-1">
           {navLinks.map((link) => {
             const isExternal = link.href.startsWith("/");
             const href = isExternal ? link.href : (pathname !== "/" ? `/${link.href}` : link.href);
@@ -174,6 +178,10 @@ export default function Navbar() {
               </a>
             );
           })}
+
+          <a href="/promo-anniversary" aria-current={pathname === "/promo-anniversary" ? "page" : undefined} onClick={() => setIsMobileMenuOpen(false)} className="flex min-h-11 items-center gap-2 rounded-xl bg-primary/15 px-3 text-sm font-semibold text-primary hover:bg-primary/25 transition-colors">
+            <span aria-hidden="true">✦</span> Promo Anniversary
+          </a>
 
           <div className="pt-3 border-t border-border/60 mt-2">
             <Link

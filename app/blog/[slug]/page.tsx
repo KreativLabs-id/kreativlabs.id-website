@@ -9,6 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getBlogPostBySlug, getAllBlogSlugs } from "@/data/blogs";
 import Markdown from "markdown-to-jsx";
+import { blogDateToISO } from "@/lib/blog-date";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -35,6 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.title,
     description: post.excerpt,
+    alternates: { canonical: postUrl },
     keywords: post.tags,
     authors: [{ name: post.author, url: "https://www.kreativlabs.id" }],
     openGraph: {
@@ -44,7 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: "KreativLabs.id",
       type: "article",
       locale: "id_ID",
-      publishedTime: post.date,
+      publishedTime: blogDateToISO(post.date),
       authors: [post.author],
       tags: post.tags,
       images: [
@@ -90,8 +92,21 @@ export default async function BlogPostPage({ params }: Props) {
     );
   }
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    mainEntityOfPage: `https://www.kreativlabs.id/blog/${post.slug}`,
+    image: new URL(post.image, "https://www.kreativlabs.id").href,
+    datePublished: blogDateToISO(post.date),
+    author: { "@type": "Organization", name: post.author, url: "https://www.kreativlabs.id" },
+    publisher: { "@id": "https://www.kreativlabs.id/#organization" },
+  };
+
   return (
     <main className="min-h-screen bg-background overflow-x-hidden w-full">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema).replace(/</g, "\\u003c") }} />
       <Navbar />
 
       {/* Header Section */}

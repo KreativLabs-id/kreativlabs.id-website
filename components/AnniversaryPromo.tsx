@@ -11,14 +11,14 @@ export default function AnniversaryPromo({ english = false }: { english?: boolea
     <aside id="promo-anniversary" aria-label={english ? "Anniversary offers" : "Promo anniversary"} className="anniversary-coupon relative my-10 scroll-mt-24 overflow-hidden rounded-[28px] text-left sm:rounded-[32px]">
       <div className="grid lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.5fr)]">
         <div className="relative flex flex-col items-start bg-[#234B63] p-7 text-white sm:p-9 lg:p-10">
-          <span aria-hidden="true" className="coupon-perforation pointer-events-none absolute inset-x-3 bottom-0 h-0.5 lg:inset-x-auto lg:bottom-3 lg:right-0 lg:top-3 lg:h-auto lg:w-0.5" />
+          <span aria-hidden="true" className="coupon-perforation pointer-events-none absolute inset-x-3 bottom-0 hidden h-0.5 md:block lg:inset-x-auto lg:bottom-3 lg:right-0 lg:top-3 lg:h-auto lg:w-0.5" />
           <span aria-hidden="true" className="pointer-events-none absolute -bottom-3 -left-3 z-10 size-6 rounded-full bg-background lg:-right-3 lg:-top-3 lg:bottom-auto lg:left-auto" />
           <span aria-hidden="true" className="pointer-events-none absolute -bottom-3 -right-3 z-10 size-6 rounded-full bg-background" />
-          <span aria-hidden="true" className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full border border-white/10" />
-          <span aria-hidden="true" className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full border border-white/10" />
+          <span aria-hidden="true" className="pointer-events-none absolute -right-20 -top-20 hidden h-56 w-56 rounded-full border border-white/10 md:block" />
+          <span aria-hidden="true" className="pointer-events-none absolute -right-12 -top-12 hidden h-40 w-40 rounded-full border border-white/10 md:block" />
           <div className="relative flex items-center gap-3">
             <Image src="/1st_kreativlabs.png" alt="" width={880} height={493} sizes="64px" className="h-auto w-16" />
-            <p className="border-l border-white/25 pl-3 text-[10px] font-semibold uppercase leading-relaxed tracking-[0.16em] text-[#C4E1ED]">KreativLabs<br />Anniversary</p>
+            <p className="pl-3 text-[10px] font-semibold uppercase leading-relaxed tracking-[0.16em] text-[#C4E1ED] md:border-l md:border-white/25">KreativLabs<br />Anniversary</p>
           </div>
           <p className="mt-8 text-xs font-semibold uppercase tracking-[0.16em] text-[#9ED4E4]">{english ? "A thank you from us" : "Hadiah ulang tahun kami"}</p>
           <h3 className="mt-3 max-w-sm text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
@@ -46,7 +46,7 @@ export default function AnniversaryPromo({ english = false }: { english?: boolea
                 {english ? "One mobile-friendly page with a WhatsApp button. Domain and hosting not included." : "Satu halaman responsif dengan tombol WhatsApp. Domain dan hosting belum termasuk."}
               </p>
             </div>
-            <div className="border-t border-[#6995AD]/25 pt-6 sm:border-l sm:border-t-0 sm:pl-7 sm:pt-0">
+            <div className="pt-2 sm:pl-7 sm:pt-0 md:border-l md:border-[#6995AD]/25">
               <p className="text-4xl font-bold leading-none tracking-tight sm:text-5xl">10<span className="text-2xl sm:text-3xl">%</span></p>
               <h4 className="mt-3 text-base font-bold">{english ? "Off website & design packages" : "Diskon paket website & desain"}</h4>
               <p className="mt-2 text-sm leading-relaxed text-[#234B63]/80">
@@ -54,14 +54,14 @@ export default function AnniversaryPromo({ english = false }: { english?: boolea
               </p>
             </div>
           </div>
-          <div className="mt-6 border-t border-[#6995AD]/25 pt-5">
+          <div className="mt-6 pt-2 md:border-t md:border-[#6995AD]/25 md:pt-5">
             <h4 className="text-base font-bold">{english ? "A bonus for returning clients" : "Bonus buat klien lama"}</h4>
             <p className="mt-2 text-sm leading-relaxed text-[#234B63]/80">
               {english ? "One free small update to a website we built for you: text, a photo, or a WhatsApp number. New features are not included." : "Gratis satu perubahan kecil di website buatan kami: ganti teks, foto, atau nomor WhatsApp. Fitur baru tidak termasuk."}
             </p>
           </div>
-          <div className="mt-6 border-t border-[#6995AD]/25 pt-4 text-xs leading-relaxed text-[#234B63]/75">
-            <p className="font-semibold text-[#234B63]">{english ? "Offers and story submissions end November 30, 2026" : "Promo dan pengiriman cerita sampai 10 November 2026"}</p>
+          <div className="mt-6 pt-2 text-xs leading-relaxed text-[#234B63]/75 md:border-t md:border-[#6995AD]/25 md:pt-4">
+            <p className="font-semibold text-[#234B63]">{english ? "Offers and story submissions end November 10, 2026" : "Promo dan pengiriman cerita sampai 10 November 2026"}</p>
             <p className="mt-1">{english ? "Send your story via WhatsApp. We will choose one business whose needs fit the offer and contact them after submissions close. One update per returning client." : "Kirim ceritamu lewat WhatsApp. Kami pilih satu usaha yang kebutuhannya sesuai promo dan menghubunginya setelah pendaftaran ditutup. Bonus berlaku satu kali per klien lama."}</p>
           </div>
         </div>

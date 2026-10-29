@@ -29,7 +29,7 @@ export default function SEOSchema({
         },
         "image": "https://www.kreativlabs.id/og-image.png",
         "description": "Jasa pembuatan website murah dan desain grafis profesional di Semarang. Landing page, company profile, e-commerce, desain logo, poster, dan social media mulai dari Rp 50.000.",
-        "email": "kreativlabsid@gmail.com",
+        "email": "hello@kreativlabs.id",
         "telephone": "+6287816270140",
         "address": {
             "@type": "PostalAddress",
@@ -70,7 +70,7 @@ export default function SEOSchema({
         "priceRange": "Rp 50.000 - Rp 5.000.000",
         "paymentAccepted": ["Cash", "Bank Transfer", "QRIS", "E-Wallet"],
         "currenciesAccepted": "IDR",
-        "openingHours": "Mo-Su 08:00-22:00"
+        "openingHours": "Mo-Sa 08:00-21:00"
     };
 
     // LocalBusiness Schema - untuk Local SEO
@@ -89,7 +89,7 @@ export default function SEOSchema({
         ],
         "description": "Jasa pembuatan website profesional dan desain grafis murah di Semarang. Melayani landing page, company profile, toko online, desain logo, poster, social media content. Harga mulai 50rb!",
         "telephone": "+6287816270140",
-        "email": "kreativlabsid@gmail.com",
+        "email": "hello@kreativlabs.id",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Semarang",
@@ -117,12 +117,6 @@ export default function SEOSchema({
                                 "@type": "Service",
                                 "name": "Jasa Landing Page Murah",
                                 "description": "Pembuatan landing page profesional, responsif, dan SEO friendly untuk meningkatkan konversi bisnis"
-                            },
-                            "priceSpecification": {
-                                "@type": "PriceSpecification",
-                                "priceCurrency": "IDR",
-                                "price": "350000",
-                                "minPrice": "350000"
                             }
                         },
                         {
@@ -212,52 +206,15 @@ export default function SEOSchema({
                 }
             ]
         },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "ratingCount": "50",
-            "bestRating": "5",
-            "worstRating": "1"
-        },
-        "review": [
-            {
-                "@type": "Review",
-                "author": {
-                    "@type": "Person",
-                    "name": "Budi Santoso"
-                },
-                "datePublished": "2025-10-15",
-                "reviewBody": "Website toko online saya jadi lebih profesional dan penjualan meningkat 200%. Harga terjangkau, hasil maksimal!",
-                "reviewRating": {
-                    "@type": "Rating",
-                    "ratingValue": "5",
-                    "bestRating": "5"
-                }
-            },
-            {
-                "@type": "Review",
-                "author": {
-                    "@type": "Person",
-                    "name": "Sarah Fitri"
-                },
-                "datePublished": "2025-11-20",
-                "reviewBody": "Desain logo dan social media content nya bagus banget! Cocok untuk UMKM yang cari jasa desain murah tapi berkualitas.",
-                "reviewRating": {
-                    "@type": "Rating",
-                    "ratingValue": "5",
-                    "bestRating": "5"
-                }
-            }
-        ],
         "priceRange": "Rp 50.000 - Rp 5.000.000",
         "paymentAccepted": ["Cash", "Bank Transfer", "QRIS", "GoPay", "OVO", "Dana"],
         "currenciesAccepted": "IDR",
         "openingHoursSpecification": [
             {
                 "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
                 "opens": "08:00",
-                "closes": "22:00"
+                "closes": "21:00"
             }
         ],
         "areaServed": [
@@ -313,62 +270,6 @@ export default function SEOSchema({
         }
     };
 
-    // FAQ Schema - untuk Rich Snippets di Google
-    const faqSchema = {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "Berapa harga jasa pembuatan website di KreativLabs?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Harga jasa pembuatan website di KreativLabs mulai dari Rp 350.000 untuk landing page. Untuk company profile mulai Rp 750.000, dan e-commerce/toko online mulai Rp 1.500.000. Semua sudah termasuk desain responsif dan SEO friendly."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Berapa harga jasa desain grafis di KreativLabs?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Jasa desain grafis di KreativLabs sangat terjangkau, mulai dari Rp 50.000 untuk desain logo, poster, dan konten social media. Cocok untuk UMKM dan bisnis yang mencari jasa desain murah berkualitas."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Apakah KreativLabs melayani jasa website di Semarang?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Ya, KreativLabs berbasis di Semarang dan melayani jasa pembuatan website serta desain grafis untuk klien di Semarang, Jawa Tengah, dan seluruh Indonesia secara online."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Berapa lama waktu pengerjaan website?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Waktu pengerjaan bervariasi: landing page 1-2 minggu, company profile 2-4 minggu, dan e-commerce 4-8 minggu. Kami memberikan timeline yang jelas di awal project."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Apakah website yang dibuat mobile-friendly?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Ya, semua website yang kami buat sudah responsive dan mobile-friendly. Kami menggunakan pendekatan mobile-first untuk memastikan tampilan optimal di semua perangkat."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Apa saja layanan yang tersedia di KreativLabs?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "KreativLabs menyediakan jasa pembuatan website (landing page, company profile, e-commerce, web custom) dan desain grafis (logo, poster, social media content, packaging) dengan harga terjangkau mulai 50rb."
-                }
-            }
-        ]
-    };
-
     // BreadcrumbList Schema
     const breadcrumbSchema = {
         "@context": "https://schema.org",
@@ -415,12 +316,7 @@ export default function SEOSchema({
                     "@id": "https://www.kreativlabs.id/#organization"
                 },
                 "areaServed": "Indonesia",
-                "serviceType": "Web Development",
-                "offers": {
-                    "@type": "Offer",
-                    "priceCurrency": "IDR",
-                    "price": "350000"
-                }
+                "serviceType": "Web Development"
             },
             {
                 "@type": "Service",
@@ -471,12 +367,6 @@ export default function SEOSchema({
                 type="application/ld+json"
                 strategy="afterInteractive"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-            />
-            <Script
-                id="faq-schema"
-                type="application/ld+json"
-                strategy="afterInteractive"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
             />
             <Script
                 id="breadcrumb-schema"
