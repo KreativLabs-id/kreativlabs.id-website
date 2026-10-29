@@ -81,15 +81,25 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 sm:h-18">
 
           {/* Logo (Left) */}
-          <Link href="/" className="flex items-center shrink-0">
+          <Link href="/" className="flex items-center gap-1.5 sm:gap-2.5 shrink-0 group">
             <Image
               src={logoSrc}
               alt="KreativLabs.id"
               width={140}
               height={40}
-              className="h-8 sm:h-9 w-auto"
+              className="h-8 sm:h-9 w-auto transition-transform duration-200 group-hover:scale-[1.02]"
               priority
             />
+            <div className="anniversary-shine relative flex items-center justify-center shrink-0" title="1st Anniversary KreativLabs!">
+              <Image
+                src="/1st_kreativlabs.png"
+                alt="1st Anniversary KreativLabs"
+                width={56}
+                height={32}
+                className="relative h-6.5 sm:h-8 md:h-8.5 w-auto object-contain select-none pointer-events-none"
+                priority
+              />
+            </div>
           </Link>
 
           {/* Desktop Navigation Links (Center) */}

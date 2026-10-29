@@ -112,19 +112,28 @@ export default function FooterEN() {
           {/* Brand & Bio (2 Columns) */}
           <div className="lg:col-span-3 space-y-4">
             <div className="mb-4">
-              <Link href="/en">
+              <Link href="/en" className="inline-flex items-center gap-2.5 group">
                 <Image
                   src={logoSrc}
                   alt="KreativLabs.id"
                   width={150}
                   height={50}
-                  className="h-12 w-auto"
+                  className="h-12 w-auto transition-transform duration-200 group-hover:scale-[1.02]"
                 />
+                <div className="anniversary-shine relative flex items-center justify-center shrink-0" title="1st Anniversary KreativLabs!">
+                  <Image
+                    src="/1st_kreativlabs.png"
+                    alt="1st Anniversary"
+                    width={65}
+                    height={36}
+                    className="relative h-9 sm:h-10 w-auto object-contain select-none pointer-events-none"
+                  />
+                </div>
               </Link>
             </div>
 
             <p className="max-w-sm text-xs sm:text-sm text-foreground/70 leading-relaxed">
-              Modern digital solutions for your business. We engineer functional websites and craft professional visual designs that deliver real results.
+              Websites, designs, and other digital projects. Tell us what you have in mind.
             </p>
 
             {/* Social Icons */}

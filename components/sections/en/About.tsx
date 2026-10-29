@@ -17,17 +17,20 @@ export default function AboutEN() {
           <div className="lg:col-span-5 space-y-6">
             <AnimatedSection animation="fade-up">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight leading-[1.18]">
-                Building high-performance digital products engineered for real growth.
+                A little about KreativLabs.
               </h2>
             </AnimatedSection>
 
             <AnimatedSection animation="fade-up" delay={80}>
               <p className="text-sm sm:text-base text-foreground/75 leading-relaxed">
-                We are more than just a web studio. KreativLabs serves as your dedicated digital engineering partner, prioritizing lightning-fast performance, intuitive content workflows, and undisputed market credibility.
+                We make websites and designs for businesses. From the first conversation to the finished work, we figure things out together.
               </p>
               
               <p className="text-sm sm:text-base text-foreground/75 leading-relaxed mt-3">
-                From high-converting promotional landing pages to custom web applications and full brand identities, every solution is engineered from the ground up without dependency on bloated templates.
+                Need a landing page, a point-of-sale system, or a web app? Tell us what you have in mind and we can find a good fit.
+              </p>
+              <p className="text-sm sm:text-base text-foreground/75 leading-relaxed mt-3">
+                Thanks for spending our first year with us. We have loved being part of your ideas.
               </p>
             </AnimatedSection>
 
@@ -69,7 +72,7 @@ export default function AboutEN() {
                   href="/en#contact"
                   className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-primary hover:text-primary/80 transition-colors group"
                 >
-                  <span>Start a Project Consultation</span>
+                  <span>Tell us about your idea</span>
                   <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Link>
               </div>

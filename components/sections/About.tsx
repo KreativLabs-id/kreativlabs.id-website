@@ -17,17 +17,20 @@ export default function About() {
           <div className="lg:col-span-5 space-y-6">
             <AnimatedSection animation="fade-up">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight leading-[1.18]">
-                Membangun website modern dengan standar tinggi untuk bisnis Anda.
+                Kenalan dulu dengan KreativLabs.
               </h2>
             </AnimatedSection>
 
             <AnimatedSection animation="fade-up" delay={80}>
               <p className="text-sm sm:text-base text-foreground/75 leading-relaxed">
-                Kami bukan sekadar pembuat halaman web biasa. KreativLabs hadir sebagai partner digital yang memprioritaskan performa kecepatan, kemudahan pengelolaan, dan kredibilitas brand Anda di mata calon pelanggan.
+                Kami bantu kamu menyiapkan website dan desain untuk bisnis. Dari obrolan pertama sampai hasilnya siap dipakai, kita kerjakan bareng-bareng.
               </p>
               
               <p className="text-sm sm:text-base text-foreground/75 leading-relaxed mt-3">
-                Dari landing page berkonversi tinggi hingga sistem kasir dan web app, setiap produk kami bangun menggunakan teknologi mutakhir tanpa ketergantungan pada template usang.
+                Butuh halaman promosi, sistem kasir, atau aplikasi web? Ceritakan saja kebutuhanmu, lalu kita cari bentuk yang pas.
+              </p>
+              <p className="text-sm sm:text-base text-foreground/75 leading-relaxed mt-3">
+                Terima kasih sudah menemani tahun pertama KreativLabs. Senang rasanya bisa ikut mengerjakan ide-ide kalian.
               </p>
             </AnimatedSection>
 
@@ -69,7 +72,7 @@ export default function About() {
                   href="#contact"
                   className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-primary hover:text-primary/80 transition-colors group"
                 >
-                  <span>Mulai Diskusi Project Anda</span>
+                  <span>Yuk, ceritakan idemu</span>
                   <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Link>
               </div>

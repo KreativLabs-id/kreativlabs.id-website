@@ -111,7 +111,7 @@ export default function Footer() {
 
           {/* Brand & Bio (2 Columns) */}
           <div className="lg:col-span-3 space-y-4">
-            <div className="mb-4">
+            <div className="mb-4 flex items-center gap-2.5">
               <Image
                 src={logoSrc}
                 alt="KreativLabs.id"
@@ -119,10 +119,19 @@ export default function Footer() {
                 height={50}
                 className="h-12 w-auto"
               />
+              <div className="anniversary-shine relative flex items-center justify-center shrink-0" title="1st Anniversary KreativLabs!">
+                <Image
+                  src="/1st_kreativlabs.png"
+                  alt="1st Anniversary"
+                  width={65}
+                  height={36}
+                  className="relative h-9 sm:h-10 w-auto object-contain select-none pointer-events-none"
+                />
+              </div>
             </div>
 
             <p className="max-w-sm text-xs sm:text-sm text-foreground/70 leading-relaxed">
-              Solusi pembuatan website profesional dan kebutuhan desain grafis untuk membantu bisnis Anda tampil lebih terpercaya dan menghasilkan konversi.
+              Bikin website, desain, dan hal-hal digital lainnya. Yuk, ceritakan apa yang sedang kamu rencanakan.
             </p>
 
             {/* Social Icons */}

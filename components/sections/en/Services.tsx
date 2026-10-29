@@ -17,7 +17,7 @@ const servicesEN = [
   {
     icon: LayoutTemplate,
     title: "Landing Page",
-    description: "Fast, mobile-friendly one-page website designed to capture leads and drive direct customer inquiries to WhatsApp.",
+    description: "A single page for your product or promotion, with a WhatsApp button so customers can get in touch.",
     points: [
       "Responsive design across all devices",
       "Fast load speed & Google SEO ready",
@@ -30,7 +30,7 @@ const servicesEN = [
   {
     icon: Globe,
     title: "Company & Business Website",
-    description: "Official multi-page website to showcase your company profile, services, and build trust with your potential clients.",
+    description: "A place to introduce your business, services, and work in one website.",
     points: [
       "Complete pages (About, Services, Contact)",
       "Clean, modern, and readable layout",
@@ -43,7 +43,7 @@ const servicesEN = [
   {
     icon: Cpu,
     title: "Custom Website",
-    description: "Tailored web applications built specifically for your business workflow, such as POS cashier systems or internal portals.",
+    description: "Need something specific? We can build a web app around your workflow, such as a POS system or an internal portal.",
     points: [
       "Custom features built to your requirements",
       "Database management & admin dashboard",
@@ -56,7 +56,7 @@ const servicesEN = [
   {
     icon: Palette,
     title: "Logo Design",
-    description: "Original, professional logo design that reflects your brand identity, complete with vector master files for digital and print.",
+    description: "A logo made for your business, with master files ready for digital use and print.",
     points: [
       "Original concepts tailored to your brand",
       "Full vector master files (AI, SVG, PNG)",
@@ -69,7 +69,7 @@ const servicesEN = [
   {
     icon: Instagram,
     title: "Social Media Design",
-    description: "Engaging visual content for feeds, stories, and advertising banners to keep your social media presence active and cohesive.",
+    description: "Need designs for your feed, stories, or banners? We can help you put them together.",
     points: [
       "Structured feed and carousel posts",
       "Promotional story templates",
@@ -108,7 +108,7 @@ export default function ServicesEN() {
               Website & <span className="text-primary">Design Services</span>
             </h2>
             <p className="text-foreground/70 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-              We help businesses build functional websites and clean, professional visual designs that deliver real results.
+              From websites to design, choose what you need or talk to us if you are not sure yet.
             </p>
           </div>
         </AnimatedSection>
@@ -177,7 +177,7 @@ export default function ServicesEN() {
         <AnimatedSection animation="fade-up" delay={150}>
           <div className="mt-12 text-center">
             <p className="text-foreground/70 text-sm mb-3">
-              Need custom requirements or want to discuss a tailored package?
+              Have something else in mind? Let us talk about it.
             </p>
             <a
               href="https://wa.me/6287816270140?text=Hello%20KreativLabs,%20I%20would%20like%20to%20discuss%20a%20project"
