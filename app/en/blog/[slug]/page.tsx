@@ -223,11 +223,11 @@ export default async function BlogPostPageEN({ params }: Props) {
                     </div>
                     <div>
                       <p className="text-sm font-bold text-foreground">{post.author}</p>
-                      <p className="text-foreground/50 text-xs">KreativLabs Editorial Studio</p>
+                      <p className="text-foreground/50 text-xs">KreativLabs editorial team</p>
                     </div>
                   </div>
                   <p className="text-foreground/70 text-xs leading-relaxed">
-                    Sharing practical insights and technology guides for websites, graphic design, and digital growth.
+                    Stories and practical guides about websites, design, and digital tools for businesses.
                   </p>
                 </div>
 

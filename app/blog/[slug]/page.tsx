@@ -236,11 +236,11 @@ export default async function BlogPostPage({ params }: Props) {
                     </div>
                     <div>
                       <p className="text-sm font-bold text-foreground">{post.author}</p>
-                      <p className="text-foreground/50 text-xs">Studio Editorial KreativLabs</p>
+                      <p className="text-foreground/50 text-xs">Tim editorial KreativLabs</p>
                     </div>
                   </div>
                   <p className="text-foreground/70 text-xs leading-relaxed">
-                    Berbagi tips praktis dan panduan teknologi seputar website, desain grafis, dan pertumbuhan digital.
+                    Cerita, tips, dan panduan seputar website, desain, dan kebutuhan digital untuk usaha.
                   </p>
                 </div>
 
