@@ -44,14 +44,14 @@ export default function WhatsAppButton() {
             transition={{ duration: 0.2 }}
             className="absolute right-full mr-3 top-1/2 -translate-y-1/2 whitespace-nowrap bg-slate-900/95 dark:bg-slate-900/95 text-white text-xs sm:text-sm font-medium px-3.5 py-2 rounded-xl shadow-xl backdrop-blur-md pointer-events-none flex items-center gap-2 border border-emerald-500/30"
           >
-            <span>{isEnglish ? "Chat with Koda on WhatsApp!" : "Tanya Koda di WhatsApp yuk!"}</span>
+            <span>{isEnglish ? "Ask about our anniversary promo!" : "Tanya promo anniversary yuk!"}</span>
             {/* Tooltip Tail Arrow */}
             <div className="absolute -right-1 top-1/2 -translate-y-1/2 w-2 h-2 bg-slate-900/95 rotate-45 border-t border-r border-emerald-500/30" />
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Pure Koda Mascot Button */}
+      {/* Anniversary promo button */}
       <motion.button
         onClick={handleClick}
         onMouseEnter={() => setIsHovered(true)}
@@ -78,30 +78,30 @@ export default function WhatsAppButton() {
           },
         }}
         whileHover={{
-          scale: 1.15,
+          scale: 1.05,
           rotate: [0, -6, 6, -3, 0],
           transition: { duration: 0.3 },
         }}
         whileTap={{ scale: 0.92 }}
-        className="pointer-events-auto relative group w-16 h-16 sm:w-20 sm:h-20 md:w-22 md:h-22 p-0 bg-transparent border-0 outline-none cursor-pointer focus:outline-none"
-        aria-label={isEnglish ? "Chat with Koda on WhatsApp" : "Hubungi Koda via WhatsApp"}
+        className="pointer-events-auto relative group w-32 h-[74px] sm:w-36 sm:h-[84px] p-0 bg-transparent border-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+        aria-label={isEnglish ? "Ask about the anniversary promo on WhatsApp" : "Tanya promo anniversary via WhatsApp"}
       >
-        {/* Pure Mascot Image with smooth drop shadow on character contours */}
+        {/* Promo artwork */}
         <div className="relative w-full h-full filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.18)] dark:drop-shadow-[0_8px_20px_rgba(0,0,0,0.45)] group-hover:drop-shadow-[0_12px_24px_rgba(37,211,102,0.45)] transition-all duration-300">
           <Image
-            src="/headkoda.webp"
-            alt="Koda - Maskot KreativLabs"
+            src="/promo_anniversary.png"
+            alt="Promo Anniversary KreativLabs"
             fill
-            sizes="(max-width: 640px) 72px, 96px"
+            sizes="(max-width: 639px) 128px, 144px"
             className="object-contain"
             priority
           />
         </div>
 
         {/* Mini WhatsApp Badge */}
-        <div className="absolute bottom-0 right-0 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg border-2 border-white dark:border-slate-900 group-hover:scale-115 transition-transform">
+        <div className="absolute bottom-[16%] right-[7%] w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg border-2 border-white dark:border-slate-900 group-hover:scale-110 transition-transform">
           <svg
-            className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current"
+            className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-current"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >

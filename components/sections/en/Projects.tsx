@@ -7,6 +7,15 @@ import AnimatedSection from "@/components/AnimatedSection";
 import FadeInStagger from "@/components/FadeInStagger";
 import { projects } from "@/data/projects";
 
+const projectDescriptions: Record<string, string> = {
+  "ecommerce-platform": "An online shop for secondhand finds.",
+  "corporate-website": "A website introducing a company and its services.",
+  chatly: "Chatly, a website for real-time conversations.",
+  "website-top-up-game": "A website for buying game top-ups online.",
+  "aplikasi-kasir-web": "A web-based point-of-sale app to help run a shop.",
+  "personal-portfolio-miftahuddin": "A portfolio for a social media specialist and digital communicator.",
+};
+
 export default function ProjectsEN() {
   return (
     <section id="projects" className="relative py-16 md:py-20 bg-background overflow-hidden w-full scroll-mt-24">
@@ -15,11 +24,12 @@ export default function ProjectsEN() {
         {/* Section Header */}
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-12">
+            <p className="mb-3 text-xs font-semibold tracking-[0.14em] text-primary uppercase">A year of creating together</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 tracking-tight">
-              Featured <span className="text-primary">Portfolio & Work</span>
+              A few things <span className="text-primary">we have made</span>
             </h2>
             <p className="text-foreground/70 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
-              A showcase of digital products and web experiences we have crafted with high performance standards.
+              From websites to digital tools, here are some projects we have worked on with our clients.
             </p>
           </div>
         </AnimatedSection>
@@ -55,7 +65,7 @@ export default function ProjectsEN() {
                       </h3>
                       
                       <p className="text-foreground/70 text-xs sm:text-sm line-clamp-2 leading-relaxed">
-                        {project.description}
+                        {projectDescriptions[project.id] ?? project.description}
                       </p>
                     </div>
 

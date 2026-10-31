@@ -15,11 +15,12 @@ export default function Projects() {
         {/* Section Header */}
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-12">
+            <p className="mb-3 text-xs font-semibold tracking-[0.14em] text-primary uppercase">Setahun berkarya bersama</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 tracking-tight">
-              Portofolio & <span className="text-primary">Hasil Proyek</span>
+              Beberapa karya <span className="text-primary">yang pernah kami buat</span>
             </h2>
             <p className="text-foreground/70 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
-              Koleksi website dan sistem digital yang telah kami kerjakan dengan performa tinggi dan desain profesional.
+              Dari website sampai sistem digital, ini beberapa proyek yang kami kerjakan bersama klien selama perjalanan KreativLabs.
             </p>
           </div>
         </AnimatedSection>
@@ -61,7 +62,7 @@ export default function Projects() {
 
                     {/* Footer link */}
                     <div className="mt-4 pt-3 border-t border-border/40 flex items-center justify-between text-xs font-semibold text-primary">
-                      <span>Lihat Detail Studi Kasus</span>
+                      <span>Lihat proyeknya</span>
                       <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </div>
                   </div>

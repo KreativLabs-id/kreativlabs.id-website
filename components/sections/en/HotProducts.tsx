@@ -27,7 +27,7 @@ export default function HotProductsEN() {
               Featured <span className="text-primary">Solution</span>
             </h2>
             <p className="text-foreground/70 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
-              A ready-to-deploy web cashier and inventory management system built to streamline daily store operations.
+              Meet Tip Top, a web-based POS for keeping track of sales and stock.
             </p>
           </div>
         </AnimatedSection>
@@ -63,7 +63,7 @@ export default function HotProductsEN() {
                   </h3>
 
                   <p className="text-foreground/70 text-xs sm:text-sm leading-relaxed mb-6">
-                    A practical web-based POS software engineered for culinary and retail businesses. Simplify daily cashier workflows without complicated installations.
+                    Run a cafe or a shop? Tip Top helps you record everyday sales in your browser, without a complicated installation.
                   </p>
 
                   {/* Feature Checklist */}

@@ -9,6 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getBlogPostBySlug, getAllBlogSlugs } from "@/data/blogs";
 import Markdown from "markdown-to-jsx";
+import { blogDateToISO } from "@/lib/blog-date";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -35,6 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.title,
     description: post.excerpt,
+    alternates: { canonical: `https://www.kreativlabs.id/blog/${post.slug}` },
     keywords: post.tags,
     authors: [{ name: post.author, url: "https://www.kreativlabs.id/en" }],
     openGraph: {
@@ -44,7 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: "KreativLabs.id",
       type: "article",
       locale: "en_US",
-      publishedTime: post.date,
+      publishedTime: blogDateToISO(post.date),
       authors: [post.author],
       tags: post.tags,
       images: [

@@ -7,23 +7,23 @@ import FadeInStagger from "@/components/FadeInStagger";
 const principles = [
   {
     icon: Clock,
-    title: "Pengerjaan Tepat Waktu",
-    description: "Timeline pengerjaan disepakati di awal secara transparan dengan laporan berkala agar project selesai sesuai jadwal.",
+    title: "Jadwal yang jelas",
+    description: "Kita sepakati jadwalnya dari awal, lalu kami kabari perkembangan proyekmu secara berkala.",
   },
   {
     icon: ShieldCheck,
-    title: "Kualitas & Performa Teruji",
-    description: "Website dibuat dengan standar koding modern yang ringan dan cepat, serta desain grafis yang original dan beresolusi tinggi.",
+    title: "Dibuat dengan teliti",
+    description: "Kami menyiapkan website yang ringan dan cepat, serta desain orisinal dengan resolusi tinggi.",
   },
   {
     icon: MessageSquare,
-    title: "Komunikasi Terbuka & Ramah",
-    description: "Konsultasi langsung tanpa birokrasi rumit. Kami siap mendengarkan kebutuhan Anda dan memberikan solusi terbaik.",
+    title: "Enak diajak ngobrol",
+    description: "Ada pertanyaan atau ide baru? Ceritakan langsung ke kami selama prosesnya.",
   },
   {
     icon: FolderKey,
-    title: "100% Hak Milik Klien",
-    description: "Semua file master (vektor, source code, aset desain) diserahkan penuh kepada Anda tanpa biaya tersembunyi.",
+    title: "Hasilnya jadi milikmu",
+    description: "File master, seperti vektor, source code, dan aset desain, kami serahkan kepadamu tanpa biaya tersembunyi.",
   },
 ];
 
@@ -36,10 +36,10 @@ export default function Principles() {
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 tracking-tight">
-              Komitmen Kami di Setiap <span className="text-primary">Project</span>
+              Cara kami <span className="text-primary">bekerja</span>
             </h2>
             <p className="text-foreground/70 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-              Prinsip kerja yang kami pegang untuk memastikan hasil akhir memuaskan, transparan, dan memberikan dampak nyata bagi bisnis Anda.
+              Biar nyaman dari awal sampai proyek selesai, ini yang kami pegang saat bekerja bareng kamu.
             </p>
           </div>
         </AnimatedSection>

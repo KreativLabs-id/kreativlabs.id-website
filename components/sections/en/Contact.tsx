@@ -121,10 +121,10 @@ export default function ContactEN() {
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 tracking-tight">
-              Start Your Project <span className="text-primary">Consultation</span>
+              Have an idea? <span className="text-primary">Tell us about it.</span>
             </h2>
             <p className="text-foreground/70 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
-              Tell us about your digital goals or visual design requirements. We will provide technical recommendations and transparent timelines.
+              Need a website or a design? Tell us what you have in mind, even if the idea is still taking shape.
             </p>
           </div>
         </AnimatedSection>
@@ -141,7 +141,7 @@ export default function ContactEN() {
                     Contact & Channels
                   </h3>
                   <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed">
-                    Connect through official channels or send a project brief through the inquiry form.
+                    Get in touch however you prefer: WhatsApp, email, or the form here.
                   </p>
                 </div>
 
@@ -212,7 +212,7 @@ export default function ContactEN() {
               {/* Direct Fast WhatsApp Callout */}
               <div className="mt-8 pt-6 border-t border-border/60">
                 <p className="text-xs text-foreground/75 leading-relaxed mb-3">
-                  Prefer direct communication? Message our engineering team on WhatsApp for prompt responses.
+                  Prefer WhatsApp? Send us a message there.
                 </p>
                 <a
                   href="https://wa.me/6287816270140?text=Hello%20KreativLabs,%20I%20would%20like%20to%20consult%20a%20project"
@@ -274,7 +274,7 @@ export default function ContactEN() {
                     htmlFor="service"
                     className="block text-xs font-semibold text-foreground mb-1.5"
                   >
-                    Service Requirement
+                    What do you need help with?
                   </label>
                   <select
                     id="service"
@@ -297,12 +297,12 @@ export default function ContactEN() {
                     htmlFor="message"
                     className="block text-xs font-semibold text-foreground mb-1.5"
                   >
-                    Project Scope & Brief
+                    Tell us about your idea
                   </label>
                   <Textarea
                     id="message"
                     name="message"
-                    placeholder="Describe your project vision, target timeline, or reference ideas..."
+                    placeholder="Tell us about the website or design you have in mind..."
                     value={formData.message}
                     onChange={handleChange}
                     className="bg-background border-border/80 text-foreground placeholder:text-foreground/40 rounded-xl px-4 py-3 text-sm focus:border-primary min-h-[120px]"
@@ -351,7 +351,7 @@ export default function ContactEN() {
                       <span>Sending Message...</span>
                     </span>
                   ) : (
-                    <span>Submit Inquiry</span>
+                    <span>Send message</span>
                   )}
                 </Button>
 

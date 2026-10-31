@@ -5,6 +5,7 @@ import { Check, ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AnimatedSection from "@/components/AnimatedSection";
 import FadeInStagger from "@/components/FadeInStagger";
+import Link from "next/link";
 
 interface PricingPlanEN {
   id: string;
@@ -19,6 +20,14 @@ interface PricingPlanEN {
   waMessage: string;
 }
 
+const anniversaryPrices: Record<string, string> = {
+  "landing-page": "$45",
+  "fullstack-website": "$180",
+  "custom-website": "From $450",
+  "design-logo": "From $9",
+  "social-media": "$27",
+};
+
 const pricingPlansEN: PricingPlanEN[] = [
   {
     id: "landing-page",
@@ -27,7 +36,7 @@ const pricingPlansEN: PricingPlanEN[] = [
     price: "$50",
     originalPrice: "$100",
     badge: "Best for Promo",
-    description: "Fast, single-page website to promote specific products, events, and generate customer leads.",
+    description: "One page to introduce your product, event, or business idea.",
     features: [
       "1 Mobile & desktop responsive page",
       "Fast load speed & Google SEO ready",
@@ -46,7 +55,7 @@ const pricingPlansEN: PricingPlanEN[] = [
     originalPrice: "$400",
     badge: "Most Popular",
     popular: true,
-    description: "Complete multi-page website to showcase your company profile, services, and build client trust.",
+    description: "A multi-page home for your business profile, services, and work.",
     features: [
       "Multi-page (Home, About, Services, Contact)",
       "Admin dashboard & content manager",
@@ -63,7 +72,7 @@ const pricingPlansEN: PricingPlanEN[] = [
     category: "website",
     price: "From $500",
     badge: "Business Scale",
-    description: "Tailored web systems built specifically around your business workflow and operational requirements.",
+    description: "A website with features tailored to the way your business works.",
     features: [
       "Tailored custom features and architecture",
       "Payment gateway & 3rd-party API integrations",
@@ -81,7 +90,7 @@ const pricingPlansEN: PricingPlanEN[] = [
     price: "From $10",
     originalPrice: "$20",
     badge: "50% Off",
-    description: "Original, professional logo design crafted to establish a distinct and memorable brand identity.",
+    description: "A logo made to reflect your business and its personality.",
     features: [
       "3 Initial design concept options",
       "Full vector master files (AI, SVG, EPS)",
@@ -99,7 +108,7 @@ const pricingPlansEN: PricingPlanEN[] = [
     price: "$30",
     originalPrice: "$60",
     badge: "5 Posts Pack",
-    description: "High-impact visual content for feeds and stories to keep your business social channels active.",
+    description: "Feed and story designs to give your social media a consistent look.",
     features: [
       "5 Custom feed/carousel designs",
       "Ready-to-use story templates",
@@ -147,11 +156,17 @@ export default function PricingEN() {
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-10 sm:mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 tracking-tight">
-              Transparent & <span className="text-primary">Predictable Pricing</span>
+              Find a package <span className="text-primary">that fits</span>
             </h2>
             <p className="text-foreground/70 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-              Choose the right plan for your business goals. All projects are delivered with professional quality and zero hidden fees.
+              Take a look at the prices and what is included. Not sure which one to choose? Just ask us.
             </p>
+
+            <div id="promo-anniversary" className="mt-5 scroll-mt-24">
+              <Link href="/en/promo-anniversary" className="inline-flex min-h-11 items-center text-sm font-semibold text-primary underline underline-offset-4 hover:text-primary/80 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">
+                See anniversary offers
+              </Link>
+            </div>
 
             {/* Filter Tabs */}
             <div className="mt-7 inline-flex p-1 rounded-lg bg-secondary/80 border border-border">
@@ -243,6 +258,11 @@ export default function PricingEN() {
                           {plan.price}
                         </span>
                       </div>
+                      {anniversaryPrices[plan.id] && (
+                        <p className="mt-2 text-xs font-semibold text-primary">
+                          Anniversary price: {anniversaryPrices[plan.id]}
+                        </p>
+                      )}
                     </div>
 
                     {/* Features List */}

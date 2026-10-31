@@ -4,6 +4,7 @@ const isDev = process.env.NODE_ENV === "development";
 const cspHeader = `
   default-src 'self';
   script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""};
+  worker-src 'self' blob:;
   style-src 'self' 'unsafe-inline';
   img-src 'self' data: blob: https://images.unsplash.com;
   font-src 'self' data:;
@@ -72,7 +73,7 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
     ],
-    formats: ['image/avif', 'image/webp'],
+    formats: ['image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60,

@@ -81,7 +81,7 @@ export default function TestimonialsEN() {
             What Our <span className="text-primary">Clients Say</span>
           </h2>
           <p className="text-foreground/70 text-sm sm:text-base leading-relaxed">
-            Direct feedback from business owners and founders who trust KreativLabs for their digital platforms and brand identities.
+            A few words from people who have worked with KreativLabs.
           </p>
         </motion.div>
 

@@ -27,7 +27,7 @@ export default function HotProducts() {
               Produk <span className="text-primary">Unggulan</span>
             </h2>
             <p className="text-foreground/70 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
-              Sistem kasir dan manajemen usaha siap pakai untuk membantu operasional bisnis Anda lebih rapi dan efisien.
+              Kenalan dengan aplikasi kasir yang membantu kamu mencatat penjualan dan mengurus stok sehari-hari.
             </p>
           </div>
         </AnimatedSection>
@@ -63,7 +63,7 @@ export default function HotProducts() {
                   </h3>
 
                   <p className="text-foreground/70 text-xs sm:text-sm leading-relaxed mb-6">
-                    Aplikasi kasir berbasis web yang dirancang praktis untuk bisnis kuliner dan retail. Mempermudah pencatatan kasir harian tanpa perlu instalasi rumit.
+                    Punya usaha kuliner atau toko? Tip Top membantu mencatat transaksi harian lewat browser, tanpa instalasi yang rumit.
                   </p>
 
                   {/* Feature Checklist */}

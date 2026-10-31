@@ -8,28 +8,28 @@ import FadeInStagger from "@/components/FadeInStagger";
 
 const faqs = [
   {
-    question: "Berapa lama waktu pengerjaan website?",
-    answer: "Untuk Landing Page sederhana selesai dalam 3–5 hari kerja. Untuk Website Profil / Toko Online membutuhkan waktu sekitar 1–3 minggu. Kami selalu menyepakati timeline pengerjaan di awal.",
+    question: "Bikin website biasanya butuh waktu berapa lama?",
+    answer: "Landing page sederhana biasanya 3–5 hari kerja. Website profil atau toko online sekitar 1–3 minggu. Jadwalnya kita sepakati dulu sebelum mulai, ya.",
   },
   {
-    question: "Apakah biaya sudah termasuk domain dan hosting?",
-    answer: "Untuk paket tertentu (seperti Website Custom & Promo khusus) domain sudah termasuk. Untuk paket dasar, kami bantu proses pendaftaran dan setup domain/hosting pilihan Anda secara langsung.",
+    question: "Domain dan hosting sudah termasuk?",
+    answer: "Tergantung paketnya. Cek daftar fitur di paket yang kamu pilih, ya. Untuk landing page gratis anniversary, domain dan hosting belum termasuk.",
   },
   {
-    question: "Apakah website bisa dibuka lancar di HP (mobile-friendly)?",
-    answer: "Ya, 100% responsif. Semua website kami uji langsung di berbagai ukuran layar smartphone, tablet, dan laptop agar navigasi tetap nyaman dan cepat.",
+    question: "Websitenya bisa dibuka di HP?",
+    answer: "Bisa. Website dibuat responsif dan diuji di berbagai ukuran layar, mulai dari HP sampai laptop.",
   },
   {
-    question: "Bagaimana alur revisi desain atau website?",
-    answer: "Kami menyediakan sesi preview dan revisi sesuai paket yang dipilih. Anda dapat memberikan feedback poin per poin, dan tim kami akan langsung melakukan penyesuaian hingga hasil sesuai.",
+    question: "Kalau mau revisi, bagaimana caranya?",
+    answer: "Kami akan kirim hasilnya untuk kamu cek. Sampaikan bagian yang ingin diubah, lalu kami sesuaikan sesuai jumlah revisi di paketmu.",
   },
   {
-    question: "Apakah saya bisa mengelola atau update konten sendiri?",
-    answer: "Bisa. Untuk paket website dinamis, kami sediakan dashboard admin yang mudah digunakan serta panduan singkat agar Anda bisa mengedit teks, produk, atau foto sendiri.",
+    question: "Bisa ganti isi website sendiri?",
+    answer: "Bisa, untuk paket website dinamis. Ada dashboard admin dan panduan singkat supaya kamu bisa mengubah teks, produk, atau foto sendiri.",
   },
   {
-    question: "Apakah ada garansi dan bantuan teknis setelah selesai?",
-    answer: "Ya, kami memberikan garansi dan support teknis pasca-serah terima untuk memastikan website tetap berjalan stabil tanpa kendala teknis.",
+    question: "Setelah selesai, masih bisa minta bantuan?",
+    answer: "Bisa. Ada garansi dan bantuan teknis setelah serah terima. Detail dan durasinya mengikuti paket yang kamu pilih.",
   },
 ];
 
@@ -48,10 +48,10 @@ export default function FAQ() {
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 tracking-tight">
-              Pertanyaan yang Sering <span className="text-primary">Ditanyakan</span>
+              Masih ada <span className="text-primary">yang ingin ditanyakan?</span>
             </h2>
             <p className="text-foreground/70 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
-              Jawaban seputar proses pengerjaan, revisi, hingga kepemilikan aset project Anda.
+              Ini beberapa hal yang sering ditanyakan sebelum mulai kerja bareng.
             </p>
           </div>
         </AnimatedSection>

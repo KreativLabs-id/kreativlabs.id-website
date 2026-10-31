@@ -60,7 +60,7 @@ export default function Contact() {
       if (response.ok) {
         setSubmitStatus({
           type: "success",
-          message: "Pesan berhasil dikirim! Tim KreativLabs akan segera menghubungi Anda.",
+          message: "Pesanmu sudah terkirim! Tim KreativLabs akan segera menghubungimu.",
         });
         setFormData({ name: "", email: "", service: "website", message: "", website: "" });
       } else {
@@ -83,7 +83,7 @@ export default function Contact() {
 
           setSubmitStatus({
             type: "success",
-            message: "Pesan berhasil dikirim! Tim KreativLabs akan segera menghubungi Anda.",
+            message: "Pesanmu sudah terkirim! Tim KreativLabs akan segera menghubungimu.",
           });
           setFormData({ name: "", email: "", service: "website", message: "", website: "" });
           return;
@@ -121,10 +121,10 @@ export default function Contact() {
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 tracking-tight">
-              Mulai Konsultasi <span className="text-primary">Project Anda</span>
+              Punya ide? <span className="text-primary">Cerita ke kami.</span>
             </h2>
             <p className="text-foreground/70 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
-              Ceritakan ide website atau kebutuhan desain bisnis Anda. Tim kami siap membantu memberikan solusi teknis dan estimasi jadwal yang akurat.
+              Mau bikin website atau butuh desain? Ceritakan kebutuhanmu, meski idenya masih belum lengkap.
             </p>
           </div>
         </AnimatedSection>
@@ -141,7 +141,7 @@ export default function Contact() {
                     Kontak & Studio
                   </h3>
                   <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed">
-                    Hubungi kami melalui saluran resmi atau kirim pesan singkat melalui formulir di samping.
+                    Pilih cara yang paling nyaman: chat, email, atau isi formulir ini.
                   </p>
                 </div>
 
@@ -212,7 +212,7 @@ export default function Contact() {
               {/* Direct Fast WhatsApp Callout */}
               <div className="mt-8 pt-6 border-t border-border/60">
                 <p className="text-xs text-foreground/75 leading-relaxed mb-3">
-                  Lebih suka diskusi langsung via WhatsApp? Dapatkan respon lebih cepat bersama tim kami.
+                  Lebih nyaman ngobrol lewat WhatsApp? Langsung chat kami saja.
                 </p>
                 <a
                   href="https://wa.me/6287816270140?text=Halo%20KreativLabs,%20saya%20ingin%20konsultasi%20langsung"
@@ -274,7 +274,7 @@ export default function Contact() {
                     htmlFor="service"
                     className="block text-xs font-semibold text-foreground mb-1.5"
                   >
-                    Kebutuhan Layanan
+                    Kamu butuh bantuan apa?
                   </label>
                   <select
                     id="service"
@@ -297,12 +297,12 @@ export default function Contact() {
                     htmlFor="message"
                     className="block text-xs font-semibold text-foreground mb-1.5"
                   >
-                    Rincian Kebutuhan Project
+                    Ceritakan idemu
                   </label>
                   <Textarea
                     id="message"
                     name="message"
-                    placeholder="Ceritakan gambaran website atau desain yang ingin Anda buat..."
+                    placeholder="Ceritakan website atau desain yang ingin kamu buat..."
                     value={formData.message}
                     onChange={handleChange}
                     className="bg-background border-border/80 text-foreground placeholder:text-foreground/40 rounded-xl px-4 py-3 text-sm focus:border-primary min-h-[120px]"

@@ -81,7 +81,7 @@ export default function Testimonials() {
             Apa Kata <span className="text-primary">Klien Kami</span>
           </h2>
           <p className="text-foreground/70 text-sm sm:text-base leading-relaxed">
-            Pengalaman nyata dari para pelaku usaha dan pemilik bisnis yang mempercayakan platform digital serta visual brand mereka kepada KreativLabs.
+            Cerita dari mereka yang pernah bekerja bareng KreativLabs.
           </p>
         </motion.div>
 

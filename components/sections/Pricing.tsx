@@ -5,6 +5,7 @@ import { Check, ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AnimatedSection from "@/components/AnimatedSection";
 import FadeInStagger from "@/components/FadeInStagger";
+import Link from "next/link";
 
 interface PricingPlan {
   id: string;
@@ -19,6 +20,14 @@ interface PricingPlan {
   waMessage: string;
 }
 
+const anniversaryPrices: Record<string, string> = {
+  "landing-page": "Rp 89.100",
+  "fullstack-website": "Rp 422.100",
+  "custom-website": "Mulai Rp 2.609.100",
+  "design-logo": "Mulai Rp 45.000",
+  "social-media": "Rp 135.000",
+};
+
 const pricingPlans: PricingPlan[] = [
   {
     id: "landing-page",
@@ -26,8 +35,8 @@ const pricingPlans: PricingPlan[] = [
     category: "website",
     price: "Rp 99.000",
     originalPrice: "Rp 500.000",
-    badge: "Best untuk Promo",
-    description: "Website satu halaman cepat untuk promosi produk, event, dan validasi ide bisnis.",
+    badge: "Untuk Promosi",
+    description: "Satu halaman untuk mengenalkan produk, acara, atau ide bisnismu.",
     features: [
       "1 Halaman responsif HP & desktop",
       "Loading cepat & ramah SEO dasar",
@@ -46,7 +55,7 @@ const pricingPlans: PricingPlan[] = [
     originalPrice: "Rp 2.000.000",
     badge: "Paling Diminati",
     popular: true,
-    description: "Website lengkap multi-halaman untuk profil bisnis, katalog layanan, dan portofolio resmi.",
+    description: "Website dengan beberapa halaman untuk profil, layanan, dan portofolio bisnismu.",
     features: [
       "Multi-halaman (Beranda, Profil, Layanan, Kontak)",
       "Dashboard admin & manajemen konten",
@@ -64,7 +73,7 @@ const pricingPlans: PricingPlan[] = [
     price: "Mulai Rp 2.899.000",
     originalPrice: "Rp 6.000.000",
     badge: "Skala Bisnis",
-    description: "Pengembangan sistem web khusus sesuai alur proses bisnis dan kebutuhan operasional Anda.",
+    description: "Website dengan fitur yang disesuaikan dengan cara kerja bisnismu.",
     features: [
       "Fitur kustom sesuai kebutuhan bisnis",
       "Integrasi payment gateway & API pihak ketiga",
@@ -82,7 +91,7 @@ const pricingPlans: PricingPlan[] = [
     price: "Mulai Rp 50.000",
     originalPrice: "Rp 250.000",
     badge: "Hemat 80%",
-    description: "Desain logo profesional original untuk membangun identitas visual usaha yang berkarakter.",
+    description: "Logo yang dibuat untuk mengenalkan identitas dan karakter bisnismu.",
     features: [
       "3 Pilihan konsep desain awal",
       "File master vektor (AI, SVG, EPS)",
@@ -100,7 +109,7 @@ const pricingPlans: PricingPlan[] = [
     price: "Rp 150.000",
     originalPrice: "Rp 300.000",
     badge: "Paket 5 Konten",
-    description: "Paket konten visual untuk feed dan story Instagram agar tampilan media sosial terlihat rapi.",
+    description: "Desain untuk feed dan story Instagram supaya tampilan bisnismu lebih rapi.",
     features: [
       "5 Desain post feed / carousel",
       "Template story promosi",
@@ -148,11 +157,17 @@ export default function Pricing() {
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-10 sm:mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 tracking-tight">
-              Pilihan Paket & <span className="text-primary">Investasi Transparan</span>
+              Pilih paket yang <span className="text-primary">pas buatmu</span>
             </h2>
             <p className="text-foreground/70 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-              Pilih paket yang paling pas untuk kebutuhan Anda. Semua paket dikerjakan dengan standar profesional dan tanpa biaya tersembunyi.
+              Cek harga dan isi setiap paket di sini. Kalau belum yakin harus pilih yang mana, tanya kami saja.
             </p>
+
+            <div id="promo-anniversary" className="mt-5 scroll-mt-24">
+              <Link href="/promo-anniversary" className="inline-flex min-h-11 items-center text-sm font-semibold text-primary underline underline-offset-4 hover:text-primary/80 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">
+                Lihat promo anniversary
+              </Link>
+            </div>
 
             {/* Filter Tabs */}
             <div className="mt-7 inline-flex p-1 rounded-lg bg-secondary/80 border border-border">
@@ -239,6 +254,11 @@ export default function Pricing() {
                           {plan.price}
                         </span>
                       </div>
+                      {anniversaryPrices[plan.id] && (
+                        <p className="mt-2 text-xs font-semibold text-primary">
+                          Harga promo anniversary: {anniversaryPrices[plan.id]}
+                        </p>
+                      )}
                     </div>
 
                     {/* Features List */}
@@ -285,10 +305,10 @@ export default function Pricing() {
               <div className="flex items-center gap-3 text-center sm:text-left">
                 <div>
                   <h4 className="text-sm font-bold text-foreground">
-                    Punya kebutuhan khusus atau budget tertentu?
+                    Punya kebutuhan atau budget sendiri?
                   </h4>
                   <p className="text-xs text-foreground/70 mt-0.5">
-                    Konsultasikan ide Anda secara gratis dan fleksibel bersama tim kami.
+                    Ceritakan ke kami. Konsultasinya gratis, kok.
                   </p>
                 </div>
               </div>

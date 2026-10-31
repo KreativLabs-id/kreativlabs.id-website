@@ -17,7 +17,7 @@ const services = [
   {
     icon: LayoutTemplate,
     title: "Landing Page",
-    description: "Website satu halaman yang cepat, responsif di HP, dan dirancang langsung untuk menarik pelanggan ke WhatsApp.",
+    description: "Satu halaman untuk mengenalkan produk atau promosi, lengkap dengan tombol WhatsApp agar calon pelanggan mudah menghubungi kamu.",
     points: [
       "Tampilan responsif di HP & desktop",
       "Loading cepat & ramah SEO Google",
@@ -30,7 +30,7 @@ const services = [
   {
     icon: Globe,
     title: "Website Profil & Bisnis",
-    description: "Website resmi untuk memperkenalkan profil perusahaan, portofolio, dan layanan bisnis Anda agar terlihat lebih terpercaya.",
+    description: "Tempat untuk bercerita tentang bisnis, layanan, dan karya kamu dalam satu website.",
     points: [
       "Halaman lengkap (Tentang, Layanan, Kontak)",
       "Desain profesional & mudah dibaca",
@@ -43,7 +43,7 @@ const services = [
   {
     icon: Cpu,
     title: "Website Custom",
-    description: "Pembuatan website dengan fitur khusus sesuai kebutuhan alur kerja bisnis, seperti sistem kasir, booking, atau portal internal.",
+    description: "Butuh fitur khusus? Kita bisa buat website sesuai alur kerja bisnismu, seperti sistem kasir, booking, atau portal internal.",
     points: [
       "Fitur dibuat sesuai kebutuhan",
       "Database & dashboard admin",
@@ -56,12 +56,12 @@ const services = [
   {
     icon: Palette,
     title: "Desain Logo",
-    description: "Desain logo original dan profesional yang mencerminkan karakter bisnis Anda, lengkap dengan file master untuk cetak maupun digital.",
+    description: "Logo yang dibuat untuk karakter bisnismu, lengkap dengan file master untuk kebutuhan digital dan cetak.",
     points: [
       "Konsep original & tidak pasaran",
       "File master lengkap (AI, SVG, PNG)",
       "Panduan warna & jenis font",
-      "Bebas revisi sampai sesuai"
+      "Revisi sesuai paket yang dipilih"
     ],
     detailHref: "/services/design",
     waMessage: "Halo KreativLabs, saya ingin pesan jasa Desain Logo."
@@ -69,7 +69,7 @@ const services = [
   {
     icon: Instagram,
     title: "Desain Social Media",
-    description: "Konten visual menarik untuk postingan feed, story, dan banner promosi agar media sosial bisnis Anda terlihat aktif dan rapi.",
+    description: "Butuh desain untuk feed, story, atau banner? Kami bantu siapkan konten yang rapi dan cocok dengan bisnismu.",
     points: [
       "Desain feed & carousel terstruktur",
       "Template story promosi",
@@ -105,10 +105,10 @@ export default function Services() {
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 tracking-tight">
-              Jasa Pembuatan <span className="text-primary">Website & Desain</span>
+              Ada yang bisa <span className="text-primary">kami bantu?</span>
             </h2>
             <p className="text-foreground/70 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-              Kami membantu bisnis dan UMKM memiliki website yang bekerja dengan baik serta desain visual yang rapi dan profesional.
+              Mulai dari website sampai desain, pilih yang kamu butuhkan atau ngobrol dulu kalau masih bingung.
             </p>
           </div>
         </AnimatedSection>
@@ -163,7 +163,7 @@ export default function Services() {
                       rel="noopener noreferrer"
                       className="text-primary hover:text-primary/80 font-semibold flex items-center gap-1 transition-colors"
                     >
-                      <span>Tanya Layanan</span>
+                      <span>Tanya dulu</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </a>
                   </div>

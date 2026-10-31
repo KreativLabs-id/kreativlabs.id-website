@@ -8,28 +8,28 @@ import FadeInStagger from "@/components/FadeInStagger";
 
 const faqsEN = [
   {
-    question: "How long does it take to develop a website?",
-    answer: "A standard Landing Page is typically completed in 3–5 business days. Corporate Websites and custom platforms require 1–3 weeks. We establish and agree on clear milestones at project kickoff.",
+    question: "How long does a website take?",
+    answer: "A simple landing page usually takes 3–5 business days. A business website or online store takes around 1–3 weeks. We agree on the timeline before we start.",
   },
   {
-    question: "Are domain and cloud hosting included?",
-    answer: "Selected plans (such as Custom Systems and special packages) include domain setup. For standard plans, we guide and handle complete registration and hosting setup directly for you.",
+    question: "Are domain and hosting included?",
+    answer: "It depends on the package, so check its features first. The free anniversary landing page does not include domain or hosting.",
   },
   {
     question: "Will the website be mobile-friendly?",
-    answer: "Yes, 100% responsive. We rigorously test all pages across various smartphone, tablet, and desktop viewports to ensure seamless user navigation and rapid loading speeds.",
+    answer: "Yes. We make responsive websites and test them on different screen sizes, from phones to laptops.",
   },
   {
-    question: "What is your revision process?",
-    answer: "We provide structured preview and revision cycles based on your package. You can supply itemized feedback, and our team will implement refinements until specifications are met.",
+    question: "What if I want to make changes?",
+    answer: "We will send you the work to review. Let us know what you would like changed, and we will revise it according to your package.",
   },
   {
     question: "Can I manage and update content independently?",
-    answer: "Yes. For dynamic web platforms, we provide an intuitive admin dashboard and a quick walkthrough guide so you can edit text, publish articles, and update assets effortlessly.",
+    answer: "Yes, with a dynamic website package. You get an admin dashboard and a short guide to help you update content yourself.",
   },
   {
-    question: "Do you offer post-launch warranty and technical support?",
-    answer: "Yes, we include post-delivery technical warranty and ongoing maintenance support to guarantee continuous uptime and stable performance.",
+    question: "Can I still ask for help after delivery?",
+    answer: "Yes. Warranty and technical support are available after handover. The details and duration depend on your package.",
   },
 ];
 

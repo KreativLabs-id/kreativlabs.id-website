@@ -35,6 +35,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     // Blog listing page
     {
+      url: `${baseUrl}/promo-anniversary`,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/en/promo-anniversary`,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/blog`,
       lastModified: new Date(),
       changeFrequency: 'weekly',

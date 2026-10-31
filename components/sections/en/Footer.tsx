@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 import { ThemeToggle } from "../../ThemeToggle";
-import { RuixenGradientFooter } from "@/components/ui/ruixen-gradient-footer";
+import FooterWordmark from "@/components/FooterWordmark";
 
 // TikTok Icon Component
 const TikTokIcon = ({ className }: { className?: string }) => (
@@ -103,8 +103,9 @@ export default function FooterEN() {
   }, []);
 
   return (
-    <RuixenGradientFooter gradientHeight="160px" className="relative bg-background border-t border-border/80 overflow-hidden w-full">
-      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 pt-16 pb-4 relative z-10">
+    <footer className="w-full overflow-hidden rounded-t-[32px] bg-secondary/60 sm:rounded-t-[48px]">
+      <div className="relative w-full overflow-hidden px-4 pt-6 sm:px-8 sm:pt-10">
+        <div className="relative z-10 mx-auto w-full max-w-6xl rounded-3xl border border-border/70 bg-background p-6 sm:p-10 lg:p-12">
 
         {/* Main Grid */}
         <div className="grid gap-10 pb-12 sm:grid-cols-2 lg:grid-cols-6">
@@ -112,19 +113,28 @@ export default function FooterEN() {
           {/* Brand & Bio (2 Columns) */}
           <div className="lg:col-span-3 space-y-4">
             <div className="mb-4">
-              <Link href="/en">
+              <Link href="/en" className="inline-flex items-center gap-2.5 group">
                 <Image
                   src={logoSrc}
                   alt="KreativLabs.id"
                   width={150}
                   height={50}
-                  className="h-12 w-auto"
+                  className="h-12 w-auto transition-transform duration-200 group-hover:scale-[1.02]"
                 />
+                <div className="anniversary-shine relative flex items-center justify-center shrink-0" title="1st Anniversary KreativLabs!">
+                  <Image
+                    src="/1st_kreativlabs.png"
+                    alt="1st Anniversary"
+                    width={65}
+                    height={36}
+                    className="relative h-9 sm:h-10 w-auto object-contain select-none pointer-events-none"
+                  />
+                </div>
               </Link>
             </div>
 
             <p className="max-w-sm text-xs sm:text-sm text-foreground/70 leading-relaxed">
-              Modern digital solutions for your business. We engineer functional websites and craft professional visual designs that deliver real results.
+              Websites, designs, and other digital projects. Tell us what you have in mind.
             </p>
 
             {/* Social Icons */}
@@ -199,7 +209,9 @@ export default function FooterEN() {
           </div>
         </div>
 
+        </div>
+        <FooterWordmark />
       </div>
-    </RuixenGradientFooter>
+    </footer>
   );
 }

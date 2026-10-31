@@ -8,22 +8,22 @@ const principlesEN = [
   {
     icon: Clock,
     title: "On-Time Delivery",
-    description: "Clear, agreed timelines with transparent milestone updates so your project launches right on schedule.",
+    description: "We agree on a timeline together and keep you updated along the way.",
   },
   {
     icon: ShieldCheck,
     title: "Quality & High Performance",
-    description: "Websites built with clean, modern code for fast loading, and original high-resolution graphic designs.",
+    description: "We build fast, lightweight websites and make original designs in high resolution.",
   },
   {
     icon: MessageSquare,
     title: "Direct & Friendly Communication",
-    description: "Straightforward communication without unnecessary red tape. We listen closely to tailor the best solutions.",
+    description: "Have a question or a new idea? You can talk to us throughout the project.",
   },
   {
     icon: FolderKey,
     title: "100% Asset Ownership",
-    description: "Full handover of all vector master files, source code, and commercial copyright directly to you.",
+    description: "You receive the master files, source code, and commercial copyright when we hand over the work.",
   },
 ];
 
@@ -36,10 +36,10 @@ export default function PrinciplesEN() {
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 tracking-tight">
-              Our Commitment to Every <span className="text-primary">Project</span>
+              How we <span className="text-primary">work together</span>
             </h2>
             <p className="text-foreground/70 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-              Core work principles we uphold to deliver high-quality, transparent results that create real value for your business.
+              A few things you can expect when we work on your project.
             </p>
           </div>
         </AnimatedSection>
