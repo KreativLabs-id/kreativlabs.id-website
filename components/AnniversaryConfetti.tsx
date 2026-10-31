@@ -3,9 +3,17 @@
 import { useEffect } from "react";
 import confetti from "canvas-confetti";
 
+const confettiStorageKey = "kreativlabs-anniversary-confetti-seen";
+let seenInMemory = false;
+
 export default function AnniversaryConfetti() {
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    try {
+      if (window.localStorage.getItem(confettiStorageKey)) return;
+    } catch {
+      if (seenInMemory) return;
+    }
 
     const canvas = document.createElement("canvas");
     canvas.setAttribute("aria-hidden", "true");
@@ -21,7 +29,15 @@ export default function AnniversaryConfetti() {
         launch({ ...options, angle: 120, origin: { x: 1, y: 0.72 } }),
       ]);
     };
-    const first = window.setTimeout(() => { void fire(isMobile ? 32 : 48, isMobile ? 48 : 60); }, 150);
+    const first = window.setTimeout(() => {
+      seenInMemory = true;
+      try {
+        window.localStorage.setItem(confettiStorageKey, "1");
+      } catch {
+        // Keep the animation to one appearance while this page is open.
+      }
+      void fire(isMobile ? 32 : 48, isMobile ? 48 : 60);
+    }, 150);
     const second = window.setTimeout(() => {
       void fire(isMobile ? 20 : 28, isMobile ? 38 : 48).then(() => canvas.remove());
     }, 400);
