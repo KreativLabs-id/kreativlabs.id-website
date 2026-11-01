@@ -32,9 +32,20 @@ export default function AnniversaryPromoPage({ english = false }: { english?: bo
       <AnniversaryPromo english={english} />
 
       <div className="mx-auto max-w-3xl text-center">
-        <h2 className="text-xl font-bold text-foreground sm:text-2xl">{english ? "Want to take part?" : "Tertarik ikut?"}</h2>
-        <p className="mt-3 text-sm leading-relaxed text-foreground/70 sm:text-base">
-          {english ? "Tell us about your business via the WhatsApp button above. Want to explore the paid packages first? You can see them on our homepage." : "Ceritakan usahamu lewat tombol WhatsApp di atas. Mau lihat paket berbayar dulu? Kamu bisa cek daftarnya di halaman utama."}
+        <h2 className="text-xl font-bold text-foreground sm:text-2xl">{english ? "How to enter" : "Cara ikut landing page gratis"}</h2>
+        <ol className="mt-7 grid gap-5 text-left sm:grid-cols-3 sm:gap-6">
+          {(english
+            ? ["Tell us about your business via WhatsApp.", "Our team will choose one eligible business.", "We’ll contact the recipient after submissions close."]
+            : ["Ceritakan usahamu lewat WhatsApp.", "Tim kami memilih satu usaha yang sesuai.", "Penerima dihubungi setelah pendaftaran ditutup."]
+          ).map((step, index) => (
+            <li key={step} className="flex items-start gap-3">
+              <span aria-hidden="true" className="flex size-8 shrink-0 items-center justify-center rounded-full bg-[#EAF4F8] text-xs font-bold text-[#234B63]">{String(index + 1).padStart(2, "0")}</span>
+              <span className="pt-1 text-sm leading-relaxed text-foreground/75">{step}</span>
+            </li>
+          ))}
+        </ol>
+        <p className="mt-6 text-xs leading-relaxed text-foreground/60 sm:text-sm">
+          {english ? "The free page includes a WhatsApp button. Domain and hosting are not included." : "Landing page gratis mencakup satu halaman dengan tombol WhatsApp. Domain dan hosting belum termasuk."}
         </p>
         <Link href={english ? "/en#pricing" : "/#pricing"} className="mt-5 inline-flex min-h-11 items-center justify-center rounded-full border border-border px-5 text-sm font-semibold text-foreground transition-colors hover:bg-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
           {english ? "See our packages" : "Lihat paket lainnya"}

@@ -94,14 +94,6 @@ export const metadata: Metadata = {
         alt: "KreativLabs.id - Jasa Website Murah & Desain Grafis Mulai 50rb",
         type: "image/png",
       },
-      {
-        url: "https://www.kreativlabs.id/og-image.jpg",
-        secureUrl: "https://www.kreativlabs.id/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "KreativLabs.id - Jasa Website Murah & Desain Grafis Mulai 50rb",
-        type: "image/jpeg",
-      },
     ],
   },
   twitter: {

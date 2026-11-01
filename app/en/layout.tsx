@@ -32,14 +32,6 @@ export const metadata: Metadata = {
         alt: "KreativLabs.id - Website & Graphic Design Starting from 50k",
         type: "image/png",
       },
-      {
-        url: "https://www.kreativlabs.id/og-image.jpg",
-        secureUrl: "https://www.kreativlabs.id/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "KreativLabs.id - Website & Graphic Design Starting from 50k",
-        type: "image/jpeg",
-      },
     ],
   },
   twitter: {
