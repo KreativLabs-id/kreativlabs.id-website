@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import AnimatedSection from "@/components/AnimatedSection";
+import { WHATSAPP_NUMBER } from "@/lib/utils";
 
 const emailJsServiceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
 const emailJsTemplateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
@@ -64,17 +65,28 @@ export default function Contact() {
         });
         setFormData({ name: "", email: "", service: "website", message: "", website: "" });
       } else {
-        if (emailJsServiceId && emailJsTemplateId && emailJsPublicKey) {
+        // Honeypot: abaikan submit bot sebelum fallback client-side
+        // (jalur fallback ini melewati validasi server /api/contact).
+        const isBot = typeof formData.website === "string" && formData.website.length > 0;
+
+        if (!isBot && emailJsServiceId && emailJsTemplateId && emailJsPublicKey) {
+          // Sanitasi sisi client, mirror dari sanitizeInput() di /api/contact,
+          // karena fallback ini tidak melewati validasi server.
+          const sanitize = (value: string) => value.replace(/[<>]/g, "").trim().substring(0, 1000);
+          const safeName = sanitize(formData.name);
+          const safeEmail = sanitize(formData.email);
+          const safeMessage = sanitize(`[Layanan: ${formData.service}] ${formData.message}`);
+
           await emailjs.send(
             emailJsServiceId,
             emailJsTemplateId,
             {
-              name: formData.name,
-              from_name: formData.name,
-              email: formData.email,
-              from_email: formData.email,
-              message: `[Layanan: ${formData.service}] ${formData.message}`,
-              reply_to: formData.email,
+              name: safeName,
+              from_name: safeName,
+              email: safeEmail,
+              from_email: safeEmail,
+              message: safeMessage,
+              reply_to: safeEmail,
             },
             {
               publicKey: emailJsPublicKey,
@@ -154,7 +166,7 @@ export default function Contact() {
                     <div>
                       <div className="text-xs text-foreground/60 font-medium">WhatsApp Resmi</div>
                       <a
-                        href="https://wa.me/6287816270140?text=Halo%20KreativLabs,%20saya%20ingin%20konsultasi%20project"
+                        href={`https://wa.me/${WHATSAPP_NUMBER}?text=Halo%20KreativLabs,%20saya%20ingin%20konsultasi%20project`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-sm font-bold text-foreground hover:text-primary transition-colors inline-flex items-center gap-1.5"
@@ -215,7 +227,7 @@ export default function Contact() {
                   Lebih nyaman ngobrol lewat WhatsApp? Langsung chat kami saja.
                 </p>
                 <a
-                  href="https://wa.me/6287816270140?text=Halo%20KreativLabs,%20saya%20ingin%20konsultasi%20langsung"
+                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=Halo%20KreativLabs,%20saya%20ingin%20konsultasi%20langsung`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-xs sm:text-sm font-semibold hover:bg-primary/90 transition-all hover:shadow-md hover:-translate-y-0.5 text-center"

@@ -10,6 +10,7 @@ import Link from "next/link";
 import { getBlogPostBySlug, getAllBlogSlugs } from "@/data/blogs";
 import Markdown from "markdown-to-jsx";
 import { blogDateToISO } from "@/lib/blog-date";
+import { WHATSAPP_NUMBER } from "@/lib/utils";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -178,6 +179,8 @@ export default async function BlogPostPage({ params }: Props) {
                       options={{
                         wrapper: "div",
                         forceBlock: true,
+                        // Keamanan: matikan parsing raw HTML dari konten blog (anti stored-XSS).
+                        disableParsingRawHTML: true,
                         overrides: {
                           h1: { component: ({ children }) => <h2 className="text-xl sm:text-2xl font-bold text-foreground mt-8 mb-4 tracking-tight">{children}</h2> },
                           h2: { component: ({ children }) => <h2 className="text-xl sm:text-2xl font-bold text-foreground mt-8 mb-4 tracking-tight">{children}</h2> },
@@ -187,7 +190,17 @@ export default async function BlogPostPage({ params }: Props) {
                           ol: { component: ({ children }) => <ol className="list-decimal pl-5 text-sm sm:text-base text-foreground/80 mb-4 space-y-2">{children}</ol> },
                           li: { component: ({ children }) => <li className="leading-relaxed">{children}</li> },
                           strong: { component: ({ children }) => <strong className="text-foreground font-bold">{children}</strong> },
-                          a: { component: ({ children, href }) => <a href={href} className="text-primary underline hover:text-primary/80 transition-colors">{children}</a> },
+                          a: {
+                            component: ({ children, href }) => {
+                              // Hanya izinkan skema aman; blokir javascript:, data:, vbscript: dll.
+                              const safeHref = typeof href === "string" && /^(https?:|mailto:|tel:|#|\/)/i.test(href.trim()) ? href.trim() : undefined;
+                              return (
+                                <a href={safeHref} rel="noopener noreferrer" target="_blank" className="text-primary underline hover:text-primary/80 transition-colors">
+                                  {children}
+                                </a>
+                              );
+                            },
+                          },
                           hr: { component: () => <hr className="border-border/60 my-6" /> },
                           code: { component: ({ children }) => <code className="bg-secondary px-2 py-0.5 rounded text-xs font-mono text-foreground/90">{children}</code> },
                           pre: { component: ({ children }) => <pre className="bg-secondary p-4 rounded-xl overflow-x-auto text-xs font-mono mb-4">{children}</pre> },
@@ -253,7 +266,7 @@ export default async function BlogPostPage({ params }: Props) {
                     Konsultasikan kebutuhan pembuatan website atau sistem kasir bisnis Anda langsung dengan kami.
                   </p>
                   <a
-                    href="https://wa.me/6287816270140?text=Halo%20KreativLabs,%20saya%20tertarik%20untuk%20konsultasi%20pembuatan%20website"
+                    href={`https://wa.me/${WHATSAPP_NUMBER}?text=Halo%20KreativLabs,%20saya%20tertarik%20untuk%20konsultasi%20pembuatan%20website`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-primary text-primary-foreground text-xs font-semibold hover:bg-primary/90 transition-colors"

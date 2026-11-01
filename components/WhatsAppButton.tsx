@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import { WHATSAPP_NUMBER } from "@/lib/utils";
 
 export default function WhatsAppButton() {
   const [isVisible, setIsVisible] = useState(false);
@@ -12,7 +13,7 @@ export default function WhatsAppButton() {
   const pathname = usePathname();
   const isEnglish = pathname?.startsWith("/en");
 
-  const phoneNumber = "6287816270140";
+  const phoneNumber = WHATSAPP_NUMBER;
   const defaultMessage = isEnglish
     ? "Hi Koda & KreativLabs Team! I would like to consult about my website & design project."
     : "Halo Koda & Tim KreativLabs! Saya ingin konsultasi tentang ide project website & desain saya.";

@@ -10,6 +10,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
+import { WHATSAPP_NUMBER } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Professional Website & Web App Development Services | KreativLabs",
@@ -110,7 +111,7 @@ export default function WebsiteServicesPageEN() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
-              href="https://wa.me/6287816270140?text=Hello%20KreativLabs,%20I%20would%20like%20to%20consult%20about%20a%20website"
+              href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20KreativLabs,%20I%20would%20like%20to%20consult%20about%20a%20website`}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3 rounded-full bg-primary text-primary-foreground text-xs sm:text-sm font-semibold hover:bg-primary/90 transition-all hover:shadow-md hover:-translate-y-0.5"
@@ -143,7 +144,7 @@ export default function WebsiteServicesPageEN() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {websiteServicesEN.map((service, index) => {
               const Icon = service.icon;
-              const waUrl = `https://wa.me/6287816270140?text=${encodeURIComponent(service.waMessage)}`;
+              const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(service.waMessage)}`;
 
               return (
                 <div
@@ -233,7 +234,7 @@ export default function WebsiteServicesPageEN() {
               Consult your specifications directly with the KreativLabs team. We will provide honest technical guidance and an accurate project timeline.
             </p>
             <a
-              href="https://wa.me/6287816270140?text=Hello%20KreativLabs,%20I%20would%20like%20to%20discuss%20a%20website%20project"
+              href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20KreativLabs,%20I%20would%20like%20to%20discuss%20a%20website%20project`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-primary text-primary-foreground text-xs sm:text-sm font-semibold hover:bg-primary/90 transition-all hover:shadow-md hover:-translate-y-0.5"

@@ -1,6 +1,12 @@
 "use client";
 
 import Script from "next/script";
+import { WHATSAPP_NUMBER } from "@/lib/utils";
+
+// Escape "<" agar payload di JSON-LD tidak bisa menutup blok <script>
+// dan menyuntik HTML/JS ke halaman (pola resmi yang dipakai Next.js docs).
+const safeJsonLd = (schema: object) =>
+    JSON.stringify(schema).replace(/</g, "\\u003c");
 
 interface SEOSchemaProps {
     type?: "homepage" | "service" | "blog";
@@ -30,7 +36,7 @@ export default function SEOSchema({
         "image": "https://www.kreativlabs.id/og-image.png",
         "description": "Jasa pembuatan website murah dan desain grafis profesional di Semarang. Landing page, company profile, e-commerce, desain logo, poster, dan social media mulai dari Rp 50.000.",
         "email": "hello@kreativlabs.id",
-        "telephone": "+6287816270140",
+        "telephone": `+${WHATSAPP_NUMBER}`,
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Semarang",
@@ -65,7 +71,7 @@ export default function SEOSchema({
             "https://tiktok.com/@kreativlabs.id",
             "https://x.com/kreativlabsid",
             "https://facebook.com/kreativlabs.id",
-            "https://wa.me/6287816270140"
+            `https://wa.me/${WHATSAPP_NUMBER}`
         ],
         "priceRange": "Rp 50.000 - Rp 5.000.000",
         "paymentAccepted": ["Cash", "Bank Transfer", "QRIS", "E-Wallet"],
@@ -88,7 +94,7 @@ export default function SEOSchema({
             "https://www.kreativlabs.id/ecommerce.png"
         ],
         "description": "Jasa pembuatan website profesional dan desain grafis murah di Semarang. Melayani landing page, company profile, toko online, desain logo, poster, social media content. Harga mulai 50rb!",
-        "telephone": "+6287816270140",
+        "telephone": `+${WHATSAPP_NUMBER}`,
         "email": "hello@kreativlabs.id",
         "address": {
             "@type": "PostalAddress",
@@ -354,31 +360,31 @@ export default function SEOSchema({
                 id="organization-schema"
                 type="application/ld+json"
                 strategy="afterInteractive"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+                dangerouslySetInnerHTML={{ __html: safeJsonLd(organizationSchema) }}
             />
             <Script
                 id="local-business-schema"
                 type="application/ld+json"
                 strategy="afterInteractive"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+                dangerouslySetInnerHTML={{ __html: safeJsonLd(localBusinessSchema) }}
             />
             <Script
                 id="website-schema"
                 type="application/ld+json"
                 strategy="afterInteractive"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+                dangerouslySetInnerHTML={{ __html: safeJsonLd(websiteSchema) }}
             />
             <Script
                 id="breadcrumb-schema"
                 type="application/ld+json"
                 strategy="afterInteractive"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+                dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumbSchema) }}
             />
             <Script
                 id="service-schema"
                 type="application/ld+json"
                 strategy="afterInteractive"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+                dangerouslySetInnerHTML={{ __html: safeJsonLd(serviceSchema) }}
             />
         </>
     );

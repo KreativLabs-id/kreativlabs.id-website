@@ -1,11 +1,12 @@
 ﻿import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import { WHATSAPP_NUMBER } from "@/lib/utils";
 
 export default function AnniversaryPromo({ english = false }: { english?: boolean }) {
   const message = english
     ? "Hi KreativLabs! I would like to share my business story for the anniversary free landing page."
     : "Halo KreativLabs! Saya ingin cerita tentang usaha saya untuk promo landing page gratis anniversary.";
-  const whatsappUrl = `https://wa.me/6287816270140?text=${encodeURIComponent(message)}`;
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
   return (
     <aside id="promo-anniversary" aria-label={english ? "Anniversary offers" : "Promo anniversary"} className="anniversary-coupon relative my-10 scroll-mt-24 overflow-hidden rounded-[28px] text-left sm:rounded-[32px]">

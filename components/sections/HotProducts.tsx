@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Check } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import FadeInStagger from "@/components/FadeInStagger";
+import { WHATSAPP_NUMBER } from "@/lib/utils";
 
 const features = [
   "Pencatatan transaksi kasir & cetak struk cepat",
@@ -14,7 +15,7 @@ const features = [
 ];
 
 export default function HotProducts() {
-  const waUrl = `https://wa.me/6287816270140?text=${encodeURIComponent("Halo KreativLabs, saya tertarik untuk melihat demo Aplikasi Kasir Web.")}`;
+  const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Halo KreativLabs, saya tertarik untuk melihat demo Aplikasi Kasir Web.")}`;
 
   return (
     <section id="hot-products" className="relative py-16 md:py-20 bg-background overflow-hidden w-full scroll-mt-24">

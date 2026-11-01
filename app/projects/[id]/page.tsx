@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Check, MessageSquare } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+import { WHATSAPP_NUMBER } from "@/lib/utils";
 
 export default function ProjectDetail() {
   const params = useParams();
@@ -30,7 +31,7 @@ export default function ProjectDetail() {
     );
   }
 
-  const waUrl = `https://wa.me/6287816270140?text=${encodeURIComponent(`Halo KreativLabs, saya tertarik dengan project ${project.title} dan ingin konsultasi project serupa.`)}`;
+  const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Halo KreativLabs, saya tertarik dengan project ${project.title} dan ingin konsultasi project serupa.`)}`;
 
   return (
     <div className="min-h-screen bg-background pt-24 pb-20">

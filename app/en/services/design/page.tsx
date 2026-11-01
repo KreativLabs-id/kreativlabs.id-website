@@ -12,6 +12,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
+import { WHATSAPP_NUMBER } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Professional Graphic Design & Branding Services | KreativLabs",
@@ -114,7 +115,7 @@ export default function DesignServicesPageEN() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
-              href="https://wa.me/6287816270140?text=Hello%20KreativLabs,%20I%20would%20like%20to%20consult%20about%20design"
+              href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20KreativLabs,%20I%20would%20like%20to%20consult%20about%20design`}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3 rounded-full bg-primary text-primary-foreground text-xs sm:text-sm font-semibold hover:bg-primary/90 transition-all hover:shadow-md hover:-translate-y-0.5"
@@ -147,7 +148,7 @@ export default function DesignServicesPageEN() {
           <div className="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto gap-6">
             {designServicesEN.map((service, index) => {
               const Icon = service.icon;
-              const waUrl = `https://wa.me/6287816270140?text=${encodeURIComponent(service.waMessage)}`;
+              const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(service.waMessage)}`;
 
               return (
                 <div
@@ -237,7 +238,7 @@ export default function DesignServicesPageEN() {
               Discuss your visual identity, branding, or social media content with the KreativLabs design team.
             </p>
             <a
-              href="https://wa.me/6287816270140?text=Hello%20KreativLabs,%20I%20would%20like%20to%20discuss%20design%20services"
+              href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20KreativLabs,%20I%20would%20like%20to%20discuss%20design%20services`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-primary text-primary-foreground text-xs sm:text-sm font-semibold hover:bg-primary/90 transition-all hover:shadow-md hover:-translate-y-0.5"

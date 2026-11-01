@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Check } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import FadeInStagger from "@/components/FadeInStagger";
+import { WHATSAPP_NUMBER } from "@/lib/utils";
 
 const featuresEN = [
   "Fast transaction records & receipt printing",
@@ -14,7 +15,7 @@ const featuresEN = [
 ];
 
 export default function HotProductsEN() {
-  const waUrl = `https://wa.me/6287816270140?text=${encodeURIComponent("Hello KreativLabs, I would like to try a demo of the Tip Top Web Cashier application.")}`;
+  const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hello KreativLabs, I would like to try a demo of the Tip Top Web Cashier application.")}`;
 
   return (
     <section id="hot-products" className="relative py-16 md:py-20 bg-background overflow-hidden w-full scroll-mt-24">

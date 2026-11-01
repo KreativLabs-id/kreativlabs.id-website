@@ -1,14 +1,16 @@
 import type { NextConfig } from "next";
 
 const isDev = process.env.NODE_ENV === "development";
+// Domain Google sesuai dokumentasi resmi Google Tag (tanpa fitur Ads):
+// https://developers.google.com/tag-platform/tag-manager/web/csp
 const cspHeader = `
   default-src 'self';
-  script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""};
+  script-src 'self' 'unsafe-inline' https://www.googletagmanager.com${isDev ? " 'unsafe-eval'" : ""};
   worker-src 'self' blob:;
   style-src 'self' 'unsafe-inline';
-  img-src 'self' data: blob: https://images.unsplash.com;
+  img-src 'self' data: blob: https://images.unsplash.com https://www.googletagmanager.com https://*.google-analytics.com;
   font-src 'self' data:;
-  connect-src 'self' https://api.emailjs.com https://www.google-analytics.com https://region1.google-analytics.com;
+  connect-src 'self' https://api.emailjs.com https://www.googletagmanager.com https://*.google-analytics.com https://*.google.com;
   frame-ancestors 'none';
   object-src 'none';
   base-uri 'self';
@@ -39,10 +41,6 @@ const nextConfig: NextConfig = {
           {
             key: "Permissions-Policy",
             value: "camera=(), microphone=(), geolocation=()",
-          },
-          {
-            key: "X-XSS-Protection",
-            value: "1; mode=block",
           },
           {
             key: "Strict-Transport-Security",

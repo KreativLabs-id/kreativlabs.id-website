@@ -14,9 +14,12 @@ function getEnvValue(...keys: string[]): string {
 }
 
 function getClientIp(request: NextRequest): string {
+  // Ambil IP dari nilai PALING KANAN x-forwarded-for: hanya proxy tepercaya
+  // (Vercel/CDN) yang menambahkan entri di posisi tersebut. Nilai paling kiri
+  // bisa dipalsukan client untuk membypass rate limit, jadi jangan dipakai.
   const forwarded = request.headers.get("x-forwarded-for");
   const realIp = request.headers.get("x-real-ip");
-  const ip = forwarded?.split(",")[0]?.trim() || realIp || "";
+  const ip = forwarded?.split(",").pop()?.trim() || realIp?.trim() || "";
   return ip || "unknown";
 }
 

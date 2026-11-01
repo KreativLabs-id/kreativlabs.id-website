@@ -62,4 +62,9 @@ export function validateArticle(article, sources, titles, slugs) {
   if (!categories.has(article.category) || !Array.isArray(article.tags) || !article.tags.length || !article.tags.every((tag) => typeof tag === 'string') || typeof article.readTime !== 'string') throw new Error('Metadata tidak valid');
   if (!Array.isArray(article.content) || !article.content.every((line) => typeof line === 'string') || article.content.filter((line) => line.trim()).length < 5) throw new Error('Isi artikel tidak valid');
   if (/\b(halo sobat kreativlabs|coba deh jujur|senam jantung)\b/i.test(article.content.join(' '))) throw new Error('Isi mengandung frasa klise');
+  // Keamanan: tolak artikel yang mengandung tag HTML mentah (potensi stored-XSS
+  // via rantai RSS -> AI -> blogs.ts -> render). Teks biasa seperti "5 < 10"
+  // tetap lolos karena pola hanya mencocokkan tag diawali huruf setelah "<".
+  const containsHtmlTag = (value) => /<\/?[a-zA-Z][^>]*>?/.test(value);
+  if ([article.title, article.excerpt, ...article.tags, ...article.content].some(containsHtmlTag)) throw new Error('Konten mengandung tag HTML mentah');
 }

@@ -19,3 +19,15 @@ test('menolak artikel tanpa sumber, berulang, atau mengandung sapaan klise', () 
   assert.throws(() => validateArticle(article, sources, [], [article.slug]));
   assert.throws(() => validateArticle({ ...article, content: ['Halo Sobat KreativLabs', ...article.content] }, sources, [], []));
 });
+
+test('menolak artikel yang mengandung tag HTML mentah (anti stored-XSS)', () => {
+  const article = { sourceId: 0, title: 'Cara memilih website bisnis', slug: 'cara-memilih-website-bisnis', excerpt: 'Hal yang perlu dipertimbangkan.', category: 'Tips Bisnis', tags: ['Website'], readTime: '4 menit', content: ['Pembuka', 'Kedua', 'Ketiga', 'Keempat', 'Penutup'] };
+  const sources = [{ id: 0 }];
+  // Tag HTML di konten, judul, excerpt, dan tag harus ditolak
+  assert.throws(() => validateArticle({ ...article, content: ['<img src=x onerror=alert(1)>', ...article.content.slice(1)] }, sources, [], []));
+  assert.throws(() => validateArticle({ ...article, title: 'Judul <script>alert(1)</script> panjang sekali' }, sources, [], []));
+  assert.throws(() => validateArticle({ ...article, excerpt: '<iframe src="https://evil.example"></iframe>' }, sources, [], []));
+  assert.throws(() => validateArticle({ ...article, tags: ['<b>Website</b>'] }, sources, [], []));
+  // Teks biasa yang mengandung "<" tanpa tag (mis. matematika) tetap lolos
+  assert.doesNotThrow(() => validateArticle({ ...article, content: ['Anggaran 5 < 10 juta rupiah', ...article.content.slice(1)] }, sources, [], []));
+});
