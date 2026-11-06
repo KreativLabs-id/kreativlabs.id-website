@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import AnniversaryPromo from "@/components/AnniversaryPromo";
 import AnniversaryConfetti from "@/components/AnniversaryConfetti";
+import AnniversaryCountdown from "@/components/AnniversaryCountdown";
 
 export default function AnniversaryPromoPage({ english = false }: { english?: boolean }) {
   return (
@@ -16,6 +17,7 @@ export default function AnniversaryPromoPage({ english = false }: { english?: bo
           <p className="mt-4 max-w-lg text-sm leading-relaxed text-[#234B63]/85 sm:text-base">
             {english ? "A free landing page opportunity, 10% off our paid packages, and a thank-you for returning clients." : "Ada kesempatan dapat landing page gratis, diskon paket, dan bonus buat kamu yang pernah kerja bareng kami."}
           </p>
+          <AnniversaryCountdown english={english} />
         </div>
         <Image src="/1st_kreativlabs.png" alt="" aria-hidden="true" width={880} height={493} sizes="56px" className="pointer-events-none absolute right-5 top-5 h-auto w-14 select-none md:hidden" />
         <Image

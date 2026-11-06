@@ -1,6 +1,7 @@
 import Image from "next/image";
 import AnniversaryBunting from "@/components/AnniversaryBunting";
 import AnniversaryConfetti from "@/components/AnniversaryConfetti";
+import AnniversaryCountdown from "@/components/AnniversaryCountdown";
 
 export default function AnniversaryHero({ english = false }: { english?: boolean }) {
   return (
@@ -36,6 +37,7 @@ export default function AnniversaryHero({ english = false }: { english?: boolean
             <p className="hero-entrance hero-entrance-copy mt-4 text-xs font-semibold leading-relaxed text-[#234B63]/80 sm:text-sm">
               {english ? "Celebrating November 5 · Offers end November 10, 2026" : "Ulang tahun 5 November · Promo sampai 10 November 2026"}
             </p>
+            <AnniversaryCountdown english={english} />
             <div className="hero-entrance hero-entrance-actions mt-5 flex flex-wrap items-center gap-2 sm:mt-6 sm:gap-x-5 sm:gap-y-3">
               <a href={english ? "/en#contact" : "#contact"} className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#234B63] px-4 text-xs font-semibold text-white transition-colors hover:bg-[#16394F] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#234B63] sm:min-h-12 sm:px-6 sm:text-sm">
                 {english ? "Let's talk" : "Yuk, ngobrol"}
