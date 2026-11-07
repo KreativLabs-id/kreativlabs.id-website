@@ -1652,6 +1652,27 @@ export const blogPosts: BlogPost[] = [
           "",
           "Sumber: [Rmol.id](https://news.google.com/rss/articles/CBMitwFBVV95cUxPWVlxbmx1R1htQlAwSUE4b0ZiX2x6eXplVm9LSDVjdmtDU19QbU8yejdzZGIzbnZ4YlB1blFMUmhpZlBNM1Z5aFY1S2lydGJuei1nZVJxT3dLYVBad21RRmF4ZUo4UUNFQWc5YjZyeTRYZDZOSHJ6M0tERlEzbUJZVExwT1VuWkRlR1lyRHBVdm1KVlRBWUhMS0xuczNpOU5uWkg4YzdQZXR4R3lKQVVCRnRacl9YVTA?oc=5)"
     ].join("\n")
+  },
+  {
+    id: "perbedaan-website-company-profile-toko-online-dan-media-sosial",
+    title: "Perbedaan Mendasar Website Company Profile, Toko Online, dan Media Sosial",
+    slug: "perbedaan-website-company-profile-toko-online-dan-media-sosial",
+    excerpt: "Mengenal fungsi spesifik antara website company profile, toko online, dan media sosial agar bisnis Anda tidak salah langkah dalam membangun aset digital.",
+    image: "/blog-images/photo-1499951360447-b19be8fe80f5.webp",
+    author: "Tim KreativLabs",
+    date: "7 November 2026",
+    category: "Tips Bisnis",
+    tags: ["website bisnis","company profile","toko online","media sosial","umkm"],
+    readTime: "4 menit",
+    content: [
+          "Banyak pemilik usaha sering menyamakan semua platform digital yang mereka miliki. Padahal, akun media sosial, toko online di marketplace, dan website company profile punya fungsi yang sangat berbeda untuk operasional sebuah bisnis.",
+          "Media sosial pada dasarnya adalah tempat untuk berinteraksi dan membangun komunitas. Tempat ini bagus untuk menarik perhatian awal, namun posisinya bukan rumah utama milik sendiri. Aturan algoritma yang sering berubah membuat bisnis di media sosial sewaktu-waktu bisa kehilangan jangkauan ke audiens.",
+          "Di sisi lain, toko online atau platform e-commerce dirancang khusus untuk transaksi jual-beli cepat. Fitur keranjang, sistem pembayaran otomatis, dan perhitungan ongkos kirim menjadi kekuatan utamanya. Ini sangat efektif untuk memproses pesanan retail sehari-hari dari pelanggan yang sudah berniat beli.",
+          "Sementara itu, website company profile berfungsi sebagai alamat resmi dan identitas utama sebuah bisnis di internet. Halaman ini bukan sekadar tempat jualan, melainkan portofolio digital yang menunjukkan kredibilitas perusahaan, informasi produk atau jasa secara lengkap, serta cara bagi calon mitra untuk menghubungi langsung.",
+          "Memahami fungsi masing-masing media ini membantu pemilik usaha mengalokasikan tenaga dan anggaran dengan lebih tepat. Media sosial menjaring perhatian, toko online melayani transaksi, dan website company profile membangun kepercayaan jangka panjang.",
+          "",
+          "Sumber: [Portal Pantura](https://news.google.com/rss/articles/CBMi0gFBVV95cUxNS2s3My1tM3pkNldYX1pGcldtbDJTcEstdm1tcS1OTHF3LXp0M2ZqNG84ZE5zZmNxaXJqSEc2aFlzeXJXV2h5TUN6YnJFZENvaXlhck94WTdUV0JvenlQbXdpOThQRHVlTlBpX1RYRkRfNFhqQ3VIUmg3YWdUUkxqc0R1aF9mekFlRkRwd2ttLUdTeXZBVTFxX2RqWG5WelpCQUhhc1dyMmp5bnBodGJDSUxsQ3NGMXp0YnVsM2ZuQjlQa1F4LUIzcV9TVTR3dUpYTXc?oc=5)"
+    ].join("\n")
   }
 ];
 
