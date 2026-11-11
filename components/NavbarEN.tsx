@@ -82,25 +82,15 @@ export default function NavbarEN() {
         <div className="flex items-center justify-between h-16 sm:h-18">
           
           {/* Logo (Left) */}
-          <Link href="/en" className="flex items-center gap-1.5 sm:gap-2.5 shrink-0 group">
+          <Link href="/en" className="flex items-center shrink-0">
             <Image
               src={logoSrc}
               alt="KreativLabs.id"
               width={140}
               height={40}
-              className="h-8 sm:h-9 w-auto transition-transform duration-200 group-hover:scale-[1.02]"
+              className="h-8 sm:h-9 w-auto"
               priority
             />
-            <div className="anniversary-shine relative flex items-center justify-center shrink-0" title="1st Anniversary KreativLabs!">
-              <Image
-                src="/1st_kreativlabs.png"
-                alt="1st Anniversary KreativLabs"
-                width={56}
-                height={32}
-                className="relative h-6.5 sm:h-8 md:h-8.5 w-auto object-contain select-none pointer-events-none"
-                priority
-              />
-            </div>
           </Link>
 
           {/* Desktop Navigation Links (Center) */}
@@ -127,9 +117,6 @@ export default function NavbarEN() {
                 </a>
               );
             })}
-            <a href="/en/promo-anniversary" aria-current={pathname === "/en/promo-anniversary" ? "page" : undefined} className="inline-flex min-h-10 items-center gap-1.5 whitespace-nowrap rounded-full bg-primary/15 px-3 text-xs font-semibold text-primary transition-colors hover:bg-primary/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
-              <span aria-hidden="true">✦</span> Anniversary Promo
-            </a>
           </nav>
 
           {/* CTA Action Button (Right) */}
@@ -181,10 +168,6 @@ export default function NavbarEN() {
               </a>
             );
           })}
-
-          <a href="/en/promo-anniversary" aria-current={pathname === "/en/promo-anniversary" ? "page" : undefined} onClick={() => setIsMobileMenuOpen(false)} className="flex min-h-11 items-center gap-2 rounded-xl bg-primary/15 px-3 text-sm font-semibold text-primary hover:bg-primary/25 transition-colors">
-            <span aria-hidden="true">✦</span> Anniversary Promo
-          </a>
 
           <div className="pt-3 border-t border-border/60 mt-2">
             <Link

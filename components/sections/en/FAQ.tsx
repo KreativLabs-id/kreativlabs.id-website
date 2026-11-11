@@ -13,7 +13,7 @@ const faqsEN = [
   },
   {
     question: "Are domain and hosting included?",
-    answer: "It depends on the package, so check its features first. The free anniversary landing page does not include domain or hosting.",
+    answer: "It depends on the package, so check its features first.",
   },
   {
     question: "Will the website be mobile-friendly?",

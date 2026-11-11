@@ -5,7 +5,6 @@ import { Check, ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AnimatedSection from "@/components/AnimatedSection";
 import FadeInStagger from "@/components/FadeInStagger";
-import Link from "next/link";
 import { WHATSAPP_NUMBER } from "@/lib/utils";
 
 interface PricingPlan {
@@ -20,14 +19,6 @@ interface PricingPlan {
   features: string[];
   waMessage: string;
 }
-
-const anniversaryPrices: Record<string, string> = {
-  "landing-page": "Rp 89.100",
-  "fullstack-website": "Rp 422.100",
-  "custom-website": "Mulai Rp 2.609.100",
-  "design-logo": "Mulai Rp 45.000",
-  "social-media": "Rp 135.000",
-};
 
 const pricingPlans: PricingPlan[] = [
   {
@@ -164,12 +155,6 @@ export default function Pricing() {
               Cek harga dan isi setiap paket di sini. Kalau belum yakin harus pilih yang mana, tanya kami saja.
             </p>
 
-            <div id="promo-anniversary" className="mt-5 scroll-mt-24">
-              <Link href="/promo-anniversary" className="inline-flex min-h-11 items-center text-sm font-semibold text-primary underline underline-offset-4 hover:text-primary/80 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">
-                Lihat promo anniversary
-              </Link>
-            </div>
-
             {/* Filter Tabs */}
             <div className="mt-7 inline-flex p-1 rounded-lg bg-secondary/80 border border-border">
               <button
@@ -255,11 +240,6 @@ export default function Pricing() {
                           {plan.price}
                         </span>
                       </div>
-                      {anniversaryPrices[plan.id] && (
-                        <p className="mt-2 text-xs font-semibold text-primary">
-                          Harga promo anniversary: {anniversaryPrices[plan.id]}
-                        </p>
-                      )}
                     </div>
 
                     {/* Features List */}

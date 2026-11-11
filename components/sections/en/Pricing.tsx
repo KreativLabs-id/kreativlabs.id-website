@@ -5,7 +5,6 @@ import { Check, ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AnimatedSection from "@/components/AnimatedSection";
 import FadeInStagger from "@/components/FadeInStagger";
-import Link from "next/link";
 import { WHATSAPP_NUMBER } from "@/lib/utils";
 
 interface PricingPlanEN {
@@ -20,14 +19,6 @@ interface PricingPlanEN {
   features: string[];
   waMessage: string;
 }
-
-const anniversaryPrices: Record<string, string> = {
-  "landing-page": "$45",
-  "fullstack-website": "$180",
-  "custom-website": "From $450",
-  "design-logo": "From $9",
-  "social-media": "$27",
-};
 
 const pricingPlansEN: PricingPlanEN[] = [
   {
@@ -163,12 +154,6 @@ export default function PricingEN() {
               Take a look at the prices and what is included. Not sure which one to choose? Just ask us.
             </p>
 
-            <div id="promo-anniversary" className="mt-5 scroll-mt-24">
-              <Link href="/en/promo-anniversary" className="inline-flex min-h-11 items-center text-sm font-semibold text-primary underline underline-offset-4 hover:text-primary/80 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">
-                See anniversary offers
-              </Link>
-            </div>
-
             {/* Filter Tabs */}
             <div className="mt-7 inline-flex p-1 rounded-lg bg-secondary/80 border border-border">
               <button
@@ -259,11 +244,6 @@ export default function PricingEN() {
                           {plan.price}
                         </span>
                       </div>
-                      {anniversaryPrices[plan.id] && (
-                        <p className="mt-2 text-xs font-semibold text-primary">
-                          Anniversary price: {anniversaryPrices[plan.id]}
-                        </p>
-                      )}
                     </div>
 
                     {/* Features List */}

@@ -29,9 +29,6 @@ export default function AboutEN() {
               <p className="text-sm sm:text-base text-foreground/75 leading-relaxed mt-3">
                 Need a landing page, a point-of-sale system, or a web app? Tell us what you have in mind and we can find a good fit.
               </p>
-              <p className="text-sm sm:text-base text-foreground/75 leading-relaxed mt-3">
-                Thanks for spending our first year with us. We have loved being part of your ideas.
-              </p>
             </AnimatedSection>
 
             {/* Impact Metrics Row */}

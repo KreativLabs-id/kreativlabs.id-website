@@ -14,20 +14,12 @@ import ContactEN from "@/components/sections/en/Contact";
 import FooterEN from "@/components/sections/en/Footer";
 
 export const metadata: Metadata = {
-  title: { absolute: "KreativLabs.id — 1st Anniversary" },
-  openGraph: {
-    title: "KreativLabs 1st Anniversary Offers",
-    description: "A free landing page for one selected business and package discounts through November 10, 2026.",
-    url: "https://www.kreativlabs.id/en",
-    siteName: "KreativLabs.id",
-    type: "website",
-    images: [{ url: "/anniversary-social.png", width: 1200, height: 630, alt: "KreativLabs first anniversary offers with Koda the mascot" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "KreativLabs 1st Anniversary Offers",
-    description: "A free landing page for one selected business and package discounts through November 10, 2026.",
-    images: ["/anniversary-social.png"],
+  alternates: {
+    canonical: "https://www.kreativlabs.id/en",
+    languages: {
+      "id-ID": "https://www.kreativlabs.id/",
+      "en-US": "https://www.kreativlabs.id/en",
+    },
   },
 };
 

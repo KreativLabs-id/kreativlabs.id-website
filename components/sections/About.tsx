@@ -29,9 +29,6 @@ export default function About() {
               <p className="text-sm sm:text-base text-foreground/75 leading-relaxed mt-3">
                 Butuh halaman promosi, sistem kasir, atau aplikasi web? Ceritakan saja kebutuhanmu, lalu kita cari bentuk yang pas.
               </p>
-              <p className="text-sm sm:text-base text-foreground/75 leading-relaxed mt-3">
-                Terima kasih sudah menemani tahun pertama KreativLabs. Senang rasanya bisa ikut mengerjakan ide-ide kalian.
-              </p>
             </AnimatedSection>
 
             {/* Impact Metrics Row */}

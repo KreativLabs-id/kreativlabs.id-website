@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     question: "Domain dan hosting sudah termasuk?",
-    answer: "Tergantung paketnya. Cek daftar fitur di paket yang kamu pilih, ya. Untuk landing page gratis anniversary, domain dan hosting belum termasuk.",
+    answer: "Tergantung paketnya. Cek daftar fitur di paket yang kamu pilih, ya.",
   },
   {
     question: "Websitenya bisa dibuka di HP?",
