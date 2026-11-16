@@ -60,11 +60,32 @@ export function validateArticle(article, sources, titles, slugs) {
   if (typeof article.slug !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(article.slug) || slugs.includes(article.slug)) throw new Error('Slug tidak valid atau sudah ada');
   if (titles.some((title) => normalize(title) === normalize(article.title))) throw new Error('Judul sudah ada');
   if (!categories.has(article.category) || !Array.isArray(article.tags) || !article.tags.length || !article.tags.every((tag) => typeof tag === 'string') || typeof article.readTime !== 'string') throw new Error('Metadata tidak valid');
-  if (!Array.isArray(article.content) || !article.content.every((line) => typeof line === 'string') || article.content.filter((line) => line.trim()).length < 5) throw new Error('Isi artikel tidak valid');
-  if (/\b(halo sobat kreativlabs|coba deh jujur|senam jantung)\b/i.test(article.content.join(' '))) throw new Error('Isi mengandung frasa klise');
+  const nonEmptyLines = Array.isArray(article.content) ? article.content.map((line) => typeof line === 'string' ? line.trim() : '').filter(Boolean) : [];
+  if (!Array.isArray(article.content) || !article.content.every((line) => typeof line === 'string') || nonEmptyLines.length < 5) throw new Error('Isi artikel tidak valid');
+  const headingCount = nonEmptyLines.filter((line) => /^##\s+\S/.test(line)).length;
+  if (headingCount < 2) throw new Error('Artikel minimal harus memiliki 2 subjudul (##)');
+  const wordCount = nonEmptyLines.join(' ').split(/\s+/).filter(Boolean).length;
+  if (wordCount < 300) throw new Error('Isi artikel terlalu pendek (minimal 300 kata)');
+  if (/\b(halo sobat kreativlabs|coba deh jujur|senam jantung|di era digital|tidak dapat dipungkiri)\b/i.test(nonEmptyLines.join(' '))) throw new Error('Isi mengandung frasa klise');
   // Keamanan: tolak artikel yang mengandung tag HTML mentah (potensi stored-XSS
   // via rantai RSS -> AI -> blogs.ts -> render). Teks biasa seperti "5 < 10"
   // tetap lolos karena pola hanya mencocokkan tag diawali huruf setelah "<".
   const containsHtmlTag = (value) => /<\/?[a-zA-Z][^>]*>?/.test(value);
   if ([article.title, article.excerpt, ...article.tags, ...article.content].some(containsHtmlTag)) throw new Error('Konten mengandung tag HTML mentah');
+}
+
+export function pickDistinctImage(availableImages, recentImages = [], allUsedImages = []) {
+  if (!Array.isArray(availableImages) || availableImages.length === 0) {
+    throw new Error('Daftar gambar blog kosong');
+  }
+  const recentSet = new Set(recentImages);
+  const freshPool = availableImages.filter((img) => !recentSet.has(img));
+  const pool = freshPool.length > 0 ? freshPool : availableImages;
+
+  const counts = new Map();
+  for (const img of allUsedImages) counts.set(img, (counts.get(img) || 0) + 1);
+
+  const minCount = Math.min(...pool.map((img) => counts.get(img) || 0));
+  const leastUsed = pool.filter((img) => (counts.get(img) || 0) === minCount);
+  return leastUsed[Math.floor(Math.random() * leastUsed.length)];
 }
