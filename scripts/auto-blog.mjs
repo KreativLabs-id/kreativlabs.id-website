@@ -52,7 +52,7 @@ ATURAN EDITORIAL:
 - Awali langsung dengan fakta dari sumber atau situasi konkret yang relevan, bukan sapaan pembaca atau pertanyaan retoris.
 - Tulis seperti orang yang menjelaskan kepada teman: ramah, jelas, dan tidak dibuat-buat. Gunakan sapaan konsisten bila memang diperlukan.
 - Hindari "Halo Sobat KreativLabs", "coba deh jujur", "senam jantung", "di era digital", "tidak dapat dipungkiri", "di sisi lain", "sementara itu", "pada dasarnya", "semakin berkembang pesat", metafora berlebihan, janji bombastis, dan penutup promosi yang dipaksakan.
-- Wajib bagi tulisan ke dalam 2–4 subjudul markdown (`## Judul Bagian`) yang spesifik dan natural, dengan paragraf pendek-menengah (2–4 kalimat per paragraf) yang terpisah rapi. Berikan contoh atau langkah praktis yang masuk akal. Jangan sertakan tautan promosi otomatis.
+- Wajib bagi tulisan ke dalam 2–4 subjudul markdown ("## Judul Bagian") yang spesifik dan natural, dengan paragraf pendek-menengah (2–4 kalimat per paragraf) yang terpisah rapi. Berikan contoh atau langkah praktis yang masuk akal. Jangan sertakan tautan promosi otomatis.
 - Gunakan hanya fakta yang didukung judul dan ringkasan sumber. Jangan mengarang angka, tanggal, kutipan, pengalaman, hasil, atau mengatakan sesuatu sedang trending tanpa bukti. Bedakan saran dari fakta.
 - Jangan salin kalimat panjang dari sumber. Jangan bahas pemrograman yang rumit.
 - Judul spesifik dan jujur, bukan clickbait. Isi 450–700 kata dengan pembahasan yang mendalam dan mengalir alami jika fakta yang tersedia cukup; jika tidak, lebih baik skip daripada mengarang.
