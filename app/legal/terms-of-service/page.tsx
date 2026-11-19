@@ -3,12 +3,22 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/sections/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { ArrowLeft, FileText, CheckCircle2, ShieldCheck, RefreshCw, CreditCard, Scale, MessageCircle } from "lucide-react";
+import {
+  ArrowLeft,
+  FileText,
+  CheckCircle2,
+  ShieldCheck,
+  RefreshCw,
+  CreditCard,
+  Scale,
+  MessageCircle,
+} from "lucide-react";
 import { WHATSAPP_NUMBER } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Ketentuan Layanan | KreativLabs.id",
-  description: "Pedoman kerja sama, alur revisi, hak kekayaan intelektual, dan kesepakatan layanan di KreativLabs.id.",
+  description:
+    "Pedoman kerja sama, alur revisi, hak kekayaan intelektual, dan kesepakatan layanan di KreativLabs.id.",
   alternates: {
     canonical: "https://www.kreativlabs.id/legal/terms-of-service",
   },
@@ -22,8 +32,8 @@ const termsSections = [
     points: [
       "Pengembangan Website: Pembuatan Landing Page terstruktur, Company Profile, Katalog/E-Commerce, dan Aplikasi Web kustom.",
       "Desain Grafis & Identitas Brand: Desain logo, identitas visual, materi promosi cetak, dan template media sosial.",
-      "Setiap proyek memiliki cakupan kerja (scope of work) yang disepakati bersama sebelum tahap pengerjaan dimulai."
-    ]
+      "Setiap proyek memiliki cakupan kerja (scope of work) yang disepakati bersama sebelum tahap pengerjaan dimulai.",
+    ],
   },
   {
     icon: CreditCard,
@@ -33,8 +43,8 @@ const termsSections = [
       "Biaya layanan dikonfirmasi secara tertulis sebelum pekerjaan teknis berjalan.",
       "Uang muka (DP) minimal 50% dari total nilai proyek wajib diselesaikan sebelum tim kami mulai merancang atau menulis kode.",
       "Pelunasan 50% sisanya dilakukan setelah proyek selesai diuji, disetujui, dan sebelum serah terima akses penuh (domain, server, atau file master).",
-      "Pembayaran sah melalui rekening bank resmi atau e-wallet yang kami konfirmasikan secara langsung."
-    ]
+      "Pembayaran sah melalui rekening bank resmi atau e-wallet yang kami konfirmasikan secara langsung.",
+    ],
   },
   {
     icon: RefreshCw,
@@ -42,8 +52,8 @@ const termsSections = [
     summary: "Kami memastikan hasil akhir sesuai dengan kesepakatan awal.",
     points: [
       "Revisi minor (penyesuaian tata letak, warna, teks, atau gambar) diberikan sesuai batas revisi pada paket yang dipilih selama masa pengerjaan.",
-      "Permintaan fitur baru, penambahan halaman di luar kesepakatan awal, atau perombakan konsep total setelah approval awal akan dihitung sebagai add-on terpisah dengan penyesuaian biaya dan waktu."
-    ]
+      "Permintaan fitur baru, penambahan halaman di luar kesepakatan awal, atau perombakan konsep total setelah approval awal akan dihitung sebagai add-on terpisah dengan penyesuaian biaya dan waktu.",
+    ],
   },
   {
     icon: Scale,
@@ -51,8 +61,8 @@ const termsSections = [
     summary: "Kejelasan hak cipta aset digital yang telah selesai dikerjakan.",
     points: [
       "Setelah pembayaran lunas 100%, seluruh hak pakai dan hak kepemilikan atas hasil akhir (website, aset desain final) sepenuhnya menjadi milik klien.",
-      "KreativLabs.id berhak menampilkan tangkapan layar atau ringkasan hasil kerja sebagai bagian dari portofolio resmi studio, kecuali ada perjanjian kerahasiaan khusus (NDA) tertulis sebelumnya."
-    ]
+      "KreativLabs.id berhak menampilkan tangkapan layar atau ringkasan hasil kerja sebagai bagian dari portofolio resmi studio, kecuali ada perjanjian kerahasiaan khusus (NDA) tertulis sebelumnya.",
+    ],
   },
   {
     icon: ShieldCheck,
@@ -61,9 +71,9 @@ const termsSections = [
     points: [
       "Kami memberikan garansi perbaikan bug teknis selama 30 hari kalender setelah website resmi diluncurkan.",
       "Garansi mencakup kendala kode bawaan atau error fungsi yang bukan disebabkan oleh modifikasi pihak ketiga atau kelalaian hosting luar.",
-      "Untuk pemeliharaan berkala, backup rutin, dan update konten harian setelah masa garansi, kami menyediakan paket maintenance terpisah."
-    ]
-  }
+      "Untuk pemeliharaan berkala, backup rutin, dan update konten harian setelah masa garansi, kami menyediakan paket maintenance terpisah.",
+    ],
+  },
 ];
 
 export default function TermsOfServicePage() {
@@ -75,7 +85,6 @@ export default function TermsOfServicePage() {
 
       <div className="w-full pt-28 pb-16 sm:pt-36 sm:pb-24">
         <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
-          
           {/* Breadcrumb & Navigation */}
           <div className="mb-6 sm:mb-8">
             <Link
@@ -104,7 +113,9 @@ export default function TermsOfServicePage() {
             </h1>
 
             <p className="text-sm sm:text-base text-foreground/80 leading-relaxed max-w-2xl">
-              Ketentuan ini disusun agar kerja sama antara kamu dan tim KreativLabs.id berjalan lancar, terarah, dan saling menguntungkan. Harap membaca poin-poin berikut sebelum memulai proyek.
+              Ketentuan ini disusun agar kerja sama antara kamu dan tim KreativLabs.id berjalan
+              lancar, terarah, dan saling menguntungkan. Harap membaca poin-poin berikut sebelum
+              memulai proyek.
             </p>
           </header>
 
@@ -134,7 +145,10 @@ export default function TermsOfServicePage() {
                   <div className="pt-3 border-t border-border/60 ml-0 sm:ml-12">
                     <ul className="space-y-2.5">
                       {section.points.map((point, idx) => (
-                        <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-foreground/80 leading-relaxed">
+                        <li
+                          key={idx}
+                          className="flex items-start gap-2.5 text-xs sm:text-sm text-foreground/80 leading-relaxed"
+                        >
                           <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2" />
                           <span>{point}</span>
                         </li>
@@ -157,15 +171,24 @@ export default function TermsOfServicePage() {
             <ul className="space-y-2">
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2" />
-                <span>Jika pembatalan diajukan sebelum pengerjaan desain/kode dimulai, DP akan dikembalikan penuh (100%).</span>
+                <span>
+                  Jika pembatalan diajukan sebelum pengerjaan desain/kode dimulai, DP akan
+                  dikembalikan penuh (100%).
+                </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2" />
-                <span>Jika pengerjaan konsep awal sudah berjalan, pengembalian DP disesuaikan dengan proporsi waktu dan tenaga yang telah dikeluarkan (maksimal refund 50% DP).</span>
+                <span>
+                  Jika pengerjaan konsep awal sudah berjalan, pengembalian DP disesuaikan dengan
+                  proporsi waktu dan tenaga yang telah dikeluarkan (maksimal refund 50% DP).
+                </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2" />
-                <span>Setelah proyek masuk tahap finalisasi atau serah terima, dana yang telah dibayarkan tidak dapat dikembalikan.</span>
+                <span>
+                  Setelah proyek masuk tahap finalisasi atau serah terima, dana yang telah
+                  dibayarkan tidak dapat dikembalikan.
+                </span>
               </li>
             </ul>
           </section>
@@ -177,7 +200,8 @@ export default function TermsOfServicePage() {
                 Butuh penyesuaian khusus atau NDA?
               </h3>
               <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed">
-                Kami siap mendiskusikan perjanjian kerja sama atau syarat kerahasiaan sebelum proyek dimulai.
+                Kami siap mendiskusikan perjanjian kerja sama atau syarat kerahasiaan sebelum proyek
+                dimulai.
               </p>
             </div>
 
@@ -200,7 +224,6 @@ export default function TermsOfServicePage() {
               </Link>
             </div>
           </aside>
-
         </div>
       </div>
 

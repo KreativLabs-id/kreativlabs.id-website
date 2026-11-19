@@ -43,82 +43,86 @@
   --animate-aurora: aurora 60s linear infinite;
   @keyframes aurora {
     from {
-      background-position: 50% 50%, 50% 50%;
+      background-position:
+        50% 50%,
+        50% 50%;
     }
     to {
-      background-position: 350% 50%, 350% 50%;
+      background-position:
+        350% 50%,
+        350% 50%;
     }
   }
-  --animate-spin: spin 2s linear infinite
+  --animate-spin: spin 2s linear infinite;
 }
 
 :root {
   --radius: 0.625rem;
-  --background: #FFFFFF;
-  --foreground: #2F4E60;
-  --card: #F8FAFB;
-  --card-foreground: #2F4E60;
-  --popover: #FFFFFF;
-  --popover-foreground: #2F4E60;
-  --primary: #6995AD;
-  --primary-foreground: #FFFFFF;
-  --secondary: #EEF3F6;
-  --secondary-foreground: #2F4E60;
-  --muted: #F1F5F7;
-  --muted-foreground: #6995AD;
-  --accent: #6995AD;
-  --accent-foreground: #FFFFFF;
-  --destructive: #EF4444;
-  --border: #D5DEE3;
-  --input: #D5DEE3;
-  --ring: #6995AD;
+  --background: #ffffff;
+  --foreground: #2f4e60;
+  --card: #f8fafb;
+  --card-foreground: #2f4e60;
+  --popover: #ffffff;
+  --popover-foreground: #2f4e60;
+  --primary: #6995ad;
+  --primary-foreground: #ffffff;
+  --secondary: #eef3f6;
+  --secondary-foreground: #2f4e60;
+  --muted: #f1f5f7;
+  --muted-foreground: #6995ad;
+  --accent: #6995ad;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --border: #d5dee3;
+  --input: #d5dee3;
+  --ring: #6995ad;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: #FFFFFF;
-  --sidebar-foreground: #2F4E60;
-  --sidebar-primary: #6995AD;
-  --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #EEF3F6;
-  --sidebar-accent-foreground: #2F4E60;
-  --sidebar-border: #D5DEE3;
-  --sidebar-ring: #6995AD;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #2f4e60;
+  --sidebar-primary: #6995ad;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #eef3f6;
+  --sidebar-accent-foreground: #2f4e60;
+  --sidebar-border: #d5dee3;
+  --sidebar-ring: #6995ad;
 }
 
 .dark {
-  --background: #0A192F;
-  --foreground: #FFFFFF;
-  --card: #0F1E37;
-  --card-foreground: #FFFFFF;
-  --popover: #0F1E37;
-  --popover-foreground: #FFFFFF;
-  --primary: #3B82F6;
-  --primary-foreground: #FFFFFF;
-  --secondary: #14233C;
-  --secondary-foreground: #FFFFFF;
-  --muted: #14233C;
-  --muted-foreground: #94A3B8;
-  --accent: #3B82F6;
-  --accent-foreground: #FFFFFF;
-  --destructive: #EF4444;
+  --background: #0a192f;
+  --foreground: #ffffff;
+  --card: #0f1e37;
+  --card-foreground: #ffffff;
+  --popover: #0f1e37;
+  --popover-foreground: #ffffff;
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  --secondary: #14233c;
+  --secondary-foreground: #ffffff;
+  --muted: #14233c;
+  --muted-foreground: #94a3b8;
+  --accent: #3b82f6;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
   --border: rgba(255, 255, 255, 0.1);
   --input: rgba(255, 255, 255, 0.1);
-  --ring: #3B82F6;
+  --ring: #3b82f6;
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: #0A192F;
-  --sidebar-foreground: #FFFFFF;
-  --sidebar-primary: #3B82F6;
-  --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #14233C;
-  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar: #0a192f;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #3b82f6;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #14233c;
+  --sidebar-accent-foreground: #ffffff;
   --sidebar-border: rgba(255, 255, 255, 0.1);
-  --sidebar-ring: #3B82F6;
+  --sidebar-ring: #3b82f6;
 }
 
 @layer base {
@@ -216,7 +220,8 @@
   }
 
   /* Lenis Recommended Styles */
-  html.lenis, html.lenis body {
+  html.lenis,
+  html.lenis body {
     height: auto;
   }
 
@@ -260,7 +265,8 @@
   /* Aurora Animations - Optimized for better performance */
   /* Using transform and opacity for GPU acceleration */
   @keyframes aurora-1 {
-    0%, 100% {
+    0%,
+    100% {
       transform: translate3d(0, 0, 0) scale(1);
       opacity: 0.3;
     }
@@ -271,7 +277,8 @@
   }
 
   @keyframes aurora-2 {
-    0%, 100% {
+    0%,
+    100% {
       transform: translate3d(0, 0, 0) scale(1);
       opacity: 0.25;
     }
@@ -282,7 +289,8 @@
   }
 
   @keyframes aurora-3 {
-    0%, 100% {
+    0%,
+    100% {
       transform: translate3d(0, 0, 0) scale(1);
       opacity: 0.2;
     }
@@ -293,7 +301,8 @@
   }
 
   @keyframes aurora-4 {
-    0%, 100% {
+    0%,
+    100% {
       transform: translate3d(0, 0, 0) scale(1);
       opacity: 0.25;
     }
@@ -304,7 +313,8 @@
   }
 
   @keyframes float-slow {
-    0%, 100% {
+    0%,
+    100% {
       transform: translateY(0) translateX(0);
       opacity: 0.3;
     }
@@ -315,7 +325,8 @@
   }
 
   @keyframes float-medium {
-    0%, 100% {
+    0%,
+    100% {
       transform: translateY(0) translateX(0);
       opacity: 0.4;
     }
@@ -326,7 +337,8 @@
   }
 
   @keyframes float-fast {
-    0%, 100% {
+    0%,
+    100% {
       transform: translateY(0) translateX(0);
       opacity: 0.5;
     }

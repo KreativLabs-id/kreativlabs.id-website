@@ -1,14 +1,6 @@
 "use client";
 
-import { 
-  LayoutTemplate, 
-  Globe, 
-  Cpu, 
-  Palette, 
-  Instagram, 
-  PenTool, 
-  ArrowRight
-} from "lucide-react";
+import { LayoutTemplate, Globe, Cpu, Palette, Instagram, PenTool, ArrowRight } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import FadeInStagger from "@/components/FadeInStagger";
 import Link from "next/link";
@@ -18,15 +10,16 @@ const servicesEN = [
   {
     icon: LayoutTemplate,
     title: "Landing Page",
-    description: "A single page for your product or promotion, with a WhatsApp button so customers can get in touch.",
+    description:
+      "A single page for your product or promotion, with a WhatsApp button so customers can get in touch.",
     points: [
       "Responsive design across all devices",
       "Fast load speed & Google SEO ready",
       "Direct WhatsApp call-to-action button",
-      "Ready-to-use domain and hosting setup"
+      "Ready-to-use domain and hosting setup",
     ],
     detailHref: "/services/website",
-    waMessage: "Hello KreativLabs, I would like to inquire about Landing Page services."
+    waMessage: "Hello KreativLabs, I would like to inquire about Landing Page services.",
   },
   {
     icon: Globe,
@@ -36,49 +29,53 @@ const servicesEN = [
       "Complete pages (About, Services, Contact)",
       "Clean, modern, and readable layout",
       "Integrated contact forms and Google Maps",
-      "Easy content updates and management"
+      "Easy content updates and management",
     ],
     detailHref: "/services/website",
-    waMessage: "Hello KreativLabs, I would like to inquire about Business / Company Website development."
+    waMessage:
+      "Hello KreativLabs, I would like to inquire about Business / Company Website development.",
   },
   {
     icon: Cpu,
     title: "Custom Website",
-    description: "Need something specific? We can build a web app around your workflow, such as a POS system or an internal portal.",
+    description:
+      "Need something specific? We can build a web app around your workflow, such as a POS system or an internal portal.",
     points: [
       "Custom features built to your requirements",
       "Database management & admin dashboard",
       "Payment gateway & API integrations",
-      "Secure, stable, and reliable performance"
+      "Secure, stable, and reliable performance",
     ],
     detailHref: "/services/website",
-    waMessage: "Hello KreativLabs, I would like to discuss a Custom Website project."
+    waMessage: "Hello KreativLabs, I would like to discuss a Custom Website project.",
   },
   {
     icon: Palette,
     title: "Logo Design",
-    description: "A logo made for your business, with master files ready for digital use and print.",
+    description:
+      "A logo made for your business, with master files ready for digital use and print.",
     points: [
       "Original concepts tailored to your brand",
       "Full vector master files (AI, SVG, PNG)",
       "Color palette and typography guide",
-      "Revisions included to ensure satisfaction"
+      "Revisions included to ensure satisfaction",
     ],
     detailHref: "/services/design",
-    waMessage: "Hello KreativLabs, I would like to order Logo Design services."
+    waMessage: "Hello KreativLabs, I would like to order Logo Design services.",
   },
   {
     icon: Instagram,
     title: "Social Media Design",
-    description: "Need designs for your feed, stories, or banners? We can help you put them together.",
+    description:
+      "Need designs for your feed, stories, or banners? We can help you put them together.",
     points: [
       "Structured feed and carousel posts",
       "Promotional story templates",
       "Digital ad campaign banners",
-      "High-resolution ready-to-post files"
+      "High-resolution ready-to-post files",
     ],
     detailHref: "/services/design",
-    waMessage: "Hello KreativLabs, I would like to order Social Media Design services."
+    waMessage: "Hello KreativLabs, I would like to order Social Media Design services.",
   },
   /* UI/UX Design - Temporarily disabled
   {
@@ -99,9 +96,11 @@ const servicesEN = [
 
 export default function ServicesEN() {
   return (
-    <section id="services" className="relative py-16 md:py-20 bg-background overflow-hidden w-full scroll-mt-24">
+    <section
+      id="services"
+      className="relative py-16 md:py-20 bg-background overflow-hidden w-full scroll-mt-24"
+    >
       <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-6xl">
-        
         {/* Section Header */}
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-12">
@@ -152,8 +151,8 @@ export default function ServicesEN() {
 
                   {/* Footer Action */}
                   <div className="pt-4 border-t border-border/60 flex items-center justify-between text-xs mt-auto">
-                    <Link 
-                      href={service.detailHref} 
+                    <Link
+                      href={service.detailHref}
                       className="text-foreground/60 hover:text-foreground font-medium transition-colors"
                     >
                       View details
@@ -191,7 +190,6 @@ export default function ServicesEN() {
             </a>
           </div>
         </AnimatedSection>
-
       </div>
     </section>
   );

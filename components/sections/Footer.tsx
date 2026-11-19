@@ -10,14 +10,24 @@ import FooterWordmark from "@/components/FooterWordmark";
 
 // TikTok Icon Component
 const TikTokIcon = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
   </svg>
 );
 
 // Threads Icon Component
 const ThreadsIcon = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path d="M18.263 11.097c-.03-3.486-1.92-5.586-5.111-5.586-2.13 0-3.922.963-4.863 2.499l2.062 1.438c.535-.843 1.272-1.543 2.628-1.543 1.528 0 2.318.85 2.544 2.431a15 15 0 0 0-2.236-.173c-4.125 0-6.068 1.867-6.068 4.336s1.943 3.99 4.804 3.99c3.139 0 5.013-2.115 5.781-4.735.798.361 1.348 1.204 1.348 2.47 0 3.387-3.907 5.232-7.22 5.232-4.885 0-8.077-3.207-8.077-8.424 0-6.392 4.223-10.487 9.9-10.487 3.808 0 5.69 1.671 6.97 3.914l2.108-1.475C21.44 2.078 18.331 0 13.663 0 6.227 0 1.168 5.277 1.168 12.934c0 7 4.953 11.066 10.856 11.066 4.878 0 9.809-2.846 9.809-7.716 0-2.545-1.46-4.231-3.569-5.187m-6.33 4.855c-1.077 0-2.026-.512-2.026-1.453 0-1.483 1.822-1.934 3.606-1.934.678 0 1.34.045 1.927.173-.422 1.927-1.671 3.215-3.508 3.214Z" />
   </svg>
 );
@@ -57,7 +67,7 @@ const socialLinks = [
     icon: Mail,
     href: "mailto:hello@kreativlabs.id",
     label: "Email",
-  }
+  },
 ];
 
 const footerColumns = [
@@ -96,7 +106,8 @@ const footerColumns = [
 export default function Footer() {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme } = useTheme();
-  const logoSrc = mounted && resolvedTheme === "light" ? "/logokreativlabsterang.png" : "/logokreativ.png";
+  const logoSrc =
+    mounted && resolvedTheme === "light" ? "/logokreativlabsterang.png" : "/logokreativ.png";
 
   useEffect(() => {
     setMounted(true);
@@ -106,98 +117,95 @@ export default function Footer() {
     <footer className="w-full overflow-hidden rounded-t-[32px] bg-secondary/60 sm:rounded-t-[48px]">
       <div className="relative w-full overflow-hidden px-4 pt-6 sm:px-8 sm:pt-10">
         <div className="relative z-10 mx-auto w-full max-w-6xl rounded-3xl border border-border/70 bg-background p-6 sm:p-10 lg:p-12">
-
-        {/* Main Grid */}
-        <div className="grid gap-10 pb-12 sm:grid-cols-2 lg:grid-cols-6">
-
-          {/* Brand & Bio (2 Columns) */}
-          <div className="lg:col-span-3 space-y-4">
-            <div className="mb-4">
-              <Image
-                src={logoSrc}
-                alt="KreativLabs.id"
-                width={150}
-                height={50}
-                className="h-12 w-auto"
-              />
-            </div>
-
-            <p className="max-w-sm text-xs sm:text-sm text-foreground/70 leading-relaxed">
-              Bikin website, desain, dan hal-hal digital lainnya. Yuk, ceritakan apa yang sedang kamu rencanakan.
-            </p>
-
-            {/* Social Icons */}
-            <div className="flex items-center gap-2.5 pt-2 flex-wrap">
-              {socialLinks.map((social, index) => {
-                const Icon = social.icon;
-                return (
-                  <a
-                    key={index}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-9 h-9 rounded-xl bg-secondary hover:bg-primary/15 border border-border/80 hover:border-primary/40 flex items-center justify-center transition-all group"
-                    aria-label={social.label}
-                  >
-                    <Icon className="w-4 h-4 text-foreground/70 group-hover:text-primary transition-colors" />
-                  </a>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Nav Columns (3 Columns) */}
-          <nav className="grid grid-cols-2 sm:grid-cols-3 gap-8 lg:col-span-3">
-            {footerColumns.map((col) => (
-              <div key={col.title}>
-                <h4 className="text-xs font-bold uppercase tracking-wider text-foreground mb-4">
-                  {col.title}
-                </h4>
-                <ul className="flex flex-col gap-2.5 text-xs sm:text-sm">
-                  {col.links.map((link) => (
-                    <li key={link.name}>
-                      {link.href.startsWith("#") ? (
-                        <a
-                          href={link.href}
-                          className="text-foreground/70 hover:text-primary transition-colors"
-                        >
-                          {link.name}
-                        </a>
-                      ) : (
-                        <Link
-                          href={link.href}
-                          className="text-foreground/70 hover:text-primary transition-colors"
-                        >
-                          {link.name}
-                        </Link>
-                      )}
-                    </li>
-                  ))}
-                </ul>
+          {/* Main Grid */}
+          <div className="grid gap-10 pb-12 sm:grid-cols-2 lg:grid-cols-6">
+            {/* Brand & Bio (2 Columns) */}
+            <div className="lg:col-span-3 space-y-4">
+              <div className="mb-4">
+                <Image
+                  src={logoSrc}
+                  alt="KreativLabs.id"
+                  width={150}
+                  height={50}
+                  className="h-12 w-auto"
+                />
               </div>
-            ))}
-          </nav>
 
-        </div>
+              <p className="max-w-sm text-xs sm:text-sm text-foreground/70 leading-relaxed">
+                Bikin website, desain, dan hal-hal digital lainnya. Yuk, ceritakan apa yang sedang
+                kamu rencanakan.
+              </p>
 
-        {/* Bottom Bar */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-border/60 pt-6 text-xs text-foreground/60">
-          <div>
-            © {new Date().getFullYear()} KreativLabs.id. Hak cipta dilindungi undang-undang.
+              {/* Social Icons */}
+              <div className="flex items-center gap-2.5 pt-2 flex-wrap">
+                {socialLinks.map((social, index) => {
+                  const Icon = social.icon;
+                  return (
+                    <a
+                      key={index}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-9 h-9 rounded-xl bg-secondary hover:bg-primary/15 border border-border/80 hover:border-primary/40 flex items-center justify-center transition-all group"
+                      aria-label={social.label}
+                    >
+                      <Icon className="w-4 h-4 text-foreground/70 group-hover:text-primary transition-colors" />
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Nav Columns (3 Columns) */}
+            <nav className="grid grid-cols-2 sm:grid-cols-3 gap-8 lg:col-span-3">
+              {footerColumns.map((col) => (
+                <div key={col.title}>
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-foreground mb-4">
+                    {col.title}
+                  </h4>
+                  <ul className="flex flex-col gap-2.5 text-xs sm:text-sm">
+                    {col.links.map((link) => (
+                      <li key={link.name}>
+                        {link.href.startsWith("#") ? (
+                          <a
+                            href={link.href}
+                            className="text-foreground/70 hover:text-primary transition-colors"
+                          >
+                            {link.name}
+                          </a>
+                        ) : (
+                          <Link
+                            href={link.href}
+                            className="text-foreground/70 hover:text-primary transition-colors"
+                          >
+                            {link.name}
+                          </Link>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </nav>
           </div>
 
-          <div className="flex items-center gap-3">
-            <ThemeToggle />
-            <Link
-              href="/en"
-              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-foreground/70 hover:text-primary transition-colors rounded-lg bg-secondary border border-border"
-            >
-              <Globe className="w-3.5 h-3.5" />
-              <span>English (EN)</span>
-            </Link>
-          </div>
-        </div>
+          {/* Bottom Bar */}
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-border/60 pt-6 text-xs text-foreground/60">
+            <div>
+              © {new Date().getFullYear()} KreativLabs.id. Hak cipta dilindungi undang-undang.
+            </div>
 
+            <div className="flex items-center gap-3">
+              <ThemeToggle />
+              <Link
+                href="/en"
+                className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-foreground/70 hover:text-primary transition-colors rounded-lg bg-secondary border border-border"
+              >
+                <Globe className="w-3.5 h-3.5" />
+                <span>English (EN)</span>
+              </Link>
+            </div>
+          </div>
         </div>
         <FooterWordmark />
       </div>

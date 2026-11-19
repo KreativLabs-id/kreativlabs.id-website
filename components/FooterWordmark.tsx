@@ -13,8 +13,15 @@ export default function FooterWordmark() {
   const y = useTransform(scrollYProgress, [0, 1], [36, 0]);
 
   return (
-    <div ref={ref} aria-hidden="true" className="pointer-events-none overflow-hidden px-2 pt-6 text-center sm:pt-10">
-      <motion.div style={{ y: reducedMotion ? 0 : y }} className="select-none whitespace-nowrap text-[clamp(3.5rem,12vw,12rem)] font-extrabold leading-[0.7] tracking-[-0.07em] text-primary/10">
+    <div
+      ref={ref}
+      aria-hidden="true"
+      className="pointer-events-none overflow-hidden px-2 pt-6 text-center sm:pt-10"
+    >
+      <motion.div
+        style={{ y: reducedMotion ? 0 : y }}
+        className="select-none whitespace-nowrap text-[clamp(3.5rem,12vw,12rem)] font-extrabold leading-[0.7] tracking-[-0.07em] text-primary/10"
+      >
         KreativLabs
       </motion.div>
     </div>

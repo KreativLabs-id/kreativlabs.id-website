@@ -35,9 +35,9 @@ const pricingPlans: PricingPlan[] = [
       "Tombol WhatsApp langsung",
       "Domain & hosting siap pakai",
       "2x Revisi desain",
-      "Garansi & panduan penggunaan"
+      "Garansi & panduan penggunaan",
     ],
-    waMessage: "Halo KreativLabs, saya ingin pesan paket Landing Page (Rp 99rb)."
+    waMessage: "Halo KreativLabs, saya ingin pesan paket Landing Page (Rp 99rb).",
   },
   {
     id: "fullstack-website",
@@ -54,9 +54,9 @@ const pricingPlans: PricingPlan[] = [
       "Database terintegrasi & aman",
       "Formulir kontak & Google Maps",
       "Optimasi SEO On-Page",
-      "3x Revisi + Support 2 bulan"
+      "3x Revisi + Support 2 bulan",
     ],
-    waMessage: "Halo KreativLabs, saya ingin pesan paket Website Bisnis & Profil (Rp 469rb)."
+    waMessage: "Halo KreativLabs, saya ingin pesan paket Website Bisnis & Profil (Rp 469rb).",
   },
   {
     id: "custom-website",
@@ -72,9 +72,9 @@ const pricingPlans: PricingPlan[] = [
       "Multi-role user & keamanan teruji",
       "Setup domain .com & cloud hosting",
       "Dokumentasi sistem & pelatihan",
-      "Support & maintenance prioritas 3 bulan"
+      "Support & maintenance prioritas 3 bulan",
     ],
-    waMessage: "Halo KreativLabs, saya ingin konsultasi paket Website Custom."
+    waMessage: "Halo KreativLabs, saya ingin konsultasi paket Website Custom.",
   },
   {
     id: "design-logo",
@@ -90,9 +90,9 @@ const pricingPlans: PricingPlan[] = [
       "File siap pakai (PNG transparan, JPG High-Res)",
       "Panduan warna & font brand",
       "3x Revisi desain",
-      "100% Hak cipta milik klien"
+      "100% Hak cipta milik klien",
     ],
-    waMessage: "Halo KreativLabs, saya ingin pesan paket Desain Logo (Mulai 50rb)."
+    waMessage: "Halo KreativLabs, saya ingin pesan paket Desain Logo (Mulai 50rb).",
   },
   {
     id: "social-media",
@@ -108,9 +108,9 @@ const pricingPlans: PricingPlan[] = [
       "Konsistensi visual & warna brand",
       "File master editable (Canva / PSD / AI)",
       "2x Revisi desain",
-      "Pengerjaan cepat 2-3 hari"
+      "Pengerjaan cepat 2-3 hari",
     ],
-    waMessage: "Halo KreativLabs, saya ingin pesan paket Desain Social Media (Rp 150rb)."
+    waMessage: "Halo KreativLabs, saya ingin pesan paket Desain Social Media (Rp 150rb).",
   },
   /* UI/UX Design - Dinonaktifkan sementara
   {
@@ -142,9 +142,11 @@ export default function Pricing() {
   );
 
   return (
-    <section id="pricing" className="relative py-16 md:py-20 bg-background overflow-hidden w-full scroll-mt-24">
+    <section
+      id="pricing"
+      className="relative py-16 md:py-20 bg-background overflow-hidden w-full scroll-mt-24"
+    >
       <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-6xl">
-
         {/* Section Header */}
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-10 sm:mb-12">
@@ -152,7 +154,8 @@ export default function Pricing() {
               Pilih paket yang <span className="text-primary">pas buatmu</span>
             </h2>
             <p className="text-foreground/70 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-              Cek harga dan isi setiap paket di sini. Kalau belum yakin harus pilih yang mana, tanya kami saja.
+              Cek harga dan isi setiap paket di sini. Kalau belum yakin harus pilih yang mana, tanya
+              kami saja.
             </p>
 
             {/* Filter Tabs */}
@@ -160,30 +163,33 @@ export default function Pricing() {
               <button
                 type="button"
                 onClick={() => setActiveCategory("all")}
-                className={`px-3.5 sm:px-4 py-1.5 rounded-md text-xs sm:text-sm font-medium transition-all duration-200 ${activeCategory === "all"
+                className={`px-3.5 sm:px-4 py-1.5 rounded-md text-xs sm:text-sm font-medium transition-all duration-200 ${
+                  activeCategory === "all"
                     ? "bg-card text-foreground shadow-xs font-semibold"
                     : "text-muted-foreground hover:text-foreground"
-                  }`}
+                }`}
               >
                 Semua Paket ({pricingPlans.length})
               </button>
               <button
                 type="button"
                 onClick={() => setActiveCategory("website")}
-                className={`px-3.5 sm:px-4 py-1.5 rounded-md text-xs sm:text-sm font-medium transition-all duration-200 ${activeCategory === "website"
+                className={`px-3.5 sm:px-4 py-1.5 rounded-md text-xs sm:text-sm font-medium transition-all duration-200 ${
+                  activeCategory === "website"
                     ? "bg-card text-foreground shadow-xs font-semibold"
                     : "text-muted-foreground hover:text-foreground"
-                  }`}
+                }`}
               >
                 Paket Website
               </button>
               <button
                 type="button"
                 onClick={() => setActiveCategory("design")}
-                className={`px-3.5 sm:px-4 py-1.5 rounded-md text-xs sm:text-sm font-medium transition-all duration-200 ${activeCategory === "design"
+                className={`px-3.5 sm:px-4 py-1.5 rounded-md text-xs sm:text-sm font-medium transition-all duration-200 ${
+                  activeCategory === "design"
                     ? "bg-card text-foreground shadow-xs font-semibold"
                     : "text-muted-foreground hover:text-foreground"
-                  }`}
+                }`}
               >
                 Paket Desain Grafis
               </button>
@@ -199,18 +205,17 @@ export default function Pricing() {
             return (
               <FadeInStagger key={plan.id} index={index} delay={40}>
                 <div
-                  className={`h-full flex flex-col justify-between rounded-2xl p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md ${plan.popular
+                  className={`h-full flex flex-col justify-between rounded-2xl p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md ${
+                    plan.popular
                       ? "bg-card border-2 border-primary shadow-sm relative"
                       : "bg-card border border-border/80 hover:border-primary/50"
-                    }`}
+                  }`}
                 >
                   <div>
                     {/* Header: Title & Badge */}
                     <div className="flex items-start justify-between gap-2 mb-3">
                       <div>
-                        <h3 className="text-lg font-bold text-foreground">
-                          {plan.name}
-                        </h3>
+                        <h3 className="text-lg font-bold text-foreground">{plan.name}</h3>
                         <p className="text-foreground/60 text-xs mt-1 leading-relaxed">
                           {plan.description}
                         </p>
@@ -218,10 +223,11 @@ export default function Pricing() {
 
                       {plan.badge && (
                         <span
-                          className={`text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-md shrink-0 ${plan.popular
+                          className={`text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-md shrink-0 ${
+                            plan.popular
                               ? "bg-primary text-primary-foreground font-bold"
                               : "bg-secondary text-foreground/80 border border-border"
-                            }`}
+                          }`}
                         >
                           {plan.badge}
                         </span>
@@ -257,10 +263,11 @@ export default function Pricing() {
                   <div className="pt-4 mt-auto">
                     <Button
                       asChild
-                      className={`w-full py-5 rounded-xl text-xs sm:text-sm font-semibold transition-all ${plan.popular
+                      className={`w-full py-5 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
+                        plan.popular
                           ? "bg-primary hover:bg-primary/90 text-primary-foreground shadow-sm"
                           : "bg-secondary hover:bg-primary hover:text-primary-foreground text-foreground border border-border"
-                        }`}
+                      }`}
                     >
                       <a
                         href={waUrl}
@@ -305,7 +312,6 @@ export default function Pricing() {
             </div>
           </div>
         </AnimatedSection>
-
       </div>
     </section>
   );

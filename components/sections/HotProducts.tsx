@@ -18,9 +18,11 @@ export default function HotProducts() {
   const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Halo KreativLabs, saya tertarik untuk melihat demo Aplikasi Kasir Web.")}`;
 
   return (
-    <section id="hot-products" className="relative py-16 md:py-20 bg-background overflow-hidden w-full scroll-mt-24">
+    <section
+      id="hot-products"
+      className="relative py-16 md:py-20 bg-background overflow-hidden w-full scroll-mt-24"
+    >
       <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-5xl">
-        
         {/* Section Header */}
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-10 sm:mb-12">
@@ -28,7 +30,8 @@ export default function HotProducts() {
               Produk <span className="text-primary">Unggulan</span>
             </h2>
             <p className="text-foreground/70 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
-              Kenalan dengan aplikasi kasir yang membantu kamu mencatat penjualan dan mengurus stok sehari-hari.
+              Kenalan dengan aplikasi kasir yang membantu kamu mencatat penjualan dan mengurus stok
+              sehari-hari.
             </p>
           </div>
         </AnimatedSection>
@@ -37,7 +40,6 @@ export default function HotProducts() {
         <FadeInStagger index={0} delay={60}>
           <div className="bg-card border border-border/80 hover:border-primary/50 rounded-2xl p-6 sm:p-8 transition-all duration-200 hover:shadow-md">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              
               {/* Product Preview Image (Left) */}
               <div className="lg:col-span-6">
                 <div className="relative aspect-4/3 w-full rounded-xl overflow-hidden border border-border/80 bg-secondary/30">
@@ -64,13 +66,17 @@ export default function HotProducts() {
                   </h3>
 
                   <p className="text-foreground/70 text-xs sm:text-sm leading-relaxed mb-6">
-                    Punya usaha kuliner atau toko? Tip Top membantu mencatat transaksi harian lewat browser, tanpa instalasi yang rumit.
+                    Punya usaha kuliner atau toko? Tip Top membantu mencatat transaksi harian lewat
+                    browser, tanpa instalasi yang rumit.
                   </p>
 
                   {/* Feature Checklist */}
                   <ul className="space-y-2.5 mb-8">
                     {features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-foreground/80">
+                      <li
+                        key={idx}
+                        className="flex items-start gap-2.5 text-xs sm:text-sm text-foreground/80"
+                      >
                         <div className="w-4 h-4 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5">
                           <Check className="w-2.5 h-2.5 stroke-[3]" />
                         </div>
@@ -98,13 +104,10 @@ export default function HotProducts() {
                     Coba Demo Kasir
                   </a>
                 </div>
-
               </div>
-
             </div>
           </div>
         </FadeInStagger>
-
       </div>
     </section>
   );

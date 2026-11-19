@@ -1,14 +1,6 @@
 "use client";
 
-import {
-  LayoutTemplate,
-  Globe,
-  Cpu,
-  Palette,
-  Instagram,
-  PenTool,
-  ArrowRight
-} from "lucide-react";
+import { LayoutTemplate, Globe, Cpu, Palette, Instagram, PenTool, ArrowRight } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import FadeInStagger from "@/components/FadeInStagger";
 import Link from "next/link";
@@ -18,67 +10,73 @@ const services = [
   {
     icon: LayoutTemplate,
     title: "Landing Page",
-    description: "Satu halaman untuk mengenalkan produk atau promosi, lengkap dengan tombol WhatsApp agar calon pelanggan mudah menghubungi kamu.",
+    description:
+      "Satu halaman untuk mengenalkan produk atau promosi, lengkap dengan tombol WhatsApp agar calon pelanggan mudah menghubungi kamu.",
     points: [
       "Tampilan responsif di HP & desktop",
       "Loading cepat & ramah SEO Google",
       "Tombol WhatsApp langsung",
-      "Domain & hosting siap pakai"
+      "Domain & hosting siap pakai",
     ],
     detailHref: "/services/website",
-    waMessage: "Halo KreativLabs, saya ingin tanya-tanya tentang jasa pembuatan Landing Page."
+    waMessage: "Halo KreativLabs, saya ingin tanya-tanya tentang jasa pembuatan Landing Page.",
   },
   {
     icon: Globe,
     title: "Website Profil & Bisnis",
-    description: "Tempat untuk bercerita tentang bisnis, layanan, dan karya kamu dalam satu website.",
+    description:
+      "Tempat untuk bercerita tentang bisnis, layanan, dan karya kamu dalam satu website.",
     points: [
       "Halaman lengkap (Tentang, Layanan, Kontak)",
       "Desain profesional & mudah dibaca",
       "Integrasi formulir kontak & maps",
-      "Bisa update konten sendiri"
+      "Bisa update konten sendiri",
     ],
     detailHref: "/services/website",
-    waMessage: "Halo KreativLabs, saya ingin tanya-tanya tentang jasa pembuatan Website Profil / Bisnis."
+    waMessage:
+      "Halo KreativLabs, saya ingin tanya-tanya tentang jasa pembuatan Website Profil / Bisnis.",
   },
   {
     icon: Cpu,
     title: "Website Custom",
-    description: "Butuh fitur khusus? Kita bisa buat website sesuai alur kerja bisnismu, seperti sistem kasir, booking, atau portal internal.",
+    description:
+      "Butuh fitur khusus? Kita bisa buat website sesuai alur kerja bisnismu, seperti sistem kasir, booking, atau portal internal.",
     points: [
       "Fitur dibuat sesuai kebutuhan",
       "Database & dashboard admin",
       "Bisa integrasi sistem pembayaran / API",
-      "Performa aman & stabil"
+      "Performa aman & stabil",
     ],
     detailHref: "/services/website",
-    waMessage: "Halo KreativLabs, saya ingin konsultasi pembuatan Website Custom."
+    waMessage: "Halo KreativLabs, saya ingin konsultasi pembuatan Website Custom.",
   },
   {
     icon: Palette,
     title: "Desain Logo",
-    description: "Logo yang dibuat untuk karakter bisnismu, lengkap dengan file master untuk kebutuhan digital dan cetak.",
+    description:
+      "Logo yang dibuat untuk karakter bisnismu, lengkap dengan file master untuk kebutuhan digital dan cetak.",
     points: [
       "Konsep original & tidak pasaran",
       "File master lengkap (AI, SVG, PNG)",
       "Panduan warna & jenis font",
-      "Revisi sesuai paket yang dipilih"
+      "Revisi sesuai paket yang dipilih",
     ],
     detailHref: "/services/design",
-    waMessage: "Halo KreativLabs, saya ingin pesan jasa Desain Logo."
+    waMessage: "Halo KreativLabs, saya ingin pesan jasa Desain Logo.",
   },
   {
     icon: Instagram,
     title: "Desain Social Media",
-    description: "Butuh desain untuk feed, story, atau banner? Kami bantu siapkan konten yang rapi dan cocok dengan bisnismu.",
+    description:
+      "Butuh desain untuk feed, story, atau banner? Kami bantu siapkan konten yang rapi dan cocok dengan bisnismu.",
     points: [
       "Desain feed & carousel terstruktur",
       "Template story promosi",
       "Banner iklan & diskon",
-      "File siap posting resolusi tinggi"
+      "File siap posting resolusi tinggi",
     ],
     detailHref: "/services/design",
-    waMessage: "Halo KreativLabs, saya ingin pesan jasa Desain Social Media."
+    waMessage: "Halo KreativLabs, saya ingin pesan jasa Desain Social Media.",
   },
   /* UI/UX Design - Dinonaktifkan sementara karena layanan sedang tidak tersedia
   {
@@ -99,9 +97,11 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="relative py-16 md:py-20 bg-background overflow-hidden w-full scroll-mt-24">
+    <section
+      id="services"
+      className="relative py-16 md:py-20 bg-background overflow-hidden w-full scroll-mt-24"
+    >
       <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-6xl">
-
         {/* Section Header */}
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-12">
@@ -109,7 +109,8 @@ export default function Services() {
               Ada yang bisa <span className="text-primary">kami bantu?</span>
             </h2>
             <p className="text-foreground/70 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-              Mulai dari website sampai desain, pilih yang kamu butuhkan atau ngobrol dulu kalau masih bingung.
+              Mulai dari website sampai desain, pilih yang kamu butuhkan atau ngobrol dulu kalau
+              masih bingung.
             </p>
           </div>
         </AnimatedSection>

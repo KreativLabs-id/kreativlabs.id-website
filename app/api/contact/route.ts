@@ -37,11 +37,7 @@ function isAllowedOrigin(request: NextRequest): boolean {
   const origin = request.headers.get("origin");
   const referer = request.headers.get("referer");
   const expectedOrigin = getSiteOrigin();
-  const defaultOrigins = [
-    expectedOrigin,
-    "https://kreativlabs.id",
-    "https://www.kreativlabs.id",
-  ];
+  const defaultOrigins = [expectedOrigin, "https://kreativlabs.id", "https://www.kreativlabs.id"];
   const additionalAllowed = (getEnvValue("ALLOWED_ORIGINS") || "")
     .split(",")
     .map((v) => v.trim())
@@ -88,10 +84,7 @@ function isRateLimited(ip: string): boolean {
 }
 
 function sanitizeInput(input: string): string {
-  return input
-    .replace(/[<>]/g, "")
-    .trim()
-    .substring(0, 1000);
+  return input.replace(/[<>]/g, "").trim().substring(0, 1000);
 }
 
 function validateEmail(email: string): boolean {
@@ -99,10 +92,7 @@ function validateEmail(email: string): boolean {
   return emailRegex.test(email) && email.length <= 254;
 }
 
-async function verifyTurnstileToken(
-  token: string,
-  ip: string
-): Promise<boolean> {
+async function verifyTurnstileToken(token: string, ip: string): Promise<boolean> {
   const secret = getEnvValue("TURNSTILE_SECRET_KEY");
   if (!secret) return true;
 
@@ -117,14 +107,11 @@ async function verifyTurnstileToken(
     }
     body.append("idempotency_key", crypto.randomUUID());
 
-    const response = await fetch(
-      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
-      {
-        method: "POST",
-        body,
-        signal: controller.signal,
-      }
-    );
+    const response = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+      method: "POST",
+      body,
+      signal: controller.signal,
+    });
     if (!response.ok) return false;
 
     const result = (await response.json()) as { success?: boolean };
@@ -139,10 +126,7 @@ async function verifyTurnstileToken(
 export async function POST(request: NextRequest) {
   try {
     if (!isAllowedOrigin(request)) {
-      return NextResponse.json(
-        { error: "Origin tidak diizinkan" },
-        { status: 403 }
-      );
+      return NextResponse.json({ error: "Origin tidak diizinkan" }, { status: 403 });
     }
 
     const ip = getClientIp(request);
@@ -158,46 +142,27 @@ export async function POST(request: NextRequest) {
     try {
       body = await request.json();
     } catch {
-      return NextResponse.json(
-        { error: "Format request tidak valid" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Format request tidak valid" }, { status: 400 });
     }
 
     if (!body || typeof body !== "object") {
-      return NextResponse.json(
-        { error: "Format request tidak valid" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Format request tidak valid" }, { status: 400 });
     }
 
     const { name, email, message, website, turnstileToken } = body as Record<string, unknown>;
 
     // Honeypot check
     if (typeof website === "string" && website.length > 0) {
-      return NextResponse.json(
-        { error: "Permintaan tidak valid" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Permintaan tidak valid" }, { status: 400 });
     }
 
     // Validation
-    if (
-      typeof name !== "string" ||
-      typeof email !== "string" ||
-      typeof message !== "string"
-    ) {
-      return NextResponse.json(
-        { error: "Semua field wajib diisi" },
-        { status: 400 }
-      );
+    if (typeof name !== "string" || typeof email !== "string" || typeof message !== "string") {
+      return NextResponse.json({ error: "Semua field wajib diisi" }, { status: 400 });
     }
 
     if (getEnvValue("TURNSTILE_SECRET_KEY") && typeof turnstileToken !== "string") {
-      return NextResponse.json(
-        { error: "Captcha wajib diisi" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Captcha wajib diisi" }, { status: 400 });
     }
 
     const sanitizedName = sanitizeInput(name);
@@ -205,95 +170,84 @@ export async function POST(request: NextRequest) {
     const sanitizedMessage = sanitizeInput(message);
 
     if (sanitizedName.length < 2 || sanitizedName.length > 100) {
-      return NextResponse.json(
-        { error: "Nama harus antara 2-100 karakter" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Nama harus antara 2-100 karakter" }, { status: 400 });
     }
 
     if (!validateEmail(sanitizedEmail)) {
-      return NextResponse.json(
-        { error: "Format email tidak valid" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Format email tidak valid" }, { status: 400 });
     }
 
     if (sanitizedMessage.length < 10 || sanitizedMessage.length > 1000) {
-      return NextResponse.json(
-        { error: "Pesan harus antara 10-1000 karakter" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Pesan harus antara 10-1000 karakter" }, { status: 400 });
     }
 
     if (getEnvValue("TURNSTILE_SECRET_KEY")) {
       if (typeof turnstileToken !== "string") {
-        return NextResponse.json(
-          { error: "Captcha wajib diisi" },
-          { status: 400 }
-        );
+        return NextResponse.json({ error: "Captcha wajib diisi" }, { status: 400 });
       }
 
       const captchaOk = await verifyTurnstileToken(turnstileToken, ip);
       if (!captchaOk) {
-        return NextResponse.json(
-          { error: "Verifikasi captcha gagal" },
-          { status: 400 }
-        );
+        return NextResponse.json({ error: "Verifikasi captcha gagal" }, { status: 400 });
       }
     }
 
     const serviceId = getEnvValue("EMAILJS_SERVICE_ID", "NEXT_PUBLIC_EMAILJS_SERVICE_ID");
     const templateId = getEnvValue("EMAILJS_TEMPLATE_ID", "NEXT_PUBLIC_EMAILJS_TEMPLATE_ID");
-    const publicKey = getEnvValue("EMAILJS_PUBLIC_KEY", "NEXT_PUBLIC_EMAILJS_PUBLIC_KEY", "EMAILJS_USER_ID");
+    const publicKey = getEnvValue(
+      "EMAILJS_PUBLIC_KEY",
+      "NEXT_PUBLIC_EMAILJS_PUBLIC_KEY",
+      "EMAILJS_USER_ID"
+    );
     const privateKey = getEnvValue("EMAILJS_PRIVATE_KEY", "EMAILJS_ACCESS_TOKEN");
 
     if (!serviceId || !templateId || !publicKey) {
       console.error("EmailJS configuration missing");
       return NextResponse.json(
-        { error: "Konfigurasi email belum lengkap. Silakan hubungi kami via WhatsApp atau email langsung." },
+        {
+          error:
+            "Konfigurasi email belum lengkap. Silakan hubungi kami via WhatsApp atau email langsung.",
+        },
         { status: 503 }
       );
     }
 
     // Send via EmailJS REST API directly
-    const response = await fetch(
-      `https://api.emailjs.com/api/v1.0/email/send`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Origin: getSiteOrigin(),
+    const response = await fetch(`https://api.emailjs.com/api/v1.0/email/send`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Origin: getSiteOrigin(),
+      },
+      body: JSON.stringify({
+        service_id: serviceId,
+        template_id: templateId,
+        user_id: publicKey,
+        ...(privateKey ? { accessToken: privateKey } : {}),
+        template_params: {
+          name: sanitizedName,
+          from_name: sanitizedName,
+          email: sanitizedEmail,
+          from_email: sanitizedEmail,
+          message: sanitizedMessage,
+          reply_to: sanitizedEmail,
         },
-        body: JSON.stringify({
-          service_id: serviceId,
-          template_id: templateId,
-          user_id: publicKey,
-          ...(privateKey ? { accessToken: privateKey } : {}),
-          template_params: {
-            name: sanitizedName,
-            from_name: sanitizedName,
-            email: sanitizedEmail,
-            from_email: sanitizedEmail,
-            message: sanitizedMessage,
-            reply_to: sanitizedEmail,
-          },
-        }),
-      }
-    );
+      }),
+    });
 
     if (!response.ok) {
       const errorText = await response.text();
       console.error("EmailJS API error:", errorText);
       return NextResponse.json(
-        { error: "Gagal mengirim pesan ke server email. Silakan hubungi kami via WhatsApp atau email langsung." },
+        {
+          error:
+            "Gagal mengirim pesan ke server email. Silakan hubungi kami via WhatsApp atau email langsung.",
+        },
         { status: 502 }
       );
     }
 
-    return NextResponse.json(
-      { success: true, message: "Pesan berhasil dikirim" },
-      { status: 200 }
-    );
+    return NextResponse.json({ success: true, message: "Pesan berhasil dikirim" }, { status: 200 });
   } catch (error) {
     console.error("Contact form error:", error);
     return NextResponse.json(

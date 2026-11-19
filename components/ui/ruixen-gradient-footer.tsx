@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  useId,
-  useState,
-  useEffect,
-  type CSSProperties,
-  type ReactNode,
-} from "react";
+import { useId, useState, useEffect, type CSSProperties, type ReactNode } from "react";
 import { useTheme } from "next-themes";
 
 type Stop = { offset: number; color: string };
@@ -84,25 +78,16 @@ export function RuixenGradientFooter({
   }, []);
 
   const isLight = !mounted || resolvedTheme === "light";
-  const themeKey = mounted ? (resolvedTheme || "light") : "light";
-  const activeStops = stops
-    ? stops
-    : isLight
-    ? KREATIVLABS_LIGHT_STOPS
-    : KREATIVLABS_DARK_STOPS;
+  const themeKey = mounted ? resolvedTheme || "light" : "light";
+  const activeStops = stops ? stops : isLight ? KREATIVLABS_LIGHT_STOPS : KREATIVLABS_DARK_STOPS;
 
   const gradId = `grad-${uid}-${themeKey}`;
   const blurId = `blur-${uid}-${themeKey}`;
 
   return (
-    <footer
-      className={`relative overflow-hidden ${className}`}
-      style={{ ...style }}
-    >
+    <footer className={`relative overflow-hidden ${className}`} style={{ ...style }}>
       {/* Footer Content at the top */}
-      <div className="relative z-10">
-        {children}
-      </div>
+      <div className="relative z-10">{children}</div>
 
       {/* Ambient Gradient Wave positioned neatly BELOW the footer content */}
       <div
@@ -126,13 +111,7 @@ export function RuixenGradientFooter({
                 <stop key={`${themeKey}-${i}`} offset={s.offset} stopColor={s.color} />
               ))}
             </linearGradient>
-            <filter
-              id={blurId}
-              x="-50%"
-              y="-50%"
-              width="200%"
-              height="200%"
-            >
+            <filter id={blurId} x="-50%" y="-50%" width="200%" height="200%">
               <feGaussianBlur stdDeviation={blur} />
             </filter>
           </defs>

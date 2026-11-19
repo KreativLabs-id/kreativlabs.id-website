@@ -12,8 +12,18 @@ import { blogPosts } from "@/data/blogs";
 
 function parseDateIndonesian(dateStr: string): Date {
   const months: { [key: string]: number } = {
-    "Januari": 0, "Februari": 1, "Maret": 2, "April": 3, "Mei": 4, "Juni": 5,
-    "Juli": 6, "Agustus": 7, "September": 8, "Oktober": 9, "November": 10, "Desember": 11
+    Januari: 0,
+    Februari: 1,
+    Maret: 2,
+    April: 3,
+    Mei: 4,
+    Juni: 5,
+    Juli: 6,
+    Agustus: 7,
+    September: 8,
+    Oktober: 9,
+    November: 10,
+    Desember: 11,
   };
   const parts = dateStr.split(" ");
   if (parts.length === 3) {
@@ -43,7 +53,8 @@ export default function BlogPageEN() {
                 Insights & <span className="text-primary">Digital Strategy</span>
               </h1>
               <p className="text-foreground/70 text-sm sm:text-base leading-relaxed">
-                Practical guides and actionable insights on web engineering, modern design, SEO, and business growth.
+                Practical guides and actionable insights on web engineering, modern design, SEO, and
+                business growth.
               </p>
             </div>
           </AnimatedSection>
@@ -53,14 +64,12 @@ export default function BlogPageEN() {
       {/* Blog Grid */}
       <section className="py-8 pb-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
-          
           {sortedPosts.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {sortedPosts.map((post, index) => (
                 <FadeInStagger key={post.id} index={index} delay={40}>
                   <Link href={`/en/blog/${post.slug}`} className="block h-full">
                     <div className="group h-full flex flex-col justify-between bg-card border border-border/80 hover:border-primary/50 rounded-2xl overflow-hidden transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
-                      
                       {/* Post Thumbnail */}
                       <div className="relative w-full aspect-16/10 bg-secondary overflow-hidden border-b border-border/50">
                         <Image
@@ -106,7 +115,6 @@ export default function BlogPageEN() {
                             <ArrowRight className="w-3 h-3" />
                           </span>
                         </div>
-
                       </div>
                     </div>
                   </Link>
@@ -126,9 +134,10 @@ export default function BlogPageEN() {
                 Looking to Build Your Next Web Project?
               </h2>
               <p className="text-xs sm:text-sm text-foreground/70 max-w-lg mx-auto leading-relaxed mb-6">
-                Discuss your business goals and custom technical requirements with the KreativLabs team.
+                Discuss your business goals and custom technical requirements with the KreativLabs
+                team.
               </p>
-              
+
               <Link
                 href="/en#contact"
                 className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-primary text-primary-foreground text-xs sm:text-sm font-semibold hover:bg-primary/90 transition-all hover:shadow-md hover:-translate-y-0.5"
@@ -137,7 +146,6 @@ export default function BlogPageEN() {
               </Link>
             </div>
           </AnimatedSection>
-
         </div>
       </section>
 

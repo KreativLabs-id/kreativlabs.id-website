@@ -23,7 +23,8 @@ export default function NavbarEN() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme } = useTheme();
-  const logoSrc = mounted && resolvedTheme === "light" ? "/logokreativlabsterang.png" : "/logokreativ.png";
+  const logoSrc =
+    mounted && resolvedTheme === "light" ? "/logokreativlabsterang.png" : "/logokreativ.png";
 
   useEffect(() => {
     setMounted(true);
@@ -80,7 +81,6 @@ export default function NavbarEN() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-18">
-          
           {/* Logo (Left) */}
           <Link href="/en" className="flex items-center shrink-0">
             <Image
@@ -97,8 +97,14 @@ export default function NavbarEN() {
           <nav className="hidden lg:flex items-center gap-3 xl:gap-6">
             {navLinksEN.map((link) => {
               const isExternal = link.href.startsWith("/");
-              const href = isExternal ? link.href : (pathname !== "/en" ? `/en/${link.href}` : link.href);
-              const isActive = activeSection === link.href || (link.href.startsWith("/") && pathname.startsWith(link.href));
+              const href = isExternal
+                ? link.href
+                : pathname !== "/en"
+                  ? `/en/${link.href}`
+                  : link.href;
+              const isActive =
+                activeSection === link.href ||
+                (link.href.startsWith("/") && pathname.startsWith(link.href));
 
               return (
                 <a
@@ -141,7 +147,6 @@ export default function NavbarEN() {
               {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
-
         </div>
       </div>
 
@@ -150,8 +155,14 @@ export default function NavbarEN() {
         <div className="lg:hidden border-b border-border/80 bg-background/98 backdrop-blur-xl shadow-lg px-4 sm:px-6 py-4 space-y-1">
           {navLinksEN.map((link) => {
             const isExternal = link.href.startsWith("/");
-            const href = isExternal ? link.href : (pathname !== "/en" ? `/en/${link.href}` : link.href);
-            const isActive = activeSection === link.href || (link.href.startsWith("/") && pathname.startsWith(link.href));
+            const href = isExternal
+              ? link.href
+              : pathname !== "/en"
+                ? `/en/${link.href}`
+                : link.href;
+            const isActive =
+              activeSection === link.href ||
+              (link.href.startsWith("/") && pathname.startsWith(link.href));
 
             return (
               <a

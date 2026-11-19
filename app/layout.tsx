@@ -14,10 +14,10 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.kreativlabs.id'),
+  metadataBase: new URL("https://www.kreativlabs.id"),
   title: {
     default: "Jasa Website Murah & Desain Grafis | KreativLabs.id - Mulai 50rb",
-    template: "%s | KreativLabs.id"
+    template: "%s | KreativLabs.id",
   },
   description:
     "Jasa pembuatan website murah & desain grafis profesional mulai 50rb. Landing page, company profile, toko online, desain logo, poster, social media. Kualitas premium, harga UMKM friendly!",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     "harga jasa pembuatan website",
     "jasa desain logo murah berkualitas",
     "paket website umkm murah",
-    "jasa website profesional murah"
+    "jasa website profesional murah",
   ],
   authors: [{ name: "KreativLabs.id", url: "https://www.kreativlabs.id" }],
   creator: "KreativLabs.id",
@@ -69,12 +69,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.png', type: 'image/png', sizes: '32x32' },
-      { url: '/favicon.ico', sizes: 'any' },
+      { url: "/favicon.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon.ico", sizes: "any" },
     ],
-    apple: [
-      { url: '/apple-icon', type: 'image/png', sizes: '180x180' },
-    ],
+    apple: [{ url: "/apple-icon", type: "image/png", sizes: "180x180" }],
   },
   openGraph: {
     title: "Jasa Website Murah & Desain Grafis | KreativLabs.id",
@@ -110,9 +108,9 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   category: "technology",
@@ -125,9 +123,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" className="overflow-x-hidden" suppressHydrationWarning>
-      <body
-        className={`${plusJakartaSans.variable} antialiased font-sans overflow-x-hidden`}
-      >
+      <body className={`${plusJakartaSans.variable} antialiased font-sans overflow-x-hidden`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

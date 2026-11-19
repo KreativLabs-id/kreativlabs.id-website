@@ -54,6 +54,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the website.
 ## 📝 Customization
 
 Untuk mengubah konten, edit file-file berikut:
+
 - `components/sections/Hero.tsx` - Hero section
 - `components/sections/Projects.tsx` - Projects section
 - `components/sections/About.tsx` - About section

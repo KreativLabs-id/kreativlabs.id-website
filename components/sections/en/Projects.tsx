@@ -13,23 +13,29 @@ const projectDescriptions: Record<string, string> = {
   chatly: "Chatly, a website for real-time conversations.",
   "website-top-up-game": "A website for buying game top-ups online.",
   "aplikasi-kasir-web": "A web-based point-of-sale app to help run a shop.",
-  "personal-portfolio-miftahuddin": "A portfolio for a social media specialist and digital communicator.",
+  "personal-portfolio-miftahuddin":
+    "A portfolio for a social media specialist and digital communicator.",
 };
 
 export default function ProjectsEN() {
   return (
-    <section id="projects" className="relative py-16 md:py-20 bg-background overflow-hidden w-full scroll-mt-24">
+    <section
+      id="projects"
+      className="relative py-16 md:py-20 bg-background overflow-hidden w-full scroll-mt-24"
+    >
       <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-6xl">
-        
         {/* Section Header */}
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-12">
-            <p className="mb-3 text-xs font-semibold tracking-[0.14em] text-primary uppercase">A year of creating together</p>
+            <p className="mb-3 text-xs font-semibold tracking-[0.14em] text-primary uppercase">
+              A year of creating together
+            </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 tracking-tight">
               A few things <span className="text-primary">we have made</span>
             </h2>
             <p className="text-foreground/70 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
-              From websites to digital tools, here are some projects we have worked on with our clients.
+              From websites to digital tools, here are some projects we have worked on with our
+              clients.
             </p>
           </div>
         </AnimatedSection>
@@ -40,7 +46,6 @@ export default function ProjectsEN() {
             <FadeInStagger key={project.id} index={index} delay={40}>
               <Link href={`/en/projects/${project.id}`} className="block h-full">
                 <div className="group h-full flex flex-col justify-between bg-card border border-border/80 hover:border-primary/50 rounded-2xl overflow-hidden transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
-                  
                   {/* Project Image */}
                   <div className="relative w-full aspect-[16/10] bg-secondary/40 overflow-hidden border-b border-border/50">
                     <Image
@@ -59,11 +64,11 @@ export default function ProjectsEN() {
                       <span className="text-[11px] font-semibold text-primary uppercase tracking-wider">
                         {project.category}
                       </span>
-                      
+
                       <h3 className="text-base sm:text-lg font-bold text-foreground mt-1 mb-2 group-hover:text-primary transition-colors">
                         {project.title}
                       </h3>
-                      
+
                       <p className="text-foreground/70 text-xs sm:text-sm line-clamp-2 leading-relaxed">
                         {projectDescriptions[project.id] ?? project.description}
                       </p>
@@ -75,13 +80,11 @@ export default function ProjectsEN() {
                       <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </div>
                   </div>
-
                 </div>
               </Link>
             </FadeInStagger>
           ))}
         </div>
-
       </div>
     </section>
   );

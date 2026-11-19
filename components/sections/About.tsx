@@ -7,12 +7,13 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function About() {
   return (
-    <section id="about" className="relative py-16 md:py-24 bg-background overflow-hidden w-full scroll-mt-24">
+    <section
+      id="about"
+      className="relative py-16 md:py-24 bg-background overflow-hidden w-full scroll-mt-24"
+    >
       <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-6xl">
-        
         {/* Asymmetrical 2-Column Tech Studio Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          
           {/* Left Column: Narrative & Impact Metrics (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
             <AnimatedSection animation="fade-up">
@@ -23,11 +24,13 @@ export default function About() {
 
             <AnimatedSection animation="fade-up" delay={80}>
               <p className="text-sm sm:text-base text-foreground/75 leading-relaxed">
-                Kami bantu kamu menyiapkan website dan desain untuk bisnis. Dari obrolan pertama sampai hasilnya siap dipakai, kita kerjakan bareng-bareng.
+                Kami bantu kamu menyiapkan website dan desain untuk bisnis. Dari obrolan pertama
+                sampai hasilnya siap dipakai, kita kerjakan bareng-bareng.
               </p>
-              
+
               <p className="text-sm sm:text-base text-foreground/75 leading-relaxed mt-3">
-                Butuh halaman promosi, sistem kasir, atau aplikasi web? Ceritakan saja kebutuhanmu, lalu kita cari bentuk yang pas.
+                Butuh halaman promosi, sistem kasir, atau aplikasi web? Ceritakan saja kebutuhanmu,
+                lalu kita cari bentuk yang pas.
               </p>
             </AnimatedSection>
 
@@ -35,27 +38,21 @@ export default function About() {
             <AnimatedSection animation="fade-up" delay={120}>
               <div className="grid grid-cols-3 gap-3 pt-6 border-t border-border/70">
                 <div>
-                  <div className="text-xl sm:text-2xl font-extrabold text-foreground">
-                    &lt; 2s
-                  </div>
+                  <div className="text-xl sm:text-2xl font-extrabold text-foreground">&lt; 2s</div>
                   <div className="text-[11px] text-foreground/60 font-medium mt-0.5">
                     Waktu Muat Cepat
                   </div>
                 </div>
 
                 <div>
-                  <div className="text-xl sm:text-2xl font-extrabold text-foreground">
-                    100%
-                  </div>
+                  <div className="text-xl sm:text-2xl font-extrabold text-foreground">100%</div>
                   <div className="text-[11px] text-foreground/60 font-medium mt-0.5">
                     Kepemilikan Aset
                   </div>
                 </div>
 
                 <div>
-                  <div className="text-xl sm:text-2xl font-extrabold text-foreground">
-                    24/7
-                  </div>
+                  <div className="text-xl sm:text-2xl font-extrabold text-foreground">24/7</div>
                   <div className="text-[11px] text-foreground/60 font-medium mt-0.5">
                     Garansi & Support
                   </div>
@@ -92,9 +89,7 @@ export default function About() {
               </div>
             </AnimatedSection>
           </div>
-
         </div>
-
       </div>
     </section>
   );

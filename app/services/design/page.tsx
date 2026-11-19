@@ -5,27 +5,21 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 // import {
 //   PenTool,
 // } from "lucide-react";
-import {
-  Palette,
-  Instagram,
-  CheckCircle2,
-  ArrowRight,
-  Layers,
-  Sparkles
-} from "lucide-react";
+import { Palette, Instagram, CheckCircle2, ArrowRight, Layers, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { WHATSAPP_NUMBER } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Jasa Desain Grafis & Branding Profesional | KreativLabs",
-  description: "Layanan desain grafis profesional dan identitas visual untuk bisnis. Desain logo, konten media sosial terstruktur, brand guideline, hingga materi promosi visual.",
+  description:
+    "Layanan desain grafis profesional dan identitas visual untuk bisnis. Desain logo, konten media sosial terstruktur, brand guideline, hingga materi promosi visual.",
   keywords: [
     "jasa desain grafis",
     "jasa desain logo",
     "jasa branding bisnis",
     "jasa desain instagram",
     "jasa desain promosi",
-    "kreativlabs design"
+    "kreativlabs design",
   ],
   alternates: {
     canonical: "https://www.kreativlabs.id/services/design",
@@ -36,30 +30,32 @@ const designServices = [
   {
     icon: Palette,
     title: "Identitas Brand & Desain Logo",
-    description: "Perancangan logo original dan filosofis yang membedakan bisnis Anda dari kompetitor, dilengkapi dengan pedoman warna, tipografi, dan file vektor master.",
+    description:
+      "Perancangan logo original dan filosofis yang membedakan bisnis Anda dari kompetitor, dilengkapi dengan pedoman warna, tipografi, dan file vektor master.",
     deliverables: [
       "Konsep logo original & riset karakter bisnis",
       "File master vektor lengkap (AI, SVG, EPS, PDF)",
       "Format transparan resolusi tinggi (PNG, JPG)",
       "Panduan palet warna (Color Guide) & jenis font",
       "Mockup penerapan pada media promosi nyata",
-      "Hak kepemilikan cipta penuh untuk bisnis Anda"
+      "Hak kepemilikan cipta penuh untuk bisnis Anda",
     ],
-    waMessage: "Halo KreativLabs, saya ingin konsultasi pembuatan Desain Logo & Brand Identity."
+    waMessage: "Halo KreativLabs, saya ingin konsultasi pembuatan Desain Logo & Brand Identity.",
   },
   {
     icon: Instagram,
     title: "Desain Konten & Social Media Kit",
-    description: "Materi visual berkualitas untuk Instagram feed, carousel edukasi, story promosi, dan banner digital agar kanal media sosial bisnis Anda terlihat konsisten dan terpercaya.",
+    description:
+      "Materi visual berkualitas untuk Instagram feed, carousel edukasi, story promosi, dan banner digital agar kanal media sosial bisnis Anda terlihat konsisten dan terpercaya.",
     deliverables: [
       "Tata letak feed & carousel yang terstruktur rapi",
       "Template visual konsisten sesuai warna brand",
       "Banner promosi dan iklan berkonversi tinggi",
       "Format siap unggah resolusi tinggi tanpa pecah",
       "Fleksibilitas revisi hingga desain sesuai kebutuhan",
-      "Termasuk file master desain yang dapat diedit kembali"
+      "Termasuk file master desain yang dapat diedit kembali",
     ],
-    waMessage: "Halo KreativLabs, saya ingin memesan paket Desain Konten Social Media."
+    waMessage: "Halo KreativLabs, saya ingin memesan paket Desain Konten Social Media.",
   },
   /* Desain UI/UX - Dinonaktifkan sementara karena layanan sedang tidak tersedia
   {
@@ -83,23 +79,27 @@ const workflow = [
   {
     step: "01",
     title: "Brief & Diskusi Konsep",
-    description: "Kami mendalami karakter brand Anda, audiens yang dituju, dan preferensi gaya visual yang diinginkan."
+    description:
+      "Kami mendalami karakter brand Anda, audiens yang dituju, dan preferensi gaya visual yang diinginkan.",
   },
   {
     step: "02",
     title: "Eksplorasi Sketsa & Moodboard",
-    description: "Pembuatan draf konsep visual dan moodboard warna untuk menyepakati arah desain sejak awal."
+    description:
+      "Pembuatan draf konsep visual dan moodboard warna untuk menyepakati arah desain sejak awal.",
   },
   {
     step: "03",
     title: "Produksi & Sesi Revisi",
-    description: "Pengerjaan desain resolusi tinggi dengan sesi penyesuaian detail berdasarkan masukan Anda."
+    description:
+      "Pengerjaan desain resolusi tinggi dengan sesi penyesuaian detail berdasarkan masukan Anda.",
   },
   {
     step: "04",
     title: "Penyerahan File Master",
-    description: "Pengiriman seluruh paket file siap pakai dalam berbagai format lengkap (vektor, raster, & master)."
-  }
+    description:
+      "Pengiriman seluruh paket file siap pakai dalam berbagai format lengkap (vektor, raster, & master).",
+  },
 ];
 
 export default function DesignServicesPage() {
@@ -113,14 +113,15 @@ export default function DesignServicesPage() {
           <span className="text-xs font-semibold text-primary uppercase tracking-widest block mb-2.5">
             Layanan Desain Grafis & Branding
           </span>
-          
+
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-foreground tracking-tight leading-[1.18] mb-4">
             Identitas Visual Profesional yang <br className="hidden sm:block" />
             <span className="text-primary">Membangun Kredibilitas Brand Anda.</span>
           </h1>
 
           <p className="text-sm sm:text-base md:text-lg text-foreground/75 max-w-2xl mx-auto leading-relaxed mb-8">
-            Kami menciptakan karya desain yang memadukan estetika modern dengan strategi visual terarah untuk membantu bisnis Anda tampil percaya diri dan menonjol.
+            Kami menciptakan karya desain yang memadukan estetika modern dengan strategi visual
+            terarah untuk membantu bisnis Anda tampil percaya diri dan menonjol.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -151,7 +152,8 @@ export default function DesignServicesPage() {
               Koleksi Layanan Desain Kreatif
             </h2>
             <p className="text-xs sm:text-sm text-foreground/70 max-w-xl mx-auto">
-              Setiap karya dikerjakan secara eksklusif dengan riset mendalam agar relevan dengan target pasar Anda.
+              Setiap karya dikerjakan secara eksklusif dengan riset mendalam agar relevan dengan
+              target pasar Anda.
             </p>
           </div>
 
@@ -170,9 +172,7 @@ export default function DesignServicesPage() {
                       <Icon className="w-5 h-5" />
                     </div>
 
-                    <h3 className="text-lg font-bold text-foreground mb-2">
-                      {service.title}
-                    </h3>
+                    <h3 className="text-lg font-bold text-foreground mb-2">{service.title}</h3>
 
                     <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed mb-5">
                       {service.description}
@@ -183,7 +183,10 @@ export default function DesignServicesPage() {
                         Kelengkapan File & Fitur:
                       </span>
                       {service.deliverables.map((item, idx) => (
-                        <div key={idx} className="flex items-start gap-2 text-xs sm:text-[13px] text-foreground/80">
+                        <div
+                          key={idx}
+                          className="flex items-start gap-2 text-xs sm:text-[13px] text-foreground/80"
+                        >
                           <CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5" />
                           <span>{item}</span>
                         </div>
@@ -222,15 +225,9 @@ export default function DesignServicesPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {workflow.map((item, index) => (
               <div key={index} className="bg-card border border-border/80 rounded-2xl p-5">
-                <span className="text-xl font-extrabold text-primary block mb-2">
-                  {item.step}
-                </span>
-                <h4 className="text-sm font-bold text-foreground mb-1.5">
-                  {item.title}
-                </h4>
-                <p className="text-xs text-foreground/70 leading-relaxed">
-                  {item.description}
-                </p>
+                <span className="text-xl font-extrabold text-primary block mb-2">{item.step}</span>
+                <h4 className="text-sm font-bold text-foreground mb-1.5">{item.title}</h4>
+                <p className="text-xs text-foreground/70 leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>
@@ -245,7 +242,8 @@ export default function DesignServicesPage() {
               Ingin Meningkatkan Tampilan Visual Bisnis Anda?
             </h2>
             <p className="text-xs sm:text-sm text-foreground/70 max-w-lg mx-auto leading-relaxed mb-6">
-              Diskusikan kebutuhan logo, identitas brand, atau materi promosi media sosial bisnis Anda bersama tim desainer KreativLabs.
+              Diskusikan kebutuhan logo, identitas brand, atau materi promosi media sosial bisnis
+              Anda bersama tim desainer KreativLabs.
             </p>
             <a
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=Halo%20KreativLabs,%20saya%20ingin%20konsultasi%20kebutuhan%20desain`}

@@ -16,7 +16,9 @@ export default function ProjectDetail() {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center px-4">
         <div className="text-center max-w-md">
-          <h1 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">Project Tidak Ditemukan</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
+            Project Tidak Ditemukan
+          </h1>
           <p className="text-foreground/70 text-sm mb-6">
             Halaman studi kasus yang Anda cari tidak tersedia atau telah dipindahkan.
           </p>
@@ -36,7 +38,6 @@ export default function ProjectDetail() {
   return (
     <div className="min-h-screen bg-background pt-24 pb-20">
       <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
-        
         {/* Navigation & Editorial Header */}
         <AnimatedSection animation="fade-up">
           <div className="mb-6">
@@ -66,36 +67,28 @@ export default function ProjectDetail() {
                 <span className="text-[11px] font-medium text-foreground/50 block uppercase tracking-wider mb-1">
                   Klien
                 </span>
-                <span className="text-sm font-semibold text-foreground">
-                  {project.client}
-                </span>
+                <span className="text-sm font-semibold text-foreground">{project.client}</span>
               </div>
 
               <div>
                 <span className="text-[11px] font-medium text-foreground/50 block uppercase tracking-wider mb-1">
                   Kategori
                 </span>
-                <span className="text-sm font-semibold text-foreground">
-                  {project.category}
-                </span>
+                <span className="text-sm font-semibold text-foreground">{project.category}</span>
               </div>
 
               <div>
                 <span className="text-[11px] font-medium text-foreground/50 block uppercase tracking-wider mb-1">
                   Durasi Pengerjaan
                 </span>
-                <span className="text-sm font-semibold text-foreground">
-                  {project.duration}
-                </span>
+                <span className="text-sm font-semibold text-foreground">{project.duration}</span>
               </div>
 
               <div>
                 <span className="text-[11px] font-medium text-foreground/50 block uppercase tracking-wider mb-1">
                   Tahun
                 </span>
-                <span className="text-sm font-semibold text-foreground">
-                  {project.year}
-                </span>
+                <span className="text-sm font-semibold text-foreground">{project.year}</span>
               </div>
             </div>
           </div>
@@ -117,10 +110,8 @@ export default function ProjectDetail() {
 
         {/* 2-Column Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10">
-          
           {/* Main Column (8 Cols) */}
           <div className="lg:col-span-8 space-y-10">
-            
             {/* Overview */}
             <AnimatedSection animation="fade-up">
               <div>
@@ -192,7 +183,10 @@ export default function ProjectDetail() {
                   <div className="bg-card border border-border/80 rounded-2xl p-6">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {project.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-center gap-2.5 text-xs sm:text-sm text-foreground/80">
+                        <div
+                          key={idx}
+                          className="flex items-center gap-2.5 text-xs sm:text-sm text-foreground/80"
+                        >
                           <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
                           <span>{feature}</span>
                         </div>
@@ -229,13 +223,11 @@ export default function ProjectDetail() {
                 </div>
               </AnimatedSection>
             )}
-
           </div>
 
           {/* Sidebar Column (4 Cols) */}
           <div className="lg:col-span-4">
             <div className="sticky top-24 space-y-6">
-              
               {/* Tech Stack Card */}
               <div className="bg-card border border-border/80 rounded-2xl p-6">
                 <h3 className="text-xs font-bold text-foreground mb-4 uppercase tracking-wider">
@@ -259,9 +251,10 @@ export default function ProjectDetail() {
                   Tertarik dengan Project Serupa?
                 </h3>
                 <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed mb-5">
-                  Konsultasikan kebutuhan website atau aplikasi bisnis Anda langsung dengan tim kami untuk mendapatkan estimasi dan solusi terbaik.
+                  Konsultasikan kebutuhan website atau aplikasi bisnis Anda langsung dengan tim kami
+                  untuk mendapatkan estimasi dan solusi terbaik.
                 </p>
-                
+
                 <a
                   href={waUrl}
                   target="_blank"
@@ -272,10 +265,8 @@ export default function ProjectDetail() {
                   <span>Konsultasi via WhatsApp</span>
                 </a>
               </div>
-
             </div>
           </div>
-
         </div>
 
         {/* Bottom Full CTA Banner */}
@@ -285,9 +276,10 @@ export default function ProjectDetail() {
               Siap Mewujudkan Website Impian Bisnis Anda?
             </h2>
             <p className="text-xs sm:text-sm sm:text-base text-foreground/70 max-w-xl mx-auto leading-relaxed mb-6">
-              Mari diskusikan konsep, fitur, dan timeline pengerjaan yang pas untuk bisnis Anda bersama tim KreativLabs.
+              Mari diskusikan konsep, fitur, dan timeline pengerjaan yang pas untuk bisnis Anda
+              bersama tim KreativLabs.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <a
                 href={waUrl}
@@ -307,7 +299,6 @@ export default function ProjectDetail() {
             </div>
           </div>
         </AnimatedSection>
-
       </div>
     </div>
   );

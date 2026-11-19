@@ -80,7 +80,9 @@ export default async function BlogPostPageEN({ params }: Props) {
         <NavbarEN />
         <div className="container mx-auto px-4 sm:px-6 py-32 text-center max-w-md">
           <h1 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">Article Not Found</h1>
-          <p className="text-foreground/70 text-sm mb-6">Sorry, the article you are looking for is not available.</p>
+          <p className="text-foreground/70 text-sm mb-6">
+            Sorry, the article you are looking for is not available.
+          </p>
           <Link
             href="/en/blog"
             className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-primary text-primary-foreground text-xs sm:text-sm font-semibold hover:bg-primary/90 transition-colors"
@@ -101,7 +103,6 @@ export default async function BlogPostPageEN({ params }: Props) {
       <section className="relative pt-28 pb-6 bg-background">
         <div className="container mx-auto px-4 sm:px-6 max-w-4xl relative z-10">
           <AnimatedSection animation="fade-up">
-
             {/* Back link */}
             <Link
               href="/en/blog"
@@ -147,7 +148,6 @@ export default async function BlogPostPageEN({ params }: Props) {
                 sizes="(max-width: 1200px) 100vw, 1000px"
               />
             </div>
-
           </AnimatedSection>
         </div>
       </section>
@@ -156,7 +156,6 @@ export default async function BlogPostPageEN({ params }: Props) {
       <section className="py-4 pb-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
-
             {/* Main Article Body */}
             <div className="lg:col-span-8">
               <AnimatedSection animation="fade-up">
@@ -169,35 +168,102 @@ export default async function BlogPostPageEN({ params }: Props) {
                         // Security: disable raw HTML parsing from blog content (stored-XSS defense).
                         disableParsingRawHTML: true,
                         overrides: {
-                          h1: { component: ({ children }) => <h2 className="text-xl sm:text-2xl font-bold text-foreground mt-8 mb-4 tracking-tight">{children}</h2> },
-                          h2: { component: ({ children }) => <h2 className="text-xl sm:text-2xl font-bold text-foreground mt-8 mb-4 tracking-tight">{children}</h2> },
-                          h3: { component: ({ children }) => <h3 className="text-lg sm:text-xl font-bold text-foreground mt-6 mb-3 tracking-tight">{children}</h3> },
-                          p: { component: ({ children }) => <p className="text-sm sm:text-base text-foreground/80 leading-relaxed mb-4">{children}</p> },
-                          ul: { component: ({ children }) => <ul className="list-disc pl-5 text-sm sm:text-base text-foreground/80 mb-4 space-y-2">{children}</ul> },
-                          ol: { component: ({ children }) => <ol className="list-decimal pl-5 text-sm sm:text-base text-foreground/80 mb-4 space-y-2">{children}</ol> },
-                          li: { component: ({ children }) => <li className="leading-relaxed">{children}</li> },
-                          strong: { component: ({ children }) => <strong className="text-foreground font-bold">{children}</strong> },
+                          h1: {
+                            component: ({ children }) => (
+                              <h2 className="text-xl sm:text-2xl font-bold text-foreground mt-8 mb-4 tracking-tight">
+                                {children}
+                              </h2>
+                            ),
+                          },
+                          h2: {
+                            component: ({ children }) => (
+                              <h2 className="text-xl sm:text-2xl font-bold text-foreground mt-8 mb-4 tracking-tight">
+                                {children}
+                              </h2>
+                            ),
+                          },
+                          h3: {
+                            component: ({ children }) => (
+                              <h3 className="text-lg sm:text-xl font-bold text-foreground mt-6 mb-3 tracking-tight">
+                                {children}
+                              </h3>
+                            ),
+                          },
+                          p: {
+                            component: ({ children }) => (
+                              <p className="text-sm sm:text-base text-foreground/80 leading-relaxed mb-4">
+                                {children}
+                              </p>
+                            ),
+                          },
+                          ul: {
+                            component: ({ children }) => (
+                              <ul className="list-disc pl-5 text-sm sm:text-base text-foreground/80 mb-4 space-y-2">
+                                {children}
+                              </ul>
+                            ),
+                          },
+                          ol: {
+                            component: ({ children }) => (
+                              <ol className="list-decimal pl-5 text-sm sm:text-base text-foreground/80 mb-4 space-y-2">
+                                {children}
+                              </ol>
+                            ),
+                          },
+                          li: {
+                            component: ({ children }) => (
+                              <li className="leading-relaxed">{children}</li>
+                            ),
+                          },
+                          strong: {
+                            component: ({ children }) => (
+                              <strong className="text-foreground font-bold">{children}</strong>
+                            ),
+                          },
                           a: {
                             component: ({ children, href }) => {
                               // Only allow safe schemes; block javascript:, data:, vbscript:, etc.
-                              const safeHref = typeof href === "string" && /^(https?:|mailto:|tel:|#|\/)/i.test(href.trim()) ? href.trim() : undefined;
+                              const safeHref =
+                                typeof href === "string" &&
+                                /^(https?:|mailto:|tel:|#|\/)/i.test(href.trim())
+                                  ? href.trim()
+                                  : undefined;
                               return (
-                                <a href={safeHref} rel="noopener noreferrer" target="_blank" className="text-primary underline hover:text-primary/80 transition-colors">
+                                <a
+                                  href={safeHref}
+                                  rel="noopener noreferrer"
+                                  target="_blank"
+                                  className="text-primary underline hover:text-primary/80 transition-colors"
+                                >
                                   {children}
                                 </a>
                               );
                             },
                           },
                           hr: { component: () => <hr className="border-border/60 my-6" /> },
-                          code: { component: ({ children }) => <code className="bg-secondary px-2 py-0.5 rounded text-xs font-mono text-foreground/90">{children}</code> },
-                          pre: { component: ({ children }) => <pre className="bg-secondary p-4 rounded-xl overflow-x-auto text-xs font-mono mb-4">{children}</pre> },
+                          code: {
+                            component: ({ children }) => (
+                              <code className="bg-secondary px-2 py-0.5 rounded text-xs font-mono text-foreground/90">
+                                {children}
+                              </code>
+                            ),
+                          },
+                          pre: {
+                            component: ({ children }) => (
+                              <pre className="bg-secondary p-4 rounded-xl overflow-x-auto text-xs font-mono mb-4">
+                                {children}
+                              </pre>
+                            ),
+                          },
                         },
                       }}
                     >
                       {post.content}
                     </Markdown>
                   ) : (
-                    <p className="text-foreground/60 text-center py-8">Article content is being prepared.</p>
+                    <p className="text-foreground/60 text-center py-8">
+                      Article content is being prepared.
+                    </p>
                   )}
                 </article>
 
@@ -224,7 +290,6 @@ export default async function BlogPostPageEN({ params }: Props) {
             {/* Sidebar (4 Cols) */}
             <div className="lg:col-span-4">
               <div className="sticky top-24 space-y-6">
-
                 {/* Author Card */}
                 <div className="bg-card border border-border/80 rounded-2xl p-5 sm:p-6">
                   <h4 className="text-xs font-bold text-foreground mb-3 uppercase tracking-wider">
@@ -240,7 +305,8 @@ export default async function BlogPostPageEN({ params }: Props) {
                     </div>
                   </div>
                   <p className="text-foreground/70 text-xs leading-relaxed">
-                    Stories and practical guides about websites, design, and digital tools for businesses.
+                    Stories and practical guides about websites, design, and digital tools for
+                    businesses.
                   </p>
                 </div>
 
@@ -261,10 +327,8 @@ export default async function BlogPostPageEN({ params }: Props) {
                     Consult via WhatsApp
                   </a>
                 </div>
-
               </div>
             </div>
-
           </div>
 
           {/* Bottom Banner */}
@@ -284,7 +348,6 @@ export default async function BlogPostPageEN({ params }: Props) {
               </Link>
             </div>
           </AnimatedSection>
-
         </div>
       </section>
 

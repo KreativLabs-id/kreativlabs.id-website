@@ -3,12 +3,22 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/sections/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { ArrowLeft, Cookie, ShieldCheck, BarChart3, Settings2, SlidersHorizontal, MessageCircle, ExternalLink } from "lucide-react";
+import {
+  ArrowLeft,
+  Cookie,
+  ShieldCheck,
+  BarChart3,
+  Settings2,
+  SlidersHorizontal,
+  MessageCircle,
+  ExternalLink,
+} from "lucide-react";
 import { WHATSAPP_NUMBER } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Kebijakan Cookie | KreativLabs.id",
-  description: "Penjelasan transparan mengenai penggunaan cookie dan teknologi penyimpanan data di website KreativLabs.id.",
+  description:
+    "Penjelasan transparan mengenai penggunaan cookie dan teknologi penyimpanan data di website KreativLabs.id.",
   alternates: {
     canonical: "https://www.kreativlabs.id/legal/cookie-policy",
   },
@@ -22,13 +32,14 @@ const cookieCategories = [
     badge: "Wajib",
     badgeType: "required",
     summary: "Dibutuhkan agar fungsi dasar dan keamanan website berjalan normal.",
-    description: "Cookie ini langsung aktif saat kamu membuka website. Tanpa cookie ini, fitur keamanan, navigasi halaman, dan penyimpanan preferensi tema (dark/light mode) tidak dapat berfungsi dengan benar.",
+    description:
+      "Cookie ini langsung aktif saat kamu membuka website. Tanpa cookie ini, fitur keamanan, navigasi halaman, dan penyimpanan preferensi tema (dark/light mode) tidak dapat berfungsi dengan benar.",
     items: [
       "Menyimpan preferensi tampilan tema (Next-Themes)",
       "Proteksi keamanan formulir dan pencegahan serangan spam (CSRF/Honeypot)",
-      "Sesi navigasi dasar antar halaman"
+      "Sesi navigasi dasar antar halaman",
     ],
-    duration: "Sesi browsing aktif hingga maksimal 1 tahun"
+    duration: "Sesi browsing aktif hingga maksimal 1 tahun",
   },
   {
     id: "analytics",
@@ -37,12 +48,13 @@ const cookieCategories = [
     badge: "Opsional",
     badgeType: "optional",
     summary: "Membantu kami mengetahui performa halaman dan kecepatan akses.",
-    description: "Data yang dikumpulkan bersifat anonim dan agregat (tanpa identitas pribadi langsung), seperti artikel yang paling sering dibaca, durasi muat halaman, dan jenis browser yang digunakan.",
+    description:
+      "Data yang dikumpulkan bersifat anonim dan agregat (tanpa identitas pribadi langsung), seperti artikel yang paling sering dibaca, durasi muat halaman, dan jenis browser yang digunakan.",
     items: [
       "Google Analytics 4 (pengukuran kunjungan halaman anonim)",
-      "Vercel Analytics & Speed Insights (pemantauan kecepatan muat web)"
+      "Vercel Analytics & Speed Insights (pemantauan kecepatan muat web)",
     ],
-    duration: "Mulai dari sesi aktif hingga maksimal 2 tahun"
+    duration: "Mulai dari sesi aktif hingga maksimal 2 tahun",
   },
   {
     id: "functional",
@@ -51,26 +63,27 @@ const cookieCategories = [
     badge: "Opsional",
     badgeType: "optional",
     summary: "Mengingat pilihan navigasi agar kamu tidak perlu mengatur ulang.",
-    description: "Digunakan untuk mempertahankan preferensi bahasa antarmuka atau status interaksi tertentu saat kamu kembali mengunjungi KreativLabs.id.",
+    description:
+      "Digunakan untuk mempertahankan preferensi bahasa antarmuka atau status interaksi tertentu saat kamu kembali mengunjungi KreativLabs.id.",
     items: [
       "Penyimpanan pilihan bahasa antarmuka (ID / EN)",
-      "Status interaksi banner promosi musiman"
+      "Status interaksi banner promosi musiman",
     ],
-    duration: "Hingga 12 bulan"
-  }
+    duration: "Hingga 12 bulan",
+  },
 ];
 
 const thirdPartyPartners = [
   {
     name: "Google Analytics & Fonts",
     role: "Analitik performa web & pemuatan font",
-    privacyUrl: "https://policies.google.com/privacy"
+    privacyUrl: "https://policies.google.com/privacy",
   },
   {
     name: "Vercel Platform",
     role: "Infrastruktur hosting & analitik performa server",
-    privacyUrl: "https://vercel.com/legal/privacy-policy"
-  }
+    privacyUrl: "https://vercel.com/legal/privacy-policy",
+  },
 ];
 
 export default function CookiePolicyPage() {
@@ -82,7 +95,6 @@ export default function CookiePolicyPage() {
 
       <div className="w-full pt-28 pb-16 sm:pt-36 sm:pb-24">
         <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
-          
           {/* Breadcrumb & Navigation */}
           <div className="mb-6 sm:mb-8">
             <Link
@@ -111,7 +123,9 @@ export default function CookiePolicyPage() {
             </h1>
 
             <p className="text-sm sm:text-base text-foreground/80 leading-relaxed max-w-2xl">
-              Halaman ini menjelaskan bagaimana KreativLabs.id menggunakan cookie dan teknologi serupa saat kamu mengakses website kami, tujuan penggunaannya, serta bagaimana kamu dapat mengelolanya.
+              Halaman ini menjelaskan bagaimana KreativLabs.id menggunakan cookie dan teknologi
+              serupa saat kamu mengakses website kami, tujuan penggunaannya, serta bagaimana kamu
+              dapat mengelolanya.
             </p>
           </header>
 
@@ -121,10 +135,15 @@ export default function CookiePolicyPage() {
               Apa itu Cookie dan Kenapa Digunakan?
             </h2>
             <p className="mb-3">
-              Cookie adalah berkas teks kecil yang disimpan pada browser perangkatmu saat kamu mengunjungi sebuah website. Di KreativLabs.id, kami mengutamakan kenyamanan dan privasi kamu: kami tidak menjual data cookie dan tidak menanam cookie pihak ketiga yang melacak aktivitasmu di luar lingkup website ini.
+              Cookie adalah berkas teks kecil yang disimpan pada browser perangkatmu saat kamu
+              mengunjungi sebuah website. Di KreativLabs.id, kami mengutamakan kenyamanan dan
+              privasi kamu: kami tidak menjual data cookie dan tidak menanam cookie pihak ketiga
+              yang melacak aktivitasmu di luar lingkup website ini.
             </p>
             <p>
-              Cookie kami gunakan untuk fungsi dasar situs, seperti mengingat tema tampilan dan mengukur halaman mana yang sering dibaca agar kami bisa terus memperbaiki kualitas konten dan performa website.
+              Cookie kami gunakan untuk fungsi dasar situs, seperti mengingat tema tampilan dan
+              mengukur halaman mana yang sering dibaca agar kami bisa terus memperbaiki kualitas
+              konten dan performa website.
             </p>
           </section>
 
@@ -179,7 +198,10 @@ export default function CookiePolicyPage() {
                       </div>
                       <ul className="space-y-2 mb-4">
                         {cat.items.map((item, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-foreground/75 leading-relaxed">
+                          <li
+                            key={idx}
+                            className="flex items-start gap-2 text-xs sm:text-sm text-foreground/75 leading-relaxed"
+                          >
                             <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2" />
                             <span>{item}</span>
                           </li>
@@ -202,7 +224,8 @@ export default function CookiePolicyPage() {
               Layanan Pihak Ketiga
             </h2>
             <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed mb-4">
-              Untuk memastikan kecepatan dan ketersediaan sistem, beberapa layanan mitra berikut memproses data teknis dasar sesuai dengan kebijakan privasi masing-masing:
+              Untuk memastikan kecepatan dan ketersediaan sistem, beberapa layanan mitra berikut
+              memproses data teknis dasar sesuai dengan kebijakan privasi masing-masing:
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -239,9 +262,11 @@ export default function CookiePolicyPage() {
                 Cara Mengelola Cookie di Perangkatmu
               </h2>
             </div>
-            
+
             <p className="text-xs sm:text-sm text-foreground/80 leading-relaxed mb-4">
-              Kamu memegang kendali penuh atas browser yang kamu gunakan. Hampir semua web browser (Google Chrome, Safari, Mozilla Firefox, Microsoft Edge) menyediakan menu pengaturan untuk:
+              Kamu memegang kendali penuh atas browser yang kamu gunakan. Hampir semua web browser
+              (Google Chrome, Safari, Mozilla Firefox, Microsoft Edge) menyediakan menu pengaturan
+              untuk:
             </p>
 
             <ul className="space-y-2 mb-4 text-xs sm:text-sm text-foreground/75">
@@ -251,7 +276,9 @@ export default function CookiePolicyPage() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2" />
-                <span>Menghapus cookie secara berkala atau otomatis saat jendela browser ditutup.</span>
+                <span>
+                  Menghapus cookie secara berkala atau otomatis saat jendela browser ditutup.
+                </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2" />
@@ -260,7 +287,9 @@ export default function CookiePolicyPage() {
             </ul>
 
             <div className="rounded-xl bg-secondary/60 p-3.5 text-xs text-foreground/70 leading-relaxed">
-              <strong className="text-foreground font-semibold">Catatan praktis:</strong> Jika kamu mematikan seluruh cookie esensial melalui pengaturan browser secara paksa, fitur preferensi tema warna dan kelancaran form pesan mungkin membutuhkan pemuatan ulang.
+              <strong className="text-foreground font-semibold">Catatan praktis:</strong> Jika kamu
+              mematikan seluruh cookie esensial melalui pengaturan browser secara paksa, fitur
+              preferensi tema warna dan kelancaran form pesan mungkin membutuhkan pemuatan ulang.
             </div>
           </section>
 
@@ -271,7 +300,8 @@ export default function CookiePolicyPage() {
                 Ada pertanyaan seputar data atau cookie kami?
               </h3>
               <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed">
-                Kami siap memberikan penjelasan terbuka mengenai teknologi dan privasi data yang kami terapkan.
+                Kami siap memberikan penjelasan terbuka mengenai teknologi dan privasi data yang
+                kami terapkan.
               </p>
             </div>
 
@@ -294,7 +324,6 @@ export default function CookiePolicyPage() {
               </Link>
             </div>
           </aside>
-
         </div>
       </div>
 

@@ -23,7 +23,8 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme } = useTheme();
-  const logoSrc = mounted && resolvedTheme === "light" ? "/logokreativlabsterang.png" : "/logokreativ.png";
+  const logoSrc =
+    mounted && resolvedTheme === "light" ? "/logokreativlabsterang.png" : "/logokreativ.png";
 
   useEffect(() => {
     setMounted(true);
@@ -72,14 +73,14 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 w-full transition-colors duration-200 ${isScrolled
-        ? "bg-background/90 backdrop-blur-md border-b border-border/80 shadow-xs"
-        : "bg-background/70 backdrop-blur-xs border-b border-border/40"
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 w-full transition-colors duration-200 ${
+        isScrolled
+          ? "bg-background/90 backdrop-blur-md border-b border-border/80 shadow-xs"
+          : "bg-background/70 backdrop-blur-xs border-b border-border/40"
+      }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-18">
-
           {/* Logo (Left) */}
           <Link href="/" className="flex items-center shrink-0">
             <Image
@@ -96,17 +97,20 @@ export default function Navbar() {
           <nav className="hidden lg:flex items-center gap-3 xl:gap-6">
             {navLinks.map((link) => {
               const isExternal = link.href.startsWith("/");
-              const href = isExternal ? link.href : (pathname !== "/" ? `/${link.href}` : link.href);
-              const isActive = activeSection === link.href || (link.href.startsWith("/") && pathname.startsWith(link.href));
+              const href = isExternal ? link.href : pathname !== "/" ? `/${link.href}` : link.href;
+              const isActive =
+                activeSection === link.href ||
+                (link.href.startsWith("/") && pathname.startsWith(link.href));
 
               return (
                 <a
                   key={link.name}
                   href={href}
-                  className={`text-sm font-medium transition-colors relative py-1 ${isActive
-                    ? "text-primary font-semibold"
-                    : "text-foreground/75 hover:text-foreground"
-                    }`}
+                  className={`text-sm font-medium transition-colors relative py-1 ${
+                    isActive
+                      ? "text-primary font-semibold"
+                      : "text-foreground/75 hover:text-foreground"
+                  }`}
                 >
                   {link.name}
                   {isActive && (
@@ -139,7 +143,6 @@ export default function Navbar() {
               {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
-
         </div>
       </div>
 
@@ -148,17 +151,20 @@ export default function Navbar() {
         <div className="lg:hidden border-b border-border/80 bg-background/98 backdrop-blur-xl shadow-lg px-4 sm:px-6 py-4 space-y-1">
           {navLinks.map((link) => {
             const isExternal = link.href.startsWith("/");
-            const href = isExternal ? link.href : (pathname !== "/" ? `/${link.href}` : link.href);
-            const isActive = activeSection === link.href || (link.href.startsWith("/") && pathname.startsWith(link.href));
+            const href = isExternal ? link.href : pathname !== "/" ? `/${link.href}` : link.href;
+            const isActive =
+              activeSection === link.href ||
+              (link.href.startsWith("/") && pathname.startsWith(link.href));
 
             return (
               <a
                 key={link.name}
                 href={href}
-                className={`block px-3 py-2.5 rounded-xl text-sm font-medium transition-colors ${isActive
-                  ? "text-primary bg-primary/10 font-semibold"
-                  : "text-foreground/80 hover:bg-secondary"
-                  }`}
+                className={`block px-3 py-2.5 rounded-xl text-sm font-medium transition-colors ${
+                  isActive
+                    ? "text-primary bg-primary/10 font-semibold"
+                    : "text-foreground/80 hover:bg-secondary"
+                }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.name}

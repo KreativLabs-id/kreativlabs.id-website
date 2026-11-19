@@ -11,17 +11,17 @@ interface AnimatedSectionProps {
   duration?: number;
 }
 
-export default function AnimatedSection({ 
-  children, 
+export default function AnimatedSection({
+  children,
   className = "",
   animation = "fade-up",
   delay = 0,
-  duration = 700
+  duration = 700,
 }: AnimatedSectionProps) {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
-  
+
   // Reduce animation complexity on mobile
   const mobileDuration = isMobile ? Math.min(duration, 300) : duration;
   const mobileDelay = isMobile ? Math.min(delay, 30) : delay;
@@ -55,23 +55,23 @@ export default function AnimatedSection({
 
   const getAnimationClasses = () => {
     const baseClasses = "transition-all ease-out";
-    
+
     if (isVisible) {
       return `${baseClasses} opacity-100 translate-x-0 translate-y-0 scale-100`;
     }
 
     // Use fixed Tailwind classes for better performance
     const baseHidden = `${baseClasses} opacity-0`;
-    
+
     switch (animation) {
       case "fade-up":
-        return `${baseHidden} ${isMobile ? 'translate-y-4' : 'translate-y-8'}`;
+        return `${baseHidden} ${isMobile ? "translate-y-4" : "translate-y-8"}`;
       case "fade-down":
-        return `${baseHidden} ${isMobile ? '-translate-y-4' : '-translate-y-8'}`;
+        return `${baseHidden} ${isMobile ? "-translate-y-4" : "-translate-y-8"}`;
       case "fade-left":
-        return `${baseHidden} ${isMobile ? 'translate-x-4' : 'translate-x-8'}`;
+        return `${baseHidden} ${isMobile ? "translate-x-4" : "translate-x-8"}`;
       case "fade-right":
-        return `${baseHidden} ${isMobile ? '-translate-x-4' : '-translate-x-8'}`;
+        return `${baseHidden} ${isMobile ? "-translate-x-4" : "-translate-x-8"}`;
       case "scale":
         return `${baseHidden} scale-95`;
       case "fade":
@@ -84,10 +84,10 @@ export default function AnimatedSection({
     <div
       ref={sectionRef}
       className={`${getAnimationClasses()} ${className}`}
-      style={{ 
+      style={{
         transitionDelay: `${mobileDelay}ms`,
         transitionDuration: `${mobileDuration}ms`,
-        willChange: isVisible ? 'auto' : 'opacity, transform'
+        willChange: isVisible ? "auto" : "opacity, transform",
       }}
     >
       {children}

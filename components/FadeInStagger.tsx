@@ -10,16 +10,16 @@ interface FadeInStaggerProps {
   index?: number;
 }
 
-export default function FadeInStagger({ 
-  children, 
+export default function FadeInStagger({
+  children,
   className = "",
   delay = 100,
-  index = 0
+  index = 0,
 }: FadeInStaggerProps) {
   const [isVisible, setIsVisible] = useState(false);
   const elementRef = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
-  
+
   // Reduce stagger delay on mobile for faster loading feel
   const mobileDelay = isMobile ? Math.min(delay, 30) : delay;
 
@@ -52,14 +52,14 @@ export default function FadeInStagger({
   return (
     <div
       ref={elementRef}
-      className={`transition-all ${isMobile ? 'duration-200' : 'duration-400'} ease-out ${
+      className={`transition-all ${isMobile ? "duration-200" : "duration-400"} ease-out ${
         isVisible
           ? "opacity-100 translate-y-0"
-          : `opacity-0 ${isMobile ? 'translate-y-2' : 'translate-y-4'}`
+          : `opacity-0 ${isMobile ? "translate-y-2" : "translate-y-4"}`
       } ${className}`}
-      style={{ 
+      style={{
         transitionDelay: `${index * mobileDelay}ms`,
-        willChange: isVisible ? 'auto' : 'opacity, transform'
+        willChange: isVisible ? "auto" : "opacity, transform",
       }}
     >
       {children}

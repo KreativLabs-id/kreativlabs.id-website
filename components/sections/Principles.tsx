@@ -8,12 +8,14 @@ const principles = [
   {
     icon: Clock,
     title: "Jadwal yang jelas",
-    description: "Kita sepakati jadwalnya dari awal, lalu kami kabari perkembangan proyekmu secara berkala.",
+    description:
+      "Kita sepakati jadwalnya dari awal, lalu kami kabari perkembangan proyekmu secara berkala.",
   },
   {
     icon: ShieldCheck,
     title: "Dibuat dengan teliti",
-    description: "Kami menyiapkan website yang ringan dan cepat, serta desain orisinal dengan resolusi tinggi.",
+    description:
+      "Kami menyiapkan website yang ringan dan cepat, serta desain orisinal dengan resolusi tinggi.",
   },
   {
     icon: MessageSquare,
@@ -23,7 +25,8 @@ const principles = [
   {
     icon: FolderKey,
     title: "Hasilnya jadi milikmu",
-    description: "File master, seperti vektor, source code, dan aset desain, kami serahkan kepadamu tanpa biaya tersembunyi.",
+    description:
+      "File master, seperti vektor, source code, dan aset desain, kami serahkan kepadamu tanpa biaya tersembunyi.",
   },
 ];
 
@@ -31,7 +34,6 @@ export default function Principles() {
   return (
     <section className="relative py-16 md:py-20 bg-background overflow-hidden w-full">
       <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-6xl">
-
         {/* Section Header */}
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-12">
@@ -39,7 +41,8 @@ export default function Principles() {
               Cara kami <span className="text-primary">bekerja</span>
             </h2>
             <p className="text-foreground/70 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-              Biar nyaman dari awal sampai proyek selesai, ini yang kami pegang saat bekerja bareng kamu.
+              Biar nyaman dari awal sampai proyek selesai, ini yang kami pegang saat bekerja bareng
+              kamu.
             </p>
           </div>
         </AnimatedSection>
@@ -74,7 +77,6 @@ export default function Principles() {
             );
           })}
         </div>
-
       </div>
     </section>
   );

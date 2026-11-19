@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.kreativlabs.id'),
+  metadataBase: new URL("https://www.kreativlabs.id"),
   title: "KreativLabs.id - Professional Website & Graphic Design Services Starting from 50k",
   description:
     "Professional website development and graphic design services (logo, poster, social media, packaging) with affordable pricing starting from 50 thousand rupiah. Premium quality, friendly prices!",
@@ -43,10 +43,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function EnLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function EnLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }

@@ -7,6 +7,7 @@ All notable changes to KreativLabs.id website will be documented in this file.
 ### ✨ Hero Section Redesign
 
 #### Updated
+
 - **Hero Section**: Complete redesign dengan Aurora background effect
   - Aurora animated background dengan 4 layers (Blue, Cyan, Purple)
   - Floating particles animation
@@ -19,6 +20,7 @@ All notable changes to KreativLabs.id website will be documented in this file.
   - Floating particles dengan different speeds
 
 #### Added
+
 - Custom Aurora animations (aurora-1, aurora-2, aurora-3, aurora-4)
 - Floating animations (float-slow, float-medium, float-fast)
 - New icons: Sparkles, Code2, Palette
@@ -27,6 +29,7 @@ All notable changes to KreativLabs.id website will be documented in this file.
 - SVG underline decoration
 
 #### Improved
+
 - Better visual hierarchy
 - More engaging copy
 - Enhanced user experience
@@ -40,6 +43,7 @@ All notable changes to KreativLabs.id website will be documented in this file.
 ### ✨ Initial Release
 
 #### Added
+
 - **Hero Section**: Landing page dengan lighting effects dan CTA buttons
 - **Projects Section**: Portfolio showcase dengan 4 project examples
 - **About Us Section**: Company information dengan statistics
@@ -54,6 +58,7 @@ All notable changes to KreativLabs.id website will be documented in this file.
 - **WhatsApp Button**: Floating WhatsApp chat button
 
 #### Features
+
 - ✅ Fully responsive design
 - ✅ Modern minimalist UI
 - ✅ Dark theme dengan blue accent (#3B82F6)
@@ -66,6 +71,7 @@ All notable changes to KreativLabs.id website will be documented in this file.
 - ✅ Plus Jakarta Sans font
 
 #### Tech Stack
+
 - Next.js 16 (App Router)
 - React 19
 - TypeScript 5
@@ -74,6 +80,7 @@ All notable changes to KreativLabs.id website will be documented in this file.
 - Lucide React icons
 
 #### Documentation
+
 - README.md - Project overview
 - DEPLOYMENT.md - Deployment guide
 - CUSTOMIZATION.md - Customization guide
@@ -81,6 +88,7 @@ All notable changes to KreativLabs.id website will be documented in this file.
 - .env.example - Environment variables template
 
 ### 🎨 Design
+
 - Color Scheme: Blue (#3B82F6) + Dark Background (#0A192F)
 - Typography: Plus Jakarta Sans
 - Layout: Modern, minimalist, clean
@@ -100,6 +108,7 @@ All notable changes to KreativLabs.id website will be documented in this file.
 9. **Footer** - Links, social media, copyright
 
 ### 🔧 Configuration Files
+
 - `next.config.ts` - Next.js configuration
 - `tailwind.config.ts` - Tailwind CSS configuration
 - `tsconfig.json` - TypeScript configuration
@@ -107,6 +116,7 @@ All notable changes to KreativLabs.id website will be documented in this file.
 - `eslint.config.mjs` - ESLint rules
 
 ### 📦 Components Structure
+
 ```
 components/
 ├── ui/ (shadcn components)
@@ -118,6 +128,7 @@ components/
 ```
 
 ### 🚀 Performance
+
 - Optimized images
 - Code splitting
 - Lazy loading
@@ -125,6 +136,7 @@ components/
 - Minimal bundle size
 
 ### 🔒 Security
+
 - Environment variables
 - No hardcoded secrets
 - Secure forms
@@ -135,6 +147,7 @@ components/
 ## Future Updates
 
 ### Planned Features
+
 - [ ] Blog section
 - [ ] Case studies
 - [ ] Team members page
@@ -147,6 +160,7 @@ components/
 - [ ] Client dashboard
 
 ### Improvements
+
 - [ ] Add more project examples
 - [ ] Integrate real contact form backend
 - [ ] Add Google Analytics
@@ -177,6 +191,7 @@ components/
 ---
 
 For detailed information about updates, see individual documentation files:
+
 - DEPLOYMENT.md for deployment updates
 - CUSTOMIZATION.md for customization options
 - PROJECT_STRUCTURE.md for structure changes

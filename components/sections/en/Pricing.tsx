@@ -35,9 +35,9 @@ const pricingPlansEN: PricingPlanEN[] = [
       "Direct WhatsApp call-to-action",
       "Domain and hosting setup included",
       "2 Design revisions",
-      "Basic user guidelines & support"
+      "Basic user guidelines & support",
     ],
-    waMessage: "Hello KreativLabs, I would like to order the Landing Page package ($50)."
+    waMessage: "Hello KreativLabs, I would like to order the Landing Page package ($50).",
   },
   {
     id: "fullstack-website",
@@ -54,9 +54,9 @@ const pricingPlansEN: PricingPlanEN[] = [
       "Integrated secure database",
       "Contact forms & Google Maps",
       "On-page SEO optimization",
-      "3 Revisions + 2 months support"
+      "3 Revisions + 2 months support",
     ],
-    waMessage: "Hello KreativLabs, I would like to order the Business Website package ($200)."
+    waMessage: "Hello KreativLabs, I would like to order the Business Website package ($200).",
   },
   {
     id: "custom-website",
@@ -71,9 +71,9 @@ const pricingPlansEN: PricingPlanEN[] = [
       "Multi-role user authentication",
       ".com domain setup & cloud deployment",
       "System documentation & user training",
-      "3 Months priority support"
+      "3 Months priority support",
     ],
-    waMessage: "Hello KreativLabs, I would like to discuss a Custom Web Application project."
+    waMessage: "Hello KreativLabs, I would like to discuss a Custom Web Application project.",
   },
   {
     id: "design-logo",
@@ -89,9 +89,9 @@ const pricingPlansEN: PricingPlanEN[] = [
       "Ready-to-use files (Transparent PNG, High-Res JPG)",
       "Brand color palette & typography guide",
       "3 Design revisions",
-      "100% Commercial copyright ownership"
+      "100% Commercial copyright ownership",
     ],
-    waMessage: "Hello KreativLabs, I would like to order the Logo Design package."
+    waMessage: "Hello KreativLabs, I would like to order the Logo Design package.",
   },
   {
     id: "social-media",
@@ -107,9 +107,9 @@ const pricingPlansEN: PricingPlanEN[] = [
       "Consistent visual identity and branding",
       "Editable master files (Canva / PSD / AI)",
       "2 Design revisions",
-      "Fast 2-3 business days turnaround"
+      "Fast 2-3 business days turnaround",
     ],
-    waMessage: "Hello KreativLabs, I would like to order the Social Media Design package ($30)."
+    waMessage: "Hello KreativLabs, I would like to order the Social Media Design package ($30).",
   },
   /* UI/UX Design - Temporarily disabled
   {
@@ -141,9 +141,11 @@ export default function PricingEN() {
   );
 
   return (
-    <section id="pricing" className="relative py-16 md:py-20 bg-background overflow-hidden w-full scroll-mt-24">
+    <section
+      id="pricing"
+      className="relative py-16 md:py-20 bg-background overflow-hidden w-full scroll-mt-24"
+    >
       <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-6xl">
-        
         {/* Section Header */}
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-10 sm:mb-12">
@@ -151,7 +153,8 @@ export default function PricingEN() {
               Find a package <span className="text-primary">that fits</span>
             </h2>
             <p className="text-foreground/70 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-              Take a look at the prices and what is included. Not sure which one to choose? Just ask us.
+              Take a look at the prices and what is included. Not sure which one to choose? Just ask
+              us.
             </p>
 
             {/* Filter Tabs */}
@@ -211,9 +214,7 @@ export default function PricingEN() {
                     {/* Header: Title & Badge */}
                     <div className="flex items-start justify-between gap-2 mb-3">
                       <div>
-                        <h3 className="text-lg font-bold text-foreground">
-                          {plan.name}
-                        </h3>
+                        <h3 className="text-lg font-bold text-foreground">{plan.name}</h3>
                         <p className="text-foreground/60 text-xs mt-1 leading-relaxed">
                           {plan.description}
                         </p>
@@ -313,7 +314,6 @@ export default function PricingEN() {
             </div>
           </div>
         </AnimatedSection>
-
       </div>
     </section>
   );

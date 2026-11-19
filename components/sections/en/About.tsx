@@ -7,12 +7,13 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function AboutEN() {
   return (
-    <section id="about" className="relative py-16 md:py-24 bg-background overflow-hidden w-full scroll-mt-24">
+    <section
+      id="about"
+      className="relative py-16 md:py-24 bg-background overflow-hidden w-full scroll-mt-24"
+    >
       <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-6xl">
-        
         {/* Asymmetrical 2-Column Tech Studio Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          
           {/* Left Column: Brand Statement & Story (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
             <AnimatedSection animation="fade-up">
@@ -23,11 +24,13 @@ export default function AboutEN() {
 
             <AnimatedSection animation="fade-up" delay={80}>
               <p className="text-sm sm:text-base text-foreground/75 leading-relaxed">
-                We make websites and designs for businesses. From the first conversation to the finished work, we figure things out together.
+                We make websites and designs for businesses. From the first conversation to the
+                finished work, we figure things out together.
               </p>
-              
+
               <p className="text-sm sm:text-base text-foreground/75 leading-relaxed mt-3">
-                Need a landing page, a point-of-sale system, or a web app? Tell us what you have in mind and we can find a good fit.
+                Need a landing page, a point-of-sale system, or a web app? Tell us what you have in
+                mind and we can find a good fit.
               </p>
             </AnimatedSection>
 
@@ -35,27 +38,21 @@ export default function AboutEN() {
             <AnimatedSection animation="fade-up" delay={120}>
               <div className="grid grid-cols-3 gap-3 pt-6 border-t border-border/70">
                 <div>
-                  <div className="text-xl sm:text-2xl font-extrabold text-foreground">
-                    &lt; 2s
-                  </div>
+                  <div className="text-xl sm:text-2xl font-extrabold text-foreground">&lt; 2s</div>
                   <div className="text-[11px] text-foreground/60 font-medium mt-0.5">
                     Fast Page Load
                   </div>
                 </div>
 
                 <div>
-                  <div className="text-xl sm:text-2xl font-extrabold text-foreground">
-                    100%
-                  </div>
+                  <div className="text-xl sm:text-2xl font-extrabold text-foreground">100%</div>
                   <div className="text-[11px] text-foreground/60 font-medium mt-0.5">
                     Asset Ownership
                   </div>
                 </div>
 
                 <div>
-                  <div className="text-xl sm:text-2xl font-extrabold text-foreground">
-                    24/7
-                  </div>
+                  <div className="text-xl sm:text-2xl font-extrabold text-foreground">24/7</div>
                   <div className="text-[11px] text-foreground/60 font-medium mt-0.5">
                     Support & Warranty
                   </div>
@@ -92,9 +89,7 @@ export default function AboutEN() {
               </div>
             </AnimatedSection>
           </div>
-
         </div>
-
       </div>
     </section>
   );

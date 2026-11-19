@@ -3,12 +3,22 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/sections/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { ArrowLeft, Shield, Database, Lock, UserCheck, Eye, MessageCircle, ExternalLink } from "lucide-react";
+import {
+  ArrowLeft,
+  Shield,
+  Database,
+  Lock,
+  UserCheck,
+  Eye,
+  MessageCircle,
+  ExternalLink,
+} from "lucide-react";
 import { WHATSAPP_NUMBER } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Kebijakan Privasi | KreativLabs.id",
-  description: "Prinsip perlindungan data dan privasi pengguna di KreativLabs.id. Kami menjaga informasi bisnismu tetap aman.",
+  description:
+    "Prinsip perlindungan data dan privasi pengguna di KreativLabs.id. Kami menjaga informasi bisnismu tetap aman.",
   alternates: {
     canonical: "https://www.kreativlabs.id/legal/privacy-policy",
   },
@@ -22,8 +32,8 @@ const privacyPrinciples = [
     points: [
       "Kontak bisnis: Nama, alamat email, dan nomor WhatsApp saat mengirim form atau berkonsultasi.",
       "Kebutuhan proyek: Informasi usaha, materi teks, foto, aset logo, atau referensi desain yang kamu bagikan kepada tim kami.",
-      "Data teknis anonim: Alamat IP umum, tipe peramban web, dan waktu kunjungan untuk menjaga performa dan kestabilan server."
-    ]
+      "Data teknis anonim: Alamat IP umum, tipe peramban web, dan waktu kunjungan untuk menjaga performa dan kestabilan server.",
+    ],
   },
   {
     icon: Eye,
@@ -32,8 +42,8 @@ const privacyPrinciples = [
     points: [
       "Membalas pesan konsultasi, menyusun rincian penawaran, dan memulai proses pengerjaan proyek.",
       "Melakukan koordinasi teknis, preview desain, dan pengiriman invoice.",
-      "Kami tidak pernah menjual atau menyewakan informasi kontakmu kepada pihak pemasaran pihak ketiga."
-    ]
+      "Kami tidak pernah menjual atau menyewakan informasi kontakmu kepada pihak pemasaran pihak ketiga.",
+    ],
   },
   {
     icon: Lock,
@@ -42,8 +52,8 @@ const privacyPrinciples = [
     points: [
       "Transmisi data di website KreativLabs.id dilindungi dengan enkripsi standar industri (SSL/TLS).",
       "Akses file proyek dan kredensial hosting/domain hanya dipegang oleh staf yang bertanggung jawab langsung atas proyekmu.",
-      "Setelah proyek selesai dan diserahterimakan, kamu dapat meminta penghapusan kredensial sementara kapan saja."
-    ]
+      "Setelah proyek selesai dan diserahterimakan, kamu dapat meminta penghapusan kredensial sementara kapan saja.",
+    ],
   },
   {
     icon: UserCheck,
@@ -52,9 +62,9 @@ const privacyPrinciples = [
     points: [
       "Meminta rangkuman data kontak apa saja yang tercatat dalam riwayat layanan kami.",
       "Memperbarui atau memperbaiki nomor kontak dan alamat email jika terjadi perubahan.",
-      "Meminta penghapusan data kontak atau arsip materi proyek setelah kewajiban proyek selesai."
-    ]
-  }
+      "Meminta penghapusan data kontak atau arsip materi proyek setelah kewajiban proyek selesai.",
+    ],
+  },
 ];
 
 export default function PrivacyPolicyPage() {
@@ -66,7 +76,6 @@ export default function PrivacyPolicyPage() {
 
       <div className="w-full pt-28 pb-16 sm:pt-36 sm:pb-24">
         <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
-          
           {/* Breadcrumb & Navigation */}
           <div className="mb-6 sm:mb-8">
             <Link
@@ -95,7 +104,9 @@ export default function PrivacyPolicyPage() {
             </h1>
 
             <p className="text-sm sm:text-base text-foreground/80 leading-relaxed max-w-2xl">
-              Privasi dan kerahasiaan materi bisnismu adalah prioritas kami. Kebijakan ini menguraikan komitmen KreativLabs.id dalam mengumpulkan, menjaga, dan mengelola informasi yang kamu bagikan.
+              Privasi dan kerahasiaan materi bisnismu adalah prioritas kami. Kebijakan ini
+              menguraikan komitmen KreativLabs.id dalam mengumpulkan, menjaga, dan mengelola
+              informasi yang kamu bagikan.
             </p>
           </header>
 
@@ -125,7 +136,10 @@ export default function PrivacyPolicyPage() {
                   <div className="pt-3 border-t border-border/60 ml-0 sm:ml-12">
                     <ul className="space-y-2.5">
                       {section.points.map((point, idx) => (
-                        <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-foreground/80 leading-relaxed">
+                        <li
+                          key={idx}
+                          className="flex items-start gap-2.5 text-xs sm:text-sm text-foreground/80 leading-relaxed"
+                        >
                           <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2" />
                           <span>{point}</span>
                         </li>
@@ -143,10 +157,12 @@ export default function PrivacyPolicyPage() {
               Penggunaan Cookie & Teknologi Penunjang
             </h3>
             <p className="mb-3">
-              Kami menggunakan cookie secukupnya untuk keperluan teknis seperti mengingat tema warna website dan mengukur performa halaman melalui analitik anonim.
+              Kami menggunakan cookie secukupnya untuk keperluan teknis seperti mengingat tema warna
+              website dan mengukur performa halaman melalui analitik anonim.
             </p>
             <p>
-              Rincian kategori cookie dan langkah pengaturannya dapat kamu pelajari secara lengkap di halaman{" "}
+              Rincian kategori cookie dan langkah pengaturannya dapat kamu pelajari secara lengkap
+              di halaman{" "}
               <Link
                 href="/legal/cookie-policy"
                 className="font-semibold text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1 focus-visible:outline-none focus-visible:underline"
@@ -165,7 +181,8 @@ export default function PrivacyPolicyPage() {
                 Ingin menanyakan perlindungan datamu?
               </h3>
               <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed">
-                Hubungi kami via WhatsApp atau email resmi di hello@kreativlabs.id. Kami siap membantu setiap pertanyaanmu.
+                Hubungi kami via WhatsApp atau email resmi di hello@kreativlabs.id. Kami siap
+                membantu setiap pertanyaanmu.
               </p>
             </div>
 
@@ -188,7 +205,6 @@ export default function PrivacyPolicyPage() {
               </Link>
             </div>
           </aside>
-
         </div>
       </div>
 

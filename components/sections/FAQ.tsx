@@ -9,7 +9,8 @@ import FadeInStagger from "@/components/FadeInStagger";
 const faqs = [
   {
     question: "Bikin website biasanya butuh waktu berapa lama?",
-    answer: "Landing page sederhana biasanya 3–5 hari kerja. Website profil atau toko online sekitar 1–3 minggu. Jadwalnya kita sepakati dulu sebelum mulai, ya.",
+    answer:
+      "Landing page sederhana biasanya 3–5 hari kerja. Website profil atau toko online sekitar 1–3 minggu. Jadwalnya kita sepakati dulu sebelum mulai, ya.",
   },
   {
     question: "Domain dan hosting sudah termasuk?",
@@ -17,19 +18,23 @@ const faqs = [
   },
   {
     question: "Websitenya bisa dibuka di HP?",
-    answer: "Bisa. Website dibuat responsif dan diuji di berbagai ukuran layar, mulai dari HP sampai laptop.",
+    answer:
+      "Bisa. Website dibuat responsif dan diuji di berbagai ukuran layar, mulai dari HP sampai laptop.",
   },
   {
     question: "Kalau mau revisi, bagaimana caranya?",
-    answer: "Kami akan kirim hasilnya untuk kamu cek. Sampaikan bagian yang ingin diubah, lalu kami sesuaikan sesuai jumlah revisi di paketmu.",
+    answer:
+      "Kami akan kirim hasilnya untuk kamu cek. Sampaikan bagian yang ingin diubah, lalu kami sesuaikan sesuai jumlah revisi di paketmu.",
   },
   {
     question: "Bisa ganti isi website sendiri?",
-    answer: "Bisa, untuk paket website dinamis. Ada dashboard admin dan panduan singkat supaya kamu bisa mengubah teks, produk, atau foto sendiri.",
+    answer:
+      "Bisa, untuk paket website dinamis. Ada dashboard admin dan panduan singkat supaya kamu bisa mengubah teks, produk, atau foto sendiri.",
   },
   {
     question: "Setelah selesai, masih bisa minta bantuan?",
-    answer: "Bisa. Ada garansi dan bantuan teknis setelah serah terima. Detail dan durasinya mengikuti paket yang kamu pilih.",
+    answer:
+      "Bisa. Ada garansi dan bantuan teknis setelah serah terima. Detail dan durasinya mengikuti paket yang kamu pilih.",
   },
 ];
 
@@ -41,9 +46,11 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="relative py-16 md:py-20 bg-background overflow-hidden w-full scroll-mt-24">
+    <section
+      id="faq"
+      className="relative py-16 md:py-20 bg-background overflow-hidden w-full scroll-mt-24"
+    >
       <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-4xl">
-
         {/* Section Header */}
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-12">
@@ -79,7 +86,9 @@ export default function FAQ() {
                     </span>
                     <div
                       className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-secondary/80 flex items-center justify-center shrink-0 transition-all ${
-                        isOpen ? "bg-primary text-primary-foreground" : "text-foreground/70 group-hover:text-primary"
+                        isOpen
+                          ? "bg-primary text-primary-foreground"
+                          : "text-foreground/70 group-hover:text-primary"
                       }`}
                     >
                       <ChevronDown

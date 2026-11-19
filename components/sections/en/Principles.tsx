@@ -13,7 +13,8 @@ const principlesEN = [
   {
     icon: ShieldCheck,
     title: "Quality & High Performance",
-    description: "We build fast, lightweight websites and make original designs in high resolution.",
+    description:
+      "We build fast, lightweight websites and make original designs in high resolution.",
   },
   {
     icon: MessageSquare,
@@ -23,7 +24,8 @@ const principlesEN = [
   {
     icon: FolderKey,
     title: "100% Asset Ownership",
-    description: "You receive the master files, source code, and commercial copyright when we hand over the work.",
+    description:
+      "You receive the master files, source code, and commercial copyright when we hand over the work.",
   },
 ];
 
@@ -31,7 +33,6 @@ export default function PrinciplesEN() {
   return (
     <section className="relative py-16 md:py-20 bg-background overflow-hidden w-full">
       <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-6xl">
-        
         {/* Section Header */}
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-12">
@@ -74,7 +75,6 @@ export default function PrinciplesEN() {
             );
           })}
         </div>
-
       </div>
     </section>
   );

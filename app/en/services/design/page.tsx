@@ -5,18 +5,14 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 // import {
 //   PenTool,
 // } from "lucide-react";
-import {
-  Palette,
-  Instagram,
-  CheckCircle2,
-  ArrowRight,
-} from "lucide-react";
+import { Palette, Instagram, CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { WHATSAPP_NUMBER } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Professional Graphic Design & Branding Services | KreativLabs",
-  description: "Bespoke visual identity and digital design solutions for modern businesses. From brand logos to structured social media kits and brand guidelines.",
+  description:
+    "Bespoke visual identity and digital design solutions for modern businesses. From brand logos to structured social media kits and brand guidelines.",
   alternates: {
     canonical: "https://www.kreativlabs.id/en/services/design",
   },
@@ -26,30 +22,33 @@ const designServicesEN = [
   {
     icon: Palette,
     title: "Brand Identity & Logo Design",
-    description: "Original, conceptual logo engineering that differentiates your brand from competitors, complete with typography guides, color palettes, and full vector source files.",
+    description:
+      "Original, conceptual logo engineering that differentiates your brand from competitors, complete with typography guides, color palettes, and full vector source files.",
     deliverables: [
       "Original concepts tailored to your brand personality",
       "Comprehensive vector master formats (AI, SVG, EPS, PDF)",
       "High-resolution transparent assets (PNG, JPG)",
       "Structured Color Palette & Typography Guidelines",
       "Realistic 3D mockup brand applications",
-      "Full and uncompromised commercial copyright ownership"
+      "Full and uncompromised commercial copyright ownership",
     ],
-    waMessage: "Hello KreativLabs, I would like to inquire about Brand Identity & Logo Design services."
+    waMessage:
+      "Hello KreativLabs, I would like to inquire about Brand Identity & Logo Design services.",
   },
   {
     icon: Instagram,
     title: "Social Media Kit & Content Design",
-    description: "Consistent high-engagement visual assets for Instagram feeds, educational carousels, promotional stories, and digital campaign ad banners.",
+    description:
+      "Consistent high-engagement visual assets for Instagram feeds, educational carousels, promotional stories, and digital campaign ad banners.",
     deliverables: [
       "Structured feed and carousel layout systems",
       "Brand-aligned promotional story templates",
       "High-converting paid advertising banners",
       "Crisp, export-ready high-resolution formats",
       "Iterative revision rounds to guarantee satisfaction",
-      "Includes fully editable design source files"
+      "Includes fully editable design source files",
     ],
-    waMessage: "Hello KreativLabs, I would like to order a Social Media Design package."
+    waMessage: "Hello KreativLabs, I would like to order a Social Media Design package.",
   },
   /* UI/UX & Product Design - Temporarily disabled
   {
@@ -73,23 +72,25 @@ const workflowEN = [
   {
     step: "01",
     title: "Brief & Discovery",
-    description: "We analyze your brand values, target demographic, and visual direction preferences."
+    description:
+      "We analyze your brand values, target demographic, and visual direction preferences.",
   },
   {
     step: "02",
     title: "Concept Exploration",
-    description: "Creating initial drafts, moodboards, and directional sketches to align early."
+    description: "Creating initial drafts, moodboards, and directional sketches to align early.",
   },
   {
     step: "03",
     title: "Refinement & Revisions",
-    description: "Polishing high-resolution designs with focused revision cycles based on your feedback."
+    description:
+      "Polishing high-resolution designs with focused revision cycles based on your feedback.",
   },
   {
     step: "04",
     title: "Master File Delivery",
-    description: "Delivering the complete asset kit in all required production and vector formats."
-  }
+    description: "Delivering the complete asset kit in all required production and vector formats.",
+  },
 ];
 
 export default function DesignServicesPageEN() {
@@ -103,14 +104,15 @@ export default function DesignServicesPageEN() {
           <span className="text-xs font-semibold text-primary uppercase tracking-widest block mb-2.5">
             Graphic Design & Branding Services
           </span>
-          
+
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-foreground tracking-tight leading-[1.18] mb-4">
             Bespoke Visual Identities Engineered to <br className="hidden sm:block" />
             <span className="text-primary">Establish Lasting Brand Authority.</span>
           </h1>
 
           <p className="text-sm sm:text-base md:text-lg text-foreground/75 max-w-2xl mx-auto leading-relaxed mb-8">
-            We craft cohesive visual experiences that combine contemporary aesthetic standards with commercial strategy to help your brand command market trust.
+            We craft cohesive visual experiences that combine contemporary aesthetic standards with
+            commercial strategy to help your brand command market trust.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -141,7 +143,8 @@ export default function DesignServicesPageEN() {
               Curated Design Capabilities
             </h2>
             <p className="text-xs sm:text-sm text-foreground/70 max-w-xl mx-auto">
-              Every deliverable is crafted from ground-up research without reliance on generic clipart.
+              Every deliverable is crafted from ground-up research without reliance on generic
+              clipart.
             </p>
           </div>
 
@@ -160,9 +163,7 @@ export default function DesignServicesPageEN() {
                       <Icon className="w-5 h-5" />
                     </div>
 
-                    <h3 className="text-lg font-bold text-foreground mb-2">
-                      {service.title}
-                    </h3>
+                    <h3 className="text-lg font-bold text-foreground mb-2">{service.title}</h3>
 
                     <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed mb-5">
                       {service.description}
@@ -173,7 +174,10 @@ export default function DesignServicesPageEN() {
                         Included Deliverables:
                       </span>
                       {service.deliverables.map((item, idx) => (
-                        <div key={idx} className="flex items-start gap-2 text-xs sm:text-[13px] text-foreground/80">
+                        <div
+                          key={idx}
+                          className="flex items-start gap-2 text-xs sm:text-[13px] text-foreground/80"
+                        >
                           <CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5" />
                           <span>{item}</span>
                         </div>
@@ -212,15 +216,9 @@ export default function DesignServicesPageEN() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {workflowEN.map((item, index) => (
               <div key={index} className="bg-card border border-border/80 rounded-2xl p-5">
-                <span className="text-xl font-extrabold text-primary block mb-2">
-                  {item.step}
-                </span>
-                <h4 className="text-sm font-bold text-foreground mb-1.5">
-                  {item.title}
-                </h4>
-                <p className="text-xs text-foreground/70 leading-relaxed">
-                  {item.description}
-                </p>
+                <span className="text-xl font-extrabold text-primary block mb-2">{item.step}</span>
+                <h4 className="text-sm font-bold text-foreground mb-1.5">{item.title}</h4>
+                <p className="text-xs text-foreground/70 leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>
@@ -235,7 +233,8 @@ export default function DesignServicesPageEN() {
               Ready to Upgrade Your Brand Identity?
             </h2>
             <p className="text-xs sm:text-sm text-foreground/70 max-w-lg mx-auto leading-relaxed mb-6">
-              Discuss your visual identity, branding, or social media content with the KreativLabs design team.
+              Discuss your visual identity, branding, or social media content with the KreativLabs
+              design team.
             </p>
             <a
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20KreativLabs,%20I%20would%20like%20to%20discuss%20design%20services`}

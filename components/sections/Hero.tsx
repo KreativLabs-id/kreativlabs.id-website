@@ -16,7 +16,6 @@ export default function Hero() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[400px] bg-primary/10 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 max-w-5xl flex flex-col items-center justify-center text-center my-auto">
-        
         {/* Top Micro Pill */}
         <AnimatedSection animation="fade-up" delay={50}>
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-card/80 border border-border/80 backdrop-blur-md text-xs font-medium text-foreground/70 mb-4">
@@ -27,17 +26,29 @@ export default function Hero() {
         {/* Framed Canvas Box - Balanced & Spacious */}
         <AnimatedSection animation="fade-up" delay={150}>
           <div className="relative w-full max-w-3xl sm:max-w-4xl md:max-w-[880px] mx-auto p-8 sm:p-11 md:p-14 border border-border/80 bg-card/40 backdrop-blur-xs rounded-3xl text-center shadow-xs">
-            
             {/* 4 Corner Crop Marks */}
-            <span aria-hidden className="absolute -top-1.5 -left-1.5 w-4.5 h-4.5 border-t-2 border-l-2 border-foreground/60 rounded-tl-xs pointer-events-none" />
-            <span aria-hidden className="absolute -top-1.5 -right-1.5 w-4.5 h-4.5 border-t-2 border-r-2 border-foreground/60 rounded-tr-xs pointer-events-none" />
-            <span aria-hidden className="absolute -bottom-1.5 -left-1.5 w-4.5 h-4.5 border-b-2 border-l-2 border-foreground/60 rounded-bl-xs pointer-events-none" />
-            <span aria-hidden className="absolute -bottom-1.5 -right-1.5 w-4.5 h-4.5 border-b-2 border-r-2 border-foreground/60 rounded-br-xs pointer-events-none" />
+            <span
+              aria-hidden
+              className="absolute -top-1.5 -left-1.5 w-4.5 h-4.5 border-t-2 border-l-2 border-foreground/60 rounded-tl-xs pointer-events-none"
+            />
+            <span
+              aria-hidden
+              className="absolute -top-1.5 -right-1.5 w-4.5 h-4.5 border-t-2 border-r-2 border-foreground/60 rounded-tr-xs pointer-events-none"
+            />
+            <span
+              aria-hidden
+              className="absolute -bottom-1.5 -left-1.5 w-4.5 h-4.5 border-b-2 border-l-2 border-foreground/60 rounded-bl-xs pointer-events-none"
+            />
+            <span
+              aria-hidden
+              className="absolute -bottom-1.5 -right-1.5 w-4.5 h-4.5 border-b-2 border-r-2 border-foreground/60 rounded-br-xs pointer-events-none"
+            />
 
             {/* Main Headline (2 Wide & Powerful Lines) */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.15rem] font-extrabold text-foreground tracking-tight leading-[1.18]">
               Jasa Pembuatan Website & <br />
-              <span className="text-foreground">Desain Grafis</span> <span className="text-primary">Bisnis.</span>
+              <span className="text-foreground">Desain Grafis</span>{" "}
+              <span className="text-primary">Bisnis.</span>
             </h1>
 
             {/* Availability Indicator */}
@@ -45,16 +56,15 @@ export default function Hero() {
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
               <span>Siap Menerima Project Baru</span>
             </div>
-
           </div>
         </AnimatedSection>
 
         {/* Subtitle & Actions (Below Frame) */}
         <AnimatedSection animation="fade-up" delay={250}>
           <div className="text-center max-w-xl mx-auto mt-6 flex flex-col items-center">
-            
             <p className="text-xs sm:text-sm md:text-base text-foreground/75 leading-relaxed mb-6 px-2">
-              Kami merancang website berkinerja tinggi dan identitas visual modern untuk membantu bisnis Anda tampil terpercaya dan menghasilkan konversi.
+              Kami merancang website berkinerja tinggi dan identitas visual modern untuk membantu
+              bisnis Anda tampil terpercaya dan menghasilkan konversi.
             </p>
 
             {/* CTA Buttons */}
@@ -73,10 +83,8 @@ export default function Hero() {
                 Lihat Portofolio
               </a>
             </div>
-
           </div>
         </AnimatedSection>
-
       </div>
     </section>
   );

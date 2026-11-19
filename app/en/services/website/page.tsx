@@ -2,19 +2,14 @@ import type { Metadata } from "next";
 import NavbarEN from "@/components/NavbarEN";
 import Footer from "@/components/sections/en/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import {
-  Code,
-  Globe,
-  Cpu,
-  CheckCircle2,
-  ArrowRight,
-} from "lucide-react";
+import { Code, Globe, Cpu, CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { WHATSAPP_NUMBER } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Professional Website & Web App Development Services | KreativLabs",
-  description: "High-performance web development solutions for ambitious businesses. From high-converting landing pages to custom web applications.",
+  description:
+    "High-performance web development solutions for ambitious businesses. From high-converting landing pages to custom web applications.",
   alternates: {
     canonical: "https://www.kreativlabs.id/en/services/website",
   },
@@ -24,68 +19,75 @@ const websiteServicesEN = [
   {
     icon: Code,
     title: "Business & Promotional Landing Pages",
-    description: "Structured single-page websites engineered specifically for marketing campaigns, high conversion rates, and direct WhatsApp lead generation.",
+    description:
+      "Structured single-page websites engineered specifically for marketing campaigns, high conversion rates, and direct WhatsApp lead generation.",
     deliverables: [
       "Persuasive layout structured for high conversions",
       "Near-instant page load speed on modern devices",
       "Adaptive & mobile-first responsive architecture",
       "Direct WhatsApp and lead capture integration",
       "Turnkey domain, hosting, and SSL setup",
-      "Clean on-page Google SEO structure"
+      "Clean on-page Google SEO structure",
     ],
-    waMessage: "Hello KreativLabs, I would like to inquire about Landing Page development."
+    waMessage: "Hello KreativLabs, I would like to inquire about Landing Page development.",
   },
   {
     icon: Globe,
     title: "Corporate & Business Websites",
-    description: "Official multi-page websites designed to establish brand credibility, showcase service portfolios, and earn the trust of corporate clients.",
+    description:
+      "Official multi-page websites designed to establish brand credibility, showcase service portfolios, and earn the trust of corporate clients.",
     deliverables: [
       "Complete multi-page structure (About, Services, Portfolio, Contact)",
       "Editorial typography that communicates corporate trust",
       "Intuitive CMS for effortless internal content updates",
       "Integrated contact forms, corporate email, and Google Maps",
       "Enterprise-grade performance and data security",
-      "Comprehensive onboarding and maintenance guide"
+      "Comprehensive onboarding and maintenance guide",
     ],
-    waMessage: "Hello KreativLabs, I would like to build a Corporate / Business Website."
+    waMessage: "Hello KreativLabs, I would like to build a Corporate / Business Website.",
   },
   {
     icon: Cpu,
     title: "Custom Web Applications & Portals",
-    description: "Custom-tailored software systems built to automate business operations, such as cloud POS cashiers, reservation systems, or internal portals.",
+    description:
+      "Custom-tailored software systems built to automate business operations, such as cloud POS cashiers, reservation systems, or internal portals.",
     deliverables: [
       "Next.js, TypeScript, and modern scalable databases",
       "Role-based access control and intuitive admin dashboards",
       "Seamless payment gateway and third-party API integrations",
       "Automated database backups and encrypted security",
       "Intuitive UX tailored for operators and daily staff",
-      "Technical warranty and continuous bug-fix support"
+      "Technical warranty and continuous bug-fix support",
     ],
-    waMessage: "Hello KreativLabs, I would like to discuss a Custom Web App project."
-  }
+    waMessage: "Hello KreativLabs, I would like to discuss a Custom Web App project.",
+  },
 ];
 
 const workflowEN = [
   {
     step: "01",
     title: "Consultation & Scope",
-    description: "We align on your digital goals, target audience, and required feature specifications."
+    description:
+      "We align on your digital goals, target audience, and required feature specifications.",
   },
   {
     step: "02",
     title: "Layout & Wireframing",
-    description: "Structuring user journeys, copywriting, and visual prototypes for seamless clarity."
+    description:
+      "Structuring user journeys, copywriting, and visual prototypes for seamless clarity.",
   },
   {
     step: "03",
     title: "Development & Integration",
-    description: "Clean engineering, database configuration, performance optimization, and testing."
+    description:
+      "Clean engineering, database configuration, performance optimization, and testing.",
   },
   {
     step: "04",
     title: "Testing, Revisions, & Launch",
-    description: "Cross-device responsiveness tests, client revisions, domain setup, and official deployment."
-  }
+    description:
+      "Cross-device responsiveness tests, client revisions, domain setup, and official deployment.",
+  },
 ];
 
 export default function WebsiteServicesPageEN() {
@@ -99,14 +101,15 @@ export default function WebsiteServicesPageEN() {
           <span className="text-xs font-semibold text-primary uppercase tracking-widest block mb-2.5">
             Web Development Services
           </span>
-          
+
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-foreground tracking-tight leading-[1.18] mb-4">
             High-Performance Websites Engineered to <br className="hidden sm:block" />
             <span className="text-primary">Drive Measurable Growth for Your Business.</span>
           </h1>
 
           <p className="text-sm sm:text-base md:text-lg text-foreground/75 max-w-2xl mx-auto leading-relaxed mb-8">
-            We engineer websites that load instantly, convert visitors into loyal clients, and provide seamless content management.
+            We engineer websites that load instantly, convert visitors into loyal clients, and
+            provide seamless content management.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -137,7 +140,8 @@ export default function WebsiteServicesPageEN() {
               Tailored Web Solutions
             </h2>
             <p className="text-xs sm:text-sm text-foreground/70 max-w-xl mx-auto">
-              Every solution is crafted with modern engineering standards, free from bloated legacy templates.
+              Every solution is crafted with modern engineering standards, free from bloated legacy
+              templates.
             </p>
           </div>
 
@@ -156,9 +160,7 @@ export default function WebsiteServicesPageEN() {
                       <Icon className="w-5 h-5" />
                     </div>
 
-                    <h3 className="text-lg font-bold text-foreground mb-2">
-                      {service.title}
-                    </h3>
+                    <h3 className="text-lg font-bold text-foreground mb-2">{service.title}</h3>
 
                     <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed mb-5">
                       {service.description}
@@ -169,7 +171,10 @@ export default function WebsiteServicesPageEN() {
                         Deliverables & Features:
                       </span>
                       {service.deliverables.map((item, idx) => (
-                        <div key={idx} className="flex items-start gap-2 text-xs sm:text-[13px] text-foreground/80">
+                        <div
+                          key={idx}
+                          className="flex items-start gap-2 text-xs sm:text-[13px] text-foreground/80"
+                        >
                           <CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5" />
                           <span>{item}</span>
                         </div>
@@ -208,15 +213,9 @@ export default function WebsiteServicesPageEN() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {workflowEN.map((item, index) => (
               <div key={index} className="bg-card border border-border/80 rounded-2xl p-5">
-                <span className="text-xl font-extrabold text-primary block mb-2">
-                  {item.step}
-                </span>
-                <h4 className="text-sm font-bold text-foreground mb-1.5">
-                  {item.title}
-                </h4>
-                <p className="text-xs text-foreground/70 leading-relaxed">
-                  {item.description}
-                </p>
+                <span className="text-xl font-extrabold text-primary block mb-2">{item.step}</span>
+                <h4 className="text-sm font-bold text-foreground mb-1.5">{item.title}</h4>
+                <p className="text-xs text-foreground/70 leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>
@@ -231,7 +230,8 @@ export default function WebsiteServicesPageEN() {
               Ready to Build Your Digital Platform?
             </h2>
             <p className="text-xs sm:text-sm text-foreground/70 max-w-lg mx-auto leading-relaxed mb-6">
-              Consult your specifications directly with the KreativLabs team. We will provide honest technical guidance and an accurate project timeline.
+              Consult your specifications directly with the KreativLabs team. We will provide honest
+              technical guidance and an accurate project timeline.
             </p>
             <a
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20KreativLabs,%20I%20would%20like%20to%20discuss%20a%20website%20project`}

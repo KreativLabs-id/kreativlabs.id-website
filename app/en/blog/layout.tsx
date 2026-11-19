@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.kreativlabs.id'),
+  metadataBase: new URL("https://www.kreativlabs.id"),
   title: "Blog - KreativLabs.id | Web Development & Design Tips",
   description:
     "Discover the latest tips, tutorials, and insights about web development, graphic design, and digital business solutions from KreativLabs.id",
@@ -43,10 +43,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BlogLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function BlogLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }

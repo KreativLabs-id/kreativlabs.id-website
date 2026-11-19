@@ -36,7 +36,7 @@ export default function BackToTop() {
           : "opacity-0 translate-y-4 pointer-events-none"
       }`}
       aria-label="Back to top"
-      style={{ position: 'fixed' }}
+      style={{ position: "fixed" }}
     >
       <ArrowUp className="w-5 h-5" />
     </Button>

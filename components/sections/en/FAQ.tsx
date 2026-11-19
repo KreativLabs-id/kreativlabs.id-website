@@ -9,7 +9,8 @@ import FadeInStagger from "@/components/FadeInStagger";
 const faqsEN = [
   {
     question: "How long does a website take?",
-    answer: "A simple landing page usually takes 3–5 business days. A business website or online store takes around 1–3 weeks. We agree on the timeline before we start.",
+    answer:
+      "A simple landing page usually takes 3–5 business days. A business website or online store takes around 1–3 weeks. We agree on the timeline before we start.",
   },
   {
     question: "Are domain and hosting included?",
@@ -17,19 +18,23 @@ const faqsEN = [
   },
   {
     question: "Will the website be mobile-friendly?",
-    answer: "Yes. We make responsive websites and test them on different screen sizes, from phones to laptops.",
+    answer:
+      "Yes. We make responsive websites and test them on different screen sizes, from phones to laptops.",
   },
   {
     question: "What if I want to make changes?",
-    answer: "We will send you the work to review. Let us know what you would like changed, and we will revise it according to your package.",
+    answer:
+      "We will send you the work to review. Let us know what you would like changed, and we will revise it according to your package.",
   },
   {
     question: "Can I manage and update content independently?",
-    answer: "Yes, with a dynamic website package. You get an admin dashboard and a short guide to help you update content yourself.",
+    answer:
+      "Yes, with a dynamic website package. You get an admin dashboard and a short guide to help you update content yourself.",
   },
   {
     question: "Can I still ask for help after delivery?",
-    answer: "Yes. Warranty and technical support are available after handover. The details and duration depend on your package.",
+    answer:
+      "Yes. Warranty and technical support are available after handover. The details and duration depend on your package.",
   },
 ];
 
@@ -41,9 +46,11 @@ export default function FAQEN() {
   };
 
   return (
-    <section id="faq" className="relative py-16 md:py-20 bg-background overflow-hidden w-full scroll-mt-24">
+    <section
+      id="faq"
+      className="relative py-16 md:py-20 bg-background overflow-hidden w-full scroll-mt-24"
+    >
       <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-4xl">
-
         {/* Section Header */}
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-12">
@@ -51,7 +58,8 @@ export default function FAQEN() {
               Frequently Asked <span className="text-primary">Questions</span>
             </h2>
             <p className="text-foreground/70 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
-              Find clear answers regarding our development workflow, revision cycles, and asset ownership.
+              Find clear answers regarding our development workflow, revision cycles, and asset
+              ownership.
             </p>
           </div>
         </AnimatedSection>
@@ -79,7 +87,9 @@ export default function FAQEN() {
                     </span>
                     <div
                       className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-secondary/80 flex items-center justify-center shrink-0 transition-all ${
-                        isOpen ? "bg-primary text-primary-foreground" : "text-foreground/70 group-hover:text-primary"
+                        isOpen
+                          ? "bg-primary text-primary-foreground"
+                          : "text-foreground/70 group-hover:text-primary"
                       }`}
                     >
                       <ChevronDown
