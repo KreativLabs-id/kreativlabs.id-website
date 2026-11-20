@@ -120,6 +120,8 @@ export async function getRelevantTrends() {
   }
 }
 
+export const MIN_ARTICLE_WORDS = 300;
+
 export function validateArticle(article, sources, titles, slugs) {
   if (
     !article ||
@@ -161,8 +163,13 @@ export function validateArticle(article, sources, titles, slugs) {
     throw new Error("Isi artikel tidak valid");
   const headingCount = nonEmptyLines.filter((line) => /^##\s+\S/.test(line)).length;
   if (headingCount < 2) throw new Error("Artikel minimal harus memiliki 2 subjudul (##)");
-  const wordCount = nonEmptyLines.join(" ").split(/\s+/).filter(Boolean).length;
-  if (wordCount < 300) throw new Error("Isi artikel terlalu pendek (minimal 300 kata)");
+  const wordCount = nonEmptyLines
+    .filter((line) => !/^#{1,6}\s/.test(line))
+    .reduce((count, line) => count + line.split(/\s+/).length, 0);
+  if (wordCount < MIN_ARTICLE_WORDS)
+    throw new Error(
+      `Isi artikel terlalu pendek (${wordCount} kata, minimal ${MIN_ARTICLE_WORDS} kata)`
+    );
   if (
     /\b(halo sobat kreativlabs|coba deh jujur|senam jantung|di era digital|tidak dapat dipungkiri)\b/i.test(
       nonEmptyLines.join(" ")
@@ -175,6 +182,59 @@ export function validateArticle(article, sources, titles, slugs) {
   const containsHtmlTag = (value) => /<\/?[a-zA-Z][^>]*>?/.test(value);
   if ([article.title, article.excerpt, ...article.tags, ...article.content].some(containsHtmlTag))
     throw new Error("Konten mengandung tag HTML mentah");
+}
+
+export async function generateArticleDraft({
+  prompt,
+  modelCandidates,
+  generate,
+  sources,
+  titles,
+  slugs,
+}) {
+  let validationIssue;
+  let lastRequestError;
+
+  for (const modelName of modelCandidates) {
+    for (let attempt = 1; attempt <= 2; attempt++) {
+      const draftPrompt = validationIssue
+        ? `${prompt}\n\nDraf sebelumnya ditolak: ${validationIssue}. Tulis ulang artikel lengkap dan perbaiki masalah itu. Jika draf terlalu pendek, kembangkan contoh, langkah praktis, atau pertimbangan bagi pembaca tanpa mengarang fakta dan tanpa mengulang isi.`
+        : prompt;
+      let response;
+      try {
+        response = await generate(modelName, draftPrompt);
+      } catch (error) {
+        lastRequestError = error;
+        break;
+      }
+
+      try {
+        let article;
+        try {
+          article = JSON.parse(
+            response
+              .text()
+              .trim()
+              .replace(/^```(?:json)?\s*|\s*```$/g, "")
+          );
+        } catch {
+          throw new Error("Respons tidak berisi JSON artikel yang lengkap");
+        }
+        if (article?.skip === true) {
+          if (!validationIssue) return null;
+          break;
+        }
+        validateArticle(article, sources, titles, slugs);
+        return { article, modelName };
+      } catch (error) {
+        validationIssue = error.message;
+        console.warn(`Draf ${modelName} percobaan ${attempt} ditolak: ${validationIssue}`);
+      }
+    }
+  }
+
+  if (!validationIssue && lastRequestError) throw lastRequestError;
+  return null;
 }
 
 export function pickUnusedImageCandidate(category, usedImages = [], imagePool = {}) {
