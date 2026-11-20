@@ -1043,7 +1043,7 @@ export const blogPosts: BlogPost[] = [
     slug: "kenapa-umkm-masih-susah-berkembang-di-2026",
     excerpt:
       "Jualan di media sosial kini makin menantang karena perilaku konsumen yang terus berubah. Saatnya bisnis Anda beradaptasi dengan membangun kehadiran digital yang lebih mandiri.",
-    image: "/blog-images/photo-1460925895917-afdab827c52f.webp",
+    image: "/blog-images/photo-1556742049-0cfed4f6a45d.webp",
     author: "Tim KreativLabs",
     date: "31 Agustus 2026",
     category: "Tips Bisnis",
@@ -1269,7 +1269,7 @@ export const blogPosts: BlogPost[] = [
     slug: "seni-mengunci-hati-pengunjung-website-jadi-pelanggan-setia",
     excerpt:
       "Pernah merasa sudah keluar banyak energi mendatangkan pengunjung ke website tapi hasilnya nihil? Mari bedah strategi psikologi harga dan branding untuk meningkatkan loyalitas.",
-    image: "/blog-images/photo-1556761175-5973dc0f32e7.webp",
+    image: "/blog-images/photo-1553877522-43269d4ea984.webp",
     author: "Tim KreativLabs",
     date: "16 September 2026",
     category: "Tips Bisnis",
@@ -1301,7 +1301,7 @@ export const blogPosts: BlogPost[] = [
     slug: "kenapa-produk-murah-bisa-terkesan-mahal-psikologi-visual-toko-online",
     excerpt:
       "Pernah penasaran kenapa ada toko online yang menjual barang biasa namun laris manis dengan harga tinggi? Jawabannya ada pada strategi desain visual dan psikologi warna yang memengaruhi persepsi pelanggan sejak detik pertama.",
-    image: "/blog-images/photo-1561070791-2526d30994b5.webp",
+    image: "/blog-images/photo-1558655146-d09347e92766.webp",
     author: "Tim KreativLabs",
     date: "19 September 2026",
     category: "Desain & Branding",
@@ -1337,7 +1337,7 @@ export const blogPosts: BlogPost[] = [
     slug: "jemput-pembeli-tanpa-bayar-iklan-kunci-ampuh-kuasai-pencarian-google-umkm",
     excerpt:
       "Anggaran bisnis habis untuk iklan berbayar tapi hasil pas-pasan? Saatnya membuat bisnismu tampil di halaman depan Google secara organik lewat strategi SEO lokal yang tepat sasaran.",
-    image: "/blog-images/photo-1499951360447-b19be8fe80f5.webp",
+    image: "/blog-images/photo-1432888498266-38ffec3eaf0a.webp",
     author: "Tim KreativLabs",
     date: "22 September 2026",
     category: "SEO & Marketing",
@@ -1363,7 +1363,7 @@ export const blogPosts: BlogPost[] = [
     slug: "wajah-baru-website-bisnis-bikin-omzet-loncat-2026",
     excerpt:
       "Standar website bisnis di tahun 2026 telah berubah drastis dan menuntut kecepatan serta sentuhan teknologi cerdas agar bisnis tetap kompetitif.",
-    image: "/blog-images/photo-1488590528505-98d2b5aba04b.webp",
+    image: "/blog-images/photo-1498050108023-c5249f4df085.webp",
     author: "Tim KreativLabs",
     date: "25 September 2026",
     category: "Update Teknologi",
@@ -1443,7 +1443,7 @@ export const blogPosts: BlogPost[] = [
     slug: "sihir-angka-di-balik-keranjang-belanja-cara-bikin-pengunjung-nyaman-rogoh-kocek",
     excerpt:
       "Pelajari cara mengoptimalkan landing page dan menerapkan strategi psikologi harga untuk membantu pengunjung toko online membuat keputusan pembelian dengan lebih nyaman.",
-    image: "/blog-images/photo-1556761175-5973dc0f32e7.webp",
+    image: "/blog-images/photo-1556742502-ec7c0e9f34b1.webp",
     author: "Tim KreativLabs",
     date: "4 Oktober 2026",
     category: "Tips Bisnis",
@@ -1471,7 +1471,7 @@ export const blogPosts: BlogPost[] = [
     slug: "jualan-online-tapi-sepi-saatnya-bikin-toko-google-anda-nangkring-di-halaman-utama",
     excerpt:
       "Punya website keren tapi pengunjungnya sepi? Rahasianya bukan pada pasang iklan mahal, melainkan bagaimana membuat Google mengenali bisnis lokal Anda.",
-    image: "/blog-images/photo-1499951360447-b19be8fe80f5.webp",
+    image: "/blog-images/photo-1557838923-2985c318be48.webp",
     author: "Tim KreativLabs",
     date: "7 Oktober 2026",
     category: "SEO & Marketing",
@@ -1507,7 +1507,7 @@ export const blogPosts: BlogPost[] = [
     slug: "strategi-bisnis-lokal-kuasai-pencarian-google",
     excerpt:
       "Pelajari cara mengoptimalkan visibilitas toko online lokal di mesin pencari Google untuk menjangkau lebih banyak pelanggan potensial di area sekitar Anda.",
-    image: "/blog-images/photo-1533750516457-a7f992034fec.webp",
+    image: "/blog-images/photo-1562577309-4932fdd64cd1.webp",
     author: "Tim KreativLabs",
     date: "10 Oktober 2026",
     category: "SEO & Marketing",
@@ -1539,7 +1539,7 @@ export const blogPosts: BlogPost[] = [
     slug: "rumah-pinjaman-vs-rumah-sendiri-saatnya-umkm-pindah-ke-aset-digital-mandiri",
     excerpt:
       "Jualan laris di media sosial sering kali terasa rentan ketika algoritma berubah sewaktu-waktu. Kenali alasan pentingnya membangun aset digital milik sendiri.",
-    image: "/blog-images/photo-1460925895917-afdab827c52f.webp",
+    image: "/blog-images/photo-1522202176988-66273c2fd55f.webp",
     author: "Tim KreativLabs",
     date: "19 Oktober 2026",
     category: "Tips Bisnis",
@@ -1571,7 +1571,7 @@ export const blogPosts: BlogPost[] = [
     slug: "standar-baru-website-bisnis-2026",
     excerpt:
       "Persaingan bisnis digital pada tahun 2026 menuntut standar performa website yang lebih tinggi, memadukan kecepatan akses dan integrasi teknologi untuk mendukung kenyamanan pelanggan.",
-    image: "/blog-images/photo-1488590528505-98d2b5aba04b.webp",
+    image: "/blog-images/photo-1504384308090-c894fdcc538d.webp",
     author: "Tim KreativLabs",
     date: "22 Oktober 2026",
     category: "Update Teknologi",
@@ -1634,7 +1634,7 @@ export const blogPosts: BlogPost[] = [
     slug: "kapan-waktu-tepat-umkm-punya-toko-sendiri",
     excerpt:
       "Website bisa melengkapi media sosial dan marketplace. Kenali kebutuhan usaha sebelum menentukan kapan mulai membuatnya.",
-    image: "/blog-images/photo-1460925895917-afdab827c52f.webp",
+    image: "/blog-images/photo-1556740758-90de374c12ad.webp",
     author: "Tim KreativLabs",
     date: "28 Oktober 2026",
     category: "Tips Bisnis",
@@ -1662,7 +1662,7 @@ export const blogPosts: BlogPost[] = [
     slug: "jemput-pelanggan-tanpa-rogoh-kocek-iklan-seni-bikini-google-kenal-bisnis-lokal",
     excerpt:
       "Capek boncos pasang iklan berbayar yang hasilnya angin-anginan? Saatnya buat Google jadi sales 24 jam yang bawa pembeli datang gratis ke lapak digital Anda.",
-    image: "/blog-images/photo-1499951360447-b19be8fe80f5.webp",
+    image: "/blog-images/photo-1504868584819-f8e8b4b6d7e3.webp",
     author: "Tim KreativLabs",
     date: "31 Oktober 2026",
     category: "SEO & Marketing",
@@ -1692,7 +1692,7 @@ export const blogPosts: BlogPost[] = [
     slug: "syntegra-luncurkan-platform-ai-terintegrasi-untuk-satukan-operasional-bisnis",
     excerpt:
       "Syntegra resmi meluncurkan platform kecerdasan buatan terintegrasi yang dirancang untuk menyatukan empat produk bisnis dalam satu sistem.",
-    image: "/blog-images/photo-1517694712202-14dd9538aa97.webp",
+    image: "/blog-images/photo-1531297484001-80022131f5a1.webp",
     author: "Tim KreativLabs",
     date: "1 November 2026",
     category: "Update Teknologi",
@@ -1730,7 +1730,7 @@ export const blogPosts: BlogPost[] = [
     slug: "perbedaan-website-company-profile-toko-online-dan-media-sosial",
     excerpt:
       "Mengenal fungsi spesifik antara website company profile, toko online, dan media sosial agar bisnis Anda tidak salah langkah dalam membangun aset digital.",
-    image: "/blog-images/photo-1519389950473-47ba0277781c.webp",
+    image: "/blog-images/photo-1542744173-8e7e53415bb0.webp",
     author: "Tim KreativLabs",
     date: "7 November 2026",
     category: "Tips Bisnis",

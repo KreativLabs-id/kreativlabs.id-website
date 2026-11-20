@@ -1,9 +1,12 @@
 import Parser from "rss-parser";
+import fs from "node:fs";
+import path from "node:path";
 
 const feeds = [
-  "https://news.google.com/rss/search?q=website+UMKM+OR+bisnis+digital&hl=id&gl=ID&ceid=ID:id",
-  "https://news.google.com/rss/search?q=desain+branding+OR+pemasaran+digital&hl=id&gl=ID&ceid=ID:id",
-  "https://news.google.com/rss/search?q=AI+bisnis+OR+teknologi+website&hl=id&gl=ID&ceid=ID:id",
+  "https://news.google.com/rss/search?q=AI+bisnis+OR+teknologi+AI+OR+tools+AI&hl=id&gl=ID&ceid=ID:id",
+  "https://news.google.com/rss/search?q=tips+bisnis+UMKM+OR+strategi+usaha+digital&hl=id&gl=ID&ceid=ID:id",
+  "https://news.google.com/rss/search?q=website+UMKM+OR+SEO+OR+pemasaran+digital&hl=id&gl=ID&ceid=ID:id",
+  "https://news.google.com/rss/search?q=desain+branding+UMKM+OR+UI+UX+bisnis&hl=id&gl=ID&ceid=ID:id",
   "https://developers.google.com/search/blog/feed.xml",
 ];
 const week = 7 * 24 * 60 * 60 * 1000;
@@ -107,7 +110,7 @@ export async function getRelevantTrends() {
     return items
       .map((item) => clean(item.title, 100))
       .filter((title) =>
-        /\b(umkm|bisnis|website|desain|branding|marketing|teknologi|kecerdasan buatan|ai|google|marketplace|e-commerce)\b/i.test(
+        /\b(umkm|bisnis|usaha|startup|website|desain|branding|marketing|seo|teknologi|kecerdasan buatan|ai|chatgpt|gemini|google|aplikasi|otomasi|produktivitas|marketplace|e-commerce|media sosial)\b/i.test(
           title
         )
       )
@@ -174,18 +177,98 @@ export function validateArticle(article, sources, titles, slugs) {
     throw new Error("Konten mengandung tag HTML mentah");
 }
 
-export function pickDistinctImage(availableImages, recentImages = [], allUsedImages = []) {
-  if (!Array.isArray(availableImages) || availableImages.length === 0) {
-    throw new Error("Daftar gambar blog kosong");
+export function pickUnusedImageCandidate(category, usedImages = [], imagePool = {}) {
+  const usedSet = new Set(usedImages);
+  const isUnused = (id) => !usedSet.has(`/blog-images/${id}.webp`);
+
+  const preferred = Array.isArray(imagePool[category]) ? imagePool[category].filter(isUnused) : [];
+  if (preferred.length > 0) {
+    return preferred[Math.floor(Math.random() * preferred.length)];
   }
-  const recentSet = new Set(recentImages);
-  const freshPool = availableImages.filter((img) => !recentSet.has(img));
-  const pool = freshPool.length > 0 ? freshPool : availableImages;
 
-  const counts = new Map();
-  for (const img of allUsedImages) counts.set(img, (counts.get(img) || 0) + 1);
+  const fallback = Object.values(imagePool).flat().filter(isUnused);
+  if (fallback.length > 0) {
+    return fallback[Math.floor(Math.random() * fallback.length)];
+  }
+  return null;
+}
 
-  const minCount = Math.min(...pool.map((img) => counts.get(img) || 0));
-  const leastUsed = pool.filter((img) => (counts.get(img) || 0) === minCount);
-  return leastUsed[Math.floor(Math.random() * leastUsed.length)];
+async function downloadImageFile(url, destPath) {
+  const response = await fetch(url, {
+    signal: AbortSignal.timeout(15000),
+    headers: { "user-agent": "KreativLabsBlogBot/1.0 (https://www.kreativlabs.id)" },
+  });
+  if (!response.ok) return false;
+  const contentType = response.headers.get("content-type") || "";
+  if (!contentType.startsWith("image/")) return false;
+  const buffer = Buffer.from(await response.arrayBuffer());
+  if (buffer.byteLength < 5000) return false;
+  fs.writeFileSync(destPath, buffer);
+  return true;
+}
+
+export async function fetchUniqueBlogImage({
+  category,
+  usedImages = [],
+  imagesDir,
+  imagePool = {},
+}) {
+  const usedSet = new Set(usedImages);
+  fs.mkdirSync(imagesDir, { recursive: true });
+
+  // 1. Cek apakah ada file lokal di public/blog-images yang sama sekali belum dipakai artikel mana pun
+  const localUnused = fs
+    .readdirSync(imagesDir)
+    .filter((file) => /^(?:photo|picsum)-.*\.webp$/i.test(file))
+    .map((file) => `/blog-images/${file}`)
+    .filter((imgPath) => !usedSet.has(imgPath));
+  if (localUnused.length > 0) {
+    return localUnused[Math.floor(Math.random() * localUnused.length)];
+  }
+
+  // 2. Ambil gambar baru yang belum pernah dipakai dari pool terkurasi sesuai kategori, lalu simpan lokal
+  const tried = new Set();
+  for (let i = 0; i < 8; i++) {
+    const candidate = pickUnusedImageCandidate(
+      category,
+      [...usedSet, ...[...tried].map((id) => `/blog-images/${id}.webp`)],
+      imagePool
+    );
+    if (!candidate) break;
+    tried.add(candidate);
+    const filename = `${candidate}.webp`;
+    const url = `https://images.unsplash.com/${candidate}?auto=format&fit=crop&w=1200&q=80&fm=webp`;
+    try {
+      if (await downloadImageFile(url, path.join(imagesDir, filename))) {
+        return `/blog-images/${filename}`;
+      }
+    } catch {
+      // Coba kandidat lain jika gagal unduh
+    }
+  }
+
+  // 3. Fallback otomatis ke Picsum (foto Unsplash asli) jika seluruh pool terkurasi sudah habis terpakai
+  for (let page = 1; page <= 5; page++) {
+    try {
+      const res = await fetch(`https://picsum.photos/v2/list?page=${page}&limit=50`, {
+        signal: AbortSignal.timeout(12000),
+      });
+      if (!res.ok) continue;
+      const list = await res.json();
+      const landscape = list.filter((item) => item.width > item.height);
+      for (const item of landscape) {
+        const imgPath = `/blog-images/picsum-${item.id}.webp`;
+        if (usedSet.has(imgPath)) continue;
+        const ok = await downloadImageFile(
+          `https://picsum.photos/id/${item.id}/1200/675.webp`,
+          path.join(imagesDir, `picsum-${item.id}.webp`)
+        );
+        if (ok) return imgPath;
+      }
+    } catch {
+      // Lanjut halaman berikutnya
+    }
+  }
+
+  throw new Error("Gagal mendapatkan gambar blog unik baru; membatalkan agar tidak duplikat.");
 }

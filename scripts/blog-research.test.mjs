@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { collectRecentItems, pickDistinctImage, validateArticle } from "./blog-research.mjs";
+import { collectRecentItems, pickUnusedImageCandidate, validateArticle } from "./blog-research.mjs";
 
 test("memilih sumber HTTPS yang terbit dalam tujuh hari tanpa duplikat", () => {
   const now = Date.parse("2026-11-01T12:00:00Z");
@@ -129,17 +129,31 @@ test("menolak artikel yang mengandung tag HTML mentah (anti stored-XSS)", () => 
   );
 });
 
-test("memilih gambar yang berbeda dari artikel terbaru dan memprioritaskan yang paling jarang dipakai", () => {
-  const available = ["/img/a.webp", "/img/b.webp", "/img/c.webp"];
-  const recent = ["/img/a.webp", "/img/b.webp"];
-  assert.equal(pickDistinctImage(available, recent, ["/img/a.webp", "/img/b.webp"]), "/img/c.webp");
-  // Jika semua pernah dipakai baru-baru ini, tetap memilih yang paling jarang dipakai
+test("memilih gambar unik yang belum pernah dipakai sama sekali dan tidak pernah menduplikasi", () => {
+  const pool = {
+    "Tips Bisnis": ["photo-a", "photo-b"],
+    "Update Teknologi": ["photo-c"],
+  };
   assert.equal(
-    pickDistinctImage(
-      ["/img/a.webp", "/img/b.webp"],
-      ["/img/a.webp", "/img/b.webp"],
-      ["/img/a.webp", "/img/a.webp", "/img/b.webp"]
+    pickUnusedImageCandidate("Tips Bisnis", ["/blog-images/photo-a.webp"], pool),
+    "photo-b"
+  );
+  // Jika kategori utama sudah habis, ambil yang belum terpakai dari kategori lain
+  assert.equal(
+    pickUnusedImageCandidate(
+      "Tips Bisnis",
+      ["/blog-images/photo-a.webp", "/blog-images/photo-b.webp"],
+      pool
     ),
-    "/img/b.webp"
+    "photo-c"
+  );
+  // Jika semua kandidat sudah terpakai, kembalikan null (tidak boleh duplikat)
+  assert.equal(
+    pickUnusedImageCandidate(
+      "Tips Bisnis",
+      ["/blog-images/photo-a.webp", "/blog-images/photo-b.webp", "/blog-images/photo-c.webp"],
+      pool
+    ),
+    null
   );
 });

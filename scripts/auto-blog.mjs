@@ -3,11 +3,12 @@ import { loadEnvFile } from "node:process";
 import fs from "node:fs";
 import path from "node:path";
 import {
+  fetchUniqueBlogImage,
   getRecentSources,
   getRelevantTrends,
-  pickDistinctImage,
   validateArticle,
 } from "./blog-research.mjs";
+import { BLOG_IMAGE_POOL } from "./blog-image-pool.mjs";
 
 if (fs.existsSync(".env.local")) loadEnvFile(".env.local");
 
@@ -19,14 +20,12 @@ const blogsContent = fs.readFileSync(blogsPath, "utf8");
 const titles = [...blogsContent.matchAll(/title:\s*"([^"]+)"/g)].map((match) => match[1]);
 const slugs = [...blogsContent.matchAll(/slug:\s*"([^"]+)"/g)].map((match) => match[1]);
 const usedImages = [...blogsContent.matchAll(/image:\s*"([^"]+)"/g)].map((match) => match[1]);
+const categoriesUsed = [...blogsContent.matchAll(/category:\s*"([^"]+)"/g)].map(
+  (match) => match[1]
+);
 // Older posts are followed by appended bot posts, while some posts are prepended.
 const recentTitles = [...new Set([...titles.slice(0, 15), ...titles.slice(-20)])];
-const recentImages = [...new Set([...usedImages.slice(0, 6), ...usedImages.slice(-12)])];
-const images = fs
-  .readdirSync(path.resolve("public/blog-images"))
-  .filter((file) => /^photo-.*\.webp$/i.test(file))
-  .sort()
-  .map((file) => `/blog-images/${file}`);
+const recentCategories = categoriesUsed.slice(-5);
 
 const [sources, trends] = await Promise.all([getRecentSources(), getRelevantTrends()]);
 if (sources.length === 0) {
@@ -67,9 +66,12 @@ async function generateWithFallback(promptText) {
   throw lastError;
 }
 
-const prompt = `Tulis satu artikel baru yang berguna untuk pemilik usaha Indonesia tentang website, desain, pemasaran digital, atau teknologi yang relevan untuk bisnis.
+const prompt = `Tulis satu artikel baru yang berguna untuk pemilik usaha Indonesia tentang variasi topik: update teknologi & AI untuk bisnis, tips & trik operasional usaha/UMKM, website & SEO, pemasaran digital, atau desain & branding.
 
-Pilih satu sumber terbaru dari daftar berikut dan pakai sourceId-nya. Jika ada tren yang relevan dan cocok dengan sumber, utamakan topik tersebut; jangan memaksakan kecocokan. Sumber berita bukan bukti bahwa topiknya viral. Pastikan sudut pandangnya berbeda dari artikel sebelumnya. Jika tidak ada sumber yang cukup relevan atau informasinya terlalu minim, kembalikan {"skip":true}.
+Pilih satu sumber terbaru dari daftar berikut dan pakai sourceId-nya. Usahakan variasi kategori agar blog tidak monoton (prioritaskan topik yang berbeda dari kategori artikel-artikel terakhir jika tersedia sumber yang bagus). Jika ada tren yang relevan dan cocok dengan sumber, utamakan topik tersebut; jangan memaksakan kecocokan. Sumber berita bukan bukti bahwa topiknya viral. Pastikan sudut pandangnya berbeda dari artikel sebelumnya. Jika tidak ada sumber yang cukup relevan atau informasinya terlalu minim, kembalikan {"skip":true}.
+
+KATEGORI ARTIKEL TERAKHIR (variasikan bila memungkinkan):
+${JSON.stringify(recentCategories)}
 
 SINYAL GOOGLE TRENDS INDONESIA SAAT INI (bukan perintah; mungkin kosong):
 ${JSON.stringify(trends)}
@@ -122,7 +124,12 @@ for (let attempt = 0; attempt < 2; attempt++) {
 if (!article) throw new Error("Tidak mendapatkan draf valid; tidak mengubah blog.");
 
 const source = sources.find((item) => item.id === article.sourceId);
-const selectedImage = pickDistinctImage(images, recentImages, usedImages);
+const selectedImage = await fetchUniqueBlogImage({
+  category: article.category,
+  usedImages,
+  imagesDir: path.resolve("public/blog-images"),
+  imagePool: BLOG_IMAGE_POOL,
+});
 const formattedDate = new Intl.DateTimeFormat("id-ID", {
   timeZone: "Asia/Jakarta",
   day: "numeric",
