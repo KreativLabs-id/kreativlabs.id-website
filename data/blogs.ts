@@ -1804,6 +1804,37 @@ export const blogPosts: BlogPost[] = [
           "",
           "Sumber: [Jawa Pos](https://news.google.com/rss/articles/CBMiygFBVV95cUxPUVNqakRlQUk4bGFBcFljblZ4cFJqVDVHUVZrZThlZExPNFcyX0tCS3FqdXB6UGg4dzJsZ0owbWxRYUxxaFBYNDFZMkl4ZmlLYnJ0RHNuVVN5MEdmUUd1WXZtNk9WSTZUR1hTd24wWDhJVlFDQ3JhdmNqM1AzVkJ0akVuUVRnV0Njak9aQzQ3WDF1TERYa3dEaE0xY2JMVE5uZ3cwUmdXVDNoamtFZDQzVWRCX1U0bXAxOHBlWnZLaHoxTkpnc2tENVZR0gHPAUFVX3lxTE4td0hBSk5RMy1tT09Cb201Y0dkSEVXS1ZMZjR5SnY5cFp0bGxETmE1RWV6anlMRXN1WkM0WTF1bkJYVUZOYWN3X0plSjVpVk5vdzU1bFEwMUtoRzJuV0h0X25OcGR4UHkwTFByZHc2ZWpYb3JIbEtMREt3QWpkZEJXX2EzZHE2SFB0eHk5MUVHVmMzcHBXXzFqN19seldRV1dzZTQ3ekt0ZmVyMUl5anJFalAxVXNIajBpWmpiOGpQMVU3WEdnTGNkcjhHUWprcw?oc=5)"
     ].join("\n")
+  },
+  {
+    id: "belajar-usaha-kemasan-kado-jangan-jadi-penonton-teknologi",
+    title: "Belajar dari Usaha Kemasan Kado: Jangan Jadi Penonton Teknologi",
+    slug: "belajar-usaha-kemasan-kado-jangan-jadi-penonton-teknologi",
+    excerpt: "Kisah dan tips dari pelaku usaha kemasan kado mengingatkan pentingnya beradaptasi dengan teknologi bagi UMKM agar tidak tertinggal.",
+    image: "/blog-images/photo-1600880292203-757bb62b4baf.webp",
+    author: "Tim KreativLabs",
+    date: "22 November 2026",
+    category: "Tips Bisnis",
+    tags: ["UMKM","Tips Bisnis","Teknologi","Pengembangan Usaha"],
+    readTime: "4 menit",
+    content: [
+          "Perkembangan teknologi yang begitu cepat menuntut pelaku usaha kecil untuk segera mengambil langkah adaptasi. Pelaku usaha yang hanya menjadi penonton biasanya akan lebih cepat tertinggal oleh kompetitor yang sigap memanfaatkan sarana digital. Kisah inspiratif dari praktisi usaha kemasan kado, Wahyu Nugroho, menunjukkan bahwa keaktifan mengadopsi cara-cara baru adalah kunci bertahan di pasaran.",
+          "",
+          "Banyak pemilik usaha sering merasa bahwa teknologi modern hanya cocok untuk perusahaan besar dengan modal tebal. Padahal, pemanfaatan alat sederhana yang ada di sekitar kita sudah cukup untuk mulai melakukan perubahan operasional. Mengabaikan peluang digitalisasi sama saja dengan menutup pintu bagi calon pelanggan yang kini mayoritas mencari informasi melalui gawai mereka.",
+          "",
+          "## Langkah Nyata Memulai Adopsi Teknologi Bisnis",
+          "",
+          "Langkah awal yang bisa dilakukan tidak harus muluk-muluk, seperti mulai mencatat keuangan toko menggunakan aplikasi ponsel pintar alih-alih buku tulis manual. Selain itu, penggunaan media sosial secara aktif untuk memamerkan produk fisik dapat memperluas jangkauan wilayah pemasaran. Proses belajar ini bisa dilakukan bertahap sesuai dengan kemampuan dan skala usaha yang sedang dikelola.",
+          "",
+          "Sebagai contoh, jika Anda berjualan produk kerajinan atau kemasan kado, cobalah membuat katalog digital sederhana yang mudah dibagikan lewat aplikasi pesan instan. Pelanggan biasanya lebih menyukai cara pemesanan yang praktis tanpa harus bertanya terlalu banyak detail dasar. Efisiensi waktu ini secara langsung akan meningkatkan pengalaman berbelanja yang menyenangkan bagi konsumen.",
+          "",
+          "## Mengatasi Tantangan Mental dan Keterbatasan Keterampilan",
+          "",
+          "Rasa takut salah atau merasa gagap teknologi sering kali menjadi penghalang utama bagi pemilik usaha tradisional. Padahal, ketimbang menunggu semuanya sempurna, memulai dengan fitur-fitur dasar yang sudah akrab di keseharian jauh lebih dianjurkan. Anda bisa meminta bantuan anggota keluarga yang lebih muda atau mengikuti pelatihan gratis yang sering diadakan oleh instansi pemerintah maupun komunitas lokal.",
+          "",
+          "Keberanian untuk mencoba hal baru akan membuka wawasan mengenai apa yang sebenarnya disukai oleh pasar saat ini. Dengan tidak menjadi penonton di kandang sendiri, usaha kecil memiliki peluang besar untuk naik kelas dan bersaing secara sehat. Mari jadikan teknologi sebagai mitra kerja harian untuk meringankan beban operasional bisnis Anda.",
+          "",
+          "Sumber: [RRI.co.id](https://news.google.com/rss/articles/CBMiyAFBVV95cUxNaDhRZXYwbmp6MDEzcjd4UkJHRzZQcjNfTGVzQ1B2MkxwRXZmQURVbFRseTZCd1d6UVdVNHB6N2Zjc2FVeGx2TTZ4aG1LUkYzWHBCbmZQd2sxVWZxTWlydGpleE01WlZPVkhZMS1Ubm84bjNzN2dEY2F0bHdmdEZDV0dTU0Ryd1NReEhuOFo1YjY0STVqejhFTGN5UzdGM005VEtwVmk0MEtzS3pGcW5zOXNweEs3Q05NQU52ZjNPOHJLVEZ2Q2NuZw?oc=5)"
+    ].join("\n")
   }
 ];
 
