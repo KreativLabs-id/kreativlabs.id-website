@@ -1884,6 +1884,39 @@ export const blogPosts: BlogPost[] = [
           "",
           "Sumber: [Marketing.co.id](https://news.google.com/rss/articles/CBMia0FVX3lxTFBVVGlWcEZ4cTZCRlloVlN4bHZ0YmJWTGtWNjI0MlhfRVh5eG1SUF9GdDAybEYzNEt4TnE0SXZ2Ul9WWGxsaW1EVllCYy11UmRIQkdzZk1NcFpFQWNCazVqX19nbGVfb01SZzZj?oc=5)"
     ].join("\n")
+  },
+  {
+    id: "kisah-umkm-daluxe-id-bisnis-rumahan-1500-pakaian",
+    title: "Kisah UMKM DaLuxe.id: Mengubah Bisnis Rumahan Menjadi Produksi Ribuan Pakaian",
+    slug: "kisah-umkm-daluxe-id-bisnis-rumahan-1500-pakaian",
+    excerpt: "Pelajari perjalanan UMKM DaLuxe.id yang sukses mengembangkan bisnis pakaian skala rumahan hingga mencapai produksi 1.500 potong per bulan.",
+    image: "/blog-images/photo-1521737711867-e3b97375f902.webp",
+    author: "Tim KreativLabs",
+    date: "28 November 2026",
+    category: "Tips Bisnis",
+    tags: ["UMKM","Bisnis Pakaian","Tips Usaha","Kisah Sukses","Produksi"],
+    readTime: "4 menit",
+    content: [
+          "Mengembangkan usaha skala rumahan hingga mampu memproduksi ribuan produk setiap bulan tentu bukan hal yang instan. Banyak pelaku usaha pemula sering kali menghadapi tantangan dalam hal konsistensi produksi, manajemen bahan baku, hingga pengelolaan tenaga kerja di ruang yang terbatas. Namun, kisah dari UMKM DaLuxe.id menunjukkan bahwa bisnis yang dimulai dari rumah pun memiliki peluang besar untuk berkembang pesat jika dikelola dengan strategi yang tepat.",
+          "",
+          "## Membangun Fondasi Produksi dari Rumah",
+          "",
+          "Langkah awal yang sering ditempuh oleh usaha konveksi atau pakaian rumahan adalah memaksimalkan fasilitas yang ada secara efektif. Sebelum memutuskan menyewa tempat atau gudang besar, pemilik usaha perlu menata alur kerja di rumah mulai dari penyimpanan bahan, proses jahit, hingga tahap finishing. Penataan ruang yang efisien membantu pekerja bergerak lebih leluasa dan meminimalkan kesalahan potong kain atau cacat produk.",
+          "",
+          "Selain tata letak, kedisiplinan jadwal produksi harian sangat menentukan kapasitas akhir setiap bulannya. Sebagai contoh, menetapkan target harian untuk jumlah pakaian yang harus diselesaikan dapat mencegah penumpukan pesanan menjelang batas pengiriman. Pengusaha juga bisa mulai melibatkan tenaga kerja dari lingkungan sekitar secara bertahap seiring bertambahnya volume permintaan pasar.",
+          "",
+          "## Menjaga Kualitas dan Kepercayaan Konsumen",
+          "",
+          "Ketika jumlah produksi mulai meningkat hingga ribuan pakaian per bulan, menjaga konsistensi kualitas jahitan dan bahan menjadi tantangan tersendiri. Pelanggan tentu mengharapkan standar yang sama antara produk pertama yang mereka beli dengan produk-produk berikutnya. Oleh karena itu, pemeriksaan kualitas atau quality control di setiap akhir lini produksi sangat wajib dilakukan sebelum barang dikemas.",
+          "",
+          "Pemanfaatan media digital juga memegang peran penting dalam memperluas jangkauan pasar bagi usaha yang berbasis produksi rumahan. Dokumentasi proses pembuatan atau menampilkan kerapian detail produk di media sosial membantu meyakinkan calon pembeli mengenai kualitas barang yang ditawarkan. Pendekatan ini membuat merek lokal semakin dipercaya oleh konsumen dari berbagai daerah di Indonesia.",
+          "",
+          "## Evaluasi dan Perencanaan Jangka Panjang",
+          "",
+          "Pertumbuhan bisnis yang stabil menuntut pemilik usaha untuk terus melakukan evaluasi bulanan terhadap efisiensi biaya dan ketersediaan stok bahan baku. Pencatatan keuangan yang terpisah antara pengeluaran pribadi dan usaha membantu mengamankan modal untuk perputaran produksi selanjutnya. Dengan perencanaan yang matang, usaha skala rumahan dapat bertransformasi menjadi bisnis yang mandiri dan siap menghadapi persaingan pasar yang lebih luas.",
+          "",
+          "Sumber: [Marketing.co.id](https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBET29iUDVWN2V6TkstVVRtN2hRa0tLVWdVVzVrRWpORjB3QWl5d3dHNXZkanFnMlhuc1FCVFRpZ0FqWjdKMkhsR1U1el82QWM1WWc5NVQ4Mm1vcVZHOF9QejJsaG1Xd2c?oc=5)"
+    ].join("\n")
   }
 ];
 
